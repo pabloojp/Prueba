@@ -1,0 +1,1340 @@
+\documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+
+       
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[square,numbers,round]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{titling}
+\usepackage{subcaption}
+\usepackage[margin=1.75cm]{geometry}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{plain}
+\usepackage{vmargin}
+\usepackage{url}
+
+
+
+%\setmargins{2.35cm}{1.5cm}{16.5cm}{23.42cm}{10pt}{1cm}{0pt}{2cm}
+
+
+\begin{document}
+
+\begin{titlepage}
+	
+	%\vspace*{0.8 cm}	he puesto geometry y he quitado setmargins
+	
+    \centering
+	
+	{\LARGE \textbf{Algoritmos de aprendizaje automático aplicados a problemas de Ciberseguridad.}\par}
+    
+	\vfill
+	\vfill 
+    
+    {\LARGE \textsc{TRABAJO DE FIN DE GRADO}\par}
+    
+    \vspace*{0.2 cm}	 
+    
+    {\Large Curso 2023/2024\par}
+    
+    \vfill
+    \vfill   
+	
+    \includegraphics[width=0.3\textwidth]{logo_UCM.png}\par
+	
+	\vfill  
+    
+    {\Large \textsc{\textbf{UNIVERSIDAD COMPLUTENSE}}\par}
+    {\Large \textsc{\textbf{MADRID}}\par}
+    
+    %%%{\LARGE \textsc{\textbf{UNIVERSIDAD COMPLUTENSE DE MADRID}}\par}
+    
+	\vfill   
+	\vfill 
+	\vfill  
+	\vfill 
+    
+    {\Large FACULTAD DE CIENCIAS MATEMÁTICAS \par}
+        
+    {\Large GRADO EN MATEMÁTICAS \par}
+    
+    \vfill
+	\vfill
+	\vfill 
+	\vfill 
+    
+
+    \begin{minipage}{0.8\textwidth}
+        \begin{flushleft}
+            {\Large Pablo Jiménez Poyatos}
+        \end{flushleft}
+    \end{minipage}
+    
+    \vfill
+    
+    
+    \begin{minipage}{0.8\textwidth}
+        \begin{flushleft}
+            {\Large Luis Fernando Llana Díaz}
+        \end{flushleft}
+    \end{minipage}
+
+    \vfill
+    \vfill
+    \vfill 
+
+	\begin{minipage}{0.75\textwidth}
+    	    \begin{flushright}
+    	    		{\Large Madrid, 10 de junio de 2024}  
+		\end{flushright}        	           
+	\end{minipage}     
+     
+    
+\end{titlepage}
+
+
+
+\newpage
+
+{\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
+
+
+
+
+
+\nocite{*}
+
+
+indice :
+
+
+
+
+Title: Machine Learning Algorithms Applied to Cybersecurity: A Bachelor Thesis
+
+Abstract:
+With the rapid expansion of digital technologies, the need for robust cybersecurity measures has become increasingly imperative. Traditional rule-based approaches to cybersecurity are often unable to cope with the dynamic and sophisticated nature of modern cyber threats. In response, machine learning algorithms have emerged as powerful tools for enhancing cybersecurity defenses. This thesis explores the application of various machine learning algorithms to cybersecurity, focusing on their effectiveness in detecting and mitigating cyber threats. Through a comprehensive review of existing literature and empirical analysis, this study aims to provide insights into the strengths, limitations, and best practices of employing machine learning in cybersecurity. Additionally, practical implementation considerations and potential challenges are discussed to guide future research and development efforts in this critical domain.
+
+Keywords: Machine Learning, Cybersecurity, Threat Detection, Data Analysis, Algorithmic Approaches.
+
+Chapter 1: Introduction
+
+Background
+Research Objectives
+Structure of the Thesis
+Chapter 2: Literature Review
+
+Traditional Cybersecurity Approaches
+Introduction to Machine Learning in Cybersecurity
+Types of Machine Learning Algorithms
+Applications of Machine Learning in Cybersecurity
+Chapter 3: Methodology
+
+Data Collection
+Preprocessing Techniques
+Model Selection
+Performance Evaluation Metrics
+Chapter 4: Experimental Results
+
+Description of Datasets
+Implementation Details
+Performance Evaluation of Machine Learning Models
+Chapter 5: Discussion
+
+Interpretation of Results
+Comparison with Existing Approaches
+Practical Implications
+Limitations and Future Directions
+Chapter 6: Conclusion
+
+Summary of Findings
+Contributions to the Field
+Recommendations for Future Research
+References
+Appendices
+
+{\bfseries \large Resumen:} \vspace{5mm}
+
+Esto es una prueba para probar el formato del Resumen. Esto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del Resumen.
+\vspace{1cm}
+
+{\bfseries \large Abstract: }\vspace{5mm} 
+
+This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+\vspace{1cm}
+
+%%Comentar estas notas para que no salgan en la memoria
+{\Large\textbf{Nota: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto.}}
+\vspace{1cm}
+
+{\Large\textbf{Extensión máxima 20 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
+\newpage
+
+%%Inicio:
+\citep{olabe1998redes} : ESPAÑOL : Muy completo, me gusta
+\citep{parisi2019hands} : INGLES información práctica sobre cómo utilizar sistemas de inteligencia artificial para prevenir ataques cibernéticos, detectar amenazas y anomalías en las redes, y fortalecer la seguridad en el ámbito de la ciberseguridad
+
+
+\section{Comentarios codigos Python}
+
+\subsection{MNIST}
+
+En el codigo de predecir los digitos MNIST, cuando cargo el modelo me aparece :
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 28, 28, 32)        832       
+
+ conv2d_1 (Conv2D)           (None, 28, 28, 32)        25632
+
+ max_pooling2d (MaxPooling2  (None, 14, 14, 32)        0
+ D)
+
+ dropout (Dropout)           (None, 14, 14, 32)        0
+
+ conv2d_2 (Conv2D)           (None, 14, 14, 64)        18496
+
+ conv2d_3 (Conv2D)           (None, 14, 14, 64)        36928
+
+ max_pooling2d_1 (MaxPoolin  (None, 7, 7, 64)          0
+ g2D)
+
+ dropout_1 (Dropout)         (None, 7, 7, 64)          0
+
+ flatten (Flatten)           (None, 3136)              0
+
+ dense (Dense)               (None, 256)               803072
+
+ dropout_2 (Dropout)         (None, 256)               0
+
+ dense_1 (Dense)             (None, 10)                2570
+
+=================================================================
+Total params: 887530 (3.39 MB)
+Trainable params: 887530 (3.39 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20
+439/439 - 127s - loss: 0.4079 - accuracy: 0.8705 - val_loss: 0.0653 - val_accuracy: 0.9821 - lr: 0.0010 - 127s/epoch - 290ms/step
+Epoch 2/20
+439/439 - 126s - loss: 0.1319 - accuracy: 0.9610 - val_loss: 0.0408 - val_accuracy: 0.9886 - lr: 0.0010 - 126s/epoch - 287ms/step
+Epoch 3/20
+439/439 - 127s - loss: 0.0931 - accuracy: 0.9717 - val_loss: 0.0420 - val_accuracy: 0.9871 - lr: 0.0010 - 127s/epoch - 290ms/step
+Epoch 4/20
+439/439 - 144s - loss: 0.0785 - accuracy: 0.9762 - val_loss: 0.0265 - val_accuracy: 0.9926 - lr: 0.0010 - 144s/epoch - 328ms/step
+Epoch 5/20
+439/439 - 124s - loss: 0.0676 - accuracy: 0.9792 - val_loss: 0.0278 - val_accuracy: 0.9921 - lr: 0.0010 - 124s/epoch - 282ms/step
+Epoch 6/20
+439/439 - 131s - loss: 0.0612 - accuracy: 0.9816 - val_loss: 0.0275 - val_accuracy: 0.9924 - lr: 0.0010 - 131s/epoch - 299ms/step
+Epoch 7/20
+439/439 - 121s - loss: 0.0596 - accuracy: 0.9829 - val_loss: 0.0263 - val_accuracy: 0.9929 - lr: 0.0010 - 121s/epoch - 275ms/step
+Epoch 8/20
+439/439 - 123s - loss: 0.0577 - accuracy: 0.9833 - val_loss: 0.0246 - val_accuracy: 0.9929 - lr: 0.0010 - 123s/epoch - 281ms/step
+Epoch 9/20
+439/439 - 116s - loss: 0.0528 - accuracy: 0.9846 - val_loss: 0.0211 - val_accuracy: 0.9936 - lr: 0.0010 - 116s/epoch - 263ms/step
+Epoch 10/20
+439/439 - 109s - loss: 0.0534 - accuracy: 0.9842 - val_loss: 0.0235 - val_accuracy: 0.9943 - lr: 0.0010 - 109s/epoch - 248ms/step
+Epoch 11/20
+439/439 - 114s - loss: 0.0507 - accuracy: 0.9857 - val_loss: 0.0281 - val_accuracy: 0.9924 - lr: 0.0010 - 114s/epoch - 260ms/step
+Epoch 12/20
+439/439 - 113s - loss: 0.0520 - accuracy: 0.9846 - val_loss: 0.0234 - val_accuracy: 0.9940 - lr: 0.0010 - 113s/epoch - 258ms/step
+Epoch 13/20
+
+Epoch 13: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+439/439 - 109s - loss: 0.0504 - accuracy: 0.9857 - val_loss: 0.0197 - val_accuracy: 0.9936 - lr: 0.0010 - 109s/epoch - 247ms/step
+Epoch 14/20
+439/439 - 107s - loss: 0.0368 - accuracy: 0.9894 - val_loss: 0.0290 - val_accuracy: 0.9938 - lr: 5.0000e-04 - 107s/epoch - 244ms/step
+Epoch 15/20
+439/439 - 107s - loss: 0.0363 - accuracy: 0.9897 - val_loss: 0.0257 - val_accuracy: 0.9938 - lr: 5.0000e-04 - 107s/epoch - 245ms/step
+Epoch 16/20
+439/439 - 111s - loss: 0.0356 - accuracy: 0.9900 - val_loss: 0.0204 - val_accuracy: 0.9950 - lr: 5.0000e-04 - 111s/epoch - 254ms/step
+Epoch 17/20
+439/439 - 111s - loss: 0.0368 - accuracy: 0.9902 - val_loss: 0.0186 - val_accuracy: 0.9948 - lr: 5.0000e-04 - 111s/epoch - 253ms/step
+Epoch 18/20
+439/439 - 113s - loss: 0.0349 - accuracy: 0.9897 - val_loss: 0.0221 - val_accuracy: 0.9940 - lr: 5.0000e-04 - 113s/epoch - 257ms/step
+Epoch 19/20
+
+Epoch 19: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+439/439 - 111s - loss: 0.0348 - accuracy: 0.9907 - val_loss: 0.0200 - val_accuracy: 0.9943 - lr: 5.0000e-04 - 111s/epoch - 254ms/step
+Epoch 20/20
+439/439 - 115s - loss: 0.0304 - accuracy: 0.9909 - val_loss: 0.0187 - val_accuracy: 0.9950 - lr: 2.5000e-04 - 115s/epoch - 262ms/step
+
+\subsection{Traffic sign}
+
+En el codigo de predecir las señales de tráfico, cuando cargo el modelo me aparece :
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 26, 26, 32)        2432      
+
+ conv2d_1 (Conv2D)           (None, 22, 22, 32)        25632
+
+ max_pooling2d (MaxPooling2  (None, 11, 11, 32)        0
+ D)
+
+ dropout (Dropout)           (None, 11, 11, 32)        0
+
+ conv2d_2 (Conv2D)           (None, 9, 9, 64)          18496
+
+ conv2d_3 (Conv2D)           (None, 7, 7, 64)          36928
+
+ max_pooling2d_1 (MaxPoolin  (None, 3, 3, 64)          0
+ g2D)
+
+ dropout_1 (Dropout)         (None, 3, 3, 64)          0
+
+ flatten (Flatten)           (None, 576)               0
+
+ dense (Dense)               (None, 256)               147712
+
+ dropout_2 (Dropout)         (None, 256)               0
+
+ dense_1 (Dense)             (None, 43)                11051
+
+=================================================================
+Total params: 242251 (946.29 KB)
+Trainable params: 242251 (946.29 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/20
+981/981 [==============================] - 67s 67ms/step - loss: 1.8714 - accuracy: 0.5150 - val_loss: 0.4437 - val_accuracy: 0.8787
+Epoch 2/20
+981/981 [==============================] - 70s 71ms/step - loss: 0.6417 - accuracy: 0.8115 - val_loss: 0.1994 - val_accuracy: 0.9463
+Epoch 3/20
+981/981 [==============================] - 70s 71ms/step - loss: 0.4526 - accuracy: 0.8680 - val_loss: 0.1249 - val_accuracy: 0.9697
+Epoch 4/20
+981/981 [==============================] - 69s 70ms/step - loss: 0.3738 - accuracy: 0.8903 - val_loss: 0.0898 - val_accuracy: 0.9759
+Epoch 5/20
+981/981 [==============================] - 70s 71ms/step - loss: 0.3153 - accuracy: 0.9089 - val_loss: 0.1175 - val_accuracy: 0.9651
+Epoch 6/20
+981/981 [==============================] - 71s 72ms/step - loss: 0.2957 - accuracy: 0.9160 - val_loss: 0.0776 - val_accuracy: 0.9795
+Epoch 7/20
+981/981 [==============================] - 71s 72ms/step - loss: 0.2871 - accuracy: 0.9183 - val_loss: 0.1025 - val_accuracy: 0.9746
+Epoch 8/20
+981/981 [==============================] - 72s 73ms/step - loss: 0.2721 - accuracy: 0.9238 - val_loss: 0.0658 - val_accuracy: 0.9814
+Epoch 9/20
+981/981 [==============================] - 71s 72ms/step - loss: 0.2577 - accuracy: 0.9266 - val_loss: 0.0728 - val_accuracy: 0.9806
+Epoch 10/20
+981/981 [==============================] - 72s 73ms/step - loss: 0.2496 - accuracy: 0.9314 - val_loss: 0.0505 - val_accuracy: 0.9862
+Epoch 11/20
+981/981 [==============================] - 73s 74ms/step - loss: 0.2411 - accuracy: 0.9338 - val_loss: 0.1150 - val_accuracy: 0.9684
+Epoch 12/20
+981/981 [==============================] - 75s 77ms/step - loss: 0.2460 - accuracy: 0.9311 - val_loss: 0.0667 - val_accuracy: 0.9814
+Epoch 13/20
+981/981 [==============================] - 72s 73ms/step - loss: 0.2399 - accuracy: 0.9336 - val_loss: 0.0497 - val_accuracy: 0.9888
+Epoch 14/20
+981/981 [==============================] - 69s 70ms/step - loss: 0.2335 - accuracy: 0.9343 - val_loss: 0.0794 - val_accuracy: 0.9762
+Epoch 15/20
+981/981 [==============================] - 67s 68ms/step - loss: 0.2370 - accuracy: 0.9343 - val_loss: 0.0676 - val_accuracy: 0.9819
+Epoch 16/20
+981/981 [==============================] - 67s 68ms/step - loss: 0.2177 - accuracy: 0.9417 - val_loss: 0.0542 - val_accuracy: 0.9857
+Epoch 17/20
+981/981 [==============================] - 68s 69ms/step - loss: 0.2196 - accuracy: 0.9404 - val_loss: 0.1583 - val_accuracy: 0.9568
+Epoch 18/20
+981/981 [==============================] - 78s 80ms/step - loss: 0.2303 - accuracy: 0.9362 - val_loss: 0.0598 - val_accuracy: 0.9829
+Epoch 19/20
+981/981 [==============================] - 83s 85ms/step - loss: 0.2183 - accuracy: 0.9419 - val_loss: 0.0663 - val_accuracy: 0.9843
+Epoch 20/20
+981/981 [==============================] - 73s 74ms/step - loss: 0.2055 - accuracy: 0.9443 - val_loss: 0.0438 - val_accuracy: 0.9888
+
+Tiempo con 1 procesadores: 13.49808839999605
+Tiempo con 2 procesadores: 9.960736699984409
+Tiempo con 3 procesadores: 8.405673700006446
+Tiempo con 4 procesadores: 7.039741999993566
+Tiempo con 5 procesadores: 5.552558899973519
+Tiempo con 6 procesadores: 6.8177413000084925
+Tiempo con 7 procesadores: 6.546938499988755
+Tiempo con 8 procesadores: 7.143771500006551
+
+Tiempo con 1 procesadores: 15.50034740002593
+Tiempo con 2 procesadores: 10.977826499962248
+Tiempo con 3 procesadores: 9.367774300044402
+Tiempo con 4 procesadores: 7.742829499999061
+Tiempo con 5 procesadores: 6.2011293999967165
+Tiempo con 6 procesadores: 6.4634942000266165
+Tiempo con 7 procesadores: 6.5787473999662325
+Tiempo con 8 procesadores: 7.304894000000786
+
+
+por carpetas y no dividiendo en grupos de carpetas
+Tiempo con 1 procesadores: 14.311493700020947
+Tiempo con 2 procesadores: 7.970937500009313
+Tiempo con 3 procesadores: 6.433522899984382
+Tiempo con 4 procesadores: 5.485239300003741
+Tiempo con 5 procesadores: 5.22384350001812
+Tiempo con 6 procesadores: 5.649088100006338
+Tiempo con 7 procesadores: 6.316512499994133
+Tiempo con 8 procesadores: 6.339678000018466
+
+
+\subsection{CNN malware}
+
+
+10800 archivos de prueba de tipo .bytes (otros 10800 de tipo .asm) pero solo usaremos los .bytes. Convertimos cada archivo en una imagen. Primero, cada código hexadecimal lo convertimos a numeros decimales y estos los pasamos a un array de numpy. Hacemos reshape (lado,lado2) de forma que obtengamos la mayor dimension posible que sea casi cuadrado consiguiendo perder la menor información posible. Este reshape lo pasamos a np.uint8 y finalmente lo interpolamos usando bilinal, cubic, bicubic, nearest y observamos cual es la mejor de todas {zhao2023new} (hacer una grafica o algo para comprobarlo). Además, para caragr los datos he usado multiprocessing con los diferentes datos de tiempo. En el caso de algunas imagenes, los archivos .bytes no contienen ningun tipo de informacion(?? ?? ?? ..) todos los byte son ??. Estos ficheros, no estan incluidos en las imagenes ni de entrenamiento ni validación porque no contienen ningun tpo de información. 
+
+Mi modelo es una CNN secuencial. Tengo que generalizarlo por si quiero insertar la layer de 1000 o las de dropout y con que valor(param de entrada). AL igual que el tipo de intepolación. Tener en cuenta que he visto overfitting porque loss y val_loss tienen mucha diferencia por eso aplico dropout.
+
+
+
+archivos con todo '??':
+da3XhOZzQEbKVtLgMYWv.bytes
+a9oIzfw03ED4lTBCt52Y.bytes
+fRLS3aKkijp4GH0Ds6Pv.bytes
+cf4nzsoCmudt1kwleOTI.bytes
+58kxhXouHzFd4g3rmInB.bytes
+6tfw0xSL2FNHOCJBdlaA.bytes
+IidxQvXrlBkWPZAfcqKT.bytes
+d0iHC6ANYGon7myPFzBe.bytes
+
+\citep{narayanan2016performance} : habla sobre los caracteres '??'
+
+
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_13 (Conv2D)          (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_14 (Conv2D)          (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d_5 (MaxPooling  (None, 112, 112, 64)     0         
+ 2D)                                                             
+                                                                 
+ conv2d_15 (Conv2D)          (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_16 (Conv2D)          (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_6 (MaxPooling  (None, 56, 56, 128)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_17 (Conv2D)          (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_18 (Conv2D)          (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_19 (Conv2D)          (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_7 (MaxPooling  (None, 28, 28, 256)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_20 (Conv2D)          (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_21 (Conv2D)          (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_22 (Conv2D)          (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_8 (MaxPooling  (None, 14, 14, 512)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_23 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_24 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_25 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_9 (MaxPooling  (None, 7, 7, 512)        0         
+ 2D)                                                             
+                                                                 
+ flatten_1 (Flatten)         (None, 25088)             0         
+                                                                 
+ dense_4 (Dense)             (None, 4096)              102764544 
+                                                                 
+ dense_5 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dense_6 (Dense)             (None, 9)                 36873     
+                                                                 
+ dense_7 (Dense)             (None, 1)                 10        
+                                                                 
+=================================================================
+Total params: 134,297,427
+Trainable params: 134,297,427
+Non-trainable params: 0
+
+
+imagenes tiempo procesadores prueba:
+Tiempo 9.895489899965469
+Tiempo 6.094023499987088
+Tiempo 4.844429599994328
+Tiempo 4.839552699995693
+Tiempo 5.95772709994344
+Tiempo 7.48712579999119
+Tiempo 6.818251899967436
+Tiempo 6.778073200024664
+
+el total de todas la imagenes cargadas:
+Tiempo 1 proc sin paralelismo       1593.2138606540393 s
+Tiempo 1 proc                       1558.5365148321725 s
+Tiempo 2 proc                       809.391520037083   s
+Tiempo 3 proc                       547.7429834520444  s
+Tiempo 4 proc                       424.8305617410224  s
+Tiempo 5 proc                       345.861815683078   s
+Tiempo 6 proc                       287.66337789199315 s
+Tiempo 7 proc                       346.96648777788505 s
+Tiempo 8 proc                       311.2085636900738  s
+
+
+1223/1223 [==============================] - 1515s 1s/step - loss: 0.0228 - accuracy: 0.9933 - val_loss: 1.4233 - val_accuracy: 0.8519 - lr: 1.0000e-04 con las imagenes escogiendolas al azar la cuadricula 224,224
+EL tiempo que ha tardado en cargarse el modelo es: 10.0 horas, 31.0 minutos y 4.3273
+
+1222/1222 [==============================] - 1416s 1s/step - loss: 6.4379e-05 - accuracy: 1.0000 - val_loss: 0.2755 - val_accuracy: 0.9650 - lr: 1.0000e-04 con las imagenes redimensionandolas usando interpolacion 
+EL tiempo que ha tardado en cargarse el modelo es: 9.0 horas, 55.0 minutos y 6.967850828077644 segundos
+
+1222/1222 [==============================] - 1412s 1s/step - loss: 5.7457e-05 - accuracy: 1.0000 - val_loss: 0.4199 - val_accuracy: 0.9586 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 9.0 horas, 48.0 minutos y 19.356191874016076 segundos añadiendo una nueva layer al modelo de 1000
+
+TERMINL 10: 10 vueltas baje 1/10 el lr
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+
+PRIMER INTENTO:
+
+1222/1222 [==============================] - 1670s 1s/step - loss: 2.8967e-04 - accuracy: 1.0000 - val_loss: 0.2471 - val_accuracy: 0.9705 - lr: 1.0000e-05
+EL tiempo que ha tardado en cargarse el modelo es: 11.0 horas, 35.0 minutos y 47.79555714922026 segundos 
+
+SEGUNDO INTENTO:
+
+
+
+
+
+TERMINAL 8: dropout(0.5) y 1/10 cada 20 epochs
+1222/1222 [==============================] - 3244s 3s/step - loss: 0.0301 - accuracy: 0.9905 - val_loss: 0.2130 - val_accuracy: 0.9392 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 21.0 horas, 57.0 minutos y 56.84166420297697 segundos
+
+
+TERMINAL 10: 1/10 cada 20 epochs
+
+1222/1222 [==============================] - 1662s 1s/step - loss: 2.3100e-04 - accuracy: 1.0000 - val_loss: 0.3134 - val_accuracy: 0.9659 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 21.0 horas, 17.0 minutos y 17.770709565375 segundos
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+
+
+TERMINAL 9: 1/10 cada 20 epochs usando dense relu + softmax y ademas dropout(0.25)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+ dense_3 (Dense)             (None, 9)                 90        
+                                                                 
+=================================================================
+Total params: 134297507 (512.30 MB)
+Trainable params: 134297507 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________ 
+Epoch 1/25
+1222/1222 [==============================] - 3209s 3s/step - loss: 0.0695 - accuracy: 0.9792 - val_loss: 0.1310 - val_accuracy: 0.9641 - lr: 0.0010
+Epoch 19/25
+1222/1222 [==============================] - 3114s 3s/step - loss: 0.0583 - accuracy: 0.9831 - val_loss: 0.1431 - val_accuracy: 0.9733 - lr: 0.0010
+Epoch 20/25
+1222/1222 [==============================] - 3126s 3s/step - loss: 0.0137 - accuracy: 0.9954 - val_loss: 0.1405 - val_accuracy: 0.9705 - lr: 1.0000e-04
+Epoch 21/25
+1222/1222 [==============================] - 3157s 3s/step - loss: 0.0086 - accuracy: 0.9976 - val_loss: 0.1487 - val_accuracy: 0.9724 - lr: 1.0000e-04
+Epoch 22/25
+1222/1222 [==============================] - 3168s 3s/step - loss: 0.0061 - accuracy: 0.9984 - val_loss: 0.1553 - val_accuracy: 0.9733 - lr: 1.0000e-04
+Epoch 23/25
+1222/1222 [==============================] - 3167s 3s/step - loss: 0.0056 - accuracy: 0.9981 - val_loss: 0.1724 - val_accuracy: 0.9742 - lr: 1.0000e-04
+Epoch 24/25
+1222/1222 [==============================] - 3160s 3s/step - loss: 0.0045 - accuracy: 0.9988 - val_loss: 0.1845 - val_accuracy: 0.9715 - lr: 1.0000e-04
+Epoch 25/25
+1222/1222 [==============================] - 3160s 3s/step - loss: 0.0045 - accuracy: 0.9988 - val_loss: 0.1845 - val_accuracy: 0.9715 - lr: 1.0000e-04
+Epoch 25/25
+1222/1222 [==============================] - 2342s 2s/step - loss: 0.0038 - accuracy: 0.9989 - val_loss: 0.1949 - val_accuracy: 0.9705 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 21.0 horas, 43.0 minutos y 26.58714363211766 segundos
+1222/1222 [==============================] - 2342s 2s/step - loss: 0.0038 - accuracy: 0.9989 - val_loss: 0.1949 - val_accuracy: 0.9705 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 21.0 horas, 43.0 minutos y 26.58714363211766 segundos
+
+ 
+ 
+TERMINAL 10:  1/10 cada 10 epochs usando dense relu + softmax y con input_shpae en maxpool
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+ dense_3 (Dense)             (None, 9)                 90        
+                                                                 
+=================================================================
+Total params: 134297507 (512.30 MB)
+Trainable params: 134297507 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/25
+1222/1222 [==============================] - 3163s 3s/step - loss: 8.9506e-04 - accuracy: 1.0000 - val_loss: 0.3637 - val_accuracy: 0.9613 - lr: 1.0000e-04
+Epoch 20/25
+1222/1222 [==============================] - 3215s 3s/step - loss: 7.0389e-04 - accuracy: 1.0000 - val_loss: 0.3651 - val_accuracy: 0.9604 - lr: 1.0000e-05
+Epoch 21/25
+1222/1222 [==============================] - 3166s 3s/step - loss: 6.8398e-04 - accuracy: 1.0000 - val_loss: 0.3665 - val_accuracy: 0.9604 - lr: 1.0000e-05
+Epoch 22/25
+1222/1222 [==============================] - 3154s 3s/step - loss: 6.6608e-04 - accuracy: 1.0000 - val_loss: 0.3679 - val_accuracy: 0.9604 - lr: 1.0000e-05
+Epoch 23/25
+1222/1222 [==============================] - 3168s 3s/step - loss: 6.4979e-04 - accuracy: 1.0000 - val_loss: 0.3694 - val_accuracy: 0.9604 - lr: 1.0000e-05
+Epoch 24/25
+1222/1222 [==============================] - 3162s 3s/step - loss: 6.3440e-04 - accuracy: 1.0000 - val_loss: 0.3708 - val_accuracy: 0.9604 - lr: 1.0000e-05
+Epoch 25/25
+1222/1222 [==============================] - 3159s 3s/step - loss: 6.1961e-04 - accuracy: 1.0000 - val_loss: 0.3723 - val_accuracy: 0.9604 - lr: 1.0000e-05
+EL tiempo que ha tardado en cargarse el modelo es: 21.0 horas, 45.0 minutos y 29.41319459117949 segundos
+
+
+
+TERMINAL : drpout(0.35, sin relu+softmax)(Usar dropout en las capas con mas parametros y ademas despues de las densas segun el review)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+1222/1222 [==============================] - 1668s 1s/step - loss: 0.0015 - accuracy: 0.9997 - val_loss: 0.1681 - val_accuracy: 0.9733 - lr: 1.0000e-04
+
+
+TERMINAL : drpout(0.5, sin relu+softmax)(Usar dropout en las capas con mas parametros y ademas despues de las densas segun el review)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/25
+1222/1222 [==============================] - 1653s 1s/step - loss: 1.7046 - accuracy: 0.3890 - val_loss: 0.8048 - val_accuracy: 0.7366 - lr: 0.0010
+Epoch 2/25
+1222/1222 [==============================] - 1649s 1s/step - loss: 0.1453 - accuracy: 0.9530 - val_loss: 0.2168 - val_accuracy: 0.9392 - lr: 0.0010
+Epoch 10/25
+1222/1222 [==============================] - 1649s 1s/step - loss: 0.1252 - accuracy: 0.9616 - val_loss: 0.1150 - val_accuracy: 0.9595 - lr: 0.0010
+Epoch 11/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.1019 - accuracy: 0.9696 - val_loss: 0.1609 - val_accuracy: 0.9549 - lr: 0.0010
+Epoch 12/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.1019 - accuracy: 0.9696 - val_loss: 0.1609 - val_accuracy: 0.9549 - lr: 0.0010
+Epoch 12/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.1019 - accuracy: 0.9696 - val_loss: 0.1609 - val_accuracy: 0.9549 - lr: 0.0010
+Epoch 12/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.1044 - accuracy: 0.9669 - val_loss: 0.1979 - val_accuracy: 0.9484 - lr: 0.0010
+Epoch 13/25
+1222/1222 [==============================] - 1651s 1s/step - loss: 0.0894 - accuracy: 0.9709 - val_loss: 0.1800 - val_accuracy: 0.9503 - lr: 0.0010
+Epoch 14/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.0713 - accuracy: 0.9779 - val_loss: 0.1262 - val_accuracy: 0.9632 - lr: 0.0010
+Epoch 15/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.0643 - accuracy: 0.9790 - val_loss: 0.1472 - val_accuracy: 0.9669 - lr: 0.0010
+Epoch 16/25
+1222/1222 [==============================] - 1649s 1s/step - loss: 0.0551 - accuracy: 0.9814 - val_loss: 0.1262 - val_accuracy: 0.9595 - lr: 0.0010
+Epoch 17/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.0482 - accuracy: 0.9852 - val_loss: 0.1820 - val_accuracy: 0.9586 - lr: 0.0010
+Epoch 18/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.0662 - accuracy: 0.9791 - val_loss: 0.1872 - val_accuracy: 0.9466 - lr: 0.0010
+Epoch 19/25
+1222/1222 [==============================] - 1649s 1s/step - loss: 0.0476 - accuracy: 0.9857 - val_loss: 0.1275 - val_accuracy: 0.9705 - lr: 0.0010
+
+Epoch 25/25
+1222/1222 [==============================] - 1650s 1s/step - loss: 0.0040 - accuracy: 0.9988 - val_loss: 0.1257 - val_accuracy: 0.9724 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 11.0 horas, 27.0 minutos y 31.495789956767112 segundos
+
+
+
+TERMINAL : drpout(0.45, sin relu+softmax)(Usar dropout en las capas con mas parametros y ademas despues de las densas segun el review)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+1222/1222 [==============================] - 1670s 1s/step - loss: 0.0043 - accuracy: 0.9987 - val_loss: 0.1710 - val_accuracy: 0.9724 - lr: 1.0000e-04
+EL tiempo que ha tardado en cargarse el modelo es: 11.0 horas, 35.0 minutos y 30.23782319575548 segundos
+
+Prueba: dropout(0.5) con batch_size = 16(Usar dropout en las capas con mas parametros y ademas despues de las densas segun el review)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/25
+611/611 [==============================] - 1412s 2s/step - loss: 1.6293 - accuracy: 0.4251 - val_loss: 0.8789 - val_accuracy: 0.6924 - lr: 0.0010
+Epoch 25/25
+611/611 [==============================] - 1409s 2s/step - loss: 0.0039 - accuracy: 0.9987 - val_loss: 0.2039 - val_accuracy: 0.9724 - lr: 1.0000e-04
+
+
+SIGUIENTE:  dropout(0.5) con batch_size = 8 y lr reduction each 10 epochs(Usar dropout en las capas con mas parametros y ademas despues de las densas segun el review)
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_1 (Conv2D)           (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 112, 112, 64)      0         
+ D)                                                              
+                                                                 
+ conv2d_2 (Conv2D)           (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 56, 56, 128)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_4 (Conv2D)           (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_5 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_6 (Conv2D)           (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 28, 28, 256)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_7 (Conv2D)           (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_8 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_9 (Conv2D)           (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 512)       0         
+ g2D)                                                            
+                                                                 
+ conv2d_10 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_11 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_4 (MaxPoolin  (None, 7, 7, 512)         0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 4096)              102764544 
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+train_loss,train_acc,val_loss,val_acc = 0.007444367278367281,0.9980560541152954,0.21274980902671814,0.9668508172035217
+
+
+SIGUIENTE:  dropout(0.5) con batch_size = 8 y sin lr reduction 
+
+Model: "sequential"
+
+\section{Cita bibliografias}
+\subsection{Páginas web}
+
+
+\citep{kaggle_cnn_tutorial} : Un tutorial sobre una CNN en python
+
+\citep{conceptos_RN_DesdeCero} : Primera red neuronal que solo hace forwardpropagation
+
+
+\subsection{Redes neuronales}
+\citep{matich2001redes} ESPAÑOL 
+
+\citep{stamp2022artificial} : INLES habla de redes neuronales y ciberseguridad
+
+\citep{tang2007neural} : INGLES redes neuronales
+
+
+
+\citep{mirjalili2020python} : Tiene una lectura muy facil y conceptos bastante bien expresados y explicados. Es un libro muy práctico con bastantes ejemplos en python usando Scikit-learn y TensorFlow.
+
+cuando usamos reshape, dimensiones tienen que coincidir. Sale en https://numpy.org/doc/stable/reference/generated/numpy.reshape.html
+\citep{ni2018malware} : De donde sale que usamos interpolacion para cargar las imagenes
+
+\citep{zhao2023new} : De donde sale que usamos interpolacion para cargar las imagenes
+
+\citep{hinton2012improving} : porque dropout in full connected layers
+
+\citep{zhao2023new} : diferentes tipos de interpolacion
+
+\citep{he2019malware}: interpolation bilineal
+
+\citep{gibert2019using} : resultados de microsoft big data
+
+\citep{ni2018malware} : resultados Microsoft data
+
+\citep{sharma2024migan} : Microsoft malware
+
+\citep{kornish2018malware} : crear las imagenes de microsoft
+
+\citep{luo2017binary} : conversion malware to image 
+
+\citep{simonyan2014very} : random cropped for large datset
+
+
+\citep{habibi2023performance} : dicen que adam, adammax y tal son mejores optimizadores
+
+\subsection{Ciberseguridad}
+
+MCFT-CNN: Malware classification with fine-tune convolution neural
+networks using traditional and transfer learning in Internet of Things IMPORTANTE EN LA PAGINA 5 HAY IMAGEN DONDE PONE RESIZE AND RESHAPE
+
+\cite{yagual2022revision} : ESPAÑOL, Analiza cuatro técnicas populares de redes neuronales y de aprendizaje profundo, en el contexto de la ciberseguridad : perceptrón multicapa (MLP), las redes neuronales convolucionales (CNN), las redes neuronales recurrentes (RNN) y el aprendizaje profundo por transferencia (DTL). Estas técnicas y sus modelos de seguridad híbridos pueden utilizarse para abordar de forma inteligente diferentes problemas de ciberdelitos, como la detección de intrusiones, el análisis de malware, el análisis de amenazas de seguridad, la predicción de ciberataques o anomalías, etc. 
+\begin{enumerate}
+\item Algoritmos NN
+\item Que algoritmo de cada NN se aplica a cada problema de ciberseguridad. Nada explicativo.
+\end{enumerate}
+
+\citep{omar2022machine} : INGLES pero es libro que tiene muy buena pinta 50 pags
+
+\citep{sarker2020cybersecurity} INGLES
+
+\citep{xin2018machine} INGLES : La introducción destaca la creciente integración de Internet en la vida social y cómo esto está cambiando la forma en que las personas aprenden y trabajan, pero también expone a amenazas de seguridad cada vez más graves. El artículo se centra en la importancia de identificar diversos ataques informáticos, en particular, los no vistos previamente. Se menciona que la ciberseguridad es un conjunto de tecnologías y procesos diseñados para proteger computadoras, redes, programas y datos de ataques y accesos no autorizados.
+
+Se explica que los sistemas de seguridad de red constan de un sistema de seguridad de red y un sistema de seguridad informática, y que cada uno de estos sistemas incluye cortafuegos, software antivirus y sistemas de detección de intrusiones. Se detalla que los sistemas de detección de intrusiones (IDS) ayudan a identificar comportamientos no autorizados en el sistema.
+
+Se mencionan tres tipos principales de análisis de redes para los IDS: basado en el uso (conocido como basado en firmas), basado en anomalías y híbrido. Se destaca que las técnicas basadas en anomalías son atractivas porque pueden detectar ataques no conocidos y se adaptan a actividades normales personalizadas para cada sistema, lo que dificulta a los atacantes saber qué actividades pueden realizar sin ser detectados.
+
+El artículo describe que las técnicas híbridas combinan la detección de uso y la detección de anomalías y se utilizan para aumentar la detección de intrusiones conocidas y reducir las tasas de falsos positivos de ataques desconocidos. Se menciona que la mayoría de los métodos de aprendizaje automático (ML) y aprendizaje profundo (DL) son híbridos.
+
+Luego, se presenta una revisión de la literatura sobre métodos de ML y DL para aplicaciones de ciberseguridad, con un enfoque en tecnologías de seguridad de red y sus descripciones. El artículo se centra en proporcionar información detallada sobre los métodos de ML y DL, así como referencias a trabajos fundamentales en cada método.
+
+Se señala que el artículo no describe todas las técnicas de detección de anomalías de red, sino que se concentra en los métodos de ML y DL. También se mencionan otros tipos de métodos de detección, como los basados en firmas y los híbridos.
+
+Finalmente, se explica que el artículo está organizado en secciones que abordan similitudes y diferencias entre ML y DL, conjuntos de datos de ciberseguridad utilizados en ML y DL, descripciones de métodos y trabajos relacionados en ciberseguridad, estado actual de la investigación y direcciones futuras, y conclusiones.
+
+En resumen, el artículo se centra en la importancia de la ciberseguridad en un mundo cada vez más conectado, describe diferentes enfoques de detección de intrusiones y proporciona una revisión de la literatura sobre métodos de ML y DL en ciberseguridad.
+
+
+El texto discute diversas aproximaciones y métodos para la detección de intrusiones en redes utilizando diferentes técnicas de aprendizaje automático. Se centra en el uso de conjuntos de datos como los Conjuntos de Datos de Detección de Intrusiones DARPA, el Conjunto de Datos KDD Cup 99, el Conjunto de Datos NSL-KDD y el Conjunto de Datos ADFA para entrenar y probar modelos de detección de intrusiones. Se exploran los siguientes algoritmos de aprendizaje automático:
+
+Máquina de Vectores de Soporte (SVM): Se utiliza SVM para clasificar diferentes tipos de ataques de red, y su rendimiento se evalúa en términos de precisión y tasa de falsas alarmas. Se han realizado varios estudios para optimizar SVM en la detección de intrusiones, con resultados que muestran tasas de detección prometedoras pero variaciones en las falsas alarmas.
+
+K-Vecinos Más Cercanos (kNN): Se emplea kNN para clasificar el tráfico de red en función de su similitud con patrones de ataque conocidos. Los estudios han demostrado que kNN puede ser eficaz en la detección de intrusiones, especialmente cuando se combina con otras técnicas. Ayuda a reducir las falsas alarmas y mejorar las tasas de detección.
+
+Árbol de Decisión: Se utilizan árboles de decisión para la detección de intrusiones, y se exploran diferentes enfoques para mejorar su rendimiento. Se aplican técnicas de selección de características, poda de árboles y optimización para mejorar la precisión y reducir las falsas alarmas. Los árboles de decisión pueden proporcionar alta precisión y son particularmente efectivos para detectar ataques conocidos.
+
+En resumen, el texto destaca la importancia de elegir el algoritmo de aprendizaje automático adecuado y el conjunto de datos para la detección de intrusiones. Diferentes algoritmos tienen sus fortalezas y debilidades, y su rendimiento puede variar según los tipos específicos de ataques y conjuntos de datos utilizados. Los investigadores trabajan continuamente para mejorar la precisión y reducir las falsas alarmas en los sistemas de detección de intrusiones en redes.
+
+
+ El texto proporcionado es un fragmento de un artículo de investigación que discute la aplicación de métodos de Aprendizaje Automático (ML) y Aprendizaje Profundo (DL) en el campo de la seguridad de redes, centrándose específicamente en la detección de intrusiones. Ofrece una visión general de diferentes técnicas de ML y DL, conjuntos de datos y tendencias en la investigación de detección de intrusiones.
+
+El texto menciona varios métodos de ML y DL, como las Redes de Creencias Profundas (DBN), las Redes Neuronales Recurrentes (RNN) y las Redes Neuronales Convolucionales (CNN). Estos métodos se aplican para detectar y clasificar intrusiones y anomalías en redes. El fragmento también aborda el uso de conjuntos de datos de referencia y los desafíos relacionados con la calidad de los datos, los datos desequilibrados y la necesidad de conjuntos de datos más extensos y equilibrados.
+
+El artículo destaca la tendencia de combinar diferentes algoritmos en modelos híbridos, lo que puede mejorar el rendimiento de la detección. También enfatiza la importancia de mejorar la velocidad de detección de intrusiones y el potencial del aprendizaje en línea para adaptarse a amenazas en constante evolución.
+
+En resumen, este texto ofrece una visión general del estado de la investigación en la detección de intrusiones utilizando métodos de ML y DL, así como algunos de los desafíos y direcciones futuras en este campo. Si tienes alguna pregunta específica o necesitas más información sobre alguna parte de este texto, no dudes en preguntar.
+
+
+\citep{martinez2019machine} Ingles
+
+
+\citep{sarker2022machine} Ingles
+
+
+\citep{stamp2022artificial} : INLES Redes neuronales y ciberseguridad
+
+\citep{haber2017data} : INGLES muchos articulos, filtrar interesnates ciberseguridad
+
+\citep{kim2018network} : INGLES Cubre temas relacionados con la detección de intrusiones y la aplicación de modelos de aprendizaje profundo en este campo, lo que es altamente relevante para la ciberseguridad.
+
+La serie tiene como objetivo desarrollar y difundir una comprensión de innovaciones, paradigmas, técnicas y tecnologías en el contexto de la investigación y estudios relacionados con sistemas y redes de ciberseguridad. Publica revisiones exhaustivas y cohesivas de temas de vanguardia en ciberseguridad, así como técnicas sofisticadas, presentaciones de investigaciones originales y estudios de casos en profundidad en sistemas y redes cibernéticas. La serie también proporciona un único punto de cobertura de temas avanzados y emergentes oportunos, así como un foro para conceptos fundamentales que pueden no haber alcanzado un nivel de madurez para justificar un libro de texto integral. Se abordan problemas de seguridad, privacidad, disponibilidad y confiabilidad para sistemas y redes cibernéticas, y se dan la bienvenida a tecnologías emergentes, como inteligencia artificial, computación en la nube, sistemas ciberfísicos y análisis de grandes datos relacionados con la investigación en ciberseguridad. Se centra principalmente en los siguientes temas de investigación:
+Fundamentos y Teorías
+• Criptografía para la ciberseguridad
+• Teorías de la ciberseguridad
+• Seguridad demostrable
+
+Sistemas y Redes Cibernéticas
+• Seguridad de sistemas cibernéticos
+• Seguridad de redes
+• Servicios de seguridad
+• Seguridad y privacidad de redes sociales
+• Ataques y defensa cibernéticos
+• Ciberseguridad basada en datos
+• Computación y sistemas de confianza
+
+Aplicaciones y Otros
+• Seguridad de hardware y dispositivos
+• Seguridad de aplicaciones cibernéticas
+• Aspectos humanos y sociales de la ciberseguridad
+
+
+
+
+
+Este monográfico presenta avances recientes en el Sistema de Detección de Intrusiones (IDS) utilizando modelos de aprendizaje profundo, que han logrado un gran éxito recientemente, especialmente en el campo de la visión por computadora, el procesamiento del lenguaje natural y el procesamiento de imágenes. El monográfico ofrece una visión sistemática y metódica de los últimos desarrollos en aprendizaje profundo y realiza una comparación entre IDS basados en aprendizaje profundo. También ofrece una descripción general completa de las aplicaciones del aprendizaje profundo en IDS, seguida de métodos de aprendizaje de características profundas que incluyen una novedosa extracción y selección de características profundas, y el aprendizaje profundo para el agrupamiento.
+Está destinado a estudiantes, investigadores y profesionales interesados en el aprendizaje profundo y la detección de intrusiones, y puede utilizarse como libro de referencia. La comparación exhaustiva de varias aplicaciones de aprendizaje profundo ayuda a los lectores con una comprensión básica del aprendizaje automático e inspira aplicaciones en IDS y otras áreas de ciberseguridad.
+El monográfico consta de varios capítulos, donde el Capítulo 1 destaca la importancia de los IDS en las redes de computadoras en la actualidad, proporcionando una encuesta de violaciones de seguridad en redes de computadoras. Se resalta que los modelos de aprendizaje profundo pueden mejorar el rendimiento de los IDS y se explica la motivación para examinar los IDS basados en aprendizaje profundo. El Capítulo 2 define IDS y explica los diferentes tipos de IDS actuales, así como las métricas de rendimiento comunes y conjuntos de datos de referencia públicos disponibles.
+El Capítulo 3 realiza un estudio preliminar breve sobre el aprendizaje automático clásico, que abarca enfoques supervisados, no supervisados, semi-supervisados, débilmente supervisados, de refuerzo y adversariales. También se revisan brevemente 22 artículos que utilizan técnicas de aprendizaje automático en sus IDS. El Capítulo 4 se centra en diversos modelos de aprendizaje profundo que incluyen enfoques generativos, discriminatorios y híbridos.
+El Capítulo 5 realiza un análisis de varios IDS que aprovechan modelos de aprendizaje profundo, divididos en cuatro clases: generativos, discriminativos, híbridos y aprendizaje profundo por refuerzo.
+El Capítulo 6 aborda la importancia de los modelos de aprendizaje profundo como enfoque de aprendizaje de características (FL) en investigaciones de IDS. También se explican dos modelos adicionales: la extracción y selección de características profundas y el aprendizaje profundo para el agrupamiento.
+El Capítulo 7 concluye este monográfico proporcionando una visión general de los desafíos y las futuras direcciones de investigación en las aplicaciones de aprendizaje profundo para IDS.
+En el Apéndice, se discuten varios artículos sobre la detección de malware en una red utilizando modelos de aprendizaje profundo. La detección de malware también es un aspecto importante.
+
+
+\citep{xu2023machine} : INGLES Mucho texto 2 conferencia de no se que
+
+\citep{alfaries2019advances} : INLES Ciberseguridad pero mucha basura. Filtrar.
+\begin{enumerate}
+\item Comparison of Supervised and Unsupervised Fraud Detection 
+\item Cybersecurity: Design and Implementation of an Intrusion Detection
+and Prevention System.
+\end{enumerate}
+
+
+\citep{kalash2018malware} : Articulo en ingles del review. Es el caso de deteccionde malware usando CNN con el dataset de Microsoft. Te visualiza y explica como pasar de los datos a imagenes. Además te dice como sería el modelo de CNN con las capas y dimensiones. Por ultimo te dice la informacion necesaria como el indice de aprendizaje y las epochs necesarias para obtener el 98,7 \% de acurrancy
+
+
+
+
+
+
+
+
+
+\bibliographystyle{unsrtnat} % Elige el estilo de citación que desees
+\bibliography{bibliografia}    % Reemplaza 'bibliografia' con el nombre de tu archivo .bib
+
+
+
+
+\end{document}

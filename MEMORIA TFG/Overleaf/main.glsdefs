@@ -1,0 +1,28 @@
+\glsdefs@newdocentry{FATO}%
+{%
+name={FATO},%
+sort={FATO},%
+type={acronym},%
+first={Final Approach and TakeOff\glsspace (FATO)},%
+firstplural={Final Approach and TakeOff\acrpluralsuffix \glsspace (FATO\acrpluralsuffix )},%
+text={FATO},%
+plural={FATO\acrpluralsuffix },%
+description={Final Approach and TakeOff},%
+descriptionplural={Final Approach and TakeOff\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Final Approach and TakeOff},%
+longplural={Final Approach and TakeOffs},%
+short={FATO},%
+shortplural={FATOs},%
+counter={page},%
+parent={},%
+%
+}%
+

@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{bengio2006greedy}
+Yoshua Bengio, Pascal Lamblin, Dan Popovici, and Hugo Larochelle.
+\newblock Greedy layer-wise training of deep networks.
+\newblock {\em Advances in neural information processing systems}, 19, 2006.
+
+\bibitem{farahnakian2018deep}
+Fahimeh Farahnakian and Jukka Heikkonen.
+\newblock A deep auto-encoder based approach for intrusion detection system.
+\newblock In {\em 2018 20th International Conference on Advanced Communication
+  Technology (ICACT)}, pages 178--183. IEEE, 2018.
+
+\bibitem{kim2020cnn}
+Jiyeon Kim, Jiwon Kim, Hyunjung Kim, Minsun Shim, and Eunjung Choi.
+\newblock Cnn-based network intrusion detection against denial-of-service
+  attacks.
+\newblock {\em Electronics}, 9(6):916, 2020.
+
+\bibitem{kim2018encoding}
+Taejoon Kim, Sang~C Suh, Hyunjoo Kim, Jonghyun Kim, and Jinoh Kim.
+\newblock An encoding technique for cnn-based network anomaly detection.
+\newblock In {\em 2018 IEEE International Conference on Big Data (Big Data)},
+  pages 2960--2965. IEEE, 2018.
+
+\bibitem{lopes2022effective}
+Ivandro~O Lopes, Deqing Zou, Ihsan~H Abdulqadder, Francis~A Ruambo, Bin Yuan,
+  and Hai Jin.
+\newblock Effective network intrusion detection via representation learning: A
+  denoising autoencoder approach.
+\newblock {\em Computer Communications}, 194:55--65, 2022.
+
+\bibitem{nguyen2018design}
+Sinh-Ngoc Nguyen, Van-Quyet Nguyen, Jintae Choi, and Kyungbaek Kim.
+\newblock Design and implementation of intrusion detection system using
+  convolutional neural network for dos detection.
+\newblock In {\em Proceedings of the 2nd international conference on machine
+  learning and soft computing}, pages 34--38, 2018.
+
+\bibitem{yang2006anomaly}
+Zhongxue Yang and Adem Karahoca.
+\newblock An anomaly intrusion detection approach using cellular neural
+  networks.
+\newblock In {\em Computer and Information Sciences--ISCIS 2006: 21th
+  International Symposium, Istanbul, Turkey, November 1-3, 2006. Proceedings
+  21}, pages 908--917. Springer, 2006.
+
+\end{thebibliography}

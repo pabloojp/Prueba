@@ -1,0 +1,46 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivación y objetivos del trabajo}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Contexto y antecedentes del trabajo}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Movilidad Aérea Urbana}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Vertipuertos}{3}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Optimización del diseño de un vertipuerto}{5}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Optimización heurística}{8}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Estructura de la memoria}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Contribuciones}{10}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Optimización Heurística}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}De la realidad a la solución}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Algoritmos exactos de optimización matemática}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Optimización heurística}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Heurística y Metaheurística}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Heurísticas evolutivas}{16}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Algoritmos genéticos}{17}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Optimización del Diseño de un Vertipuerto}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problema de Diseño de un Vertipuerto}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Caracterización de la solución}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Consideraciones del diseño de optimización}{20}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Definición del problema de optimización}{21}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Modelo de optimización}{22}{section.3.2}%
+\contentsline {subsubsection}{Función objetivo}{23}{section*.12}%
+\contentsline {subsubsection}{Restricciones}{24}{section*.14}%
+\contentsline {chapter}{\numberline {4}Implementación en Python de un GA para el VDP}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Algoritmos genéticos para el VDP}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Caracterización de la solución}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Función de generación}{29}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Función de aptitud}{31}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Operadores genéticos: Selección}{33}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Operadores genéticos: Cruce}{35}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Operadores genéticos: Mutación}{36}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Función de recombinación}{37}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Función de parada}{38}{subsection.4.1.8}%
+\contentsline {chapter}{\numberline {5}Resultados y Análisis}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Datos del caso práctico}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Resultados}{40}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Comparación entre algoritmos de selección}{41}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Análisis de Sensibilidad}{44}{section.5.4}%
+\contentsline {subsubsection}{Ajuste de parámetros de penalización}{44}{section*.28}%
+\contentsline {subsubsection}{Ajustes de los parámetros del GA}{48}{section*.33}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{55}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusiones}{55}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{56}{section.6.2}%
+\contentsline {chapter}{\numberline {A}Entrevista previa realizada}{59}{appendix.Alph1}%
