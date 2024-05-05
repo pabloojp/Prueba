@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: mainJunto.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+Database file #1: biblio.bib
+Warning--can't use both volume and number fields in maithem2021network
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            573 strings with 6563 characters,
+and the built_in function-call counts, 4765 in all, are:
+= -- 480
+> -- 233
+< -- 7
++ -- 95
+- -- 80
+* -- 332
+:= -- 747
+add.period$ -- 38
+call.type$ -- 11
+change.case$ -- 73
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 192
+empty$ -- 354
+format.name$ -- 80
+if$ -- 1035
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 11
+newline$ -- 58
+num.names$ -- 22
+pop$ -- 80
+preamble$ -- 1
+purify$ -- 62
+quote$ -- 0
+skip$ -- 148
+stack$ -- 0
+substring$ -- 292
+swap$ -- 73
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 1
+while$ -- 44
+width$ -- 13
+write$ -- 129
+(There was 1 warning)

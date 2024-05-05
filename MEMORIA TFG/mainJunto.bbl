@@ -1,12 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{kagglebig2015}
-Microsoft malware classification challenge (big 2015), 2015.
-
-\bibitem{mxnet}
-{Apache Software Foundation}.
-\newblock Apache mxnet, 2015.
-
 \bibitem{bao2017deep}
 Wei Bao, Jun Yue, and Yulei Rao.
 \newblock A deep learning framework for financial time series using stacked
@@ -18,52 +11,17 @@ Yoshua Bengio, Pascal Lamblin, Dan Popovici, and Hugo Larochelle.
 \newblock Greedy layer-wise training of deep networks.
 \newblock {\em Advances in neural information processing systems}, 19, 2006.
 
-\bibitem{cahyani2022influence}
-Niken Dwi~Wahyu Cahyani, Erwid~M Jadied, Nurul~Hidayah Ab~Rahman, and Endro
-  Ariyanto.
-\newblock The influence of virtual secure mode (vsm) on memory acquisition.
-\newblock {\em International Journal of Advanced Computer Science and
-  Applications}, 13(11), 2022.
-
 \bibitem{elmasry2019empirical}
 Wisam Elmasry, Akhan Akbulut, and Abdul~Halim Zaim.
 \newblock Empirical study on multiclass classification-based network intrusion
   detection.
 \newblock {\em Computational Intelligence}, 35(4):919--954, 2019.
 
-\bibitem{pytorch}
-{Facebook AI Research}.
-\newblock Pytorch, 2017.
-
 \bibitem{farahnakian2018deep}
 Fahimeh Farahnakian and Jukka Heikkonen.
 \newblock A deep auto-encoder based approach for intrusion detection system.
 \newblock In {\em 2018 20th International Conference on Advanced Communication
   Technology (ICACT)}, pages 178--183. IEEE, 2018.
-
-\bibitem{keras}
-{Google AI Team}.
-\newblock Keras, 2015.
-
-\bibitem{tensorflow}
-{Google Brain Team}.
-\newblock Tensorflow, 2015.
-
-\bibitem{gupta2016malware}
-Sanchit Gupta, Harshit Sharma, and Sarvjeet Kaur.
-\newblock Malware characterization using windows api call sequences.
-\newblock In {\em Security, Privacy, and Applied Cryptography Engineering: 6th
-  International Conference, SPACE 2016, Hyderabad, India, December 14-18, 2016,
-  Proceedings 6}, pages 271--280. Springer, 2016.
-
-\bibitem{kebede2017classification}
-Temesguen~Messay Kebede, Ouboti Djaneye-Boundjou, Barath~Narayanan Narayanan,
-  Anca Ralescu, and David Kapp.
-\newblock Classification of malware programs using autoencoders based deep
-  learning architecture and its application to the microsoft malware
-  classification challenge (big 2015) dataset.
-\newblock In {\em 2017 IEEE National Aerospace and Electronics Conference
-  (NAECON)}, pages 70--75. IEEE, 2017.
 
 \bibitem{kim2020cnn}
 Jiyeon Kim, Jiwon Kim, Hyunjung Kim, Minsun Shim, and Eunjung Choi.
@@ -84,26 +42,11 @@ Ivandro~O Lopes, Deqing Zou, Ihsan~H Abdulqadder, Francis~A Ruambo, Bin Yuan,
   denoising autoencoder approach.
 \newblock {\em Computer Communications}, 194:55--65, 2022.
 
-\bibitem{luoma2023analysis}
-Mika Luoma-aho.
-\newblock Analysis of modern malware: obfuscation techniques.
-\newblock 2023.
-
-\bibitem{mahmoud2019dlbench}
-Nesma Mahmoud, Youssef Essam, Radwa Elshawi, and Sherif Sakr.
-\newblock Dlbench: an experimental evaluation of deep learning frameworks.
-\newblock In {\em 2019 IEEE International Congress on Big Data
-  (BigDataCongress)}, pages 149--156. IEEE, 2019.
-
 \bibitem{maithem2021network}
 Mohammed Maithem and Ghadaa~A Al-Sultany.
 \newblock Network intrusion detection system using deep neural networks.
 \newblock In {\em Journal of Physics: Conference Series}, volume 1804, page
   012138. IOP Publishing, 2021.
-
-\bibitem{theano}
-{Montreal University}.
-\newblock Theano, 2010.
 
 \bibitem{nguyen2018design}
 Sinh-Ngoc Nguyen, Van-Quyet Nguyen, Jintae Choi, and Kyungbaek Kim.
@@ -111,20 +54,6 @@ Sinh-Ngoc Nguyen, Van-Quyet Nguyen, Jintae Choi, and Kyungbaek Kim.
   convolutional neural network for dos detection.
 \newblock In {\em Proceedings of the 2nd international conference on machine
   learning and soft computing}, pages 34--38, 2018.
-
-\bibitem{podder2021artificial}
-Prajoy Podder, Subrato Bharati, M~Mondal, Pinto~Kumar Paul, and Utku Kose.
-\newblock Artificial neural network for cybersecurity: A comprehensive review.
-\newblock {\em arXiv preprint arXiv:2107.01185}, 2021.
-
-\bibitem{talukder2020tools}
-Sajedul Talukder.
-\newblock Tools and techniques for malware detection and analysis.
-\newblock {\em arXiv preprint arXiv:2002.06819}, 2020.
-
-\bibitem{chainer}
-{Tokyo University}.
-\newblock Chainer, 2015.
 
 \bibitem{vigneswaran2018evaluating}
 Rahul~K Vigneswaran, R~Vinayakumar, KP~Soman, and Prabaharan Poornachandran.
@@ -140,18 +69,5 @@ Zhongxue Yang and Adem Karahoca.
 \newblock In {\em Computer and Information Sciences--ISCIS 2006: 21th
   International Symposium, Istanbul, Turkey, November 1-3, 2006. Proceedings
   21}, pages 908--917. Springer, 2006.
-
-\bibitem{you2010malware}
-Ilsun You and Kangbin Yim.
-\newblock Malware obfuscation techniques: A brief survey.
-\newblock In {\em 2010 International conference on broadband, wireless
-  computing, communication and applications}, pages 297--300. IEEE, 2010.
-
-\bibitem{zolkipli2010malware}
-Mohamad~Fadli Zolkipli and Aman Jantan.
-\newblock Malware behavior analysis: Learning and understanding current malware
-  threats.
-\newblock In {\em 2010 Second International Conference on Network Applications,
-  Protocols and Services}, pages 218--221. IEEE, 2010.
 
 \end{thebibliography}

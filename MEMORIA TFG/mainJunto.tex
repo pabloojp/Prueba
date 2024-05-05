@@ -1,0 +1,381 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{stackrel}
+\usepackage{hyperref}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2.8cm]{geometry}
+\setlength{\parskip}{4mm}
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{url}
+
+\PassOptionsToPackage{hyphens}{url} %Permite que los enlaces URL puedan dividirse en múltiples líneas 
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{esvect}
+
+%\usepackage{subfig}
+
+\usepackage{float}
+\usepackage{enumitem}
+
+\usepackage{natbib}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{synttree} 
+
+\graphicspath{ {images/} }
+\let\olditemize\itemize
+\def\itemize{\olditemize\itemsep=0pt }
+\setlength{\parindent}{0cm}
+\setlist[itemize]{topsep=0pt}
+\setlist[enumerate]{topsep=0pt}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{cor}[teo]{Corolario}
+\newtheorem{defi}[teo]{Definición}
+\newtheorem{prop}[teo]{Proposición}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{conj}[teo]{Conjetura}
+\newtheorem{obs}[teo]{Observación}
+\newtheorem{ejem}[teo]{Ejemplo}
+\newtheorem{axioma}[teo]{Axioma}
+
+\newcommand\Item[1][]{%
+  \ifx\mathbb{R}lax#1\mathbb{R}lax  \item \else \item[#1] \fi
+  \abovedisplayskip=-4pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} %Define un nuevo comando \abs para facilitar la escritura de valores absolutos. Cuando uses \abs{x}, esto se representará como |x| con el tamaño de los delimitadores automáticamente ajustado al tamaño de x.
+
+\newcommand{\mbb}{\mathbb}
+\newcommand{\lp}{\ensuremath{\left(}}
+\newcommand{\rp}{\ensuremath{\right)}}
+
+%\usepackage{acronym}
+
+\usepackage{multicol}
+\usepackage{longtable}
+
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[acronym]{glossaries}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{} % Limpia la cabecera y pie de página actuales
+%\fancyhead[LO,RE]{\nouppercase{\leftmark}} % Cabecera de la página par (izquierda) e impar (derecha)
+%\fancyhead[RO,LE]{\thepage} % Número de página en la cabecera derecha (páginas impares) y izquierda (páginas pares)
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\chaptermark}[1]{%
+%  \markboth{\chaptername\ \thechapter.\ #1}{}%
+%}
+
+
+
+
+
+
+
+
+\makeatletter
+\newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
+
+\newcommand{\@dotminus}{%
+  \ooalign{\hidewidth\raise1ex\hbox{.}\hidewidth\cr$\m@th-$\cr}%
+}
+\makeatother
+
+
+\usepackage{mdframed}
+\newmdenv[leftline=false,topline=false]{topbot}
+            
+\author{Pablo Jiménez Poyatos}
+\title{TFG}
+\date{Julio 2024}
+
+
+\newacronym{cnn}{Convolutional Neural Network}{CNN}
+\newacronym{dnn}{Deep Neural Network}{DNN}
+\newacronym{dbns}{Deep Belief Networks}{DBNs}
+\newacronym{rnn}{Recurrent Neural Network}{RNN}
+\newacronym{rbm}{Restricted Boltzmann Machine}{RBM}
+
+
+
+\makeglossaries
+
+
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+
+\begin{titlepage}
+		\centering
+		
+		{ \Large UNIVERSIDAD COMPLUTENSE DE MADRID}
+		
+		{ \Large \textbf{FACULTAD DE CIENCIAS MATEMÁTICAS}}
+		\vspace{0.8cm}
+		
+		{ \large DEPARTAMENTO DE CIENCIAS DE LA  COMPUTACIÓN}
+		\vspace{1cm}
+		
+		\vspace{0.6cm}
+		
+		\graphicspath{ {images/} }
+		%%%%Logo Complutense%%%%%
+		\includegraphics[width=0.35\textwidth]{img/ucm.png} 
+		\vspace{0.4cm}
+		
+        {\Large \textbf{TRABAJO DE FIN DE GRADO}}
+		
+		\vspace{8mm}
+        {\huge \bfseries Algoritmos de Aprendizaje Automático aplicados a problemas de Ciberseguridad\par}
+		\vspace{1cm}
+
+		{\large Presentado por: Pablo Jiménez Poyatos}
+		
+		{\large Dirigido por: Luis Fernando Llana Diaz}
+		
+		\vspace{1.5cm}
+		{\large Grado en Matemáticas}
+		
+		{\large Curso académico 2023-24}
+\end{titlepage}
+
+\thispagestyle{empty}
+\clearpage
+\setcounter{page}{1}
+
+
+\newpage
+\begin{center}
+   {\bf Agradecimientos} 
+\end{center}
+
+
+
+
+ 
+
+\thispagestyle{empty}
+\clearpage
+\setcounter{page}{1}
+
+
+\newpage
+\begin{center}
+   {\bf Resumen} 
+\end{center}
+   
+
+\vspace{0.6 cm}
+\textsl{\textbf{Palabras clave:} } 
+
+
+
+\begin{center}
+   {\bf Abstract} 
+\end{center}
+
+
+
+\vspace{0.6 cm}
+\textsl{\textbf{Keywords:} } 
+
+
+\newpage
+\tableofcontents
+
+\newpage
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{Introducción} \label{Capitulo 1}
+      
+
+
+
+\section{Motivación y objetivos del trabajo} \label{Sec:1_1}
+
+TensorFlow is a more complex library for distributed numerical computation. It makes it possible to train and run very large neural networks efficiently by distributing the computations across potentially hundreds of multi-GPU (graphics processing unit) servers. TensorFlow (TF) was created at Google and supports many of its large-scale machine learning applications. It was open sourced in November 2015, and version 2.0 was released in September 2019.
+
+Keras is a high-level deep learning API that makes it very simple to train and run neural networks. Keras comes bundled with TensorFlow, and it relies on TensorFlow for all the intensive computations.
+
+    
+\section{Contexto y antecedentes del trabajo} \label{Sec:1_2}
+
+\subsection{Movilidad Aérea Urbana} \label{Subsubsec: 1_2_1}
+  
+\subsection{Vertipuertos} \label{Subsec: 1_2_2}
+
+\subsection{Optimización del diseño de un vertipuerto} \label{Subsec: 1_2_3}
+
+\subsection{Optimización heurística} \label{Subsubsec: 1_2_4}
+
+
+
+\section{Estructura de la memoria} \label{Subsubsec: 1_3}
+  
+
+
+\section{Contribuciones} \label{Subsec: 1_4}
+
+\chapter{Fundamentos de las redes neuronales} \label{Capitulo_2}
+
+
+ 
+
+\section{Revisión teórica} \label{Subsec: 3_1}
+Puedo introducir los tipos de funciones de activavion. Esta bien explicado en el TFG wuolah o en el articulo de KDD cup 199 de DNN network intrusion.
+Puedo añadir overfitting y underfitting.
+lo que es aprendizaje supervisado y no supervisao
+Partes de una neurona y como trabaja(bias, pesos...)
+
+
+\section{Arquitecturas relevantes} \label{Subsec: 3_2}
+Mini tabla resumen en Deep Cybersecurity: A Comprehensive Overview from Neural Network and Deep Learning Perspective y miniresumen de todos los tipos en review Deep Cybersecurity: A Comprehensive Overview from Neural Networkand Deep Learning Perspective y review
+\subsection{Autoencoder}
+
+Leer y sacar la información del word autoencoders.
+
+Los autoencoders son una clase de redes neuronales artificiales utilizadas en aprendizaje no supervisado para aprender representaciones eficientes de datos. Su objetivo principal es codificar la entrada en una representación comprimida y significativa, y luego decodificarla de manera que la reconstrucción sea lo más similar posible a la entrada original.
+
+La arquitectura básica de un autoencoder consta de dos partes: el encoder y el decoder. El encoder mapea los datos de entrada a una representación oculta de menor dimensión utilizando funciones principalmente no lineales, mientras que el decoder reconstruye los datos de entrada a partir de esta representación oculta. Durante el entrenamiento, los parámetros del autoencoder se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia.
+
+Los autoencoders se han utilizado en una amplia variedad de aplicaciones, incluida la reducción de dimensionalidad, la extracción de características, la eliminación de ruido en los datos de entrada y la detección de anomalías. Su versatilidad y capacidad para aprender representaciones útiles de los datos los hacen herramientas poderosas en el campo del aprendizaje automático y la inteligencia artificial.
+
+
+
+\subsection{Deep Belief Networks}
+\subsubsection{Red Neuronal Profunda}
+\subsubsection{Restricted Boltzmann Machine}
+\subsection{Red Neuronal Convolucional}
+\subsection{Red Neuronal Recurrente}
+
+\section{Paquetes de python} \label{Subsec: 3_3}
+\subsection{Keras}
+
+
+
+\chapter{Aplicación en la ciberseguridad} \label{Capitulo_3}
+
+\section{Clasificación de Malware}
+\subsection{Microsoft Malware Classification Challenge}
+\subsection{Autoencoder}
+\subsection{Red Neuronal Convolucional}
+\subsection{Resultados}
+Poner esto :This experiment is executed on MSI GF75 Thin 9SD laptop which has Intel Core i7-9750H CPU @ 2.60 GHz, 16 GB memory without using GPU
+
+\section{Detección de intrusiones}
+\subsection{KDD Cup 1999}
+\subsection{Autoencoder}
+Para la clasificacion binaria usar autoencoder con el entrenamiento de las imágenes (buenas o malas) y según el error que den, se clasifica.
+Para la multiclasificación, tenemos dos opciones:
+\begin{itemize}
+\item Usamos autoencoder para comprimir la información de entrada y despues esa informacion la usamos para clasificarla usando una DNN \citep{lopes2022effective}
+\item Usamos una cadena de autoencoders en el cual la salida de h es la entrada del autoencoder h+1. Utilizo el articulo \citep{farahnakian2018deep} donde se desarrolla todo el modelo y explicacion y ademas se hace referencia al artículo \citep{bengio2006greedy} porque se basa en él (lo de salida de h es la entrada de h+1). Ver tambien:
+\begin{itemize}
+\item Asymmetric Stacked Autoencoder
+\item Constrained Nonlinear Control Allocation based on Deep Auto-Encoder Neural Networks.
+
+\end{itemize} El algoritmo consiste en entrenar las capas por separado en la que el input del autoencoder es la salida del autoencoder anterior. Lo que de verdad nos interesa es la capa oculta, que tiene una representación comprimida de los datos de entrada y sus pesos. Estos pesos son con los que se inicializa el entrenamiento de la stacked autoencoder acabando en softmax. He usado el url para enterlo \url{https://amiralavi.com/tied-autoencoders/}. Además en \citep{bao2017deep} explica bastante bien la diferencia entre capa autoencoder y un autoencoder.
+\end{itemize}
+\subsection{Red Neuronal Convolucional}
+Para clasificar los datos del dataset KDD 1999 usando las \gls{cnn} vamos a seguir los siguientes articulos \citep{kim2020cnn, yang2006anomaly, nguyen2018design, kim2018encoding}. Prácticamente todo el cuerpo del experimento se encuentra en el artículo \citep{kim2020cnn}, pero en el artículo \citep{kim2018encoding} aparece la parte de normalización de los datos y algunos hiperparametros de inicio.
+
+\subsection{Red Neuronal Profunda}
+Por otro lado, el método \gls{dnn} utiliza una arquitectura muy parecida a una CNN. Podemos ver todo el procesamiento de los datos y el modelo en el artículo \citep{maithem2021network}. Además, hay buena explicacion del experimento en \citep{vigneswaran2018evaluating}. Por último, en el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
+
+\subsection{Red Neuronal Recurrente}
+En el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
+
+\subsection{Restricted Boltzmann Machine}
+En el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
+
+
+\subsection{Resultados}
+
+
+\chapter{Conclusiones y Trabajo Futuro} \label{Capítulo 6}
+
+
+
+\section{Conclusiones} \label{Subsec: 6_1}
+
+
+
+\section{Trabajo futuro} \label{Subsec: 6_2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+\newpage
+
+\medskip
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{biblio}
+\clearpage
+
+\newpage
+
+\appendix
+
+\printglossary
+
+\end{document}
+
+

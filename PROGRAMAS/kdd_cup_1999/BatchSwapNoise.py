@@ -60,3 +60,19 @@ elementos = [
 total_elementos = len(elementos)
 
 print("Total de elementos:", total_elementos)
+
+
+vector = [0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]  # Ejemplo de vector
+
+# Ajusta el tamaño del vector a 117
+vector = vector[:117]
+
+# Reshape el vector para que tenga la forma de una imagen RGB
+imagen_rgb = np.array(vector).reshape(5, 5, 3)
+
+# Convierte la matriz en una imagen RGB utilizando PIL
+imagen_pil = Image.fromarray(imagen_rgb.astype('uint8'))
+
+# Guarda la imagen o visualízala
+imagen_pil.save("imagen_rgb.png")
+imagen_pil.show()
