@@ -7,48 +7,52 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Database file #1: biblio.bib
 Warning--entry type for "kagglebig2015" isn't style-file defined
 --line 191 of file biblio.bib
+Warning--entry type for "keraswebsite" isn't style-file defined
+--line 267 of file biblio.bib
+Warning--entry type for "keraswebsite2" isn't style-file defined
+--line 274 of file biblio.bib
 Warning--to sort, need author or key in kagglebig2015
 Warning--empty journal in luoma2023analysis
 Warning--can't use both volume and number fields in maithem2021network
-You've used 27 entries,
+You've used 33 entries,
             2118 wiz_defined-function locations,
-            640 strings with 8861 characters,
-and the built_in function-call counts, 9625 in all, are:
-= -- 958
-> -- 436
-< -- 12
-+ -- 178
-- -- 146
-* -- 590
-:= -- 1505
-add.period$ -- 83
-call.type$ -- 27
-change.case$ -- 154
+            669 strings with 9894 characters,
+and the built_in function-call counts, 11572 in all, are:
+= -- 1156
+> -- 522
+< -- 14
++ -- 213
+- -- 174
+* -- 704
+:= -- 1821
+add.period$ -- 105
+call.type$ -- 33
+change.case$ -- 186
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 394
-empty$ -- 780
-format.name$ -- 146
-if$ -- 2110
+cite$ -- 36
+duplicate$ -- 469
+empty$ -- 941
+format.name$ -- 174
+if$ -- 2533
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 20
-newline$ -- 130
-num.names$ -- 52
-pop$ -- 212
+int.to.str$ -- 33
+missing$ -- 24
+newline$ -- 162
+num.names$ -- 64
+pop$ -- 258
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 153
 quote$ -- 0
-skip$ -- 322
+skip$ -- 375
 stack$ -- 0
-substring$ -- 525
-swap$ -- 136
-text.length$ -- 12
+substring$ -- 621
+swap$ -- 156
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 132
 warning$ -- 3
-while$ -- 89
-width$ -- 29
-write$ -- 283
-(There were 4 warnings)
+while$ -- 109
+width$ -- 35
+write$ -- 351
+(There were 6 warnings)

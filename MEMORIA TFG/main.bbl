@@ -3,6 +3,12 @@
 \bibitem{kagglebig2015}
 Microsoft malware classification challenge (big 2015), 2015.
 
+\bibitem{keraswebsite2}
+{Aakash Nain}.
+\newblock {Keras Documentation}.
+\newblock \url{https://keras.io/}.
+\newblock Consultado el 06-05-2024.
+
 \bibitem{mxnet}
 {Apache Software Foundation}.
 \newblock Apache mxnet, 2015.
@@ -56,6 +62,12 @@ Sanchit Gupta, Harshit Sharma, and Sarvjeet Kaur.
   International Conference, SPACE 2016, Hyderabad, India, December 14-18, 2016,
   Proceedings 6}, pages 271--280. Springer, 2016.
 
+\bibitem{hu2019machine}
+Yen-Hung~Frank Hu, Abdinur Ali, Chung-Chu~George Hsieh, and Aurelia Williams.
+\newblock Machine learning techniques for classifying malicious api calls and
+  n-grams in kaggle data-set.
+\newblock In {\em 2019 SoutheastCon}, pages 1--8. IEEE, 2019.
+
 \bibitem{kebede2017classification}
 Temesguen~Messay Kebede, Ouboti Djaneye-Boundjou, Barath~Narayanan Narayanan,
   Anca Ralescu, and David Kapp.
@@ -64,6 +76,14 @@ Temesguen~Messay Kebede, Ouboti Djaneye-Boundjou, Barath~Narayanan Narayanan,
   classification challenge (big 2015) dataset.
 \newblock In {\em 2017 IEEE National Aerospace and Electronics Conference
   (NAECON)}, pages 70--75. IEEE, 2017.
+
+\bibitem{kerkers2014characterisation}
+Max Kerkers, Jos{\'e}~Jair Santanna, and Anna Sperotto.
+\newblock Characterisation of the kelihos. b botnet.
+\newblock In {\em Monitoring and Securing Virtualized Networks and Services:
+  8th IFIP WG 6.6 International Conference on Autonomous Infrastructure,
+  Management, and Security, AIMS 2014, Brno, Czech Republic, June 30--July 3,
+  2014. Proceedings 8}, pages 79--91. Springer, 2014.
 
 \bibitem{kim2020cnn}
 Jiyeon Kim, Jiwon Kim, Hyunjung Kim, Minsun Shim, and Eunjung Choi.
@@ -101,9 +121,21 @@ Mohammed Maithem and Ghadaa~A Al-Sultany.
 \newblock In {\em Journal of Physics: Conference Series}, volume 1804, page
   012138. IOP Publishing, 2021.
 
+\bibitem{keraswebsite}
+{Matthew Carrigan}.
+\newblock {Keras Documentation}.
+\newblock \url{https://keras.io/}.
+\newblock Consultado el 06-05-2024.
+
 \bibitem{theano}
 {Montreal University}.
 \newblock Theano, 2010.
+
+\bibitem{botnetstructure}
+Mohammad Najafimehr, Sajjad Zarifzadeh, and Seyedakbar Mostafavi.
+\newblock A hybrid machine learning approach for detecting unprecedented ddos
+  attacks.
+\newblock {\em The Journal of Supercomputing}, 78, 04 2022.
 
 \bibitem{nguyen2018design}
 Sinh-Ngoc Nguyen, Van-Quyet Nguyen, Jintae Choi, and Kyungbaek Kim.
@@ -121,6 +153,11 @@ Prajoy Podder, Subrato Bharati, M~Mondal, Pinto~Kumar Paul, and Utku Kose.
 Sajedul Talukder.
 \newblock Tools and techniques for malware detection and analysis.
 \newblock {\em arXiv preprint arXiv:2002.06819}, 2020.
+
+\bibitem{tang2019dynamic}
+Mingdong Tang and Quan Qian.
+\newblock Dynamic api call sequence visualisation for malware classification.
+\newblock {\em IET Information Security}, 13(4):367--377, 2019.
 
 \bibitem{chainer}
 {Tokyo University}.

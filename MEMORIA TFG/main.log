@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  5 MAY 2024 19:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  13 MAY 2024 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,7 +1092,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<img/ucm.png, id=155, 1204.5pt x 1375.1375pt>
+<img/ucm.png, id=151, 1204.5pt x 1375.1375pt>
 File: img/ucm.png Graphic file (type png)
 <use img/ucm.png>
 Package pdftex.def Info: img/ucm.png  used on input line 176.
@@ -1150,7 +1150,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 ...en del Conjunto de Datos}{10}{section.3.2}
+l.28 ... {3.1.2}Autoencoder}{11}{subsection.3.1.2}
                                                   % [3])
 \tf@toc=\write8
 \openout8 = `main.toc'.
@@ -1176,7 +1176,7 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Cap\'{\i }tulo 2.
 [3]
-<img/graficoTF.png, id=236, 352.31625pt x 488.82625pt>
+<img/graficoTF.png, id=231, 352.31625pt x 488.82625pt>
 File: img/graficoTF.png Graphic file (type png)
 <use img/graficoTF.png>
 Package pdftex.def Info: img/graficoTF.png  used on input line 47.
@@ -1195,84 +1195,87 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Cap\'{\i }tulo 3.
 [7]
-<img/previewMMC.png, id=281, 963.6pt x 542.025pt>
+<img/previewMMC.png, id=283, 963.6pt x 542.025pt>
 File: img/previewMMC.png Graphic file (type png)
 <use img/previewMMC.png>
-Package pdftex.def Info: img/previewMMC.png  used on input line 36.
-(pdftex.def)             Requested size: 364.19667pt x 204.8551pt.
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
+Package pdftex.def Info: img/previewMMC.png  used on input line 39.
+(pdftex.def)             Requested size: 318.66948pt x 179.24924pt.
+LaTeX Info: Redefining \. on input line 58.
+LaTeX Info: Redefining \% on input line 58.
  [8 <./img/previewMMC.png (PNG copy)>]
-<img/circularMMC.png, id=296, 462.528pt x 346.896pt>
+<img/botnetStructure.png, id=297, 204.765pt x 212.2329pt>
+File: img/botnetStructure.png Graphic file (type png)
+<use img/botnetStructure.png>
+Package pdftex.def Info: img/botnetStructure.png  used on input line 64.
+(pdftex.def)             Requested size: 150.23138pt x 155.71889pt.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+ [9 <./img/botnetStructure.png>]
+<img/circularMMC.png, id=315, 462.528pt x 346.896pt>
 File: img/circularMMC.png Graphic file (type png)
 <use img/circularMMC.png>
-Package pdftex.def Info: img/circularMMC.png  used on input line 88.
-(pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
-[9]
-<img/barras4MMC.png, id=309, 462.528pt x 346.896pt>
+Package pdftex.def Info: img/circularMMC.png  used on input line 97.
+(pdftex.def)             Requested size: 273.14923pt x 204.87329pt.
+<img/barras4MMC.png, id=319, 462.528pt x 346.896pt>
 File: img/barras4MMC.png Graphic file (type png)
 <use img/barras4MMC.png>
-Package pdftex.def Info: img/barras4MMC.png  used on input line 98.
-(pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
+Package pdftex.def Info: img/barras4MMC.png  used on input line 109.
+(pdftex.def)             Requested size: 273.14923pt x 204.87329pt.
 
+Excluding 'comment' comment. Excluding 'comment' comment.
+LaTeX Info: Redefining \. on input line 320.
+LaTeX Info: Redefining \% on input line 320.
+ [10 <./img/circularMMC.png> <./img/barras4MMC.png>]
+Underfull \vbox (badness 1365) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
-[10 <./img/circularMMC.png>] Excluding 'comment' comment.
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
- [11 <./img/barras4MMC.png>]
-LaTeX Info: Redefining \. on input line 192.
-LaTeX Info: Redefining \% on input line 192.
- [12]) (capitulo04.tex
+LaTeX Info: Redefining \. on input line 341.
+LaTeX Info: Redefining \% on input line 341.
+ [11])
+(capitulo04.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [13]
+ [12]
+Cap\'{\i }tulo 4.
+) Excluding 'comment' comment. [13
+
+] (main.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [14
 
-]
-Cap\'{\i }tulo 4.
-) Excluding 'comment' comment. [15] (main.bbl
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [16
-
-] [17])
+] [15]
+LaTeX Info: Redefining \. on input line 181.
+LaTeX Info: Redefining \% on input line 181.
+ [16])
 LaTeX Info: Redefining \. on input line 467.
 LaTeX Info: Redefining \% on input line 467.
- [18]
-No file main.gls.
-LaTeX Info: Redefining \. on input line 475.
-LaTeX Info: Redefining \% on input line 475.
-[19
+ [17]
 
-] (main.aux
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+No file main.gls.
+LaTeX Info: Redefining \. on input line 532.
+LaTeX Info: Redefining \% on input line 532.
+[18
+
+]
+LaTeX Info: Redefining \. on input line 532.
+LaTeX Info: Redefining \% on input line 532.
+ [19] (main.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D28C0101EC9ED9ECAEC8585D32BB9EC5;6981.
+(rerunfilecheck)             Checksum: 234F81F64C41D553986D31AD9B8AD219;6769.
  ) 
 Here is how much of TeX's memory you used:
- 25767 strings out of 475385
- 447407 string characters out of 2776906
- 862252 words of memory out of 3000000
- 46592 multiletter control sequences out of 15000+600000
+ 25796 strings out of 475385
+ 448171 string characters out of 2776906
+ 910449 words of memory out of 3000000
+ 46614 multiletter control sequences out of 15000+600000
  485118 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 91i,9n,91p,2325b,795s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 91i,8n,91p,2325b,795s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{glo:dnn} has been referenced but does not exist, re
 placed by a fixed one
@@ -1286,18 +1289,20 @@ placed by a fixed one
 /cm/cmbx10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pjime/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/pjime/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pjime/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pjim
-e/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Use
-rs/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pf
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pjime/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pjime/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/pjime/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pj
+ime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
+sers/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pf
 b><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmti10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmtt10.pfb>
-Output written on main.pdf (25 pages, 820513 bytes).
+cmsl10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (25 pages, 908787 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
- 105 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 497 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
+ 327 words of extra memory for PDF output out of 10000 (max. 10000000)
 
