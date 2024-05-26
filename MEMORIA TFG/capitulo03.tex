@@ -1,15 +1,16 @@
-\chapter{Aplicación en la ciberseguridad} \label{Capitulo_3}
+\chapter{Clasificación de Malware} \label{Capitulo_3}
 
-\section{Clasificación de Malware}
-
-Hoy en día, uno de los principales retos que enfrenta el software anti-malware es la enorme cantidad de datos y archivos que se requieren evaluar en busca de posibles amenazas maliciosas. Una de las razones principales de este volumen tan elevado de archivos diferentes es que los creadores de malware introducen variaciones en los componentes maliciosos para evadir la detección. Esto implica que los archivos maliciosos pertenecientes a la misma ``familia'' de malware (con patrones de comportamiento similares), se modifican constantemente utilizando diversas tácticas, lo que hace que parezcan ser múltiples archivos distintos. 
+Hoy en día, uno de los principales retos que enfrenta el software anti-malware es la enorme cantidad de datos y archivos que se requieren evaluar en busca de posibles amenazas maliciosas. Una de las razones principales de este volumen tan elevado de archivos diferentes es que los creadores de malware introducen variaciones en los componentes maliciosos para evadir la detección. Esto implica que los archivos maliciosos pertenecientes a la misma ``familia'' de malware (con patrones de comportamiento similares), se modifican constantemente utilizando diversas tácticas, lo que hace que parezcan ser múltiples archivos distintos \citep{kagglebig2015}. 
 
 
 Para poder analizar y clasificar eficazmente estas cantidades masivas de archivos, es necesario agruparlos e identificar sus respectivas familias. Además, estos criterios de agrupación pueden aplicarse a nuevos archivos encontrados en computadoras para detectarlos como maliciosos y asociarlos a una familia específica. 
 
 
+Para enfrentar este tipo de problema, se va a escoger una de las bases de datos disponibles en \citep{podder2021artificial} para poder clasificar distintos tipos de ciberataques. Como el objetivo principal de este trabajo es el estudio y puesta en práctica de diferentes algoritmos de aprendizaje automático, se ha decidido tomar como base de datos Microsoft Malware Classification Challenge. La principal razón de esta decisión ha sido que con este dataset tenemos a nuestra disposición dos algoritmos diferentes de machine learning que están referenciacios en este review y que se aborda el problema usando cada uno su propio enfoque. 
 
-\subsection{Microsoft Malware Classification Challenge}
+
+
+\section{Microsoft Malware Classification Challenge}
 
 
 
@@ -32,7 +33,7 @@ Este dataset contiene 5 archivos:
 Para nuestro estudio, nos enfocaremos exclusivamente en el conjunto de datos de entrenamiento, que consta de los archivos ``train.7z'' y ``trainLabels.csv''. Los archivos 'test.7z' y 'sampleSubmission.csv' están destinados específicamente para la competición. Nosotros no los utilizaremos debido a que son programas de malware sin etiquetar y para este problema de clasificación, es necesario conocerlas.  Además, la carpeta 'dataSample.7z' proporciona dos programas que se encuentran también en la carpeta train.7z, por lo que tampoco la utilizaremos. 
 
 
-Cada programa malicioso tiene un identificador, un valor hash de 20 caracteres que identifica de forma única el archivo, y una etiqueta de clase, que es un número entero que representa una de las 9 familias de malware al que puede pertenecer. Por ejemplo, el programa \textit{0ACDbR5M3ZhBJajygTuf} tiene como etiqueta el valor 7. Esta información se puede consultar en el archivo ``trainLabels.csv''. Cada programa tiene dos archivos, uno asm\footnote{Es una secuencia de bytes que lo podemos visualizar como si fuera un texto plano} con el código extraído por la herramienta de desensamblado IDA y otro bytes\footnote{Realmente no es un archivo bytes, sino un archivo de texto con letras} con la representación hexadecimal del contenido binario del programa pero sin los encabezados ejecutables (para garantizar esterilidad). Para nuestro estudio vamos a utilizar únicamente este ultimo archivo. 
+Cada programa malicioso tiene un identificador, un valor hash de 20 caracteres que identifica de forma única el archivo, y una etiqueta de clase, que es un número entero que representa una de las 9 familias de malware al que puede pertenecer. Por ejemplo, el programa \textit{0ACDbR5M3ZhBJajygTuf} tiene como etiqueta el valor 7. Esta información se puede consultar en el archivo ``trainLabels.csv''. Cada programa tiene dos archivos, uno asm con el código extraído por la herramienta de desensamblado IDA y otro bytes\footnote{Realmente no es un archivo bytes, sino un fichero de texto con caractéres.} con la representación hexadecimal del contenido binario del programa pero sin los encabezados ejecutables (para garantizar esterilidad). Para nuestro estudio vamos a utilizar únicamente este ultimo archivo. 
 
 \begin{figure}[h]
     \begin{center}
@@ -46,7 +47,7 @@ Cada programa malicioso tiene un identificador, un valor hash de 20 caracteres q
 Como aparece en la figura \ref{fig:previewMMC}, los ocho primeros caracteres son direcciones de memoria, seguido de la representación hexadecimal del contenido binario del programa, que contiene 16 bytes (cada uno dos caracteres). A veces nos podemos encontrar con ``??'' en el lugar de un byte. Este símbolo se utiliza en estos archivos para representar que se desconoce su información porque su memoria no se puede leer \citep{cahyani2022influence}. 
 
 
-\subsubsection{Distribución del dataset}
+\subsection{Distribución del dataset}
 
 Hay un total de 21.741 programas de malware, pero nosotros tan solo usaremos los 10.868 pertenecientes al entrenamiento. Estos programas pertenecen a una de estas 9 familias de malware: Rammit, Lollipop, Kelihos\_ ver3, Vundo, Simda, Tracur, Kelihos\_ ver1, Obfuscator y Gatak. Según \cite{hu2019machine}, podemos deinirlas como: 
 
@@ -54,7 +55,7 @@ Hay un total de 21.741 programas de malware, pero nosotros tan solo usaremos los
 
 \begin{enumerate}
 
-\item \textbf{Ramnit} es un malware tipo gusano que infecta archivos ejecutables de Windows, archivos de Microsoft Office y archivos HTML. Cuando los ha infectado, el ordenador pasa a formar parte de una red de bots, que son controladas por un nodo central de forma remota. Este malware puede robar información sensible y puede propagarse a través de conexiones de red y unidades extraíbles.
+\item \textbf{Ramnit} es un malware tipo gusano que infecta archivos ejecutables de Windows, archivos de Microsoft Office y archivos HTML. Cuando se infectan, el ordenador pasa a formar parte de una red de bots controladas por un nodo central de forma remota. Este malware puede robar información y propagarse a través de conexiones de red y unidades extraíbles.
 
 \end{enumerate}
 
@@ -68,31 +69,29 @@ Hay un total de 21.741 programas de malware, pero nosotros tan solo usaremos los
 \end{wrapfigure}
 \vspace{-\baselineskip}
 
-\textbf{2.} \textbf{Lollipop} es un tipo de programa adware que muestra anuncios no deseados en los navegadores web. También puede redirigir los resultados de búsqueda a recursos web ilegítimos, descargar aplicaciones maliciosas y robar la información del ordenador monitoreando sus actividades web. Este adware se puede descargar desde el sitio web del programa o empaquetarse con algunos programas de terceros.
+\bigskip
+\textbf{2.} \textbf{Lollipop} es un tipo de programa adware\footnote{Es una variedad de malware que muestra anuncios no deseados a los usuarios, típicamente como ventanas emergentes o banners.} que muestra anuncios no deseados en los navegadores web. También puede redirigir los resultados de búsqueda a recursos web ilegítimos, descargar aplicaciones maliciosas y robar la información del ordenador monitoreando sus actividades web. Este adware se puede descargar desde el sitio web del programa o empaquetarse con algunos programas de terceros.
 
 
-\textbf{3.} \textbf{Simda} es un troyano backdoor que infecta ordenadores descargando y ejecutando archivos arbitrarios que pueden incluir malware adicional. Los ordenadores infectados pasar a ser parte de una botnet, lo que les permite cometer aciones criminales como robo de contraseñas, credenciales bancarias o descargar otros tipos de malware.
+\textbf{3.} \textbf{Simda} es un troyano backdoor\footnote{Un backdoor permite que una entidad no autorizada tome el control completo del sistema de una víctima sin su consentimiento.} que infecta ordenadores descargando y ejecutando archivos arbitrarios que pueden incluir malware adicional. Los ordenadores infectados pasar a ser parte de una botnet, lo que les permite cometer aciones criminales como robo de contraseñas, credenciales bancarias o descargar otros tipos de malware.
 
 \textbf{4.} \textbf{Vundo} es otro troyano conocido por causar publicidad emergente para programas de antivirus falsos. A menudo se distribuye como un archivo DLL(Dynamic Link Library) \footnote{Una parte del programa que se ejecuta cuando una aplicación se lo pide. Se suele guardar en un directorio del sistema.} y se instala en el ordenador como un Objeto Auxiliar del Navegador (BHO) sin su consentimiento. Además, utiliza técnicas
 
 \begin{enumerate}
 \item[] avanzadas para evitar su detección y eliminación.
-\item[5.] \textbf{Kelihos\_ ver3} es un troyano tipo backdoor \footnote{Un backdoor permite que una entidad no autorizada tome el control completo del sistema de una víctima sin su consentimiento.} que distribuye correos electrónicos que pueden contener enlaces falsos a instaladores de malware. Consta de tres tipos de bots \citep{kerkers2014characterisation}: controladores (operados por los dueños y donde se crean las instrucciones), enrutadores (redistribuyen las instrucciones a otros bots) y trabajadores (ejecutan las instrucciones).
+\item[5.] \textbf{Kelihos\_ ver3} es un troyano tipo backdoor que distribuye correos electrónicos que pueden contener enlaces falsos a instaladores de malware. Consta de tres tipos de bots \citep{kerkers2014characterisation}: controladores (operados por los dueños y donde se crean las instrucciones), enrutadores (redistribuyen las instrucciones a otros bots) y trabajadores (ejecutan las instrucciones).
 
 \item[6.] \textbf{Tracur} es un descargador troyano que agrega el proceso 'explorer.exe' a la lista de excepciones del Firewall de Windows para disminuir deliberadamente la seguridad del sistema y permitir la comunicación no autorizada a través del firewall. Además, esta familia también te puede redirigir a enlaces maliciosos para descargar e instalar otros tipos de malware.
 
-\item[7.] \textbf{Kelihos\_ ver1} es una versión más antigua del troyano Kelihos\_ ver3 pero tiene el mismo funcionamiento y las mismas partes.
+\item[7.] \textbf{Kelihos\_ ver1} es una versión más antigua del troyano Kelihos\_ ver3, pero con las mismas funcionalidades.
 
-\item[8.] \textbf{Obfuscator.ACY} es un tipo de malware sofisticado que oculta su propósito y podría sobrepasar las capas de seguridad del software.  Se puede propagar mediante archivos adjuntos de correo electrónico, anuncios web y descargas de archivos.
-
+\item[8.] \textbf{Obfuscator.ACY} es un tipo de malware sofisticado que oculta su propósito y podría sobrepasar las capas de seguridad del software.  Se puede propagar mediante archivos adjuntos de correo electrónico, anuncios web y descargas de archivos. 
 \item[9.] \textbf{Gatak} es un troyano que abre una puerta trasera en el ordenador. Se propaga a través de sitios web falsos que ofrecen claves de licencias de productos. Una vez infectado el sistema, Gatak recopila información del ordenador.
 \end{enumerate} 
 
+Como ya mencionamos antes, vamos a entrenar nuestras redes neuronales con 10.868 archivos bytes. De estos archivos, solo son válidos 10.860 porque en los 8 archivos restantes\footnote{Los identificadores de estos archivos son 58kxhXouHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA, a9oIzfw03ED4lTBCt52Y, cf4nzsoCmudt1kwleOTI, d0iHC6ANYGon7myPFzBe, da3XhOZzQEbKVtLgMYWv, fRLS3aKkijp4GH0Ds6Pv, IidxQvXrlBkWPZAfcqKT.} (pertenecientes a la familia Ramnit), todo sus bytes son ``??''. Con estos datos finales, vamos a ver gráficamente como se distribuyen las 9 clases de malware (Figura \ref{img: circularMMC}).
 
-
-Como ya mencionamos antes, vamos a entrenar nuestras redes neuronales con 10.868 archivos bytes. De estos archivos, solo nos son válidos 10.860 porque en los 8 restantes (pertenecientes a la familia Ramnit), todo su contenido son ``??''. Con estos programas finales, vamos a ver sus datos en el gráfico \ref{img: circularMMC}. 
- 
- \begin{figure}[h]
+\begin{figure}[h]
     \begin{center}
     \includegraphics[width=0.6\textwidth]{img/circularMMC.png}
     \end{center}
@@ -100,9 +99,61 @@ Como ya mencionamos antes, vamos a entrenar nuestras redes neuronales con 10.868
     \label{img: circularMMC}
 \end{figure}  
 
-Analizando \ref{img: circularMMC}, podemos observar como la distribución entre las clases no es uniforme. Mientras que de la clase Simbda hay 42 muestras, de la clase Kelihos\_ ver3 hay 2942, es decir, un 98 \% más. En \citep{kebede2017classification} deciden prescindir de esta clase, pero nosotros hemos decidido hacer el análisis con las 9 clases. A la hora de crear nuestros modelos, hemos dividido el conjunto de datos aleatoriamente en grupos del 75\%, 15\% y 10\% para entrenamiento, test y validación respectivamente. La imagen \ref{img: train_test_valMMC} muestra como quedarían distribuidas las clases en los diferentes grupos.
+Analizando la Figura \ref{img: circularMMC}, podemos observar como la distribución entre las clases no es uniforme. Mientras que de la clase Simbda hay 42 muestras, de la clase Kelihos\_ ver3 hay 2.942, es decir, 70 veces más de muestras. En \citep{kebede2017classification} deciden prescindir de esta clase, pero nosotros hemos decidido hacer el análisis con las 9 clases. 
 
 
+A la hora de crear nuestros modelos, hemos dividido el conjunto de datos aleatoriamente usando la función \texttt{train\_test\_split()} en grupos del 75\%, 15\% y 10\% para entrenamiento, test y validación respectivamente. La tabla \ref{tab:malware_distribution} muestra como quedarían distribuidas las clases en los diferentes grupos.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccccccc}
+\hline
+& Ramnit & Lollipop & Kelihos3 & Vundo & Simda & Tracur & Kelihos1 & Obfus & Gatak \\
+\hline
+Total & 1533 & 2478 & 2942 & 475 & 42 & 751 & 398 & 1228 & 1013 \\
+Train & 1177 & 1835 & 2228 & 337 & 26 & 543 & 306 & 925 & 768 \\
+Test & 223 & 394 & 436 & 75 & 9 & 124 & 42 & 177 & 149 \\
+Valid & 133 & 249 & 278 & 63 & 7 & 84 & 50 & 126 & 96 \\
+\hline
+\end{tabular}
+\caption{Distribución de los tipos de malware en los conjuntos de datos}
+\label{tab:malware_distribution}
+\end{table}
+
+ 
+
+
+Para abordar este problema de clasificación, vamos a realizar dos modelos diferentes para luego comparar sus resultados. El primer método de machine learning que vamos a utilizar es una \acrfull{cnn}. El segundo será entrenar un Autoencoder junto con una \acrfull{dnn}, primero obteniendo una representación comprimida de los datos y después clasificando esta representación con una red neuronal profunda. 
+ 
+
+
+
+
+
+
+
+\section{Red Neuronal Convolucional}
+\section{Autoencoder}
+\section{Resultados}
+El entorno de hardware en el que he realizado todos los experimentos es un sistema operativo Debian 12.2 con Linux version 6.1.0-17-amd64. La CPU utilizada es un Intel(R) Xeon(R) W-2235 CPU con 3.8 GHz ($3.80*10^9$Hz) con 6 núcleos. La memoria RAM disponible es de 128 GB. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\citep{gibert2022fusing} mete imagen de asm junto con bytes.
+\begin{comment}
 
 \begin{figure}[h]
     \begin{center}
@@ -110,17 +161,8 @@ Analizando \ref{img: circularMMC}, podemos observar como la distribución entre 
     \end{center}
     \caption{Distribución de las clases en cada grupo.}
     \label{img: train_test_valMMC}
-\end{figure}  
+\end{figure}
 
-
-
-Como podemos observar, todos los programas proporcionados son malware, lo que nos indica que con este dataset no podemos crear un modelo que nos prediga si un programa es malware o no, sino que tan solo podemos hacer un modelo de clasificación. Para ello vamos a abordar este experimento de dos formas diferentes. Una de ellas es utilizando una CNN y la otra es usando un autoencoder. utilizar dos redes neuronales
-
-
-
-
-
-\begin{comment}
 \section{Resumen del Conjunto de Datos}
 
 El conjunto de datos utilizado en este estudio proviene del Desafío de Clasificación de Malware de Microsoft (BIG 2015), accesible a través de Kaggle. Este conjunto de datos consta de programas de malware pertenecientes a 9 categorías diferentes. Se proporcionan conjuntos de datos de entrenamiento y prueba, pero solo se utilizan los datos de entrenamiento debido a la falta de etiquetas para el conjunto de prueba para su entrega. Además
@@ -131,7 +173,6 @@ La distribución de los datos se realiza con un 72\% para entrenamiento, un 8\% 
 
 Este conjunto de datos, con su amplia gama de muestras etiquetadas y la diversidad de familias de malware representadas, proporciona una base sólida para la investigación y desarrollo de métodos efectivos de detección y clasificación de amenazas informáticas.
 
-\end{comment}
 
 
 
@@ -143,14 +184,6 @@ Este conjunto de datos, con su amplia gama de muestras etiquetadas y la diversid
 
 
 
-
-
-
-
-
-
-
-\begin{comment}
 
 \item Worm (Gusano)- Los gusanos informáticos son un tipo de malware que puede propagarse a través de redes sin la intervención de un programa huésped o de un humano. Son caballos de Troya maliciosos que pueden replicarse y propagarse de una computadora a otra. Los gusanos infectan a sus anfitriones mediante el engaño y la astucia, pudiendo causar graves daños a las computadoras comprometidas al consumir ancho de banda, sobrecargar sistemas, eliminar o modificar archivos e instalar virus adicionales. Además, las vulnerabilidades en el software, los archivos adjuntos de correo electrónico y las conexiones de red pueden facilitar su propagación. 
 
@@ -280,7 +313,6 @@ Las compañías de salud muchas veces pueden estar bajo presión, con pocos recu
 
 
 
-
 un conjunto de datos de malware sin precedentes y promoviendo el desarrollo de técnicas efectivas de código abierto para agrupar variantes de archivos de malware en sus respectivas familias.
 
 Est Fue un challenge que promocionó Microsoft para que la comunidad científica propuesiera una solución para este problema.Es un dataset que fue creado para un Challenge proporcionado por Microsoft para 
@@ -309,45 +341,6 @@ sampleSubmission.csv - a file showing the valid submission format
 dataSample.csv - a sample of the dataset to preview before downloading
 \end{comment}
 
-
-
-
-
-\subsection{Autoencoder}
-\subsection{Red Neuronal Convolucional}
-\subsection{Resultados}
-El entorno de hardware en el que he realizado todos los experimentos es un sistema operativo Debian 12.2 con Linux version 6.1.0-17-amd64. La CPU utilizada es un Intel(R) Xeon(R) W-2235 CPU con 3.8 GHz ($3.80*10^9$Hz) con 6 núcleos. La memoria RAM disponible es de 128 GB. 
-
-
-\section{Detección de intrusiones}
-\subsection{KDD Cup 1999}
-\subsection{Autoencoder}
-Para la clasificacion binaria usar autoencoder con el entrenamiento de las imágenes (buenas o malas) y según el error que den, se clasifica.
-Para la multiclasificación, tenemos dos opciones:
-\begin{itemize}
-\item Usamos autoencoder para comprimir la información de entrada y despues esa informacion la usamos para clasificarla usando una DNN \citep{lopes2022effective}
-\item Usamos una cadena de autoencoders en el cual la salida de h es la entrada del autoencoder h+1. Utilizo el articulo \citep{farahnakian2018deep} donde se desarrolla todo el modelo y explicacion y ademas se hace referencia al artículo \citep{bengio2006greedy} porque se basa en él (lo de salida de h es la entrada de h+1). Ver tambien:
-\begin{itemize}
-\item Asymmetric Stacked Autoencoder
-\item Constrained Nonlinear Control Allocation based on Deep Auto-Encoder Neural Networks.
-
-\end{itemize} El algoritmo consiste en entrenar las capas por separado en la que el input del autoencoder es la salida del autoencoder anterior. Lo que de verdad nos interesa es la capa oculta, que tiene una representación comprimida de los datos de entrada y sus pesos. Estos pesos son con los que se inicializa el entrenamiento de la stacked autoencoder acabando en softmax. He usado el url para enterlo \url{https://amiralavi.com/tied-autoencoders/}. Además en \citep{bao2017deep} explica bastante bien la diferencia entre capa autoencoder y un autoencoder.
-\end{itemize}
-\subsection{Red Neuronal Convolucional}
-Para clasificar los datos del dataset KDD 1999 usando las \gls{cnn} vamos a seguir los siguientes articulos \citep{kim2020cnn, yang2006anomaly, nguyen2018design, kim2018encoding}. Prácticamente todo el cuerpo del experimento se encuentra en el artículo \citep{kim2020cnn}, pero en el artículo \citep{kim2018encoding} aparece la parte de normalización de los datos y algunos hiperparametros de inicio.
-
-\subsection{Red Neuronal Profunda}
-Por otro lado, el método \gls{dnn} utiliza una arquitectura muy parecida a una CNN. Podemos ver todo el procesamiento de los datos y el modelo en el artículo \citep{maithem2021network}. Además, hay buena explicacion del experimento en \citep{vigneswaran2018evaluating}. Por último, en el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
-
-\subsection{Red Neuronal Recurrente}
-En el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
-
-\subsection{Restricted Boltzmann Machine}
-En el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
-
-
-\subsection{Resultados}
-El entorno de hardware en el que he realizado todos los experimentos es un sistema operativo Debian 12.2 con Linux version 6.1.0-17-amd64. La CPU utilizada es un Intel(R) Xeon(R) W-2235 CPU con 3.8 GHz ($3.80*10^9$Hz) con 6 núcleos. La memoria RAM disponible es de 128 GB. 
 
 
 

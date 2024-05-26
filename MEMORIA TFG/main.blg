@@ -8,51 +8,61 @@ Database file #1: biblio.bib
 Warning--entry type for "kagglebig2015" isn't style-file defined
 --line 191 of file biblio.bib
 Warning--entry type for "keraswebsite" isn't style-file defined
---line 267 of file biblio.bib
+--line 277 of file biblio.bib
 Warning--entry type for "keraswebsite2" isn't style-file defined
---line 274 of file biblio.bib
+--line 284 of file biblio.bib
+Warning--entry type for "numpy" isn't style-file defined
+--line 310 of file biblio.bib
+Warning--entry type for "scikitlearn" isn't style-file defined
+--line 317 of file biblio.bib
+Warning--entry type for "traintestsplit" isn't style-file defined
+--line 324 of file biblio.bib
+Warning--entry type for "modeltraining" isn't style-file defined
+--line 331 of file biblio.bib
+Warning--entry type for "matplotlib" isn't style-file defined
+--line 338 of file biblio.bib
 Warning--to sort, need author or key in kagglebig2015
 Warning--empty journal in luoma2023analysis
 Warning--can't use both volume and number fields in maithem2021network
-You've used 33 entries,
+You've used 42 entries,
             2118 wiz_defined-function locations,
-            669 strings with 9894 characters,
-and the built_in function-call counts, 11572 in all, are:
-= -- 1156
-> -- 522
-< -- 14
-+ -- 213
-- -- 174
-* -- 704
-:= -- 1821
-add.period$ -- 105
-call.type$ -- 33
-change.case$ -- 186
+            707 strings with 10884 characters,
+and the built_in function-call counts, 13906 in all, are:
+= -- 1379
+> -- 613
+< -- 15
++ -- 251
+- -- 202
+* -- 814
+:= -- 2203
+add.period$ -- 132
+call.type$ -- 42
+change.case$ -- 226
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 469
-empty$ -- 941
-format.name$ -- 174
-if$ -- 2533
+cite$ -- 45
+duplicate$ -- 558
+empty$ -- 1155
+format.name$ -- 202
+if$ -- 3033
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 24
-newline$ -- 162
-num.names$ -- 64
-pop$ -- 258
+int.to.str$ -- 42
+missing$ -- 29
+newline$ -- 207
+num.names$ -- 82
+pop$ -- 334
 preamble$ -- 1
-purify$ -- 153
+purify$ -- 185
 quote$ -- 0
-skip$ -- 375
+skip$ -- 446
 stack$ -- 0
-substring$ -- 621
-swap$ -- 156
-text.length$ -- 14
+substring$ -- 736
+swap$ -- 174
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 166
 warning$ -- 3
-while$ -- 109
-width$ -- 35
-write$ -- 351
-(There were 6 warnings)
+while$ -- 133
+width$ -- 44
+write$ -- 439
+(There were 11 warnings)

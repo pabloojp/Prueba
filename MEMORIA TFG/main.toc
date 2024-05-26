@@ -17,26 +17,24 @@
 \contentsline {subsection}{\numberline {2.2.3}Red Neuronal Convolucional}{4}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Red Neuronal Recurrente}{4}{subsection.2.2.4}%
 \contentsline {subsubsection}{Restricted Boltzmann Machine}{4}{section*.3}%
-\contentsline {section}{\numberline {2.3}Implementación en Python}{4}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Frameworks}{4}{subsection.2.3.1}%
-\contentsline {subsubsection}{Deep neural network}{4}{section*.4}%
-\contentsline {section}{\numberline {2.4}Principales Deep Learning Frameworks. Keras.}{4}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Aplicación en la ciberseguridad}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Clasificación de Malware}{7}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Microsoft Malware Classification Challenge}{7}{subsection.3.1.1}%
-\contentsline {subsubsection}{Distribución del dataset}{8}{section*.7}%
-\contentsline {subsection}{\numberline {3.1.2}Autoencoder}{11}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Red Neuronal Convolucional}{11}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Resultados}{11}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Detección de intrusiones}{11}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}KDD Cup 1999}{11}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Autoencoder}{11}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Red Neuronal Convolucional}{11}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Red Neuronal Profunda}{12}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Red Neuronal Recurrente}{12}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Restricted Boltzmann Machine}{12}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Resultados}{12}{subsection.3.2.7}%
-\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusiones}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Trabajo futuro}{13}{section.4.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{15}{chapter*.11}%
+\contentsline {section}{\numberline {2.3}Bibliotecas utilizadas en Python}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Principales frameworks. Keras}{4}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Librerías y herramientas esenciales.}{5}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Clasificación de Malware}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Microsoft Malware Classification Challenge}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Distribución del dataset}{9}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Red Neuronal Convolucional}{11}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Autoencoder}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Resultados}{11}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Detección de intrusiones}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}KDD Cup 1999}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Autoencoder}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Red Neuronal Convolucional}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Red Neuronal Profunda}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Red Neuronal Recurrente}{14}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Restricted Boltzmann Machine}{14}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Resultados}{14}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{15}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{17}{chapter*.8}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  13 MAY 2024 21:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  26 MAY 2024 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -284,9 +284,29 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \CommentStream=\write3
 
 Excluding comment 'comment')
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
@@ -498,29 +518,9 @@ fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-))
+)
 \Gin@req@height=\dimen197
 \Gin@req@width=\dimen198
-) (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
-
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 227.
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 )
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -561,26 +561,40 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 \MTr@childattachsep=\count332
 )
 \c@teo=\count333
+ (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
+Package: footmisc 2023/07/05 v6.0f a miscellany of footnote facilities
+\FN@temptoken=\toks37
+\footnotemargin=\dimen199
+\@outputbox@depth=\dimen256
+Package footmisc Info: Declaring symbol style bringhurst on input line 696.
+Package footmisc Info: Declaring symbol style chicago on input line 704.
+Package footmisc Info: Declaring symbol style wiley on input line 713.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 724.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 744.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 765
+.
+)
 \c@samefootnote=\count334
  (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \c@tracingmulticols=\count335
 \mult@box=\box70
-\multicol@leftmargin=\dimen199
+\multicol@leftmargin=\dimen257
 \c@unbalance=\count336
 \c@collectmore=\count337
 \doublecol@number=\count338
 \multicoltolerance=\count339
 \multicolpretolerance=\count340
-\full@width=\dimen256
-\page@free=\dimen257
-\premulticols=\dimen258
-\postmulticols=\dimen259
+\full@width=\dimen258
+\page@free=\dimen259
+\premulticols=\dimen260
+\postmulticols=\dimen261
 \multicolsep=\skip86
 \multicolbaselineskip=\skip87
 \partial@page=\box71
 \last@line=\box72
-\maxbalancingoverflow=\dimen260
+\maxbalancingoverflow=\dimen262
 \mult@rightbox=\box73
 \mult@grightbox=\box74
 \mult@firstbox=\box75
@@ -624,9 +638,9 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \c@minrows=\count341
 \c@columnbadness=\count342
 \c@finalcolumnbadness=\count343
-\last@try=\dimen261
-\multicolovershoot=\dimen262
-\multicolundershoot=\dimen263
+\last@try=\dimen263
+\multicolovershoot=\dimen264
+\multicolundershoot=\dimen265
 \mult@nat@firstbox=\box113
 \colbreak@box=\box114
 \mc@col@check@num=\count344
@@ -638,7 +652,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTpre=\skip90
 \LTpost=\skip91
 \LTchunksize=\count345
-\LTcapwidth=\dimen264
+\LTcapwidth=\dimen266
 \LT@head=\box115
 \LT@firsthead=\box116
 \LT@foot=\box117
@@ -648,21 +662,21 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LT@rows=\count347
 \c@LT@tables=\count348
 \c@LT@chunks=\count349
-\LT@p@ftn=\toks37
+\LT@p@ftn=\toks38
 )
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count350
 \lst@gtempboxa=\box120
-\lst@token=\toks38
+\lst@token=\toks39
 \lst@length=\count351
-\lst@currlwidth=\dimen265
+\lst@currlwidth=\dimen267
 \lst@column=\count352
 \lst@pos=\count353
-\lst@lostspace=\dimen266
-\lst@width=\dimen267
+\lst@lostspace=\dimen268
+\lst@width=\dimen269
 \lst@newlines=\count354
 \lst@lineno=\count355
-\lst@maxwidth=\dimen268
+\lst@maxwidth=\dimen270
 
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
@@ -674,19 +688,22 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen269
-\captionmargin=\dimen270
-\caption@leftmargin=\dimen271
-\caption@rightmargin=\dimen272
-\caption@width=\dimen273
-\caption@indent=\dimen274
-\caption@parindent=\dimen275
-\caption@hangindent=\dimen276
+\caption@tempdima=\dimen271
+\captionmargin=\dimen272
+\caption@leftmargin=\dimen273
+\caption@rightmargin=\dimen274
+\caption@width=\dimen275
+\caption@indent=\dimen276
+\caption@parindent=\dimen277
+\caption@hangindent=\dimen278
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count358
@@ -715,8 +732,8 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks39
-\XKV@tempa@toks=\toks40
+\XKV@toks=\toks40
+\XKV@tempa@toks=\toks41
 )
 \XKV@depth=\count362
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -728,8 +745,8 @@ Package: mfirstuc 2022/10/14 v2.08 (NLCT)
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count363
 )
-\@glsmfirst=\toks41
-\@glsmrest=\toks42
+\@glsmfirst=\toks42
+\@glsmrest=\toks43
 ) (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
 )
@@ -791,7 +808,7 @@ Package: fp-upn 1996/10/21
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks43
+\@dtl@toks=\toks44
 \@dtl@tmpcount=\count376
 \dtl@tmplength=\skip92
 \dtl@sortresult=\count377
@@ -817,12 +834,12 @@ File: glossaries-spanish.ldf 2014/11/23 v1.0
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-spanish\glos
 saries-spanish-utf8.ldf))
 \gls@level=\count383
-\@gls@tmpb=\toks44
+\@gls@tmpb=\toks45
 \gls@tmplen=\skip93
-\glskeylisttok=\toks45
-\glslabeltok=\toks46
-\glsshorttok=\toks47
-\glslongtok=\toks48
+\glskeylisttok=\toks46
+\glslabeltok=\toks47
+\glsshorttok=\toks48
+\glslongtok=\toks49
 
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gloss
 ary-hypernav.sty
@@ -847,19 +864,19 @@ Package: glossary-super 2023/09/29 v4.53 (NLCT)
 ar.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \c@tracingst=\count384
-\ST@wd=\dimen277
+\ST@wd=\dimen279
 \ST@rightskip=\skip97
 \ST@leftskip=\skip98
 \ST@parfillskip=\skip99
-\ST@pageleft=\dimen278
-\ST@headht=\dimen279
-\ST@tailht=\dimen280
-\ST@pagesofar=\dimen281
-\ST@pboxht=\dimen282
-\ST@lineht=\dimen283
-\ST@prevht=\dimen284
-\ST@toadd=\dimen285
-\ST@dimen=\dimen286
+\ST@pageleft=\dimen280
+\ST@headht=\dimen281
+\ST@tailht=\dimen282
+\ST@pagesofar=\dimen283
+\ST@pboxht=\dimen284
+\ST@lineht=\dimen285
+\ST@prevht=\dimen286
+\ST@toadd=\dimen287
+\ST@dimen=\dimen288
 \ST@pbox=\box122
 ))
 (C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\gloss
@@ -991,43 +1008,68 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 \glo@main@file=\write5
 \openout5 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 151.
+Package glossaries Info: Writing glossary file main.glo on input line 169.
 \glo@acronym@file=\write6
 \openout6 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.acn on input line 151.
+Package glossaries Info: Writing glossary file main.acn on input line 169.
  (main.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Info: Redefining \. on input line 156.
-LaTeX Info: Redefining \% on input line 156.
-Package hyperref Info: Link coloring OFF on input line 156.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+Package hyperref Info: Link coloring OFF on input line 174.
  (main.out) (main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
 
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count393
+\scratchdimen=\dimen289
+\scratchbox=\box129
+\nofMPsegments=\count394
+\nofMParguments=\count395
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count396
+\MPscratchDim=\dimen290
+\MPnumerator=\count397
+\makeMPintoPDFobject=\count398
+\everyMPtoPDFconversion=\toks51
+)
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1062,32 +1104,6 @@ Package hyperref Info: Link coloring OFF on input line 156.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count393
-\scratchdimen=\dimen287
-\scratchbox=\box129
-\nofMPsegments=\count394
-\nofMParguments=\count395
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count396
-\MPscratchDim=\dimen288
-\MPnumerator=\count397
-\makeMPintoPDFobject=\count398
-\everyMPtoPDFconversion=\toks50
-)
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
 \c@lstlisting=\count399
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: supertabular package is loaded.
@@ -1095,9 +1111,9 @@ Package caption Info: End \AtBeginDocument code.
 <img/ucm.png, id=151, 1204.5pt x 1375.1375pt>
 File: img/ucm.png Graphic file (type png)
 <use img/ucm.png>
-Package pdftex.def Info: img/ucm.png  used on input line 176.
+Package pdftex.def Info: img/ucm.png  used on input line 194.
 (pdftex.def)             Requested size: 159.33821pt x 181.90059pt.
- [1
+[1
 
 \openout4 = `main.ist'.
 
@@ -1108,7 +1124,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.211 \clearpage
+l.229 \clearpage
                  [1
 
 ]
@@ -1116,7 +1132,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.236 \newpage
+l.254 \newpage
                [1
 
 ]
@@ -1124,7 +1140,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.237 \tableofcontents
+l.255 \tableofcontents
                        [2
 
 ] (main.toc
@@ -1150,19 +1166,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 ... {3.1.2}Autoencoder}{11}{subsection.3.1.2}
+l.26 ...d Neuronal Convolucional}{11}{section.3.2}
                                                   % [3])
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
-LaTeX Info: Redefining \. on input line 239.
-LaTeX Info: Redefining \% on input line 239.
+LaTeX Info: Redefining \. on input line 257.
+LaTeX Info: Redefining \% on input line 257.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.239 \newpage
+l.257 \newpage
                [4] (capitulo01.tex
 Cap\'{\i }tulo 1.
 ) (capitulo02.tex [1
@@ -1176,106 +1192,105 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Cap\'{\i }tulo 2.
 [3]
-<img/graficoTF.png, id=231, 352.31625pt x 488.82625pt>
-File: img/graficoTF.png Graphic file (type png)
-<use img/graficoTF.png>
-Package pdftex.def Info: img/graficoTF.png  used on input line 47.
-(pdftex.def)             Requested size: 150.23138pt x 208.43834pt.
-LaTeX Info: Redefining \. on input line 58.
-LaTeX Info: Redefining \% on input line 58.
- [4 <./img/graficoTF.png (PNG copy)>] Excluding 'comment' comment.)
-(capitulo03.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+ [4]
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
  [5]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 78.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 78.
+ Excluding 'comment' comment.) (capitulo03.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [6
+ [6]
+Cap\'{\i }tulo 3.
+[7
 
 ]
-Cap\'{\i }tulo 3.
-[7]
-<img/previewMMC.png, id=283, 963.6pt x 542.025pt>
+<img/previewMMC.png, id=301, 963.6pt x 542.025pt>
 File: img/previewMMC.png Graphic file (type png)
 <use img/previewMMC.png>
-Package pdftex.def Info: img/previewMMC.png  used on input line 39.
+Package pdftex.def Info: img/previewMMC.png  used on input line 40.
 (pdftex.def)             Requested size: 318.66948pt x 179.24924pt.
-LaTeX Info: Redefining \. on input line 58.
-LaTeX Info: Redefining \% on input line 58.
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
  [8 <./img/previewMMC.png (PNG copy)>]
-<img/botnetStructure.png, id=297, 204.765pt x 212.2329pt>
+<img/botnetStructure.png, id=312, 204.765pt x 212.2329pt>
 File: img/botnetStructure.png Graphic file (type png)
 <use img/botnetStructure.png>
-Package pdftex.def Info: img/botnetStructure.png  used on input line 64.
+Package pdftex.def Info: img/botnetStructure.png  used on input line 65.
 (pdftex.def)             Requested size: 150.23138pt x 155.71889pt.
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
  [9 <./img/botnetStructure.png>]
-<img/circularMMC.png, id=315, 462.528pt x 346.896pt>
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[][][]\OT1/cmr/m/n/9 Los iden-ti-fi-ca-do-res de es-tos ar-chi-vos son 58kxh-Xo
+uHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA,
+ []
+
+<img/circularMMC.png, id=334, 462.528pt x 346.896pt>
 File: img/circularMMC.png Graphic file (type png)
 <use img/circularMMC.png>
-Package pdftex.def Info: img/circularMMC.png  used on input line 97.
+Package pdftex.def Info: img/circularMMC.png  used on input line 96.
 (pdftex.def)             Requested size: 273.14923pt x 204.87329pt.
-<img/barras4MMC.png, id=319, 462.528pt x 346.896pt>
-File: img/barras4MMC.png Graphic file (type png)
-<use img/barras4MMC.png>
-Package pdftex.def Info: img/barras4MMC.png  used on input line 109.
-(pdftex.def)             Requested size: 273.14923pt x 204.87329pt.
-
-Excluding 'comment' comment. Excluding 'comment' comment.
-LaTeX Info: Redefining \. on input line 320.
-LaTeX Info: Redefining \% on input line 320.
- [10 <./img/circularMMC.png> <./img/barras4MMC.png>]
-Underfull \vbox (badness 1365) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 341.
-LaTeX Info: Redefining \% on input line 341.
- [11])
-(capitulo04.tex
+LaTeX Info: Redefining \. on input line 127.
+LaTeX Info: Redefining \% on input line 127.
+[10 <./img/circularMMC.png>] Excluding 'comment' comment.) (capitulo04.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [12]
+
+[11]
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [12
+
+]
 Cap\'{\i }tulo 4.
-) Excluding 'comment' comment. [13
+[13]) (capitulo05.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [14]
+Cap\'{\i }tulo 5.
+) Excluding 'comment' comment. [15
 
 ] (main.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [14
+ [16
 
-] [15]
-LaTeX Info: Redefining \. on input line 181.
-LaTeX Info: Redefining \% on input line 181.
- [16])
-LaTeX Info: Redefining \. on input line 467.
-LaTeX Info: Redefining \% on input line 467.
- [17]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+] [17]
+LaTeX Info: Redefining \. on input line 190.
+LaTeX Info: Redefining \% on input line 190.
+ [18])
+LaTeX Info: Redefining \. on input line 487.
+LaTeX Info: Redefining \% on input line 487.
+ [19]
 No file main.gls.
-LaTeX Info: Redefining \. on input line 532.
-LaTeX Info: Redefining \% on input line 532.
-[18
+LaTeX Info: Redefining \. on input line 552.
+LaTeX Info: Redefining \% on input line 552.
+[20
 
 ]
-LaTeX Info: Redefining \. on input line 532.
-LaTeX Info: Redefining \% on input line 532.
- [19] (main.aux
+LaTeX Info: Redefining \. on input line 552.
+LaTeX Info: Redefining \% on input line 552.
+ [21] (main.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 234F81F64C41D553986D31AD9B8AD219;6769.
+(rerunfilecheck)             Checksum: D58EA29D5D077A41C9DDC8298A9AC285;6757.
  ) 
 Here is how much of TeX's memory you used:
- 25796 strings out of 475385
- 448171 string characters out of 2776906
- 910449 words of memory out of 3000000
- 46614 multiletter control sequences out of 15000+600000
- 485118 words of font info for 88 fonts, out of 8000000 for 9000
+ 26487 strings out of 475385
+ 456067 string characters out of 2776906
+ 914938 words of memory out of 3000000
+ 47281 multiletter control sequences out of 15000+600000
+ 485454 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 91i,8n,91p,2325b,795s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 91i,8n,91p,2325b,1352s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{glo:dnn} has been referenced but does not exist, re
 placed by a fixed one
@@ -1289,20 +1304,21 @@ placed by a fixed one
 /cm/cmbx10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pjime/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pjime/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/pjime/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pj
-ime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
-sers/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pf
-b><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsl10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (25 pages, 908787 bytes).
+X/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/pjime/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pjime/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pjime/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
+/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C
+:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr9.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsl10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/pjime/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (27 pages, 892002 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 327 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 533 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

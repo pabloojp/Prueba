@@ -24,12 +24,28 @@ Yoshua Bengio, Pascal Lamblin, Dan Popovici, and Hugo Larochelle.
 \newblock Greedy layer-wise training of deep networks.
 \newblock {\em Advances in neural information processing systems}, 19, 2006.
 
+\bibitem{bloice2016tutorial}
+Marcus~D Bloice and Andreas Holzinger.
+\newblock A tutorial on machine learning and data science tools with python.
+\newblock {\em Machine Learning for Health Informatics: State-of-the-Art and
+  Future Challenges}, pages 435--480, 2016.
+
 \bibitem{cahyani2022influence}
 Niken Dwi~Wahyu Cahyani, Erwid~M Jadied, Nurul~Hidayah Ab~Rahman, and Endro
   Ariyanto.
 \newblock The influence of virtual secure mode (vsm) on memory acquisition.
 \newblock {\em International Journal of Advanced Computer Science and
   Applications}, 13(11), 2022.
+
+\bibitem{modeltraining}
+Keras Developers.
+\newblock Model training apis.
+\newblock Consultado el 25-04-2024.
+
+\bibitem{numpy}
+NumPy Developers.
+\newblock Numpy documentation.
+\newblock Consultado el 25-04-2024.
 
 \bibitem{elmasry2019empirical}
 Wisam Elmasry, Akhan Akbulut, and Abdul~Halim Zaim.
@@ -46,6 +62,12 @@ Fahimeh Farahnakian and Jukka Heikkonen.
 \newblock A deep auto-encoder based approach for intrusion detection system.
 \newblock In {\em 2018 20th International Conference on Advanced Communication
   Technology (ICACT)}, pages 178--183. IEEE, 2018.
+
+\bibitem{gibert2022fusing}
+Daniel Gibert, Jordi Planes, Carles Mateu, and Quan Le.
+\newblock Fusing feature engineering and deep learning: A case study for
+  malware classification.
+\newblock {\em Expert Systems with Applications}, 207:117957, 2022.
 
 \bibitem{keras}
 {Google AI Team}.
@@ -67,6 +89,11 @@ Yen-Hung~Frank Hu, Abdinur Ali, Chung-Chu~George Hsieh, and Aurelia Williams.
 \newblock Machine learning techniques for classifying malicious api calls and
   n-grams in kaggle data-set.
 \newblock In {\em 2019 SoutheastCon}, pages 1--8. IEEE, 2019.
+
+\bibitem{Hunter:2007}
+J.~D. Hunter.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock {\em Computing in Science \& Engineering}, 9(3):90--95, 2007.
 
 \bibitem{kebede2017classification}
 Temesguen~Messay Kebede, Ouboti Djaneye-Boundjou, Barath~Narayanan Narayanan,
@@ -121,6 +148,11 @@ Mohammed Maithem and Ghadaa~A Al-Sultany.
 \newblock In {\em Journal of Physics: Conference Series}, volume 1804, page
   012138. IOP Publishing, 2021.
 
+\bibitem{matplotlib}
+matplotlib Developers.
+\newblock Matplotlib: Visualization with python.
+\newblock Consultado el 25-04-2024.
+
 \bibitem{keraswebsite}
 {Matthew Carrigan}.
 \newblock {Keras Documentation}.
@@ -130,6 +162,12 @@ Mohammed Maithem and Ghadaa~A Al-Sultany.
 \bibitem{theano}
 {Montreal University}.
 \newblock Theano, 2010.
+
+\bibitem{muller2016introduction}
+Andreas~C M{\"u}ller and Sarah Guido.
+\newblock {\em Introduction to machine learning with Python: a guide for data
+  scientists}.
+\newblock " O'Reilly Media, Inc.", 2016.
 
 \bibitem{botnetstructure}
 Mohammad Najafimehr, Sajjad Zarifzadeh, and Seyedakbar Mostafavi.
@@ -148,6 +186,16 @@ Sinh-Ngoc Nguyen, Van-Quyet Nguyen, Jintae Choi, and Kyungbaek Kim.
 Prajoy Podder, Subrato Bharati, M~Mondal, Pinto~Kumar Paul, and Utku Kose.
 \newblock Artificial neural network for cybersecurity: A comprehensive review.
 \newblock {\em arXiv preprint arXiv:2107.01185}, 2021.
+
+\bibitem{scikitlearn}
+scikit-learn Developers.
+\newblock ssikit-llarn documentation.
+\newblock Consultado el 25-04-2024.
+
+\bibitem{traintestsplit}
+scikit-learn Developers.
+\newblock Train test split de scikit-learn.
+\newblock Consultado el 25-04-2024.
 
 \bibitem{talukder2020tools}
 Sajedul Talukder.

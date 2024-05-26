@@ -31,44 +31,81 @@ Los autoencoders se han utilizado en una amplia variedad de aplicaciones, inclui
 \subsubsection{Restricted Boltzmann Machine}
 
 
-\section{Implementación en Python} \label{Subsec: 3_3}
-\subsection{Frameworks}
+\section{Bibliotecas utilizadas en Python} \label{Subsec: 3_3}
 
-numpy
-matplotlib
-sklearn
+Para nuestros experimentos, utilizaremos Python debido a su popularidad y versatilidad en el ámbito del aprendizaje automático y la inteligencia artificial. Python ofrece una amplia gama de bibliotecas especializadas que facilitan la creación, entrenamiento y evaluación de modelos, así como el análisis y visualización de datos. A continuación, se describen las principales bibliotecas y frameworks que emplearemos en este trabajo, destacando sus características y ventajas.
 
-\subsubsection{Deep neural network}
 
-\section{Principales Deep Learning Frameworks. Keras.}
+\subsection{Principales frameworks. Keras}
 
-\begin{wrapfigure}{r}{0.33\textwidth}
-  \begin{center}
-    \includegraphics[width=0.33\textwidth]{img/graficoTF.png}
-  \end{center}
-    \caption{Gráfico de una red neuronal.}
-  \label{fig:graficoTF}
-\end{wrapfigure}
-\vspace{-\baselineskip}
+Como las técnicas de aprendizaje profundo han ido ganando popularidad, muchas organizaciones académicas e industriales se han centrado en desarrollar marcos para facilitar la experimentación con redes neuronales profundas. En esta sección, ofrecemos una visión general de los marcos de trabajo más importantes que se pueden usar en Python, concluyendo con nuestra elección.
 
-A medida que las técnicas de aprendizaje profundo han ido ganando popularidad, muchas organizaciones académicas e industriales se han centrado en desarrollar marcos de trabajo para facilitar la experimentación con redes neuronales profundas de manera sencilla para el usuario. En esta sección, ofrecemos una visión general de los bibliotecas más conocidss: TensorFlow, PyTorch y Keras.
 
- 
-\textbf{TensorFlow} \citep{tensorflow} es una biblioteca de código abierto que fue desarrollada en 2016 por el equipo de Google Brain del departamento de IA de Google. Es una plataforma que se centra principalmente en el aprendizaje automático y la computación de alto rendimiento. Su modelo de programación permite que los datos fluyan de una operación a otra de manera flexible gracias a su estructura de grafo computacional y al concepto de flujo de datos. Los gráficos son estructuras de datos que contienen un conjunto de objetos tf.Operation (nodos), que representan unidades de cálculo y objetos tf.Tensor \footnote{arreglos multidimensionales que pueden contener datos de cualquier tipo y forma}, que representan las unidades de datos que fluyen entre esas operaciones (Figura \ref{fig:graficoTF}). Esto permite una ejecución eficiente y paralela de operaciones en diferentes dispositivos de hardware, como en una CPU, GPU, dispositivos móviles y sistemas distribuidos a gran escala con cientos de nodos. Esta flexibilidad y además su capacidad de diferenciación automática lo hacen una biblioteca útil para una gran variedad de aplicaciones, desde la investigación hasta el desarrollo y la producción de modelos de aprendizaje automático.
+\textbf{TensorFlow} \citep{tensorflow} es una biblioteca de código abierto desarrollada por el equipo de Google Brain para la computación numérica y el aprendizaje automático a gran escala. Diseñada para ser altamente flexible, TensorFlow soporta computación distribuida y permite la optimización de gráficos computacionales, lo que mejora significativamente la velocidad y el uso de memoria de las operaciones. En su núcleo, TensorFlow es similar a NumPy pero con soporte para GPU, lo que acelera considerablemente los cálculos. Además, incluye herramientas avanzadas como TensorBoard para la visualización de modelos y TensorFlow Extended para la producción de modelos de aprendizaje automático. Gracias a estas capacidades, TensorFlow se ha convertido en una herramienta esencial en la industria y la investigación, siendo utilizada en aplicaciones que van desde la clasificación de imágenes y el procesamiento de lenguaje natural hasta los sistemas de recomendación y la previsión de series temporales.
+
+
+\textbf{Keras} \citep{keras} es una API de alto nivel para redes neuronales que ahora es parte integral de TensorFlow. Fue desarrollada por François Chollet y ganó popularidad rápidamente gracias a su simplicidad y diseño elegante. Inicialmente, Keras soportaba múltiples backends, pero desde la versión 2.4, funciona exclusivamente con TensorFlow \citep{muller2016introduction}. Keras permite a los usuarios construir, entrenar y evaluar modelos de aprendizaje profundo de manera rápida y eficiente. Su facilidad de uso y extensa documentación la convierten en una herramienta valiosa tanto para la investigación como para la implementación de aplicaciones de inteligencia artificial.
 
 
 
+\textbf{PyTorch} \citep{pytorch}, desarrollado por el equipo de investigación de IA de Facebook, es una biblioteca de aprendizaje profundo que destaca por su enfoque en la computación dinámica, lo que permite una mayor flexibilidad en la creación de modelos complejos. A diferencia de TensorFlow, que utiliza gráficos computacionales estáticos, PyTorch permite que la topología de la red neuronal cambie durante la ejecución del programa \citep{mahmoud2019dlbench}. Esto, junto con su capacidad de auto-diferenciación en modo inverso\footnote{Técnica en la que PyTorch calcula automáticamente las derivadas de las funciones de pérdida con respecto a los parámetros del modelo.}, hace que PyTorch sea popular entre los investigadores y desarrolladores. Su facilidad de uso y robusta comunidad de apoyo han llevado a su adopción por parte de importantes organizaciones como Facebook, Twitter y NVIDIA.
 
 
-\textbf{PyTorch} \citep{pytorch}, presentado por el equipo de investigación en IA de Facebook en 2016, es una biblioteca de aprendizaje profundo desarrollado en Python que simplifica la creación de modelos complejos a través de una interfaz de programación sencilla. A diferencia de otros marcos populares que emplean gráficos de computación estáticos, PyTorch se basa en la computación dinámica (su topología puede variar durante la ejecución del programa), lo que permite una mayor flexibilidad para diseñar arquitecturas complejas. Cambiar el comportamiento de una red neuronal típicamente implica reiniciar desde cero, pero PyTorch emplea una técnica llamada auto-diferenciación en modo inverso, que permite realizar cambios en el comportamiento de la red con poco esfuerzo. PyTorch se ha vuelto popular tanto en la comunidad científica como en la industria debido a su facilidad de uso y su capacidad para crear modelos complejos de manera eficiente. Además, ha sido adoptado por varias organizaciones importantes, incluidas Facebook, Twitter y NVIDIA, lo que garantiza su continuo desarrollo y soporte.
+
+Para escoger con cuál de estas librerías se realizará la parte práctica de este trabajo, vamos a utilizar, además de las características previamente vistas, los resultados de \citep{mahmoud2019dlbench}. En él se hace un estudio de eficiencia, convergencia, tiempo de entrenamiento y uso de memoria de los diferentes frameworks con varios datasets. Entre sus resultados podemos observar como Keras destaca por encima de las demás en el entorno de la CPU. No solo logra el mejor accuracy en los tres datasets (MNIST, CIFAR-10, CIFAR-100), sino que además también tiene los tiempos de ejecución más bajos y una de las mejores tasas de convergencia. En cuento al entorno de la GPU, las tres librerías obtienen unos resultados semejantes. En conclusión, podemos afirmar que estos resultados junto con su facilidad de uso, accesibilidad y documentación bien estructurada, han sido determinantes para optar por usar Keras en vez de PyTorch o TensorFlow en nuestros estudios posteriores. Aakash Nain resume perfectamente las ventajas de Keras \citep{keraswebsite2} al señalar que:
+
+\begin{quote} 
+``Keras is that sweet spot where you get flexibility for research and consistency for deployment. Keras is to Deep Learning what Ubuntu is to Operating Systems.'' 
+\end{quote}
+
+De manera similar, Matthew Carrigan destaca la intuitividad y facilidad de uso de Keras \citep{keraswebsite}, afirmando:
+
+\begin{quote}
+``The best thing you can say about any software library is that the abstractions it chooses feel completely natural, such that there is zero friction between thinking about what you want to do and thinking about how you want to code it. That's exactly what you get with Keras.''
+\end{quote}
 
 
-\textbf{Keras} \citep{keras} es un marco de redes neuronales de código abierto desarrollado por François Cholle, un miembro del equipo de IA de Google. Se considera un meta-marco de trabajo que interactúa con otros marcos. En particular puede ejecutarse en la parte superior de TensorFlow y Theano. Está implementado en Python y proporciona APIs de redes neuronales de alto nivel para desarrollar modelos de aprendizaje profundo. En lugar de manejar operaciones de bajo nivel (diferenciación y manipulación de tensores), Keras depende de una biblioteca especializada que sirve como su motor de backend. Keras minimiza el número de acciones requeridas por un usuario para una acción específica. Una característica importante de Keras es su facilidad de uso sin sacrificar la flexibilidad. Keras permite a los usuarios implementar sus modelos como si estuvieran implementados en los marcos base (como TensorFlow o Theano\footnote{Librería de Python para aprendizaje automático.}). Proporciona un rendimiento y escalabilidad de nivel industrial, siendo utilizado por organizaciones de renombre como NASA, YouTube y Waymo para una amplia gama de aplicaciones en inteligencia artificial y aprendizaje automático.
+\subsection{Librerías y herramientas esenciales.} \label{sec:2.3.2}
+
+De forma complementaria, también es importante conocer y utilizar diversas librerías y herramientas esenciales que facilitan el desarrollo y análisis de los modelos de Keras. Estas incluyen herramientas para la manipulación, visualización y análisis de datos.
+
+\textbf{Scikit-Learn} \citep{scikitlearn} es una librería de código abierto con herramientas simples y eficientes para el análisis predictivo de datos. Contiene varios algoritmos de aprendizaje automático, desde clasificación y regresión hasta clustering y reducción de dimensionalidad, con la documentación completa sobre cada algoritmo. Está construida sobre otras librerías que veremos más adelante como Numpy, SciPy y matplotlib. Aunque no se aprovecharán todas estas funcionalidades de scikit-learn, si que se va a utilizar una de sus funciones más populares, \texttt{train\_test\_split()} \citep{traintestsplit}. Esta función divide el dataset en dos subconjuntos de forma aleatoria, manteniendo la correspondencia en caso de que el dataset contenga dos o más partes. Usualmente, a estos subconjuntos se les llama conjunto de prueba y conjunto de entrenamiento, cuyo tamaño se indica con un valor entre 0 y 1 (\texttt{test\_size}). Además, también se suele asignar una semilla a esa división para que cada vez que se quieran reproducir los experimentos, pueda usarse la misma partición. Esa semilla es un número natural que se introduce como parámetro de entrada en la variable \texttt{random\_state}. Veamos un ejemplo de como utilizar esta función.
 
 
-Analizando los resultados de \citep{mahmoud2019dlbench}, podemos observar que usando la CPU, Keras destaca por encima de las demás. No solo logra el mejor accuracy en los tres datasets (MNIST, CIFAR-10, CIFAR-100), sino que además también tiene los tiempos de ejecución más bajos y una de las mejores tasas de convergencia. Estos datos sobresalientes además de su facilidad de uso, accesibilidad y documentación bien estructurada han sido determinantes para acabar por decantarme por Keras. Según Aakash Nain \citep{keraswebsite2} \begin{quote} Keras is that sweet spot where you get flexibility for research and consistency for deployment. Keras is to Deep Learning what Ubuntu is to Operating Systems. \end{quote}
+\lstset{language=Python}
+\begin{lstlisting}
+# Ejemplo de codigo en Python
+from sklearn.model_selection import train_test_split
 
-y según Matthew Carrigan \citep{keraswebsite} \begin{quote}The best thing you can say about any software library is that the abstractions it chooses feel completely natural, such that there is zero friction between thinking about what you want to do and thinking about how you want to code it. That's exactly what you get with Keras.\end{quote}
+X_train, X_test, y_train, y_test = train_test_split(data, labels,
+                                        test_size=0.25, random_state=42)
+\end{lstlisting}
+
+
+Las variables X\_train, X\_ test y compañía son numpy arrays. \textbf{NumPy} \citep{numpy} es el paquete fundamental de Python para la computación científica. Es una biblioteca general de estructuras de datos, álgebra lineal y manipulación de matrices para Python, cuya sintaxis y manejo de estructuras de datos y matrices es comparable al de MATLAB \citep{bloice2016tutorial}. En NumPy, se pueden crear arrays y realizar operaciones rápidas y eficientes sobre ellos. Se utilizarán estas estructuras de datos para almacenar los datos y entrenar las redes neuronales con ellas. Aunque también se pueden utilizar tensores \citep{modeltraining}, se ha decidido utilizar numpy arrays por su alta eficiencia operacional y por su uso en la industria.
+
+
+Otro paquete que se va a utilizar durante los experimentos y que Scikit-Learn utiliza es \textbf{matplotlib} \citep{matplotlib}. Es la principal biblioteca de gráficos científicos en Python y proporciona funciones para crear visualizaciones de calidad como gráficos de barras, histogramas, gráficos de dispersión, etc. Se utilizará este paquete para representar gráficamente los datos de cada dataset para poder obtener bastante información con un simple vistazo. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{comment}
 
