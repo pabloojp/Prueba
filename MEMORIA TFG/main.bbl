@@ -24,6 +24,11 @@ Yoshua Bengio, Pascal Lamblin, Dan Popovici, and Hugo Larochelle.
 \newblock Greedy layer-wise training of deep networks.
 \newblock {\em Advances in neural information processing systems}, 19, 2006.
 
+\bibitem{berman2019survey}
+Daniel~S Berman, Anna~L Buczak, Jeffrey~S Chavis, and Cherita~L Corbett.
+\newblock A survey of deep learning methods for cyber security.
+\newblock {\em Information}, 10(4):122, 2019.
+
 \bibitem{bloice2016tutorial}
 Marcus~D Bloice and Andreas Holzinger.
 \newblock A tutorial on machine learning and data science tools with python.
@@ -47,6 +52,20 @@ NumPy Developers.
 \newblock Numpy documentation.
 \newblock Consultado el 25-04-2024.
 
+\bibitem{diba2017temporal}
+Ali Diba, Mohsen Fayyaz, Vivek Sharma, Amir~Hossein Karami, Mohammad~Mahdi
+  Arzani, Rahman Yousefzadeh, and Luc Van~Gool.
+\newblock Temporal 3d convnets: New architecture and transfer learning for
+  video classification.
+\newblock {\em arXiv preprint arXiv:1711.08200}, 2017.
+
+\bibitem{dileep2020dense}
+P~Dileep, Dibyaiyoti Das, and Prabin~Kumar Bora.
+\newblock Dense layer dropout based cnn architecture for automatic modulation
+  classification.
+\newblock In {\em 2020 national conference on communications (NCC)}, pages
+  1--5. IEEE, 2020.
+
 \bibitem{elmasry2019empirical}
 Wisam Elmasry, Akhan Akbulut, and Abdul~Halim Zaim.
 \newblock Empirical study on multiclass classification-based network intrusion
@@ -62,6 +81,12 @@ Fahimeh Farahnakian and Jukka Heikkonen.
 \newblock A deep auto-encoder based approach for intrusion detection system.
 \newblock In {\em 2018 20th International Conference on Advanced Communication
   Technology (ICACT)}, pages 178--183. IEEE, 2018.
+
+\bibitem{geron2022hands}
+Aur{\'e}lien G{\'e}ron.
+\newblock {\em Hands-on machine learning with Scikit-Learn, Keras, and
+  TensorFlow}.
+\newblock " O'Reilly Media, Inc.", 2022.
 
 \bibitem{gibert2022fusing}
 Daniel Gibert, Jordi Planes, Carles Mateu, and Quan Le.
@@ -84,6 +109,12 @@ Sanchit Gupta, Harshit Sharma, and Sarvjeet Kaur.
   International Conference, SPACE 2016, Hyderabad, India, December 14-18, 2016,
   Proceedings 6}, pages 271--280. Springer, 2016.
 
+\bibitem{hossain2019classification}
+Md~Anwar Hossain and Md~Shahriar~Alam Sajib.
+\newblock Classification of image using convolutional neural network (cnn).
+\newblock {\em Global Journal of Computer Science and Technology},
+  19(2):13--14, 2019.
+
 \bibitem{hu2019machine}
 Yen-Hung~Frank Hu, Abdinur Ali, Chung-Chu~George Hsieh, and Aurelia Williams.
 \newblock Machine learning techniques for classifying malicious api calls and
@@ -94,6 +125,11 @@ Yen-Hung~Frank Hu, Abdinur Ali, Chung-Chu~George Hsieh, and Aurelia Williams.
 J.~D. Hunter.
 \newblock Matplotlib: A 2d graphics environment.
 \newblock {\em Computing in Science \& Engineering}, 9(3):90--95, 2007.
+
+\bibitem{autoencoderImage}
+Kavya.
+\newblock Auto encoder — implementation.
+\newblock Consultado el 25-05-2024.
 
 \bibitem{kebede2017classification}
 Temesguen~Messay Kebede, Ouboti Djaneye-Boundjou, Barath~Narayanan Narayanan,
@@ -118,11 +154,24 @@ Jiyeon Kim, Jiwon Kim, Hyunjung Kim, Minsun Shim, and Eunjung Choi.
   attacks.
 \newblock {\em Electronics}, 9(6):916, 2020.
 
+\bibitem{kim2023bilstm}
+Sera Kim and Seok-Pil Lee.
+\newblock A bilstm--transformer and 2d cnn architecture for emotion recognition
+  from speech.
+\newblock {\em Electronics}, 12(19):4034, 2023.
+
 \bibitem{kim2018encoding}
 Taejoon Kim, Sang~C Suh, Hyunjoo Kim, Jonghyun Kim, and Jinoh Kim.
 \newblock An encoding technique for cnn-based network anomaly detection.
 \newblock In {\em 2018 IEEE International Conference on Big Data (Big Data)},
   pages 2960--2965. IEEE, 2018.
+
+\bibitem{lin2022analysis}
+Runze Lin.
+\newblock Analysis on the selection of the appropriate batch size in cnn neural
+  network.
+\newblock In {\em 2022 International Conference on Machine Learning and
+  Knowledge Engineering (MLKE)}, pages 106--109. IEEE, 2022.
 
 \bibitem{lopes2022effective}
 Ivandro~O Lopes, Deqing Zou, Ihsan~H Abdulqadder, Francis~A Ruambo, Bin Yuan,
@@ -147,6 +196,12 @@ Mohammed Maithem and Ghadaa~A Al-Sultany.
 \newblock Network intrusion detection system using deep neural networks.
 \newblock In {\em Journal of Physics: Conference Series}, volume 1804, page
   012138. IOP Publishing, 2021.
+
+\bibitem{martinez2017analisis}
+Rosa Mart{\'\i}nez {\'A}lvarez-Castellanos et~al.
+\newblock An{\'a}lisis de las m{\'a}quinas sparse autoencoders como extractores
+  de caracter{\'\i}sticas.
+\newblock 2017.
 
 \bibitem{matplotlib}
 matplotlib Developers.
@@ -181,6 +236,18 @@ Sinh-Ngoc Nguyen, Van-Quyet Nguyen, Jintae Choi, and Kyungbaek Kim.
   convolutional neural network for dos detection.
 \newblock In {\em Proceedings of the 2nd international conference on machine
   learning and soft computing}, pages 34--38, 2018.
+
+\bibitem{pajares2021aprendizaje}
+Gonzalo Pajares~Martinsanz et~al.
+\newblock Aprendizaje profundo.
+\newblock 2021.
+
+\bibitem{phung2018deep}
+Van~Hiep Phung and Eun~Joo Rhee.
+\newblock A deep learning approach for classification of cloud image patches on
+  small datasets.
+\newblock {\em Journal of information and communication convergence
+  engineering}, 16(3):173--178, 2018.
 
 \bibitem{podder2021artificial}
 Prajoy Podder, Subrato Bharati, M~Mondal, Pinto~Kumar Paul, and Utku Kose.
@@ -218,6 +285,12 @@ Rahul~K Vigneswaran, R~Vinayakumar, KP~Soman, and Prabaharan Poornachandran.
 \newblock In {\em 2018 9th International conference on computing, communication
   and networking technologies (ICCCNT)}, pages 1--6. IEEE, 2018.
 
+\bibitem{wang2017combining}
+Jin Wang, Zhongyuan Wang, Dawei Zhang, and Jun Yan.
+\newblock Combining knowledge with deep convolutional neural networks for short
+  text classification.
+\newblock In {\em IJCAI}, volume 350, pages 3172077--3172295, 2017.
+
 \bibitem{yang2006anomaly}
 Zhongxue Yang and Adem Karahoca.
 \newblock An anomaly intrusion detection approach using cellular neural
@@ -225,6 +298,13 @@ Zhongxue Yang and Adem Karahoca.
 \newblock In {\em Computer and Information Sciences--ISCIS 2006: 21th
   International Symposium, Istanbul, Turkey, November 1-3, 2006. Proceedings
   21}, pages 908--917. Springer, 2006.
+
+\bibitem{yepez2020stride}
+Juan Yepez and Seok-Bum Ko.
+\newblock Stride 2 1-d, 2-d, and 3-d winograd for convolutional neural
+  networks.
+\newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
+  Systems}, 28(4):853--863, 2020.
 
 \bibitem{you2010malware}
 Ilsun You and Kangbin Yim.

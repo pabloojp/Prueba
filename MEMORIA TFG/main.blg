@@ -6,63 +6,76 @@ The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
 Database file #1: biblio.bib
 Warning--entry type for "kagglebig2015" isn't style-file defined
---line 191 of file biblio.bib
+--line 196 of file biblio.bib
 Warning--entry type for "keraswebsite" isn't style-file defined
---line 277 of file biblio.bib
+--line 282 of file biblio.bib
 Warning--entry type for "keraswebsite2" isn't style-file defined
---line 284 of file biblio.bib
+--line 289 of file biblio.bib
 Warning--entry type for "numpy" isn't style-file defined
---line 310 of file biblio.bib
+--line 315 of file biblio.bib
 Warning--entry type for "scikitlearn" isn't style-file defined
---line 317 of file biblio.bib
+--line 322 of file biblio.bib
 Warning--entry type for "traintestsplit" isn't style-file defined
---line 324 of file biblio.bib
+--line 329 of file biblio.bib
 Warning--entry type for "modeltraining" isn't style-file defined
---line 331 of file biblio.bib
+--line 336 of file biblio.bib
 Warning--entry type for "matplotlib" isn't style-file defined
---line 338 of file biblio.bib
+--line 343 of file biblio.bib
+Warning--entry type for "autoencoderImage" isn't style-file defined
+--line 471 of file biblio.bib
+Warning--I didn't find a database entry for "krizhevsky2012imagenet"
+Warning--I didn't find a database entry for "ronneberger2015u"
+Warning--I didn't find a database entry for "parkhi2015deep"
+Warning--I didn't find a database entry for "he2015delving"
+Warning--I didn't find a database entry for "hinton2012deep"
+Warning--I didn't find a database entry for "lecun1998gradient"
+Warning--I didn't find a database entry for "graves2013speech"
+Warning--I didn't find a database entry for "collobert2008unified"
 Warning--to sort, need author or key in kagglebig2015
 Warning--empty journal in luoma2023analysis
 Warning--can't use both volume and number fields in maithem2021network
-You've used 42 entries,
+Warning--empty journal in martinez2017analisis
+Warning--empty journal in pajares2021aprendizaje
+Warning--can't use both volume and number fields in wang2017combining
+You've used 55 entries,
             2118 wiz_defined-function locations,
-            707 strings with 10884 characters,
-and the built_in function-call counts, 13906 in all, are:
-= -- 1379
-> -- 613
-< -- 15
-+ -- 251
-- -- 202
-* -- 814
-:= -- 2203
-add.period$ -- 132
-call.type$ -- 42
-change.case$ -- 226
+            780 strings with 13293 characters,
+and the built_in function-call counts, 18346 in all, are:
+= -- 1820
+> -- 814
+< -- 19
++ -- 333
+- -- 268
+* -- 1104
+:= -- 2921
+add.period$ -- 173
+call.type$ -- 55
+change.case$ -- 295
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 558
-empty$ -- 1155
-format.name$ -- 202
-if$ -- 3033
+cite$ -- 61
+duplicate$ -- 735
+empty$ -- 1505
+format.name$ -- 268
+if$ -- 3976
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 29
-newline$ -- 207
-num.names$ -- 82
-pop$ -- 334
+int.to.str$ -- 55
+missing$ -- 42
+newline$ -- 272
+num.names$ -- 108
+pop$ -- 416
 preamble$ -- 1
-purify$ -- 185
+purify$ -- 242
 quote$ -- 0
-skip$ -- 446
+skip$ -- 585
 stack$ -- 0
-substring$ -- 736
-swap$ -- 174
-text.length$ -- 15
+substring$ -- 1006
+swap$ -- 221
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 166
-warning$ -- 3
-while$ -- 133
-width$ -- 44
-write$ -- 439
-(There were 11 warnings)
+type$ -- 216
+warning$ -- 6
+while$ -- 176
+width$ -- 57
+write$ -- 577
+(There were 23 warnings)

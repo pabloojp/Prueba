@@ -133,10 +133,42 @@ Para abordar este problema de clasificación, vamos a realizar dos modelos difer
 
 
 \section{Red Neuronal Convolucional}
+
+10800 archivos de prueba de tipo .bytes (otros 10800 de tipo .asm) pero solo usaremos los .bytes. Convertimos cada archivo en una imagen. Primero, cada código hexadecimal lo convertimos a numeros decimales y estos los pasamos a un array de numpy. Hacemos reshape (lado,lado2) de forma que obtengamos la mayor dimension posible que sea casi cuadrado consiguiendo perder la menor información posible. Este reshape lo pasamos a np.uint8 y finalmente lo interpolamos usando bilinal, cubic, bicubic, nearest y observamos cual es la mejor de todas {zhao2023new} (hacer una grafica o algo para comprobarlo). Además, para caragr los datos he usado multiprocessing con los diferentes datos de tiempo. En el caso de algunas imagenes, los archivos .bytes no contienen ningun tipo de informacion(?? ?? ?? ..) todos los byte son ??. Estos ficheros, no estan incluidos en las imagenes ni de entrenamiento ni validación porque no contienen ningun tpo de información. 
+
+La diferencia principal entre realizar el entrenamiento del modelo en la GPU o en la CPU radica en el rendimiento y la velocidad de entrenamiento.
+
+\subsection{GPU (Unidad de Procesamiento Gráfico)}
+
+\subsubsection{Ventajas}
+\begin{itemize}
+    \item Las GPU están diseñadas específicamente para manejar operaciones matriciales y paralelas, que son comunes en el entrenamiento de modelos de redes neuronales.
+    \item Pueden realizar cálculos en paralelo en grandes cantidades de datos, lo que acelera significativamente el entrenamiento de modelos, especialmente en tareas intensivas en cálculos, como las redes neuronales profundas.
+    \item Ofrecen un rendimiento superior en comparación con las CPU para tareas de aprendizaje profundo.
+\end{itemize}
+
+\subsubsection{Desventajas}
+\begin{itemize}
+    \item Pueden ser más costosas y consumir más energía que las CPU.
+    \item Puede haber limitaciones en la cantidad de memoria de la GPU disponible, lo que podría ser un factor en modelos muy grandes.
+\end{itemize}
+
+\subsection{CPU (Unidad Central de Procesamiento)}
+
+\subsubsection{Ventajas}
+\begin{itemize}
+    \item Disponibles en la mayoría de las computadoras y servidores sin necesidad de hardware adicional.
+    \item Adecuadas para tareas generales de propósito múltiple y no solo para aprendizaje profundo.
+    \item Pueden ser más económicas en términos de hardware y consumo de energía.
+\end{itemize}
+
+\subsubsection{Desventajas}
+\begin{itemize}
+    \item Las CPU no están diseñadas específicamente para tareas de aprendizaje profundo y pueden ser menos eficientes en términos de velocidad para ciertos tipos de operaciones, especialmente en modelos grandes.
+\end{itemize}
+
 \section{Autoencoder}
 \section{Resultados}
-El entorno de hardware en el que he realizado todos los experimentos es un sistema operativo Debian 12.2 con Linux version 6.1.0-17-amd64. La CPU utilizada es un Intel(R) Xeon(R) W-2235 CPU con 3.8 GHz ($3.80*10^9$Hz) con 6 núcleos. La memoria RAM disponible es de 128 GB. 
-
 
 
 
@@ -339,6 +371,70 @@ trainLabels.csv - the class labels associated with the training set
 test.7z - the raw data for the test set (MD5 hash = 84b6fbfb9df3c461ed2cbbfa371ffb43)
 sampleSubmission.csv - a file showing the valid submission format
 dataSample.csv - a sample of the dataset to preview before downloading
+
+dropout25
+Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_26 (Conv2D)          (None, 224, 224, 64)      1792      
+                                                                 
+ conv2d_27 (Conv2D)          (None, 224, 224, 64)      36928     
+                                                                 
+ max_pooling2d_10 (MaxPooli  (None, 112, 112, 64)      0         
+ ng2D)                                                           
+                                                                 
+ conv2d_28 (Conv2D)          (None, 112, 112, 128)     73856     
+                                                                 
+ conv2d_29 (Conv2D)          (None, 112, 112, 128)     147584    
+                                                                 
+ max_pooling2d_11 (MaxPooli  (None, 56, 56, 128)       0         
+ ng2D)                                                           
+                                                                 
+ conv2d_30 (Conv2D)          (None, 56, 56, 256)       295168    
+                                                                 
+ conv2d_31 (Conv2D)          (None, 56, 56, 256)       590080    
+                                                                 
+ conv2d_32 (Conv2D)          (None, 56, 56, 256)       590080    
+                                                                 
+ max_pooling2d_12 (MaxPooli  (None, 28, 28, 256)       0         
+ ng2D)                                                           
+                                                                 
+ conv2d_33 (Conv2D)          (None, 28, 28, 512)       1180160   
+                                                                 
+ conv2d_34 (Conv2D)          (None, 28, 28, 512)       2359808   
+                                                                 
+ conv2d_35 (Conv2D)          (None, 28, 28, 512)       2359808   
+                                                                 
+ max_pooling2d_13 (MaxPooli  (None, 14, 14, 512)       0         
+ ng2D)                                                           
+                                                                 
+ conv2d_36 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_37 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ conv2d_38 (Conv2D)          (None, 14, 14, 512)       2359808   
+                                                                 
+ max_pooling2d_14 (MaxPooli  (None, 7, 7, 512)         0         
+ ng2D)                                                           
+                                                                 
+ flatten_2 (Flatten)         (None, 25088)             0         
+                                                                 
+ dense_6 (Dense)             (None, 4096)              102764544 
+                                                                 
+ dropout_2 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_7 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_3 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_8 (Dense)             (None, 9)                 36873     
+                                                                 
+=================================================================
+Total params: 134297417 (512.30 MB)
+Trainable params: 134297417 (512.30 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
 \end{comment}
 
 
