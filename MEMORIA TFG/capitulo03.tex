@@ -49,7 +49,7 @@ Como aparece en la figura \ref{fig:previewMMC}, los ocho primeros caracteres son
 
 \subsection{Distribución del dataset}
 
-Hay un total de 21.741 programas de malware, pero nosotros tan solo usaremos los 10.868 pertenecientes al entrenamiento. Estos programas pertenecen a una de estas 9 familias de malware: Rammit, Lollipop, Kelihos\_ ver3, Vundo, Simda, Tracur, Kelihos\_ ver1, Obfuscator y Gatak. Según \cite{hu2019machine}, podemos deinirlas como: 
+Hay un total de 21.741 programas de malware, pero solo 10.868 de ellos tienen etiquetas. Estos programas pertenecen a una de estas 9 familias de malware: Rammit, Lollipop, Kelihos\_ ver3, Vundo, Simda, Tracur, Kelihos\_ ver1, Obfuscator y Gatak. Según \cite{hu2019machine}, podemos deinirlas como: 
 
   
 
@@ -89,7 +89,7 @@ Hay un total de 21.741 programas de malware, pero nosotros tan solo usaremos los
 \item[9.] \textbf{Gatak} es un troyano que abre una puerta trasera en el ordenador. Se propaga a través de sitios web falsos que ofrecen claves de licencias de productos. Una vez infectado el sistema, Gatak recopila información del ordenador.
 \end{enumerate} 
 
-Como ya mencionamos antes, vamos a entrenar nuestras redes neuronales con 10.868 archivos bytes. De estos archivos, solo son válidos 10.860 porque en los 8 archivos restantes\footnote{Los identificadores de estos archivos son 58kxhXouHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA, a9oIzfw03ED4lTBCt52Y, cf4nzsoCmudt1kwleOTI, d0iHC6ANYGon7myPFzBe, da3XhOZzQEbKVtLgMYWv, fRLS3aKkijp4GH0Ds6Pv, IidxQvXrlBkWPZAfcqKT.} (pertenecientes a la familia Ramnit), todo sus bytes son ``??''. Con estos datos finales, vamos a ver gráficamente como se distribuyen las 9 clases de malware (Figura \ref{img: circularMMC}).
+Como ya mencionamos antes, solo hay 10.868 programas con etiquetas, luego vamos a hacer el análisis descriptivo de los datos solo con estos archivos. De estos programas, solo son válidos 10.860 porque en los 8 archivos restantes\footnote{Los identificadores de estos archivos son 58kxhXouHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA, a9oIzfw03ED4lTBCt52Y, cf4nzsoCmudt1kwleOTI, d0iHC6ANYGon7myPFzBe, da3XhOZzQEbKVtLgMYWv, fRLS3aKkijp4GH0Ds6Pv, IidxQvXrlBkWPZAfcqKT.} (pertenecientes a la familia Ramnit), todo sus bytes son ``??'', es decir, información desconocida. Con estos datos, vamos a ver gráficamente como se distribuyen en las 9 clases de malware (Figura \ref{img: circularMMC}).
 
 \begin{figure}[h]
     \begin{center}
@@ -123,7 +123,7 @@ Valid & 133 & 249 & 278 & 63 & 7 & 84 & 50 & 126 & 96 \\
  
 
 
-Para abordar este problema de clasificación, vamos a realizar dos modelos diferentes para luego comparar sus resultados. El primer método de machine learning que vamos a utilizar es una \acrfull{cnn}. El segundo será entrenar un Autoencoder junto con una \acrfull{dnn}, primero obteniendo una representación comprimida de los datos y después clasificando esta representación con una red neuronal profunda. 
+Para abordar este problema de clasificación, vamos a realizar dos modelos de aprendizaje automático diferentes para luego comparar sus resultados. El primer método que vamos a utilizar es una \acrfull{cnn}. El segundo será entrenar un Autoencoder junto con una capa de clasificación, primero obteniendo una representación comprimida de los datos y después clasificando esta representación con una red neuronal profunda. 
  
 
 
@@ -133,6 +133,68 @@ Para abordar este problema de clasificación, vamos a realizar dos modelos difer
 
 
 \section{Red Neuronal Convolucional}
+
+Para abordar este problema utilizando como modelo una CNN, solo podemos utilizar los datos etiquetados ya que este método es un método supervisado. De los 21.741 programas de malware con los que disponemos, solo podemos utilizar los 10.860 que están etiquetados y contienen información disponible. Como ya vimos en la sección \ref{sec:2.CNN}, para entrenar estas redes neuronales es necesario tener los datos en forma matricial. Uno de los principales motivos para convertir el malware en imagen es porque los creadores de malware suelen modificar sus implementaciones para producir nuevo malware \citep{nataraj2015sattva}, pero si lo representamos de forma matricial, estos pequeños cambios pueden ser detectados fácilmente \citep{kalash2018malware}.
+
+\subsection{Visualizar el malware como imagen}
+Para visualizar los archivos .bytes como imagen en escala de grises, cada byte debe ser interpretado como un pixel en la imagen. Inspirado en \citep{nataraj2011malware}, para pasar de código hexadecimal a imagen primero pasamos cada byte a su número decimal correspondiente que se encuentra en el rango [0,255]\footnote{Cada valor en este intervalo tiene un color asociado donde 0 es el negro y 255 el color blanco.} Como vimos en el apartado anterior, hay algunos bytes que son ``??'' lo que significa que se desconoce su información. Para solucionar este problema con los datos, en el apéndice B de \citep{geron2022hands}, se plantea eliminar estos caracteres y tratar el resto de bytes. Otra solución la proponen Narayanan et al. \citep{narayanan2016performance}, que es sustituir estos bytes por el valor -1 (color blanco). Después de probar con ambas propuestas y además la de cambiando el ``??'' por el valor 0, finalmente hemos decidido sustituirlo por 0 (color negro) en base a los resultados obtenidos. 
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=\textwidth]{img/visualMalware.png}
+    \end{center}
+    \caption{Proceso de visualización del malware. Adaptación de \citep{nataraj2011malware}}
+    \label{img: visualMalware}
+\end{figure}
+
+Después de tener todos los bytes en formato decimal dentro de un vector, hacemos un reshape a una matriz 2D de forma que se consiga una matriz lo más cuadrada posible. Como las dimensiones de cada archivo son diferentes, las dimensiones después de hacer el reshape también lo serán, luego tenemos que fijar un tamaño fijo para poder entrenar nuestra CNN \citep{kumar2021mcft}. Para ello, siguiendo el ejemplo de \citep{kalash2018malware}, decidimos escoger como tamaño $224 \times 224$. Para obtener estas dimensiones, Simonyan et al. \citep{simonyan2014very} deciden recortar aleatoriamente un cuadrado de la imagen de tamaño $224 \times 224$, pero nosotros hemos decidido usar interpolación lineal. En la figura \ref{img: visualFamilias}, se puede observar cuales son los patrones que sigue cada tipo de malware en su forma matricial.
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=\textwidth]{img/visualFamilias.png}
+    \end{center}
+    \caption{Visualización familias malware.}
+    \label{img: visualFamilias}
+\end{figure}
+
+
+\subsection{Visualización del modelo}
+
+
+Una vez ya hemos explorado y preparado los datos, el siguiente paso es crear nuestra red neuronal convolucional. Para ello hemos seguido el artículo \citep{kalash2018malware}, en el que se crea una M-CNN (malware CNN) con múltiples capas. Vemos su arquitectura en la Figura \ref{img: cnnMMC}.
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=\textwidth]{img/cnnMMC.png}
+    \end{center}
+    \caption{Arquitectura de la CNN. Fuente \citep{kalash2018malware}.}
+    \label{img: cnnMMC}
+\end{figure}
+
+En las capas iniciales, se aplican filtros de tamaño $3 \times 3$, que permiten extraer características locales importantes de la imagen de entrada. Las capas convolucionales aprenden a detectar bordes, texturas y otros patrones básicos al principio, y conforme se agregan más capas, las características detectadas se vuelven más abstractas y complejas\citep{geron2022hands}. Después de cada operación de convolución, se aplica la función de activación ReLU para introducir no linealidades en el modelo.
+
+Las capas de max pooling reducen la dimensionalidad de los mapas de características seleccionando el valor máximo en sub-regiones de $2 \times 2$, lo que no solo reduce la carga computacional sino que también ayuda a hacer las características más robustas a pequeñas variaciones y traslaciones en la imagen de entrada\citep{geron2022hands}.
+
+La secuencia de capas convolucionales y de pooling se repite varias veces hasta obtener un conjunto final de características que es una matriz de $7 \times 7$ con 512 mapas de características. Esta salida se aplana para convertirla en un vector unidimensional, que luego pasa a través de varias capas completamente conectadas (fully connected layers). Finalmente, la capa de salida utiliza una función de activación softmax para generar las predicciones finales del modelo.
+
+Una vez definida la arquitectura de la red, procedemos a compilar y entrenar el modelo. Cabe recordar que los datos fueron divididos en tres conjuntos: entrenamiento (75\%), validación (10\%) y prueba (15\%). 
+
+Para la compilación del modelo, utilizamos el optimizador SGD (Stochastic Gradient Descent) con un learning rate inicial de 0.001. Este learning rate se reduce en un factor de 10 cada 20 epochs. Además, fijamos el momentum en 0.9 y el weight decay en 0.0005, siguiendo las recomendaciones de \citep{kalash2018malware}. La función de pérdida utilizada es categorical\_crossentropy ya que nuestro problema involucra múltiples clases de etiquetas \citep{categoriCE}.
+
+El entrenamiento se realizó con un batch\_size de 8 y se ejecutó durante 25 epochs. Utilizamos callbacks para ajustar dinámicamente el learning rate, detener el entrenamiento temprano si no se observan mejoras en la pérdida de validación, y registrar el progreso del entrenamiento. Además, se barajea el conjunto de datos de entrenamiento antes de cada epoch. 
+
+
+\subsection{Mejora del modelo}
+
+Este modelo obtiene un accuracy bastante bueno 0.9613, sin embargo, si lo comparamos con el éxito que obtienen los datos de entrenamiento, 1.0, vemos que hay una gran diferencia. Cuando evaluamos la función de pérdida ocurre lo mismo, el loss que obtiene los datos de validación son de 0.331 mientras que los datos de entrenamiento obtienen un 0.0005. Estos datos nos sugieren que se puede estar produciendo un sobreajuste de los datos de aprendizaje, lo que evita la generalización. Para salir vemos gráficamente en la Figura \ref{img: dropout0} su evolución a lo largo de las epochs.
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=\textwidth]{img/malware_classifier_dropout0.png}
+    \end{center}
+    \caption{Evolución del modelo en términos de accuracy y loss.}
+    \label{img: dropout0}
+\end{figure}
 
 10800 archivos de prueba de tipo .bytes (otros 10800 de tipo .asm) pero solo usaremos los .bytes. Convertimos cada archivo en una imagen. Primero, cada código hexadecimal lo convertimos a numeros decimales y estos los pasamos a un array de numpy. Hacemos reshape (lado,lado2) de forma que obtengamos la mayor dimension posible que sea casi cuadrado consiguiendo perder la menor información posible. Este reshape lo pasamos a np.uint8 y finalmente lo interpolamos usando bilinal, cubic, bicubic, nearest y observamos cual es la mejor de todas {zhao2023new} (hacer una grafica o algo para comprobarlo). Además, para caragr los datos he usado multiprocessing con los diferentes datos de tiempo. En el caso de algunas imagenes, los archivos .bytes no contienen ningun tipo de informacion(?? ?? ?? ..) todos los byte son ??. Estos ficheros, no estan incluidos en las imagenes ni de entrenamiento ni validación porque no contienen ningun tpo de información. 
 

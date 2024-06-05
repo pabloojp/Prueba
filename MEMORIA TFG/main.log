@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  2 JUN 2024 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  5 JUN 2024 21:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1108,7 +1108,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<img/ucm.png, id=163, 1204.5pt x 1375.1375pt>
+<img/ucm.png, id=175, 1204.5pt x 1375.1375pt>
 File: img/ucm.png Graphic file (type png)
 <use img/ucm.png>
 Package pdftex.def Info: img/ucm.png  used on input line 194.
@@ -1166,7 +1166,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 ...d Neuronal Convolucional}{15}{section.3.2}
+l.26 ...d Neuronal Convolucional}{15}{section.3.2}
                                                   % [3])
 \tf@toc=\write8
 \openout8 = `main.toc'.
@@ -1192,115 +1192,85 @@ Cap\'{\i }tulo 2.
 [3
 
 ]
-<img/AE0 (1).png, id=252, 714.41907pt x 230.36063pt>
-File: img/AE0 (1).png Graphic file (type png)
-<use img/AE0 (1).png>
-Package pdftex.def Info: img/AE0 (1).png  used on input line 30.
-(pdftex.def)             Requested size: 273.14923pt x 88.07573pt.
-LaTeX Info: Redefining \. on input line 69.
-LaTeX Info: Redefining \% on input line 69.
- [4 <./img/AE0 (1).png>]
-<img/convlayers.png, id=276, 437.38406pt x 216.05719pt>
+<img/AE4.png, id=264, 432.61626pt x 117.43875pt>
+File: img/AE4.png Graphic file (type png)
+<use img/AE4.png>
+Package pdftex.def Info: img/AE4.png  used on input line 30.
+(pdftex.def)             Requested size: 273.14923pt x 74.15164pt.
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
+ [4 <./img/AE4.png>]
+<img/convlayers.png, id=294, 437.38406pt x 216.05719pt>
 File: img/convlayers.png Graphic file (type png)
 <use img/convlayers.png>
-Package pdftex.def Info: img/convlayers.png  used on input line 73.
+Package pdftex.def Info: img/convlayers.png  used on input line 88.
 (pdftex.def)             Requested size: 273.14923pt x 134.9299pt.
-<img/convolucion.png, id=286, 681.54625pt x 473.77pt>
+<img/convolucion.png, id=304, 681.54625pt x 473.77pt>
 File: img/convolucion.png Graphic file (type png)
 <use img/convolucion.png>
-Package pdftex.def Info: img/convolucion.png  used on input line 91.
+Package pdftex.def Info: img/convolucion.png  used on input line 106.
 (pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
-<img/convolucionPadding.png, id=287, 681.54625pt x 473.77pt>
+<img/convolucionPadding.png, id=305, 681.54625pt x 473.77pt>
 File: img/convolucionPadding.png Graphic file (type png)
 <use img/convolucionPadding.png>
-Package pdftex.def Info: img/convolucionPadding.png  used on input line 98.
+Package pdftex.def Info: img/convolucionPadding.png  used on input line 113.
 (pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/stride.png, id=288, 871.255pt x 303.1325pt>
+<img/stride.png, id=306, 871.255pt x 303.1325pt>
 File: img/stride.png Graphic file (type png)
 <use img/stride.png>
-Package pdftex.def Info: img/stride.png  used on input line 110.
+Package pdftex.def Info: img/stride.png  used on input line 125.
 (pdftex.def)             Requested size: 273.14923pt x 95.03395pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
+LaTeX Info: Redefining \. on input line 131.
+LaTeX Info: Redefining \% on input line 131.
 [5 <./img/convlayers.png>]
-LaTeX Info: Redefining \. on input line 152.
-LaTeX Info: Redefining \% on input line 152.
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
  [6 <./img/convolucion.png (PNG copy)> <./img/convolucionPadding.png (PNG copy)
 > <./img/stride.png (PNG copy)>]
-<img/maxpooling.png, id=324, 548.0475pt x 264.99pt>
+<img/maxpooling.png, id=342, 548.0475pt x 264.99pt>
 File: img/maxpooling.png Graphic file (type png)
 <use img/maxpooling.png>
-Package pdftex.def Info: img/maxpooling.png  used on input line 157.
+Package pdftex.def Info: img/maxpooling.png  used on input line 172.
 (pdftex.def)             Requested size: 182.09486pt x 88.0454pt.
-<img/translacionPooling.png, id=326, 144.54pt x 90.0966pt>
+<img/translacionPooling.png, id=344, 144.54pt x 90.0966pt>
 File: img/translacionPooling.png Graphic file (type png)
 <use img/translacionPooling.png>
-Package pdftex.def Info: img/translacionPooling.png  used on input line 167.
+Package pdftex.def Info: img/translacionPooling.png  used on input line 182.
 (pdftex.def)             Requested size: 182.09486pt x 113.5113pt.
-LaTeX Info: Redefining \. on input line 182.
-LaTeX Info: Redefining \% on input line 182.
+LaTeX Info: Redefining \. on input line 192.
+LaTeX Info: Redefining \% on input line 192.
  [7 <./img/maxpooling.png (PNG copy)> <./img/translacionPooling.png (PNG copy)>
 ]
-
-Package natbib Warning: Citation `krizhevsky2012imagenet' on page 8 undefined o
-n input line 184.
-
-
-Package natbib Warning: Citation `ronneberger2015u' on page 8 undefined on inpu
-t line 184.
-
-
-Package natbib Warning: Citation `parkhi2015deep' on page 8 undefined on input 
-line 184.
-
-
-Package natbib Warning: Citation `he2015delving' on page 8 undefined on input l
-ine 184.
-
-
-Package natbib Warning: Citation `hinton2012deep' on page 8 undefined on input 
-line 184.
-
-
-Package natbib Warning: Citation `lecun1998gradient' on page 8 undefined on inp
-ut line 184.
-
-
-Package natbib Warning: Citation `graves2013speech' on page 8 undefined on inpu
-t line 184.
-
-
-Package natbib Warning: Citation `collobert2008unified' on page 8 undefined on 
-input line 184.
-
-LaTeX Info: Redefining \. on input line 204.
-LaTeX Info: Redefining \% on input line 204.
-[8]
-LaTeX Info: Redefining \. on input line 230.
-LaTeX Info: Redefining \% on input line 230.
+Excluding 'comment' comment.
+LaTeX Info: Redefining \. on input line 229.
+LaTeX Info: Redefining \% on input line 229.
+ [8]
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
  [9]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 237.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 255.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 237.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 255.
 
- Excluding 'comment' comment. Excluding 'comment' comment.
-Excluding 'comment' comment.) (capitulo03.tex
+ Excluding 'comment' comment.
+Excluding 'comment' comment. Excluding 'comment' comment.) (capitulo03.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [10]
+
+[10]
 Cap\'{\i }tulo 3.
 [11
 
 ]
-<img/previewMMC.png, id=406, 963.6pt x 542.025pt>
+<img/previewMMC.png, id=421, 963.6pt x 542.025pt>
 File: img/previewMMC.png Graphic file (type png)
 <use img/previewMMC.png>
 Package pdftex.def Info: img/previewMMC.png  used on input line 40.
@@ -1308,7 +1278,7 @@ Package pdftex.def Info: img/previewMMC.png  used on input line 40.
 LaTeX Info: Redefining \. on input line 53.
 LaTeX Info: Redefining \% on input line 53.
  [12 <./img/previewMMC.png (PNG copy)>]
-<img/botnetStructure.png, id=417, 204.765pt x 212.2329pt>
+<img/botnetStructure.png, id=432, 204.765pt x 212.2329pt>
 File: img/botnetStructure.png Graphic file (type png)
 <use img/botnetStructure.png>
 Package pdftex.def Info: img/botnetStructure.png  used on input line 65.
@@ -1321,7 +1291,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--92
 uHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA,
  []
 
-<img/circularMMC.png, id=440, 462.528pt x 346.896pt>
+<img/circularMMC.png, id=455, 462.528pt x 346.896pt>
 File: img/circularMMC.png Graphic file (type png)
 <use img/circularMMC.png>
 Package pdftex.def Info: img/circularMMC.png  used on input line 96.
@@ -1329,41 +1299,83 @@ Package pdftex.def Info: img/circularMMC.png  used on input line 96.
 LaTeX Info: Redefining \. on input line 127.
 LaTeX Info: Redefining \% on input line 127.
 [14 <./img/circularMMC.png>]
-LaTeX Info: Redefining \. on input line 161.
-LaTeX Info: Redefining \% on input line 161.
- [15] Excluding 'comment' comment.) (capitulo04.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[16]
-Cap\'{\i }tulo 4.
-[17
+<img/visualMalware.png, id=476, 1933.2225pt x 341.275pt>
+File: img/visualMalware.png Graphic file (type png)
+<use img/visualMalware.png>
+Package pdftex.def Info: img/visualMalware.png  used on input line 144.
+(pdftex.def)             Requested size: 455.24411pt x 80.36105pt.
+<img/visualFamilias.png, id=483, 2509.375pt x 960.58875pt>
+File: img/visualFamilias.png Graphic file (type png)
+<use img/visualFamilias.png>
+Package pdftex.def Info: img/visualFamilias.png  used on input line 154.
+(pdftex.def)             Requested size: 455.24411pt x 174.26164pt.
 
-]) (capitulo05.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
+[15 <./img/visualMalware.png (PNG copy)>]
+<img/cnnMMC.png, id=499, 1425.325pt x 429.605pt>
+File: img/cnnMMC.png Graphic file (type png)
+<use img/cnnMMC.png>
+Package pdftex.def Info: img/cnnMMC.png  used on input line 168.
+(pdftex.def)             Requested size: 455.24411pt x 137.21419pt.
+LaTeX Info: Redefining \. on input line 180.
+LaTeX Info: Redefining \% on input line 180.
+ [16 <./img/visualFamilias.png (PNG copy)> <./img/cnnMMC.png>]
+
+Package natbib Warning: Citation `categoriCE' on page 17 undefined on input lin
+e 182.
+
+<img/malware_classifier_dropout0.png, id=511, 867.24pt x 433.62pt>
+File: img/malware_classifier_dropout0.png Graphic file (type png)
+<use img/malware_classifier_dropout0.png>
+Package pdftex.def Info: img/malware_classifier_dropout0.png  used on input lin
+e 193.
+(pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
+LaTeX Info: Redefining \. on input line 200.
+LaTeX Info: Redefining \% on input line 200.
+[17 <./img/malware_classifier_dropout0.png>] Excluding 'comment' comment.)
+(capitulo04.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [18]
-Cap\'{\i }tulo 5.
-) Excluding 'comment' comment. [19
-
-] (main.bbl
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [19]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [20
 
-] [21]
-LaTeX Info: Redefining \. on input line 193.
-LaTeX Info: Redefining \% on input line 193.
+]
+Cap\'{\i }tulo 4.
+[21]) (capitulo05.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
  [22]
-LaTeX Info: Redefining \. on input line 301.
-LaTeX Info: Redefining \% on input line 301.
- [23])
+Cap\'{\i }tulo 5.
+) Excluding 'comment' comment. [23
+
+] (main.bbl
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [24
+
+] [25]
+LaTeX Info: Redefining \. on input line 194.
+LaTeX Info: Redefining \% on input line 194.
+ [26]
+LaTeX Info: Redefining \. on input line 291.
+LaTeX Info: Redefining \% on input line 291.
+ [27])
 LaTeX Info: Redefining \. on input line 487.
 LaTeX Info: Redefining \% on input line 487.
- [24]
+ [28]
 No file main.gls.
 LaTeX Info: Redefining \. on input line 493.
 LaTeX Info: Redefining \% on input line 493.
-[25
+[29
 
 ]
 
@@ -1371,18 +1383,18 @@ Package natbib Warning: There were undefined citations.
 
 LaTeX Info: Redefining \. on input line 564.
 LaTeX Info: Redefining \% on input line 564.
-[26] (main.aux
+[30] (main.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 51A76A8D12AF0CBC5C52AC74F610A7B2;7378.
+(rerunfilecheck)             Checksum: 7586560EF059435EBF183F61437F4CDC;7961.
  ) 
 Here is how much of TeX's memory you used:
- 26640 strings out of 475385
- 459242 string characters out of 2776906
- 915190 words of memory out of 3000000
- 47387 multiletter control sequences out of 15000+600000
+ 26711 strings out of 475385
+ 460902 string characters out of 2776906
+ 915732 words of memory out of 3000000
+ 47436 multiletter control sequences out of 15000+600000
  485454 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,9n,91p,2325b,1352s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1416,10 +1428,11 @@ Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pjime/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/User
 s/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb>
-Output written on main.pdf (32 pages, 1209123 bytes).
+mtt10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on main.pdf (36 pages, 3025929 bytes).
 PDF statistics:
- 678 PDF objects out of 1000 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 376 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 753 PDF objects out of 1000 (max. 8388607)
+ 183 named destinations out of 1000 (max. 500000)
+ 420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

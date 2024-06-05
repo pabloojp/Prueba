@@ -23,59 +23,51 @@ Warning--entry type for "matplotlib" isn't style-file defined
 --line 343 of file biblio.bib
 Warning--entry type for "autoencoderImage" isn't style-file defined
 --line 471 of file biblio.bib
-Warning--I didn't find a database entry for "krizhevsky2012imagenet"
-Warning--I didn't find a database entry for "ronneberger2015u"
-Warning--I didn't find a database entry for "parkhi2015deep"
-Warning--I didn't find a database entry for "he2015delving"
-Warning--I didn't find a database entry for "hinton2012deep"
-Warning--I didn't find a database entry for "lecun1998gradient"
-Warning--I didn't find a database entry for "graves2013speech"
-Warning--I didn't find a database entry for "collobert2008unified"
 Warning--to sort, need author or key in kagglebig2015
 Warning--empty journal in luoma2023analysis
 Warning--can't use both volume and number fields in maithem2021network
 Warning--empty journal in martinez2017analisis
 Warning--empty journal in pajares2021aprendizaje
 Warning--can't use both volume and number fields in wang2017combining
-You've used 55 entries,
+You've used 62 entries,
             2118 wiz_defined-function locations,
-            780 strings with 13293 characters,
-and the built_in function-call counts, 18346 in all, are:
-= -- 1820
-> -- 814
-< -- 19
-+ -- 333
-- -- 268
-* -- 1104
-:= -- 2921
-add.period$ -- 173
-call.type$ -- 55
-change.case$ -- 295
+            807 strings with 14786 characters,
+and the built_in function-call counts, 21294 in all, are:
+= -- 2121
+> -- 950
+< -- 24
++ -- 386
+- -- 314
+* -- 1292
+:= -- 3374
+add.period$ -- 196
+call.type$ -- 62
+change.case$ -- 338
 chr.to.int$ -- 0
-cite$ -- 61
-duplicate$ -- 735
-empty$ -- 1505
-format.name$ -- 268
-if$ -- 3976
+cite$ -- 68
+duplicate$ -- 860
+empty$ -- 1732
+format.name$ -- 314
+if$ -- 4627
 int.to.chr$ -- 0
-int.to.str$ -- 55
-missing$ -- 42
-newline$ -- 272
-num.names$ -- 108
-pop$ -- 416
+int.to.str$ -- 62
+missing$ -- 49
+newline$ -- 307
+num.names$ -- 122
+pop$ -- 469
 preamble$ -- 1
-purify$ -- 242
+purify$ -- 278
 quote$ -- 0
-skip$ -- 585
+skip$ -- 685
 stack$ -- 0
-substring$ -- 1006
-swap$ -- 221
-text.length$ -- 19
+substring$ -- 1194
+swap$ -- 269
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 216
+type$ -- 244
 warning$ -- 6
-while$ -- 176
-width$ -- 57
-write$ -- 577
-(There were 23 warnings)
+while$ -- 207
+width$ -- 64
+write$ -- 655
+(There were 15 warnings)

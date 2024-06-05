@@ -27,12 +27,27 @@ Los autoencoders son una clase de redes neuronales artificiales utilizadas en ap
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/AE0.png}
+    \includegraphics[width=0.6\textwidth]{img/AE4.png}
     \caption{Arquitectura de un autoencoder. Fuente:\citep{autoencoderImage}.}
     \label{fig:AE_architecture}
 \end{figure}
 
-El encoder mapea los datos de entrada a una representación oculta de menor dimensión utilizando funciones principalmente no lineales, mientras que el decoder reconstruye los datos de entrada a partir de esta representación oculta. Durante el entrenamiento, los parámetros del autoencoder se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia, como por ejemplo la pérdida de entropía cruzada.
+El encoder mapea los datos de entrada a una representación oculta de menor dimensión utilizando funciones principalmente no lineales, mientras que el decoder reconstruye los datos de entrada a partir de esta representación oculta. Durante el entrenamiento, los parámetros del autoencoder se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia, como por ejemplo la pérdida de entropía cruzada. Esto concluye el proceso de entrenamiento de un autoencoder.
+
+
+El problema, tal como se define formalmente en \cite{bank2023autoencoders}, es aprender las funciones
+\[
+A : \mathbb{R}^n \rightarrow \mathbb{R}^p \quad \text{(encoder)}
+\]
+y
+\[
+B : \mathbb{R}^p \rightarrow \mathbb{R}^n \quad \text{(decoder)}
+\]
+que satisfacen
+\[
+\arg \min_{A, B} \mathbb{E}[\Delta(x, B \circ A(x))],
+\]
+donde $\mathbb{E}$ es la esperanza sobre la distribución de $x$, y $\Delta$ es la función de pérdida de reconstrucción, que mide la distancia entre la salida del decodificador y la entrada.
 
 
 Las ecuaciones para obtener la salida de un autoencoder serían:
@@ -62,10 +77,10 @@ Las principales capas que se utilizan en esta red neuronal son las capas densas 
 
 \subsection{Deep Belief Networks}
 \subsubsection{Red Neuronal Profunda}
-\subsection{Red Neuronal Convolucional}
+\subsection{Red Neuronal Convolucional} \label{sec:2.CNN}
 
 
-Las redes neuronales convolucionales son una de las métodos de machine learning más importantes y utilizados en el campo de la ciberseguridad. Estas redes neuronales están diseñadas para procesar entradas almacenadas en matrices, como las imágenes.  Estas redes son una parte de las redes neuronales profundas que procesa y analiza entradas de imágenes visuales, y están compuestas por neuronas con pesos y sesgos que aprenden a lo largo de su entrenamiento \citep{podder2021artificial}. La arquitectura de una CNN (Figura \ref{fig:cnn_architecture}) consta de tres tipos de capas: capas de convolución, capas de pooling y la capa de clasificación. 
+Las redes neuronales convolucionales son una de las métodos de machine learning más importantes y utilizados en el campo de la ciberseguridad. Estas redes neuronales están diseñadas para procesar entradas almacenadas en matrices, como las imágenes.  Son una parte de las redes profundas que procesa y analiza entradas de imágenes visuales, y están compuestas por neuronas con pesos y sesgos que aprenden a lo largo de su entrenamiento \citep{podder2021artificial}. La arquitectura de una CNN (Figura \ref{fig:cnn_architecture}) consta de tres tipos de capas: capas de convolución, capas de pooling y la capa de clasificación. 
  
 
 \begin{figure}[h]
@@ -108,7 +123,7 @@ Se observa que el filtro se desplaza por la matriz \textit{I} con paso unitario 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{img/stride.png}
-    \caption{Campos receptivos en una convolución. Fuente \citep{yepez2020stride}}
+    \caption{Campos receptivos en una convolución. Adaptación de imagen de \citep{yepez2020stride}}
     \label{fig:receptive_field}
 \end{figure}
 
@@ -176,7 +191,7 @@ Además de reducir el número de operaciones, el número de parámetros y ayudar
 Por último están las capas totalmente conectadas (\textit{fully connected}), que realizan la clasificación sobre la salida generada por las capas de convolución y pooling. Como el input de una capa densa debe ser un vector, primero se debe aplanar la salida de la última capa para poder utilizar después esta capa. Cada una de sus neuronas está conectada a todas las de la capa anterior, estableciendo una red densa de conexiones. Este tipo de neuronas suele ir seguido de una capa Dropout para mejorar la generalización del modelo. Este diseño permite a las CNN manejar datos complejos y variados, aprovechando la jerarquía de características aprendidas durante el entrenamiento. Este tipo de capa suele ir seguido de una capa de Dropout que mejora la capacidad de generalización del modelo al prevenir el sobreajuste, un problema común en el ámbito del aprendizaje profundo \citep{hossain2019classification}.
 
 
-
+\begin{comment}
 %Adicionalmente, las CNN pueden utilizar técnicas de regularización que ayudan a reducir el sobreajuste. Una de las técnicas más exitosas se llama \textit{dropout} \citep{srivastava2014dropout}. Al entrenar un modelo utilizando \textit{dropout}, durante cada iteración de entrenamiento, un porcentaje especificado de nodos en una capa dada y sus conexiones entrantes y salientes se eliminan aleatoriamente. Incluir \textit{dropout} típicamente mejora la precisión y la capacidad de generalización de un modelo porque aumenta la probabilidad de que un nodo sea útil.
 
 \subsubsection{Aplicaciones y Éxitos}
@@ -186,6 +201,9 @@ Los usos de las CNN son significativamente variados. El mayor éxito se ha logra
 
 
 Una de las redes neuronales más importantes y más utilizadas en el campo de la ciberseguridad son la \acrfull{cnn}. Las CNN tienen su origen en el estudio de la corteza visual del cerebro y han sido utilizadas en el reconocimiento de imágenes desde la década de los 80. Actualmente, debido al aumento en la capacidad computacional, la disponibilidad de grandes volúmenes de datos de entrenamiento y las técnicas avanzadas de redes profundas, han permitido que las CNN alcancen un rendimiento excepcional en tareas visuales complejas. Estas redes son la base de servicios como la búsqueda de imágenes o los vehículos autónomos. Además, las CNN no se limitan únicamente a la percepción visual, también han demostrado ser efectivas en tareas como el reconocimiento de voz y el procesamiento del lenguaje natural \citep{geron2022hands}. No obstante, nos enfocaremos únicamente en sus aplicaciones visuales.
+
+\end{comment}
+
 \subsection{Red Neuronal Recurrente}
 \subsubsection{Restricted Boltzmann Machine}
 
