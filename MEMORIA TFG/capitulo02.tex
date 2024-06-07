@@ -18,6 +18,131 @@ lo que es aprendizaje supervisado y no supervisao
 Partes de una neurona y como trabaja(bias, pesos...)
 
 
+
+\section{Introducción}
+
+En la última década, la inteligencia artificial (IA) se ha convertido en un tema popular tanto dentro como fuera de la comunidad científica. Una abundancia de artículos en revistas tecnológicas y no tecnológicas han cubierto los temas de aprendizaje automático (ML, por sus siglas en inglés), aprendizaje profundo (DL, por sus siglas en inglés) e IA. Sin embargo, todavía persiste confusión en torno a IA, ML y DL. Los términos están estrechamente relacionados, pero no son intercambiables. 
+
+En 1956, un grupo de científicos informáticos propuso que las computadoras podrían ser programadas para pensar y razonar, ``que cada aspecto del aprendizaje o cualquier otra característica de la inteligencia podría, en principio, ser descrito tan precisamente que una máquina podría simularlo'' \citep{moor2006dartmouth}. Describieron este principio como ``inteligencia artificial''. En pocas palabras, la IA es un campo enfocado en automatizar tareas intelectuales que normalmente realizan los humanos, y el Machine Learning es un método específico para lograr este objetivo. Es decir, está dentro del ámbito de la IA (Figura \ref{fig:fig1}) \citep{choi2020introduction}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/ia.jpg}
+    \caption{Relación entre Ciencia de Datos, Inteligencia Artificial, Machine Learning y Deep Learning.}
+    \label{fig: ia}
+\end{figure}
+
+
+\section{Aprendizaje Automático}
+
+Por otro lado, el Aprendizaje Automático (ML, por sus siglas en inglés) es la ciencia o el arte de programar ordenadores para que puedan aprender a partir de datos. Arthur Samuel lo definió en 1959 como ``el campo de estudio que otorga a las computadoras la capacidad de aprender sin ser explícitamente programadas''. Más formalmente, según Tom Mitchell (1997), ``se dice que un programa de computadora aprende de la experiencia \(E\) con respecto a alguna tarea \(T\) y alguna medida de rendimiento \(P\), si su rendimiento en \(T\), medido por \(P\), mejora con la experiencia \(E\)'' \citep{geron2022hands}. El aprendizaje automático ha revolucionado numerosos campos, permitiendo a las máquinas realizar tareas que antes requerían intervención humana directa. Desde la conducción autónoma hasta el diagnóstico médico, las aplicaciones del aprendizaje automático son diversas. A diferencia de los métodos tradicionales de programación, donde se codifican reglas explícitas, el aprendizaje automático permite que los sistemas descubran patrones y relaciones directamente a partir de los datos, adaptándose y mejorando con el tiempo.
+
+
+
+Un ejemplo de aprendizaje automático es un filtro de spam que, dado ejemplos de correos electrónicos de spam y ejemplos de correos electrónicos normales (no spam, también llamados ``ham''), puede aprender a marcar el spam \citep{geron2022hands}. Los ejemplos que el sistema utiliza para aprender se llaman el conjunto de entrenamiento. Cada ejemplo de entrenamiento se llama una instancia de entrenamiento (o muestra). En este caso, la tarea \(T\) es marcar el spam en los nuevos correos electrónicos, la experiencia \(E\) son los datos de entrenamiento, y la medida de rendimiento \(P\) podría ser la precisión del filtro.
+
+Un filtro de spam utilizando técnicas tradicionales de programación, en primer lugar consideraría cómo se ve normalmente el spam, detectando palabras comunes u otros patrones como el nombre del remitente y escribiendo reglas para cada una de estas. Pero si los encargados de mandar el spam detectan que todos los correos que incluyen la palabra ``Para usted'' o  ``cuenta bancaria'' son rechazados, pueden modificar estas palabras por otras y así ser aceptados por el filtro. Luego un filtro de spam que utiliza técnicas tradicionales de programación necesitaría ser actualizado continuamente para detectar correos electrónicos spam. 
+
+Por otro lado, un filtro de spam basado en técnicas de aprendizaje automático nota automáticamente que "Para ti" se ha vuelto inusualmente frecuente en el spam marcado por los usuarios, y comienza a marcarlos sin intervención humana \citep{geron2022hands}.
+
+
+\bigskip
+
+El esquema global de aprendizaje consta de tres módulos principales: el generador, el entrenamiento y la decisión. El generador proporciona entradas estructuradas, principalmente vectores con atributos de los datos, para su procesamiento. El entrenamiento ajusta los parámetros del modelo basándose en las salidas deseadas, y por último, la decisión asigna categorías a nuevas muestras de entrada utilizando los parámetros aprendidos durante el entrenamiento \citep{pajares2021aprendizaje}.
+
+
+
+En cuanto a la clasificación de los sistemas de aprendizaje automático, se distinguen cuatro tipos principales:
+
+El \textbf{aprendizaje supervisado}, es un tipo de entrenamiento en el que los datos tienen asociados las salidas deseadas, también llamadas etiquetas. Un ejemplo de aprendizaje supervisado puede ser el del filtro de spam ya que se entrena el modelo con los correos y con la etiqueta de si son spam o no. Otros ejemplos incluyen regresión lineal, regresión logística, árboles de decisión y redes neuronales.
+
+
+Al contrario que el aprendizaje supervisado, en el \textbf{aprendizaje no supervisado}, los datos de entrenamiento no están etiquetados, luego el modelo tiene que aprender sin ``profesor''. El objetivo de este tipo de algoritmos es otro como el de agrupamiento, detección de anomalías o reducción de dimensionalidad. 
+
+
+En el caso de encontrarnos ante un problema en el que tengamos datos tanto etiquetados como sin etiquetar, nos encontramos antes un tipo de \textbf{aprendizaje semisupervisado}, que se encuentra entre el supervisado y el no supervisado. Este tipo de aprendizaje suele darse en situaciones en las que obtener etiquetas de los datos puede ser muy costoso pero sin embargo obtener datos sin etiquetar no tanto. Un ejemplo podría ser la agrupación de fotos donde sale la misma persona en Google Photos. La parte no supervisada sería la de agrupación y la supervisada la de dar una etiqueta a cada grupo.
+
+
+Por último, está el \textbf{aprendizaje por refuenzo}, un tipo de aprendizaje un poco diferente a los otros tres.  El sistema de aprendizaje, llamado agente, observa el entorno, selecciona y realiza acciones para obtener recompensas a cambio (o penalizaciones en forma de recompensas negativas). Luego debe aprender por sí mismo cuál es la mejor estrategia, llamada política, para obtener la mayor recompensa con el tiempo. Una política define qué acción debe elegir el agente cuando se encuentra en una situación determinada. Por ejemplo, muchos robots implementan algoritmos de aprendizaje por refuerzo para aprender a andar.
+
+
+
+
+
+
+¿PONER O NO?
+El aprendizaje automático es excelente para:
+
+\begin{itemize}
+\item Problemas para los cuales las soluciones existentes requieren muchos ajustes o largas listas de reglas: un algoritmo de aprendizaje automático a menudo puede simplificar el código y funcionar mejor que el enfoque tradicional.
+
+\item Problemas complejos para los que el enfoque tradicional no ofrece una buena solución: las mejores técnicas de Machine Learning quizás puedan encontrar una solución.
+
+\item Entornos fluctuantes: un sistema de Machine Learning puede adaptarse a nuevos datos.
+
+\item Obtener información sobre problemas complejos y grandes cantidades de datos.
+\end{itemize}
+
+
+\section{Aprendizaje profundo}
+
+Dentro del Machine Learning, se encuentra el Deep Learning, cuya base son las redes neuronales artificiales (ANN). Una red neuronal artificial es un modelo matemático inspirado en la estructura de una red neuronal biológica. Consiste en una red de neuronas interconectadas organizadas por capas, con una capa de entrada, una o más capas ocultas y una capa de salida \citep{dolling2002artificial}. En cada neurona se aplica una suma ponderada de las señales recibidas a las que se le aplica una función de activación o conexión no lineal. La capa de entrada recibe la información del exterior y la agrupa en la capa de entrada, mandando una salida a la siguiente capa a través de sus neuronas con pesos asociados en cada conexión. Las capas ocultas reciben información de otras neuronas artificiales y cuyas señales de entrada y salida permanecen dentro de la red. Por último, la capa de salida recibe la información procesada y la devuelve al exterior con la salida predicha por nuestro modelo. Además de los pesos que se van ajustando durante el entrenamiento, también está el sesgo o bias, que es un valor que se asigna a cada neurona de cada capa para añadir características adicionales a la red neuronal que antes no tenía. 
+
+
+\subsection{Perceptrón}
+
+Antes de profundizar en los modelos de redes neuronales más complejos y profundos, veamos el funcionamiento del modelo más simple, el \textit{Perceptrón}. Este modelo es la base del resto de modelos de aprendizaje automático. Consiste en una capa de entrada y en una de salida en la que hay que aplicar dos etapas. En la figura \ref{img: perceptron} podemos ver el esquema para dos clases.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/perceptron.png}
+    \caption{Modelo del perceptrón simple}
+    \label{img: perceptron}
+\end{figure}
+
+La primera etapa del proceso consiste en calcular la suma promediada de sus entrada mediante una función lineal
+\begin{equation}
+f(x) = \sum_{i=1}^{n} w_i \cdot x_i + b
+\end{equation}
+Los coeficientes $w_i$, $i=1,2, \ldots, n$ llamados pesos, dan un valor determinado a cada una de las entradas en función de la importancia para obtener la salida. Además, el coeficiente $b$ es el sesgo o bias que se añade a la función. Otra forma práctica de escribir esta ecuación sería: $f(x) = \sum_{i=1}^{n+1} w_i \cdot z_i = w^t\cdot z  donde w = (w_1, \ldots, w_n, b)^t y z^t = (x_1, \ldots, x_n, 1)^t$
+
+La segunda capa consiste en transformar la salida de la primera etapa mediante una función de activación. En el caso de un problema de clasificación binaria (0 o 1), si esta salida sobrepasa un cierto umbral predefinido al principio, su salida será 1 y en caso contrario, será 0. Es decir, siendo $c$ una constante real:
+
+\begin{equation}
+\text{y} = 
+\begin{cases} 
+1  \text{  si  }  \sum_{i=1}^{n} w_i \cdot x_i + b > c\\
+0  \text{  si  }  \sum_{i=1}^{n} w_i \cdot x_i + b <= c.
+\end{cases}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{GENERALIZACIÓN}
+\section{COMO SE APRENDE}
+\section{OPTIMIZACIÓN}
+\section{FUNCIÓN DE PERDIDA}
+\section{FUNCION DE ACTIVACION}
+\section{VALIDACIÓN CRUZADA}
+\section{ARQUITECTURAS}
+\section{REGULARIZACIÓN}
+\section{MÉTRICAS}
+\section{FRAMEWORKS}
+
+
+
+
+
+
 \section{Arquitecturas relevantes} \label{Subsec: 3_2}
 Mini tabla resumen en Deep Cybersecurity: A Comprehensive Overview from Neural Network and Deep Learning Perspective y miniresumen de todos los tipos en review Deep Cybersecurity: A Comprehensive Overview from Neural Networkand Deep Learning Perspective y review
 
@@ -206,6 +331,13 @@ Una de las redes neuronales más importantes y más utilizadas en el campo de la
 
 \subsection{Red Neuronal Recurrente}
 \subsubsection{Restricted Boltzmann Machine}
+
+
+
+
+
+
+
 
 
 \section{Bibliotecas utilizadas en Python} \label{Subsec: 3_3}
@@ -498,6 +630,271 @@ donde:
 \end{itemize}
 \end{comment}
 
+
+
+\begin{comment}
+Dentro del AA se encuadra el conocido como Aprendizaje Profundo (AP). En la literatura especializada a nivel internacional es muy común referirse al AP por sus términos en inglés, esto es, Deep Learning, que es el núcleo central del presente libro. Por otra parte, y al hilo de esta cuestión, conviene reseñar que son muchos y diversos los términos en inglés utilizados para definir y describir los conceptos involucrados bajo el paradigma del AP. Muchos de los cuales no poseen una clara traducción conceptual al español, razón por la cual los considerados bajo esta situación se mantienen a lo largo del libro con el fin de que el lector pueda fácilmente identificarlos en la literatura especializada escrita en inglés. Solo se han traducido aquellos conceptos que no admiten discusión, manteniendo en todo caso su expresión original en inglés.
+
+Bien es cierto que desde los años 50 del siglo pasado, la IA a veces se ha sobrevalorado y se ha considerado como muy prometedora en diversas ocasiones, eso pese a que no se han llegado a alcanzar las perspectivas iniciales. Por otra parte, no es menos cierto que en los últimos años se están viendo avances importantes gracias al AP. Ello a pesar de que todavía es relativamente frágil de cara a su generalización y adaptación a entornos o escenarios cambiantes, principalmente por falta de datos suficientes que capturen los cambios de dicho entorno, pudiendo aparecer ciertos sesgos por falta de la información necesaria extraíble de los datos. Algunos autores como Marcus y Davis (2019), expresan, no sin cierta razón, algunos aspectos relativos a las ventajas e inconvenientes de los procesos de AP, achacándoles que muchas arquitecturas basadas en redes neuronales hacen cosas increíbles, sin ser conscientes por parte de quien las aplica del conocimiento real sobre lo que están haciendo, y por ello, no son sistemas totalmente inteligentes.
+
+Aunque en parte, esto último puede verse desde esta perspectiva, no es menos cierto que los desarrollos basados en AP son capaces de conseguir resultados importantes, siendo esta la perspectiva desde la que se abordan y plantean los temas del presente libro.
+
+Como sostienen Goodfellow y col. (2016), en los comienzos de la IA, se abordaron rápidamente problemas intelectualmente difíciles para los seres humanos, pero relativamente sencillos para las computadoras, todo ello mediante una lista de reglas matemáticas formales. A partir de ahí, el verdadero desafío para la IA se tornó en resolver tareas fáciles de realizar para las personas, pero difíciles de describir formalmente. Aquí se incluyen tareas tales como el reconocimiento de objetos en imágenes, palabras o acciones en los movimientos. No cabe duda de que en este aspecto el AP ha conseguido ya logros muy relevantes. Es en este rasgo, y más concretamente en la exposición de una serie de técnicas orientadas a tal fin, donde se centra el presente libro.
+
+En definitiva, se trata de exponer una serie de técnicas para resolver problemas, por decirlo de alguna manera, intuitivos para el ser humano, con el uso de las computadoras, que aprenden mediante los métodos y algoritmos diseñados a partir de los datos suministrados y sin necesidad de que los humanos especifiquen formalmente todo el conocimiento requerido por la computadora. En cualquier caso, y siguiendo también la teoría expuesta en Goodfellow y col. (2016), la jerarquía de conceptos permite que la computadora aprenda conceptos complicados al construirlos a partir de otros más simples, todos ellos estructurados en múltiples capas, razón por la cual a este enfoque se le denomina con el término ya indicado de AP. En cualquier caso, como una técnica específica del AA, estos procedimientos se encaminan a extraer patrones determinados a partir de los datos.
+
+Existe una diferencia fundamental en lo que respecta a la extracción de las mencionadas características entre las técnicas clásicas, por llamarlas de alguna manera, de AA y las específicas del AP. Por ejemplo, considérese un ejemplo sencillo biclase, en el que se trata de separar el cielo y la hierba en una imagen de color de un paisaje de campo. Los datos disponibles en este caso son valores de color de los píxeles, de forma que en el caso del cielo predominan las tonalidades azules, mientras que en la hierba son las verdes. Un método simple tal como naive Bayes puede separar los patrones en dos clases diferentes teniendo en cuenta que los mismos están definidos, por lo que se conoce como características. La extracción de características en este caso es esencial. Por otro lado, y siguiendo en el ámbito de las imágenes, estas se caracterizan por poseer información espacial, y en vídeos, también temporal. Las redes neuronales profundas pueden captar perfectamente ambos tipos de información. En el primer caso, los filtros de convolución son responsables de la captura espacial, a diferencia de lo que ocurre con otros modelos de red, tal como las de retropropagación, en las que las características de las imágenes se transforman en vectores que se suministran a la entrada, perdiendo las relaciones espaciales. Por ejemplo, una imagen de dimensión 3x3 se transforma en un vector con 9 componentes. En el caso de las características temporales las redes recurrentes tienen la habilidad de realizar tal captura.
+
+No obstante, para muchas tareas no resulta fácil extraer características. Por ejemplo, supóngase que a partir de una imagen se quieren identificar peatones cuando un vehículo autónomo navega en un entorno urbano. Una persona puede identificarse por poseer cabeza, tronco y extremidades. Se podría pensar en detectar la presencia de extremidades o del cuerpo y la cabeza o todas, lo cual no resulta trivial debido a que no es fácil establecer las características de dichas partes. Los brazos y las piernas son alargados, el tronco tiene una forma más rectangular, pero en todos los casos nunca están exentos de elementos perturbadores, tales como el uso de distintos tipos de ropa, sombras, oclusiones totales o parciales, entre otros.
+
+Una solución a este problema consiste en utilizar el AA para descubrir no solo la proyección de la representación a la salida, sino también la representación misma. Este enfoque se conoce como aprendizaje de representación según Goodfellow y col. (2016). Las representaciones aprendidas a menudo resultan en un rendimiento mucho mejor que el que se puede obtener con representaciones diseñadas a mano. También permiten que los sistemas de IA se adapten rápidamente a nuevas tareas, con una mínima intervención humana. Un algoritmo de aprendizaje de representación puede descubrir un buen conjunto de características para una tarea simple en minutos o para una tarea compleja en horas y meses. El diseño manual de características para una tarea compleja requiere una gran cantidad de tiempo y esfuerzo humanos, pudiendo llevar incluso décadas. Un ejemplo por excelencia de un algoritmo de aprendizaje de representación es el \textit{autoencoder} (autocodificador), que convierte los datos de entrada en una representación diferente para luego poder devolverla a la representación original mediante el correspondiente \textit{decoder} (decodificador).
+
+Cuando se diseñan algoritmos para aprender las características, el objetivo consiste en separar los factores de variación que expliquen los datos observados. El concepto factor se refiere a abstracciones que ayudan a distinguir entre la alta variabilidad de los datos observados; así, en el reconocimiento de los peatones los factores de variación hacen referencia a la posición de las extremidades con respecto al tronco, la posición con respecto a la cámara, la ropa con la que van vestidos, las oclusiones de las extremidades, las posibles sombras proyectadas sobre sus cuerpos o la intensidad de la luz con la que se ha obtenido la imagen, entre otros. La mayoría de las aplicaciones exigen separar los factores de variación descartando aquellos que no interesan. A la vista de lo cual, resulta francamente difícil obtener una representación tal que permita resolver el problema. Es precisamente aquí donde entra en acción el aprendizaje profundo, ya que permite introducir representaciones que se expresan en términos de otras representaciones a distintos niveles, que van estructurando convenientemente la información. Por ejemplo, la figura \ref{fig:modelo_aprendizaje_profundo} muestra un sistema basado en AP, concretamente una Red Neuronal Convolucional (RNC) o en terminología inglesa \textit{Convolutional Neural Network} (CNN), donde se representa el concepto de una imagen de una taza combinando conceptos más simples, tales como bordes, contornos o partes de los objetos hasta llegar a su clasificación, en este caso como taza. La idea de representación en múltiples capas es lo que determina una de las perspectivas del AP. De esta forma, se puede decir con carácter general, que las primeras capas de las redes profundas extraen características de bajo nivel, de modo que estas se van tornando en más complejas con características de mayor nivel hasta llegar a las capas superiores, en las que las características extraídas de la imagen son del más alto nivel. Esta información concatenada permite identificar un objeto (taza), a pesar de que pueda presentar diferentes características tales como, por ejemplo, color, forma o tamaño, lo que permite claramente diferenciar el AP del AA.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ruta_a_la_imagen}
+    \caption{Modelo de aprendizaje profundo}
+    \label{fig:modelo_aprendizaje_profundo}
+\end{figure}
+
+Otra idea para determinar el concepto de profundidad es la también establecida por Goodfellow y col. (2016), en el sentido de que la profundidad se determina como el estado del computador para aprender un programa computacional multipaso, de forma que cada capa de la representación puede verse como el estado de la memoria del computador después de ejecutar otro conjunto de instrucciones en paralelo. Las redes con mayor profundidad pueden ejecutar más instrucciones en secuencia. Las instrucciones secuenciales ofrecen un gran poder porque las instrucciones posteriores pueden referirse a los resultados de instrucciones anteriores. Según esta visión del AP, no toda la información en las activaciones de una capa codifica necesariamente factores de variación que explican la entrada. La representación también almacena información de estado que ayuda a ejecutar un programa que puede dar sentido a la entrada. Esta información de estado podría ser análoga a un contador o puntero en un programa de computación tradicional. No tiene nada que ver con el contenido de la entrada específicamente, pero ayuda al modelo a organizar su procesamiento.
+
+Existen dos formas principales de medir la profundidad de un modelo. La primera se basa en el número de instrucciones secuenciales que deben ejecutarse para evaluar la arquitectura. Se puede pensar en esto como la longitud de la ruta más larga a través del diagrama de flujo que describe cómo calcular cada una de las salidas del modelo dadas sus entradas. Otro enfoque, utilizado por modelos probabilísticos profundos, considera que la profundidad de un modelo no es la profundidad del gráfico computacional sino la profundidad del gráfico que describe cómo se relacionan los conceptos entre sí. En este caso, la profundidad del diagrama de flujo de los cálculos necesarios para computar la representación de cada concepto puede ser mucho más profunda que la gráfica de los conceptos en sí mismos. Esto se debe a que la comprensión del sistema de los conceptos más simples puede refinarse dando información sobre los conceptos más complejos. Por ejemplo, siguiendo también a Goodfellow y col. (2016), un sistema inteligente que observa una imagen de una cara con un ojo en la sombra puede ver inicialmente únicamente un ojo. Después de detectar la presencia de una cara, el sistema puede inferir que probablemente también esté presente un segundo ojo. En este caso, la gráfica de conceptos incluye sólo dos capas, una capa para ojos y una capa para caras, pero la gráfica de cálculos incluye dos capas si se refina la estimación de cada concepto dadas las otras n veces. Debido a que no siempre está claro cuál de estos dos modelos (la profundidad del gráfico computacional o la profundidad del gráfico de modelado probabilístico) es más relevante, y debido a que distintas personas eligen diferentes conjuntos de elementos más pequeños a partir de los cuales construir sus gráficos, no existe un único valor correcto para la profundidad de una arquitectura, así como tampoco hay un valor correcto único para la duración de un programa computacional. Tampoco existe un consenso acerca de la profundidad que un modelo requiere para calificarlo como “profundo”. Sin embargo, el aprendizaje profundo puede considerarse, con seguridad, como el estudio de modelos que implican una mayor cantidad de composición de funciones aprendidas o conceptos aprendidos que el aprendizaje automático tradicional.
+
+En definitiva, el aprendizaje profundo es un tipo particular de aprendizaje automático que consigue un gran poder y flexibilidad al representar al mundo como una jerarquía anidada de conceptos, donde cada concepto se define en relación con conceptos más simples y representaciones más abstractas calculadas en términos de conceptos menos abstractos.
+
+
+\section{Funciones de Unidades Lineales de Activación No Lineales}
+
+Una función de activación clásica es la función sigmoide sigmoidal definida como sigue:
+
+\begin{equation}
+f(a, x, c) = \frac{1}{1 + e^{-a(x-c)}}
+\end{equation}
+
+Dependiendo del signo del parámetro \(a\), la función sigmoide se abre hacia la izquierda o hacia la derecha, siendo apropiada para representar conceptos tales como "muy grande" o "muy negativo". La figura 2-4 muestra la representación de sendas funciones sigmoide: en (a) con los siguientes parámetros \(a = 2\) y \(c = 4\); y en (b) con \(a = -2\) y \(c = 4\).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{sigmoid_a_2_c_4.png}
+    \includegraphics[width=0.45\textwidth]{sigmoid_a_-2_c_4.png}
+    \caption{Funciones sigmoide: (a) con \(a=2\) y \(c = 4\); (b) con \(a = -2\) y \(c = 4\).}
+\end{figure}
+
+La función sigmoide que proyecta salidas de números reales de entrada al intervalo [0, 1] posee dos problemas:
+\begin{enumerate}
+    \item Saturación del gradiente. Cuando el valor de la función de activación se aproxima a los extremos 0 o 1, el gradiente de la función tiende a 0, lo que repercute en el ajuste de los pesos de las redes.
+    \item Pesos positivos de forma continua. El valor medio de la función de salida no es 0, lo que origina que los pesos tiendan a ser positivos.
+\end{enumerate}
+
+Estas dos cuestiones provocan una convergencia lenta de los parámetros afectando a la eficiencia del entrenamiento.
+
+\section{Capítulo 2: Computación Numérica}
+
+En Courbariaux y col. (2015) se define lo que denominan función sigmoide dura (hard-sigmoid) como sigue:
+
+\begin{equation}
+f(x) = \max(0, \min(1, 0.5(x+1)))
+\end{equation}
+
+La función tangente hiperbólica tanh proporciona salidas reales en el rango definido, siendo una variante de la función sigmoide, definida exactamente como
+
+\begin{equation}
+\tanh(x) = 2 \cdot \text{sigmoid}(2x) - 1
+\end{equation}
+
+presentando el mismo problema de la saturación del gradiente. La figura 2-5 muestra la representación de la función tanh.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{tanh.png}
+    \caption{Función tanh}
+\end{figure}
+
+La función Unidad Lineal Rectificada (ReLU, Rectified Linear Unit),
+
+\begin{equation}
+f(x) = \max(0, x)
+\end{equation}
+
+representada en la figura 2-6(a) tiene las siguientes características:
+\begin{enumerate}
+    \item Gradiente no saturado. Por el hecho de que \(x > 0\), el problema de la dispersión del gradiente en el proceso de propagación inversa se ve aliviado, y los parámetros en la primera capa de la red neuronal pueden actualizarse rápidamente. En \(x = 0\) no es derivable, por lo que es habitual asignar un valor arbitrario en este caso, por ejemplo 0, 0.5 o bien 1.0.
+    \item Baja complejidad computacional. Dada su propia definición.
+\end{enumerate}
+
+No obstante, posee la desventaja de que la neurona ReLU puede morir cuando recibe un gradiente negativo alto durante la retropropagación que le permite aprender más porque su derivada es cero cuando su entrada es menor que cero, por lo que el gradiente será finalmente cero. Esto se puede evitar al inicializar cuidadosamente los pesos o utilizar ReLU con "fugas", similar a ReLU, pero donde su salida es lineal multiplicada por un valor pequeño (aproximadamente 0.001) cuando la entrada es negativa, esto es
+
+\begin{equation}
+f(x) = \max(0.01x, x)
+\end{equation}
+
+tal y como se muestra en la figura 2-6(b), conocida en ocasiones como ReLU con fugas (LReLU, Leaky ReLU).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{relu.png}
+    \includegraphics[width=0.45\textwidth]{lrelu.png}
+    \caption{Funciones: (a) ReLU; (b) LReLU}
+\end{figure}
+
+En algunos tipos de redes como Mobile Net, que se estudiarán posteriormente, se define una variante de ReLU como sigue (es la función ReLU6), y cuya representación se muestra en la figura 2-7(a). A partir de ella se define hard-swish o h-swish (Hs) representada en la figura 2-7(b), aunque a veces en esta función se utiliza:
+
+\begin{equation}
+\text{ReLU6}(x) = \min(\max(x,0),6)
+\end{equation}
+
+\begin{equation}
+\text{HS}(x) = x \cdot \frac{\text{ReLU6}(x + 3)}{6}
+\end{equation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{relu6.png}
+    \includegraphics[width=0.45\textwidth]{hswish.png}
+    \caption{Funciones: (a) ReLU6; (b) Hard-Swish}
+\end{figure}
+
+La función Paramétrica ReLU (PReLU, Parametric ReLU, He y col., 2015b) se define según:
+
+\begin{equation}
+f(x, \alpha) = \begin{cases} 
+x & \text{si } x > 0 \\ 
+\alpha x & \text{si } x \leq 0 
+\end{cases}
+\end{equation}
+
+De forma que si el parámetro \(\alpha = 0\) la función es exactamente ReLU; si \(\alpha > 0\) se trata de la función LReLU, es cuando el parámetro \(\alpha\) se incluye como un parámetro a aprender durante el proceso de entrenamiento, cuando la función toma su verdadero significado, de ahí su nombre.
+
+Por otra parte, existe la Unidad lineal exponencial (ELU, Exponential Linear Unit) definida en Clevert y col. (2016) como sigue con \(\alpha > 0\):
+
+\begin{equation}
+f(x, \alpha) = \begin{cases} 
+x & \text{si } x > 0 \\ 
+\alpha (e^x - 1) & \text{si } x \leq 0 
+\end{cases}
+\end{equation}
+
+El parámetro \(\alpha\) controla el valor para el cual se produce la saturación para valores de \(x\) negativos. En la figura 2-8 se muestran sendas funciones ELU con valores de \(\alpha = 0.1\) en (a) y 1.0 en (b), respectivamente.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{elu_0.1.png}
+    \includegraphics[width=0.45\textwidth]{elu_1.0.png}
+    \caption{Funciones ELU: (a) con \(\alpha= 0.1\); (b) con \(\alpha= 1.0\)}
+\end{figure}
+
+La función SELU hace referencia a Unidad lineal exponencial escalada (Scaled Exponential Linear Unit), siendo una versión ligeramente modificada de ELU por Klambauer y col. (2017) y definida como sigue:
+
+\begin{equation}
+f(x, \alpha) = \begin{cases} 
+\lambda x & \text{si } x > 0 \\ 
+\lambda \alpha (e^x - 1) & \text{si } x \leq 0 
+\end{cases}
+\end{equation}
+
+En la figura 2-9 se muestra la representación gráfica de la función SELU con valores \(\lambda = 1.0\) y \(\alpha = 2.0\).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{selu.png}
+    \caption{Función SELU}
+\end{figure}
+
+Las funciones ReLU tienen la ventaja de acelerar el entrenamiento, ya que el cálculo del gradiente es simple (0 o 1 dependiendo del signo de la entrada), y no existe una constante en la parte positiva del dominio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Introducción}
+En este capítulo se inicia la presentación, junto con las características más relevantes de las redes neuronales profundas, que, desde sus primeros desarrollos a mediados del siglo XX, han recibido diferentes nombres entre los que destacan: redes neuronales, computadores neuronales, sistemas distribuidos paralelos, modelos conexionistas, entre otros.
+
+Se inicia el capítulo con los fundamentos de este tipo de redes, para abordar a continuación el modelo del perceptrón, como unidad básica, y posteriormente la red de retropropagación. Se finaliza con una pincelada de los modelos conocidos como redes de creencia o bayesianas. En todos los casos con la vista puesta en el concepto de profundidad dentro del aprendizaje profundo.
+
+\section{Fundamentos Generales}
+El interés por las redes neuronales data de los años 40, a partir del trabajo de McCulloch y Pitts (1943), donde se proponen modelos de neuronas en la forma de dispositivos binarios basados en un umbral y algoritmos estocásticos que implicaban cambios binarios 0-1 y 1-0 en los estados de las neuronas como la base para el desarrollo de sistemas neuronales. El trabajo posterior de Hebb (1949) estaba basado en modelos matemáticos que intentaban capturar el concepto de aprendizaje por refuerzo o asociación. Durante la primera mitad de los años 50 y principios de los 60, las denominadas máquinas de aprendizaje propuestas por Rosenblatt (1962) supusieron una revolución entre los investigadores en la teoría de reconocimiento de patrones. La razón del gran interés de dichas máquinas llamadas perceptrones fue el desarrollo de las correspondientes demostraciones matemáticas llegando a la conclusión de que los perceptrones, cuando son entrenados con conjuntos de entrenamientos linealmente separables, convergen a una solución en un número finito de iteraciones. La solución tomó la forma de coeficientes de hiperplanos capaces de separar correctamente las clases representadas por patrones del conjunto de entrenamiento.
+
+Desafortunadamente, las expectativas que siguieron a este descubrimiento perdieron fuerza porque el modelo anterior era inapropiado para muchas tareas de reconocimiento de patrones. Intentos posteriores para extender la potencia del perceptrón considerando múltiples capas de perceptrones fracasaron también. Un estado del arte sobre las máquinas de aprendizaje a mitad de los años 60 fue recopilado por Nilsson (1965). Unos pocos años más tarde, Minsky y Papert (1969) presentaron un estudio desalentador sobre las limitaciones de las máquinas de aprendizaje basadas en el perceptrón. Esta idea negativa se mantuvo hasta mitad de la década de los 80, llegándose incluso a rechazar el uso del perceptrón en algunos trabajos como el presentado por Simon (1986).
+
+Los nuevos algoritmos de aprendizaje para perceptrones multicapa presentados por Rumelhart et al. (1986), conocidos como regla delta generalizada para aprendizaje por retropropagación, modificaron el interés por las redes neuronales. En los años sucesivos, nuevos algoritmos fueron presentados por diferentes autores. Aunque no se ha probado la convergencia de dichos algoritmos hacia una solución óptima, han sido aplicados con éxito a muchos problemas de interés práctico, lo que les otorgó una cierta validez en los años 90. A continuación, estas redes cayeron en popularidad en favor de otras técnicas diferentes. Los motivos fueron múltiples. Por ejemplo, no había un lenguaje estándar de facto para modelar redes neuronales. Tampoco se observaban mejoras significativas cuando se añadían muchas capas a la red, resultando a veces contraproducente. Además, el entrenamiento era computacionalmente costoso con los ordenadores disponibles en la época de referencia. Y en muchas condiciones no había suficientes datos para evitar el sobreajuste del modelo.
+
+Para entender correctamente los fundamentos de las redes neuronales profundas conviene empezar estudiando el modelo más básico. Este consiste en especificar un conjunto de funciones indicador \(A(x,w)\) que toman los valores \{0,1\}, considerando que son los parámetros que definen cada posible elemento que hay que clasificar. Además, se considera que se dispone de \(n\) muestras \((x_i,y_i)\) de entrenamiento (con \(i=1,...,n\)) de las que se conoce su clase \(y_i\). A continuación se minimiza el riesgo empírico de la función indicador sobre todo elemento del conjunto de entrenamiento. Para ello se suele minimizar el error de clasificación incorrecta \(R_o(w) = \sum_i [f(x_i,w) - y_i]^2\).
+
+Para entender mejor el proceso, considérese primero el siguiente caso especial de funciones indicador, donde \(h()\) es una función que indica si el elemento pertenece a la clase (toma el valor 1) o no (toma el valor 0) en base a la combinación lineal, sopesada por los valores de los pesos del modelo \(w\), de los \(q\) parámetros de entrada en \(x\).
+\[
+f(x,w) = h \left( \sum_{j=1}^q w_j x_j \right)
+\]
+En este caso, si se supone que el conjunto de datos de entrenamiento es linealmente separable, existe un simple procedimiento de optimización para encontrar \(f(x,w^*)\), que es conocido como el algoritmo del perceptrón. Cuando los datos son no separables este algoritmo no proporciona una solución óptima, motivo por el que se han desarrollado otros procedimientos. Uno de los métodos considerados es el entrenamiento conocido como Widrow-Hoff o regla delta de mínimos cuadrados, que minimiza una función del tipo dado en la ecuación anterior. Una alternativa diferente consiste en utilizar un perceptrón multicapa (MLP, Multi-Layer Perceptron), que es capaz de manejar adecuadamente tanto las clases separables como las no separables y que utiliza el riesgo empírico funcional dado por:
+\[
+R_{emp}(w,v) = \sum_{i=1}^n \left( f(x_i, w, v) - y_i \right)^2
+\]
+que debe ser minimizado con respecto a los parámetros o pesos \(w\) y \(v=[v_1, v_2, ..., v_m]\). En el caso del perceptrón multicapa, la función \(f(x,w,v)\) se parametriza como:
+\[
+f(x,w,v) = h \left( g(x, w, v) \right)
+\]
+donde \(g(x,w,v) = \sum_{j=1}^m v_j h \left( \sum_{i=1}^q w_{ji} x_i \right)\). 
+
+\section{El Perceptrón}
+El modelo más básico que se puede utilizar en los modelos de redes neuronales recibe el nombre de perceptrón. Debido a su expresión matemática, introducida brevemente en la sección anterior, es capaz de aprender el modelo (obtener los pesos en \(w\)) que permite distinguir los elementos de dos clases linealmente separables. En esta sección se detallan los elementos y formas de representar este modelo, y se explican diferentes métodos de entrenamiento para ajustar los valores de sus parámetros.
+
+\subsection{Arquitectura del Perceptrón}
+En su forma más básica, el perceptrón aprende una función discriminante lineal \(f_d(x)\) que se corresponde con la función \(f(x, w^*)\) introducida en la sección anterior. Esta función establece una dicotomía entre dos conjuntos de entrenamiento linealmente separables. Dados dos conjuntos de puntos, se dice que son linealmente separables si existe un hiperplano en el espacio patrón que separa ambos conjuntos de datos. En el caso de un espacio de dos dimensiones, el hiperplano se puede representar gráficamente y a efectos pedagógicos como una recta, tal y como se muestra en la Figura 3-1.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figura_3_1.png}
+    \caption{Hiperplano de separación para el caso bidimensional}
+    \label{fig:figura_3_1}
+\end{figure}
+
+La Figura 3-2(a) muestra el esquema del modelo del perceptrón para dos clases. La respuesta de este dispositivo está basada en dos etapas. En la primera, se calcula la suma promediada de sus entradas mediante una función de decisión lineal con respecto a las componentes de los vectores patrón:
+\[
+f_d(x) = \sum_{i=1}^n w_i x_i + w_{n+1}
+\]
+Los coeficientes \(w_i\), \(i= 1, 2, ..., n, n+1\), llamados pesos, modifican las entradas antes de que sean sumadas y suministradas al elemento de umbral. Una de las entradas es el sesgo (bias) externo \(w_{n+1}\). En este sentido, los pesos son similares a las sinapsis en el sistema neuronal humano.
+
+En la segunda, se transforma la salida de la primera etapa mediante una función de activación (también conocida como función de transferencia). En su forma más simple, la función de activación es una función escalón (Figura 3-2(b)). Sin embargo, en otras arquitecturas de red también puede ser una función sigmoide o sigmoide binaria.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figura_3_2a.png}
+        \caption{}
+        \label{fig:figura_3_2a}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figura_3_2b.png}
+        \caption{}
+        \label{fig:figura_3_2b}
+    \end{subfigure}
+    \caption{Esquema del modelo del perceptrón para dos clases}
+    \label{fig:figura_3_2}
+\end{figure}
+
+A continuación, se presenta un conjunto de ejemplos de patrones de entrada con el objetivo de encontrar el hiperplano que permite separar dos clases de forma adecuada. El conjunto de patrones de entrada es denotado como \(x_1, x_2, ..., x_n\), y cada patrón de entrada tiene una dimensión de \(m\). La salida deseada es denotada como \(d_1, d_2, ..., d_n\), donde cada \(d_i\) pertenece a \{0,1\}.
+
+
+\end{comment}
 
 
 
