@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  7 JUN 2024 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  9 JUN 2024 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1108,7 +1108,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<img/ucm.png, id=215, 1204.5pt x 1375.1375pt>
+<img/ucm.png, id=255, 1204.5pt x 1375.1375pt>
 File: img/ucm.png Graphic file (type png)
 <use img/ucm.png>
 Package pdftex.def Info: img/ucm.png  used on input line 194.
@@ -1166,16 +1166,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...2.10.1}Autoencoder}{19}{subsection.2.10.1}
+l.32 ...Sobreajuste del modelo.}{14}{section.2.10}
                                                   % [3]
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 ...clusiones y Trabajo Futuro}{39}{chapter.5}
+l.66 ...}Detección de intrusiones}{39}{chapter.4}
                                                   % [4])
 \tf@toc=\write8
 \openout8 = `main.toc'.
@@ -1198,21 +1198,10 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [2]
 Cap\'{\i }tulo 2.
-
-Package natbib Warning: Citation `moor2006dartmouth' on page 3 undefined on inp
-ut line 26.
-
-
-LaTeX Warning: Reference `fig:fig1' on page 3 undefined on input line 26.
-
-
-Package natbib Warning: Citation `choi2020introduction' on page 3 undefined on 
-input line 26.
-
 [3
 
 ]
-<img/ia.jpg, id=314, 418.6842pt x 412.4208pt>
+<img/ia.jpg, id=368, 418.6842pt x 412.4208pt>
 File: img/ia.jpg Graphic file (type jpg)
 <use img/ia.jpg>
 Package pdftex.def Info: img/ia.jpg  used on input line 30.
@@ -1220,432 +1209,233 @@ Package pdftex.def Info: img/ia.jpg  used on input line 30.
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
  [4 <./img/ia.jpg>]
-
-Package natbib Warning: Citation `dolling2002artificial' on page 5 undefined on
- input line 73.
-
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
-[5]
-<img/perceptron.png, id=332, 643.40375pt x 454.69875pt>
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
+ [5]
+<img/perceptron.png, id=388, 643.40375pt x 454.69875pt>
 File: img/perceptron.png Graphic file (type png)
 <use img/perceptron.png>
-Package pdftex.def Info: img/perceptron.png  used on input line 82.
+Package pdftex.def Info: img/perceptron.png  used on input line 98.
 (pdftex.def)             Requested size: 182.09486pt x 128.68852pt.
-
-! Extra alignment tab has been changed to \cr.
-<template> ...w@strut \hfil $\relax $\endtemplate 
-                                                  
-l.99 0 & \text{  si  } &
-                         \sum_{i=1}^{n} w_i \cdot x_i + b <= c.
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
-[6 <./img/perceptron.png (PNG copy)>]
-
-LaTeX Warning: File `ANN_structure.png' not found on input line 124.
-
-
-! Package pdftex.def Error: File `ANN_structure.png' not found: using draft set
-ting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ...s[width=0.7\textwidth]{ANN_structure.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
-[7]
-LaTeX Info: Redefining \. on input line 166.
-LaTeX Info: Redefining \% on input line 166.
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+ [6 <./img/perceptron.png (PNG copy)>]
+Excluding 'comment' comment.
+LaTeX Info: Redefining \. on input line 327.
+LaTeX Info: Redefining \% on input line 327.
+ [7]
+LaTeX Info: Redefining \. on input line 379.
+LaTeX Info: Redefining \% on input line 379.
  [8]
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
+LaTeX Info: Redefining \. on input line 439.
+LaTeX Info: Redefining \% on input line 439.
  [9]
+<img/activation_functions.png, id=441, 1156.32pt x 867.24pt>
+File: img/activation_functions.png Graphic file (type png)
+<use img/activation_functions.png>
+Package pdftex.def Info: img/activation_functions.png  used on input line 458.
+(pdftex.def)             Requested size: 409.71692pt x 307.2835pt.
+LaTeX Info: Redefining \. on input line 470.
+LaTeX Info: Redefining \% on input line 470.
+ [10 <./img/activation_functions.png>]
+LaTeX Info: Redefining \. on input line 499.
+LaTeX Info: Redefining \% on input line 499.
 
-! LaTeX Error: File `ruta_a_la_imagen' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.177 ...cs[width=0.5\textwidth]{ruta_a_la_imagen}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Info: Redefining \. on input line 185.
-LaTeX Info: Redefining \% on input line 185.
-[10]
-
-LaTeX Warning: File `sigmoid_a_2_c_4.png' not found on input line 201.
-
-
-! Package pdftex.def Error: File `sigmoid_a_2_c_4.png' not found: using draft s
-etting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 ...idth=0.45\textwidth]{sigmoid_a_2_c_4.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `sigmoid_a_-2_c_4.png' not found on input line 202.
-
-
-! Package pdftex.def Error: File `sigmoid_a_-2_c_4.png' not found: using draft 
-setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.202 ...dth=0.45\textwidth]{sigmoid_a_-2_c_4.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Info: Redefining \. on input line 209.
-LaTeX Info: Redefining \% on input line 209.
 [11]
-
-LaTeX Warning: File `tanh.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `tanh.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 ...egraphics[width=0.45\textwidth]{tanh.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Info: Redefining \. on input line 245.
-LaTeX Info: Redefining \% on input line 245.
-[12]
-
-LaTeX Warning: File `relu.png' not found on input line 258.
-
-
-! Package pdftex.def Error: File `relu.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.258 ...egraphics[width=0.45\textwidth]{relu.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `lrelu.png' not found on input line 259.
-
-
-! Package pdftex.def Error: File `lrelu.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...graphics[width=0.45\textwidth]{lrelu.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `relu6.png' not found on input line 275.
-
-
-! Package pdftex.def Error: File `relu6.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.275 ...graphics[width=0.45\textwidth]{relu6.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `hswish.png' not found on input line 276.
-
-
-! Package pdftex.def Error: File `hswish.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.276 ...raphics[width=0.45\textwidth]{hswish.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 287.
-LaTeX Info: Redefining \% on input line 287.
-[13]
-
-LaTeX Warning: File `elu_0.1.png' not found on input line 304.
-
-
-! Package pdftex.def Error: File `elu_0.1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.304 ...aphics[width=0.45\textwidth]{elu_0.1.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `elu_1.0.png' not found on input line 305.
-
-
-! Package pdftex.def Error: File `elu_1.0.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.305 ...aphics[width=0.45\textwidth]{elu_1.0.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: File `selu.png' not found on input line 322.
-
-
-! Package pdftex.def Error: File `selu.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.322 ...egraphics[width=0.45\textwidth]{selu.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
-[14]
-LaTeX Info: Redefining \. on input line 357.
-LaTeX Info: Redefining \% on input line 357.
+LaTeX Info: Redefining \. on input line 532.
+LaTeX Info: Redefining \% on input line 532.
+ [12]
+LaTeX Info: Redefining \. on input line 571.
+LaTeX Info: Redefining \% on input line 571.
+ [13]
+<img/overfitting.png, id=490, 756.8275pt x 284.06125pt>
+File: img/overfitting.png Graphic file (type png)
+<use img/overfitting.png>
+Package pdftex.def Info: img/overfitting.png  used on input line 603.
+(pdftex.def)             Requested size: 364.19667pt x 136.69458pt.
+LaTeX Info: Redefining \. on input line 610.
+LaTeX Info: Redefining \% on input line 610.
+ [14 <./img/overfitting.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 642.
+LaTeX Info: Redefining \% on input line 642.
  [15]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-62.
+<img/dropout.png, id=514, 425.59pt x 231.86626pt>
+File: img/dropout.png Graphic file (type png)
+<use img/dropout.png>
+Package pdftex.def Info: img/dropout.png  used on input line 645.
+(pdftex.def)             Requested size: 273.14923pt x 148.82198pt.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 663.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 663.
 
-(C:\Users\pjime\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 362.
-LaTeX Info: Redefining \. on input line 367.
-LaTeX Info: Redefining \% on input line 367.
-
-[16]
-
-LaTeX Warning: File `figura_3_1.png' not found on input line 386.
-
-
-! Package pdftex.def Error: File `figura_3_1.png' not found: using draft settin
-g.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.386 ...hics[width=0.5\textwidth]{figura_3_1.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Info: Redefining \. on input line 679.
+LaTeX Info: Redefining \% on input line 679.
+ [16 <./img/dropout.png>]
+<img/earlyStopping.png, id=537, 454.69875pt x 454.69875pt>
+File: img/earlyStopping.png Graphic file (type png)
+<use img/earlyStopping.png>
+Package pdftex.def Info: img/earlyStopping.png  used on input line 681.
+(pdftex.def)             Requested size: 127.47105pt x 127.4674pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 682.
+See the caption package documentation for explanation.
 
-LaTeX Info: Redefining \. on input line 396.
-LaTeX Info: Redefining \% on input line 396.
-[17]
-
-LaTeX Warning: File `figura_3_2a.png' not found on input line 402.
-
-
-! Package pdftex.def Error: File `figura_3_2a.png' not found: using draft setti
-ng.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.402 ...aphics[width=\textwidth]{figura_3_2a.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Info: Redefining \. on input line 733.
+LaTeX Info: Redefining \% on input line 733.
+[17 <./img/earlyStopping.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 772.
+LaTeX Info: Redefining \% on input line 772.
+ [18]
+<img/roc.png, id=569, 681.54625pt x 644.4075pt>
+File: img/roc.png Graphic file (type png)
+<use img/roc.png>
+Package pdftex.def Info: img/roc.png  used on input line 809.
+(pdftex.def)             Requested size: 209.40797pt x 197.99434pt.
 
 
-LaTeX Warning: File `figura_3_2b.png' not found on input line 407.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 810.
+See the caption package documentation for explanation.
 
 
-! Package pdftex.def Error: File `figura_3_2b.png' not found: using draft setti
-ng.
+Overfull \hbox (27.31311pt too wide) in paragraph at lines 809--810
+[][] 
+ []
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.407 ...aphics[width=\textwidth]{figura_3_2b.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<img/pr.png, id=571, 681.54625pt x 644.4075pt>
+File: img/pr.png Graphic file (type png)
+<use img/pr.png>
+Package pdftex.def Info: img/pr.png  used on input line 819.
+(pdftex.def)             Requested size: 209.40797pt x 197.99434pt.
 
-LaTeX Info: Redefining \. on input line 437.
-LaTeX Info: Redefining \% on input line 437.
-[18]
-<img/AE4.png, id=427, 432.61626pt x 117.43875pt>
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 820.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (27.31311pt too wide) in paragraph at lines 819--820
+[][] 
+ []
+
+LaTeX Info: Redefining \. on input line 834.
+LaTeX Info: Redefining \% on input line 834.
+[19 <./img/roc.png (PNG copy)>]
+<img/precision_recall_vs_threshold.png, id=579, 346.896pt x 165.0165pt>
+File: img/precision_recall_vs_threshold.png Graphic file (type png)
+<use img/precision_recall_vs_threshold.png>
+Package pdftex.def Info: img/precision_recall_vs_threshold.png  used on input l
+ine 840.
+(pdftex.def)             Requested size: 273.14923pt x 129.94109pt.
+LaTeX Info: Redefining \. on input line 861.
+LaTeX Info: Redefining \% on input line 861.
+ [20 <./img/pr.png (PNG copy)> <./img/precision_recall_vs_threshold.png (PNG co
+py)>]
+<img/AE4.png, id=590, 432.61626pt x 117.43875pt>
 File: img/AE4.png Graphic file (type png)
 <use img/AE4.png>
-Package pdftex.def Info: img/AE4.png  used on input line 446.
+Package pdftex.def Info: img/AE4.png  used on input line 864.
 (pdftex.def)             Requested size: 273.14923pt x 74.15164pt.
-LaTeX Info: Redefining \. on input line 482.
-LaTeX Info: Redefining \% on input line 482.
- [19 <./img/AE4.png>]
-<img/convlayers.png, id=447, 437.38406pt x 216.05719pt>
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
+ [21 <./img/AE4.png>]
+<img/convlayers.png, id=611, 437.38406pt x 216.05719pt>
 File: img/convlayers.png Graphic file (type png)
 <use img/convlayers.png>
-Package pdftex.def Info: img/convlayers.png  used on input line 504.
+Package pdftex.def Info: img/convlayers.png  used on input line 922.
 (pdftex.def)             Requested size: 273.14923pt x 134.9299pt.
-LaTeX Info: Redefining \. on input line 517.
-LaTeX Info: Redefining \% on input line 517.
- [20 <./img/convlayers.png>]
-<img/convolucion.png, id=473, 681.54625pt x 473.77pt>
+LaTeX Info: Redefining \. on input line 935.
+LaTeX Info: Redefining \% on input line 935.
+ [22 <./img/convlayers.png>]
+<img/convolucion.png, id=638, 681.54625pt x 473.77pt>
 File: img/convolucion.png Graphic file (type png)
 <use img/convolucion.png>
-Package pdftex.def Info: img/convolucion.png  used on input line 522.
+Package pdftex.def Info: img/convolucion.png  used on input line 940.
 (pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
-<img/convolucionPadding.png, id=474, 681.54625pt x 473.77pt>
+<img/convolucionPadding.png, id=639, 681.54625pt x 473.77pt>
 File: img/convolucionPadding.png Graphic file (type png)
 <use img/convolucionPadding.png>
-Package pdftex.def Info: img/convolucionPadding.png  used on input line 529.
+Package pdftex.def Info: img/convolucionPadding.png  used on input line 947.
 (pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
-<img/stride.png, id=475, 871.255pt x 303.1325pt>
+<img/stride.png, id=640, 871.255pt x 303.1325pt>
 File: img/stride.png Graphic file (type png)
 <use img/stride.png>
-Package pdftex.def Info: img/stride.png  used on input line 541.
+Package pdftex.def Info: img/stride.png  used on input line 959.
 (pdftex.def)             Requested size: 273.14923pt x 95.03395pt.
-LaTeX Info: Redefining \. on input line 564.
-LaTeX Info: Redefining \% on input line 564.
- [21 <./img/convolucion.png (PNG copy)> <./img/convolucionPadding.png (PNG copy
+LaTeX Info: Redefining \. on input line 988.
+LaTeX Info: Redefining \% on input line 988.
+ [23 <./img/convolucion.png (PNG copy)> <./img/convolucionPadding.png (PNG copy
 )> <./img/stride.png (PNG copy)>]
-<img/maxpooling.png, id=494, 548.0475pt x 264.99pt>
+<img/maxpooling.png, id=659, 548.0475pt x 264.99pt>
 File: img/maxpooling.png Graphic file (type png)
 <use img/maxpooling.png>
-Package pdftex.def Info: img/maxpooling.png  used on input line 588.
+Package pdftex.def Info: img/maxpooling.png  used on input line 1006.
 (pdftex.def)             Requested size: 182.09486pt x 88.0454pt.
-<img/translacionPooling.png, id=496, 144.54pt x 90.0966pt>
+<img/translacionPooling.png, id=661, 144.54pt x 90.0966pt>
 File: img/translacionPooling.png Graphic file (type png)
 <use img/translacionPooling.png>
-Package pdftex.def Info: img/translacionPooling.png  used on input line 598.
+Package pdftex.def Info: img/translacionPooling.png  used on input line 1016.
 (pdftex.def)             Requested size: 182.09486pt x 113.5113pt.
+LaTeX Info: Redefining \. on input line 1026.
+LaTeX Info: Redefining \% on input line 1026.
+ [24 <./img/maxpooling.png (PNG copy)> <./img/translacionPooling.png (PNG copy)
+>] Excluding 'comment' comment.
+LaTeX Info: Redefining \. on input line 1066.
+LaTeX Info: Redefining \% on input line 1066.
+ [25]
+LaTeX Info: Redefining \. on input line 1091.
+LaTeX Info: Redefining \% on input line 1091.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-LaTeX Info: Redefining \. on input line 608.
-LaTeX Info: Redefining \% on input line 608.
-[22 <./img/maxpooling.png (PNG copy)>] Excluding 'comment' comment.
-LaTeX Info: Redefining \. on input line 638.
-LaTeX Info: Redefining \% on input line 638.
- [23 <./img/translacionPooling.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 664.
-LaTeX Info: Redefining \% on input line 664.
- [24]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 671.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 671.
-
- Excluding 'comment' comment.
-Excluding 'comment' comment. Excluding 'comment' comment.) (capitulo03.tex
+[26] Excluding 'comment' comment. Excluding 'comment' comment.
+Excluding 'comment' comment. Excluding 'comment' comment.
+Excluding 'comment' comment.) (capitulo03.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-[25]
+ [27]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [26
+ [28
 
 ]
 Cap\'{\i }tulo 3.
-[27]
-<img/previewMMC.png, id=579, 963.6pt x 542.025pt>
+[29]
+<img/previewMMC.png, id=740, 963.6pt x 542.025pt>
 File: img/previewMMC.png Graphic file (type png)
 <use img/previewMMC.png>
 Package pdftex.def Info: img/previewMMC.png  used on input line 40.
 (pdftex.def)             Requested size: 318.66948pt x 179.24924pt.
 LaTeX Info: Redefining \. on input line 53.
 LaTeX Info: Redefining \% on input line 53.
- [28 <./img/previewMMC.png (PNG copy)>]
-<img/botnetStructure.png, id=590, 204.765pt x 212.2329pt>
+ [30 <./img/previewMMC.png (PNG copy)>]
+<img/botnetStructure.png, id=752, 204.765pt x 212.2329pt>
 File: img/botnetStructure.png Graphic file (type png)
 <use img/botnetStructure.png>
 Package pdftex.def Info: img/botnetStructure.png  used on input line 65.
 (pdftex.def)             Requested size: 150.23138pt x 155.71889pt.
 LaTeX Info: Redefining \. on input line 89.
 LaTeX Info: Redefining \% on input line 89.
- [29 <./img/botnetStructure.png>]
+ [31 <./img/botnetStructure.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 92--92
 [][][]\OT1/cmr/m/n/9 Los iden-ti-fi-ca-do-res de es-tos ar-chi-vos son 58kxh-Xo
 uHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA,
  []
 
-<img/circularMMC.png, id=612, 462.528pt x 346.896pt>
+<img/circularMMC.png, id=774, 462.528pt x 346.896pt>
 File: img/circularMMC.png Graphic file (type png)
 <use img/circularMMC.png>
 Package pdftex.def Info: img/circularMMC.png  used on input line 96.
 (pdftex.def)             Requested size: 273.14923pt x 204.87329pt.
 LaTeX Info: Redefining \. on input line 127.
 LaTeX Info: Redefining \% on input line 127.
-[30 <./img/circularMMC.png>]
-<img/visualMalware.png, id=634, 1933.2225pt x 341.275pt>
+[32 <./img/circularMMC.png>]
+<img/visualMalware.png, id=795, 1933.2225pt x 341.275pt>
 File: img/visualMalware.png Graphic file (type png)
 <use img/visualMalware.png>
 Package pdftex.def Info: img/visualMalware.png  used on input line 144.
 (pdftex.def)             Requested size: 455.24411pt x 80.36105pt.
-<img/visualFamilias.png, id=641, 2509.375pt x 960.58875pt>
+<img/visualFamilias.png, id=802, 2509.375pt x 960.58875pt>
 File: img/visualFamilias.png Graphic file (type png)
 <use img/visualFamilias.png>
 Package pdftex.def Info: img/visualFamilias.png  used on input line 154.
@@ -1656,20 +1446,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 165.
 LaTeX Info: Redefining \% on input line 165.
-[31 <./img/visualMalware.png (PNG copy)>]
-<img/cnnMMC.png, id=657, 1425.325pt x 429.605pt>
+[33 <./img/visualMalware.png (PNG copy)>]
+<img/cnnMMC.png, id=818, 1425.325pt x 429.605pt>
 File: img/cnnMMC.png Graphic file (type png)
 <use img/cnnMMC.png>
 Package pdftex.def Info: img/cnnMMC.png  used on input line 168.
 (pdftex.def)             Requested size: 455.24411pt x 137.21419pt.
 LaTeX Info: Redefining \. on input line 180.
 LaTeX Info: Redefining \% on input line 180.
- [32 <./img/visualFamilias.png (PNG copy)> <./img/cnnMMC.png>]
-
-Package natbib Warning: Citation `categoriCE' on page 33 undefined on input lin
-e 182.
-
-<img/malware_classifier_dropout0.png, id=669, 867.24pt x 433.62pt>
+ [34 <./img/visualFamilias.png (PNG copy)> <./img/cnnMMC.png>]
+<img/malware_classifier_dropout0.png, id=831, 867.24pt x 433.62pt>
 File: img/malware_classifier_dropout0.png Graphic file (type png)
 <use img/malware_classifier_dropout0.png>
 Package pdftex.def Info: img/malware_classifier_dropout0.png  used on input lin
@@ -1677,74 +1463,69 @@ e 193.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 LaTeX Info: Redefining \. on input line 200.
 LaTeX Info: Redefining \% on input line 200.
-[33 <./img/malware_classifier_dropout0.png>]
-
-Package natbib Warning: Citation `xing2022malware' on page 34 undefined on inpu
-t line 234.
-
+ [35 <./img/malware_classifier_dropout0.png>]
 LaTeX Info: Redefining \. on input line 235.
 LaTeX Info: Redefining \% on input line 235.
-[34] Excluding 'comment' comment.) (capitulo04.tex
+ [36]
+Excluding 'comment' comment.) (capitulo04.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [35]
+ [37]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [36
+ [38
 
 ]
 Cap\'{\i }tulo 4.
-[37]) (capitulo05.tex
+[39]) (capitulo05.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [38]
+ [40]
 Cap\'{\i }tulo 5.
-) Excluding 'comment' comment. [39
+) Excluding 'comment' comment. [41
 
 ] (main.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [40
+ [42
 
-] [41]
-LaTeX Info: Redefining \. on input line 194.
-LaTeX Info: Redefining \% on input line 194.
- [42]
-LaTeX Info: Redefining \. on input line 291.
-LaTeX Info: Redefining \% on input line 291.
- [43])
+] [43]
+LaTeX Info: Redefining \. on input line 195.
+LaTeX Info: Redefining \% on input line 195.
+ [44]
+LaTeX Info: Redefining \. on input line 297.
+LaTeX Info: Redefining \% on input line 297.
+ [45]
+LaTeX Info: Redefining \. on input line 394.
+LaTeX Info: Redefining \% on input line 394.
+ [46])
 LaTeX Info: Redefining \. on input line 487.
 LaTeX Info: Redefining \% on input line 487.
- [44]
+
+[47]
 No file main.gls.
 LaTeX Info: Redefining \. on input line 493.
 LaTeX Info: Redefining \% on input line 493.
-[45
+[48
 
 ]
-
-Package natbib Warning: There were undefined citations.
-
 LaTeX Info: Redefining \. on input line 564.
 LaTeX Info: Redefining \% on input line 564.
-[46] (main.aux
+ [49] (main.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B2193D63407170D5E89B277270FA5CE;9742.
+(rerunfilecheck)             Checksum: AEB7D49A95E150361F1F141A443865D3;11227.
  ) 
 Here is how much of TeX's memory you used:
- 27318 strings out of 475385
- 473235 string characters out of 2776906
- 916343 words of memory out of 3000000
- 47956 multiletter control sequences out of 15000+600000
+ 27000 strings out of 475385
+ 465835 string characters out of 2776906
+ 916909 words of memory out of 3000000
+ 47594 multiletter control sequences out of 15000+600000
  485454 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 91i,9n,91p,2397b,1352s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 91i,9n,91p,2390b,1351s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{glo:dnn} has been referenced but does not exist, re
 placed by a fixed one
@@ -1777,9 +1558,9 @@ s/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on main.pdf (53 pages, 3225067 bytes).
+Output written on main.pdf (56 pages, 3707026 bytes).
 PDF statistics:
- 925 PDF objects out of 1000 (max. 8388607)
- 239 named destinations out of 1000 (max. 500000)
- 510 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1108 PDF objects out of 1200 (max. 8388607)
+ 304 named destinations out of 1000 (max. 500000)
+ 625 words of extra memory for PDF output out of 10000 (max. 10000000)
 

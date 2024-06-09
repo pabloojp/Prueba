@@ -23,7 +23,7 @@ Partes de una neurona y como trabaja(bias, pesos...)
 
 En la última década, la inteligencia artificial (IA) se ha convertido en un tema popular tanto dentro como fuera de la comunidad científica. Una abundancia de artículos en revistas tecnológicas y no tecnológicas han cubierto los temas de aprendizaje automático (ML, por sus siglas en inglés), aprendizaje profundo (DL, por sus siglas en inglés) e IA. Sin embargo, todavía persiste confusión en torno a IA, ML y DL. Los términos están estrechamente relacionados, pero no son intercambiables. 
 
-En 1956, un grupo de científicos informáticos propuso que las computadoras podrían ser programadas para pensar y razonar, ``que cada aspecto del aprendizaje o cualquier otra característica de la inteligencia podría, en principio, ser descrito tan precisamente que una máquina podría simularlo'' \citep{moor2006dartmouth}. Describieron este principio como ``inteligencia artificial''. En pocas palabras, la IA es un campo enfocado en automatizar tareas intelectuales que normalmente realizan los humanos, y el Machine Learning es un método específico para lograr este objetivo. Es decir, está dentro del ámbito de la IA (Figura \ref{fig:fig1}) \citep{choi2020introduction}. 
+En 1956, un grupo de científicos informáticos propuso que las computadoras podrían ser programadas para pensar y razonar, ``que cada aspecto del aprendizaje o cualquier otra característica de la inteligencia podría, en principio, ser descrito tan precisamente que una máquina podría simularlo'' \citep{moor2006dartmouth}. Describieron este principio como ``inteligencia artificial''. En pocas palabras, la IA es un campo enfocado en automatizar tareas intelectuales que normalmente realizan los humanos, y el Machine Learning es un método específico para lograr este objetivo. Es decir, está dentro del ámbito de la IA (Figura \ref{fig: ia}) \citep{choi2020introduction}. 
 
 \begin{figure}[h!]
     \centering
@@ -130,13 +130,722 @@ La segunda capa consiste en transformar la salida de la primera etapa mediante u
 \section{GENERALIZACIÓN}
 \section{COMO SE APRENDE}
 \section{OPTIMIZACIÓN}
-\section{FUNCIÓN DE PERDIDA}
-\section{FUNCION DE ACTIVACION}
-\section{VALIDACIÓN CRUZADA}
-\section{ARQUITECTURAS}
-\section{REGULARIZACIÓN}
-\section{MÉTRICAS}
-\section{FRAMEWORKS}
+\begin{comment}
+\section{Métodos de Optimización}
+
+La optimización se refiere a la tarea de minimizar o maximizar una función $f(x)$ modificando $x$. En general, la optimización alude a una minimización, ya que la maximización es equivalente a la minimización de $-f(x)$. La función a minimizar (o maximizar) se conoce como función objetivo o criterio, que se utiliza para evaluar una solución candidata, por ejemplo, los pesos en una red neuronal. Cuando se está minimizando, según Goodfellow y col. (2016), se le denomina también función de coste (\textit{cost function}), función de pérdida (\textit{loss function}), o función de error (\textit{error function}). La función de pérdida es necesaria para poder disponer de un error que retropropagar durante la etapa de aprendizaje. Así pues, la función o grupo de funciones que se están minimizando se denominan \textit{loss functions}, y el valor que obtiene la minimización o maximización se identifica con el símbolo $\hat{x} = \arg \min f(x)$.
+
+Conviene destacar que la función de pérdida debe ser diferenciable, y en este sentido, durante el entrenamiento, mediante dicha función se compara la salida de la red neuronal (predicción) con la etiqueta del objetivo verdadera (\textit{ground-truth}). Según los distintos modelos de red, se definen diferentes funciones de pérdida. En la red neuronal se obtienen todos los cálculos realizados por cada una de las capas. Por tanto, si cada uno de estos cálculos es diferenciable, entonces la función de pérdida también será diferenciable. No obstante, a veces se utilizan funciones de activación, tales como ReLU, que no son diferenciables; en estos casos es necesario aplicar alguna aproximación derivativa para poder utilizar la función en los procesos de retropropagación, mediante gradiente descendente, como se verá posteriormente.
+
+Una función de pérdida es una medida de cuán bueno es un modelo de predicción en términos de poder aproximarse lo más posible (predecir) al resultado esperado. Uno de los métodos más utilizados para encontrar el punto mínimo de una función es el denominado \textit{descenso de gradiente}. Se puede pensar en la función de pérdida como una montaña ondulada y el descenso en pendiente es como deslizarse por la montaña para llegar al punto más bajo; de aquí surge el concepto de optimización mediante el gradiente (\textit{gradient-based optimization}). Cuando se calcula la pérdida, se debe mejorar el modelo. Esto se hace propagando el error hacia atrás a través de la estructura del modelo, de forma que en las redes neuronales son los pesos del modelo los que terminan ajustándose. Esto cierra el ciclo de aprendizaje entre el envío de los datos hacia adelante, la generación de predicciones y la mejora durante la propagación hacia atrás. Al adaptar los pesos, el modelo probablemente mejore (a veces mucho, a veces ligeramente) y, por lo tanto, se dice que se ha realizado el aprendizaje.
+
+Resulta bien conocido que la derivada de una función en un punto $x$ proporciona la pendiente de la función en dicho punto. La derivada permite escalar un pequeño cambio en la entrada para obtener el correspondiente cambio en la salida: $f(x+\delta) = f(x) + \delta f'(x)$. La derivada es, por tanto, útil para minimizar una función porque indica cómo cambiar $x$ para conseguir una pequeña mejora en la salida $y$. Por ejemplo, se sabe que $f(x - \delta \cdot \text{sign}(f'(x)))$ es menor que $f(x)$ para un $\delta$ suficientemente pequeño. Se puede entonces disminuir $f(x)$ moviéndose en pequeños pasos con el signo opuesto de la derivada. Esto se conoce como \textit{gradiente descendente} (\textit{gradient descent}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{gradiente_descendente.png}
+    \caption{Gradiente descendente}
+    \label{fig:gradiente}
+\end{figure}
+
+Para $x < 0$, $f'(x) < 0$ y $f$ disminuye hacia la derecha. Para $x > 0$, $f'(x) > 0$ y $f$ disminuye hacia la izquierda. Para $x = 0$, el gradiente se detiene puesto que $f'(x) = 0$.
+
+Cuando $f'(x) = 0$, la derivada no proporciona información sobre la dirección en la que hay que moverse, de esta forma, los puntos con $f'(x) = 0$ se conocen como puntos críticos o puntos estacionarios. Un mínimo local es un punto donde $f(x)$ es menor que todos los puntos vecinos, de modo que no es posible disminuir $f(x)$ mediante pasos infinitesimales. Un máximo local es un punto donde $f(x)$ es mayor que todos los puntos vecinos, de modo que no es posible incrementar $f(x)$ mediante pasos infinitesimales. Otros puntos críticos denominados puntos de inflexión son los que tienen vecinos que son mayores y menores que el punto mismo, pero no son ni máximos ni mínimos.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{puntos_criticos.png}
+    \caption{Puntos críticos}
+    \label{fig:puntos_criticos}
+\end{figure}
+
+Un punto que obtiene el valor más bajo de $f(x)$ es un mínimo global. Puede haber solo un mínimo global o múltiples mínimos globales de la función. También es posible que haya mínimos locales que no sean globalmente óptimos. En el contexto del aprendizaje profundo, se optimizan las funciones que pueden tener muchas limitaciones locales que no son óptimas y muchos puntos de inflexión rodeados de regiones muy planas. Todo esto hace que la optimización sea difícil, especialmente cuando la entrada a la función es multidimensional.
+
+A menudo es necesario minimizar funciones que tienen múltiples ($n$) entradas: $f: \mathbb{R}^n \to \mathbb{R}$, con una única salida (escalar). Con múltiples entradas, se debe utilizar el concepto de derivadas parciales $\frac{\partial f(x)}{\partial x_i}$, que mide cómo cambia $f$ según aumenta la variable $x_i$ en el punto $x$. El gradiente generaliza la noción de derivada al caso en que la derivada es con respecto a un vector: el gradiente de $f$ es el vector que contiene todas las derivadas parciales, denotado por $\nabla f(x)$. El elemento $i$-ésimo del gradiente es la derivada parcial de $f$ con respecto a $x_i$. En múltiples dimensiones, los puntos críticos son puntos en los que cada elemento del gradiente es igual a cero. La derivada direccional en la dirección $u$ (vector unitario) es la pendiente de la función $f$ en esa dirección $u$. En otras palabras, la derivada direccional es la derivada de la función $f(x + \alpha u)$ con respecto a $\alpha$, evaluada en $\alpha = 0$. Usando la regla de la cadena, se determina que $f(x + \alpha u)$ evalúa $u \cdot \nabla f(x)$ cuando $\alpha = 0$.
+
+Para minimizar $f$, es deseable encontrar la dirección en la que $f$ disminuye de forma más rápida, lo que se puede hacer usando la derivada direccional:
+\[
+\min_u \nabla f(x) \cdot u = \min_{\theta} \|\nabla f(x)\| \cos(\theta)
+\]
+donde $\theta$ es el ángulo entre $u$ y el gradiente. Sustituyendo $\|u\| = 1$ e ignorando factores que no dependen de $\theta$, se concreta en minimizar $\min_{u} \cos \theta$. Esto se consigue cuando $u$ apunta en la dirección opuesta del gradiente. En otras palabras, el gradiente apunta directamente hacia arriba. Se puede hacer decrecer $f$ moviéndose en la dirección opuesta del gradiente, lo que se conoce como método del gradiente descendente (\textit{steepest descent} o \textit{gradient descent}), que propone un nuevo punto,
+\[
+x' = x - \eta \nabla f(x)
+\]
+donde $\eta$ es la razón de aprendizaje, que es un valor escalar que determina la dimensión del paso. Se puede elegir de varias formas, una de ellas es fijarlo a un valor pequeño constante. Algunas veces se puede determinar la dimensión del paso que hace desaparecer la derivada direccional. Otra aproximación consiste en evaluar $f(x - \eta \nabla f(x))$ para varios valores de $\eta$ y elegir el que proporciona el valor de la función objetivo más pequeño. Esta estrategia se denomina \textit{búsqueda en línea} (\textit{line search}).
+
+El gradiente descendente converge cuando cada elemento del gradiente es cero (o, en la práctica, muy próximo a cero). En algunos casos, se puede evitar ejecutar este algoritmo iterativo y simplemente saltar al punto en el que el gradiente es igual a cero. En muchas situaciones es posible resolver analíticamente la ecuación $\nabla f(x) = 0$. En la optimización convexa, la optimización de funciones cóncavas y diferenciables que tienen una única solución óptima global, se puede obtener una solución cerrada sin necesidad de recurrir a métodos iterativos, como el gradiente descendente. Sin embargo, las redes neuronales, así como otros modelos que pueden tener múltiples óptimos locales y limitaciones no convexas, se enfrentan a mayores desafíos en este aspecto.
+
+
+
+\subsection{Gradiente Descendente Estocástico}
+
+En el ámbito del aprendizaje automático, el problema del Gradiente Descendente Estocástico (SGD, Stochastic Gradient Descent) consiste en minimizar una función objetivo que tiene la forma (Bishop, 2006; Ruder, 2017),
+
+\begin{equation}
+J(w) = \sum_{i=1}^{n} L(y_i, f(x_i; w)),
+\end{equation}
+
+donde el parámetro \( w \), que minimiza \( J(w) \), debe estimarse. \( J_i \) se asocia con la i-ésima observación en el conjunto de datos utilizados para el entrenamiento (ajuste). El término estocástico proviene del hecho relativo a la selección de las muestras (observaciones) para el ajuste de forma aleatoria, que incluso se pueden seleccionar por lotes en cada iteración. \( J(w) \) es el valor de la función de pérdida (loss function) en el i-ésimo ejemplo y \( J(w) \) es el riesgo empírico.
+
+El gradiente descendente se usa para minimizar la siguiente función de forma iterativa, con iteraciones \( t \). En el Anexo se proporciona un mayor nivel de detalle.
+
+\begin{equation}
+w(t+1) = w(t) - \eta \nabla J(w(t)),
+\end{equation}
+
+donde \( \eta \) es la tasa de aprendizaje. De esta forma iterativa, el método recorre el conjunto de entrenamiento y realiza la actualización indicada anteriormente para cada muestra de entrenamiento. Según la ecuación (2.5), gradientes negativos incrementan el peso y viceversa, siempre con el fin de minimizar la función objetivo. Se pueden realizar varios pasos sobre el conjunto de entrenamiento hasta que el algoritmo converja. Si se hace esto, los datos se pueden seleccionar aleatoriamente en cada paso para evitar ciclos; es lo que se conoce como criterio estocástico. Estas muestras así seleccionadas constituyen lo que se denomina un lote (batch). Las implementaciones típicas pueden usar una razón de aprendizaje adaptativa para que el algoritmo converja.
+
+En pseudocódigo, el método del gradiente descendente estocástico es como sigue:
+
+\begin{enumerate}
+    \item Elegir un vector inicial de parámetros \( w \) (puede ser aleatoriamente) y una tasa de aprendizaje \( \eta \).
+    \item Repetir hasta que se consiga un mínimo aproximado:
+    \begin{enumerate}
+        \item Seleccionar aleatoriamente ejemplos en el conjunto de entrenamiento.
+        \item Para \( i = 1, 2, \ldots, n \), hacer:
+        \begin{equation}
+        w(t+1) = w(t) - \eta \nabla J_i(w).
+        \end{equation}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Ejemplo}
+
+Supóngase que se quiere ajustar una línea recta \( y = w_1 + w_2 x \) a partir de un conjunto de observaciones \( (x_1, x_2, \ldots, x_n) \) con sus correspondientes respuestas estimadas \( (y_1, y_2, \ldots, y_n) \) utilizando mínimos cuadrados. La función objetivo a minimizar es:
+
+\begin{equation}
+J(w) = \sum_{i=1}^{n} (w_1 + w_2 x_i - y_i)^2.
+\end{equation}
+
+El punto 2.2 del pseudocódigo resulta en:
+
+\begin{equation}
+w_1(t+1) = w_1(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i),
+\end{equation}
+
+\begin{equation}
+w_2(t+1) = w_2(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i)x_i.
+\end{equation}
+
+En cada iteración (también llamada actualización), solo se evalúa el gradiente en un único punto \( x \) en lugar de evaluar en el conjunto de todas las muestras. La diferencia clave en comparación con el gradiente descendente estándar es que solo se utiliza un dato del total del conjunto de datos disponible para obtener la actualización, y el dato se selecciona de forma aleatoria en cada paso.
+
+Existen diversas variantes, extensiones y mejoras del algoritmo. Resulta de particular interés el hecho de fijar la razón de aprendizaje, ya que valores altos tienden hacia la divergencia de los datos, mientras que valores demasiado pequeños hacen que la convergencia sea lenta. Una forma de abordar este problema es que dicha razón sea variable disminuyendo a medida que se incorporan nuevas muestras (mayor aprendizaje). Esto se consigue haciéndola dependiente del número de datos o iteraciones. Una de tales extensiones es la del método del momentum (Rumelhart y col., 1986; Murphy 2012). Este método recuerda la actualización \( \Delta w \) en cada iteración, determinando la siguiente actualización como una combinación lineal del gradiente y la actualización previa (Sutskever y col., 2013):
+
+\begin{equation}
+\Delta w(t) = \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1)),
+\end{equation}
+
+\begin{equation}
+w(t) = w(t-1) + \Delta w(t).
+\end{equation}
+
+En resumen, la dimensión del lote expresa el número de muestras procesadas antes de actualizar los pesos de la red. El número de épocas (epochs) es el número de pases completos de todo el conjunto de muestras de entrenamiento \( N \). Se puede establecer que la razón de aprendizaje varíe cada cierto número de épocas, por ejemplo, cada 5 épocas disminuye un 10\% con respecto al valor inicial. Se puede ejecutar el algoritmo todo el tiempo que se desee e incluso detenerlo utilizando otros criterios además de un número fijo de épocas, tal como que el error del modelo o que la función objetivo no cambia con el número de iteraciones. En estos casos se dice que se ha alcanzado la convergencia y los criterios así establecidos se denominan de convergencia.
+
+A modo de ejemplo, supóngase un conjunto de datos con 400 muestras, de forma que se define la dimensión del lote en 10 con 100 épocas. Esto significa que el conjunto de datos se divide en 40 lotes, cada lote con 10 muestras. La actualización de los pesos del modelo se realizará tras el paso de cada lote con 10 muestras. Así, una época involucra 40 lotes, es decir, 40 actualizaciones del modelo.
+
+
+
+
+Esto se consigue haciéndola dependiente del número de datos o iteraciones. Una de tales extensiones es la del método del \textit{momentum} (Rumelhart y col., 1986; Murphy, 2012). Este método recuerda la actualización $\Delta w$ en cada iteración, determinando la siguiente actualización como una combinación lineal del gradiente y la actualización previa (Sutskever y col., 2013):
+
+\[
+\Delta w(t) = \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1))
+\]
+
+La anterior expresión conduce a:
+
+\[
+w(t) = w(t-1) + \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1))
+\]
+
+donde $\eta > 0$ es la razón de aprendizaje y $\alpha \in [0,1]$ es la constante de momento que controla la velocidad de actualización de $\Delta w(t-1)$. El vector de parámetros, $w$, que minimiza $J(w)$ es realmente el que se estima en el proceso de optimización. El nombre de \textit{momentum} proviene del concepto de momento en física, de forma que el vector de pesos $w$, visto como una partícula viajando a través del espacio de parámetros, adquiere una aceleración a partir de la fuerza, tendiendo a mantenerse en la misma dirección, evitando así oscilaciones.
+
+En los procesos de optimización de redes neuronales, si los gradientes incrementan su magnitud exponencialmente, por ejemplo, porque los pesos toman valores altos afectando a los resultados de las multiplicaciones, el entrenamiento se hace inestable y puede divergir en unas pocas iteraciones. Esto es lo que se conoce como \textit{explosión del gradiente}. Pascanu y col. (2013) proponen el \textit{recorte de gradiente} (\textit{gradient clipping}), que ayuda a prevenir dicha explosión estabilizando el entrenamiento ante la presencia de \textit{outliers}. Para ello se propone considerar un determinado umbral $T$ de forma que si:
+
+\[
+\|\nabla J(w)\| > T \text{ entonces } \nabla J(w) = T \frac{\nabla J(w)}{\|\nabla J(w)\|}
+\]
+
+De forma similar, si los valores del gradiente son muy pequeños también por influencia de valores de pesos pequeños, el problema se conoce como \textit{desaparición del gradiente}. En la literatura se han investigado diversas aproximaciones en aras de la mejora de la convergencia, por ejemplo, mediante el promediado de trayectorias (Polyak y Juditsky, 1992).
+
+Durante el proceso de actualización de los pesos de la red, mediante el cálculo del error, existen básicamente tres tipos de estrategias. En todas ellas, se dispone de $N$ muestras de entrenamiento, la diferencia estriba en cómo se realiza la actualización (Kim, 2017; Brownlee, 2018). El proceso de optimización es iterativo, lo que quiere decir que cuando se busca el mínimo, se realizan una serie de pasos, siendo el objetivo de cada paso ajustar lo mejor posible los pesos. Cada paso consiste en utilizar el modelo con los parámetros actuales, realizar una predicción sobre algunas muestras, comparar las predicciones con las muestras, calcular el error y propagar el error hacia atrás para actualizar de nuevo los pesos del modelo.
+
+Una muestra es un dato simple, también llamada instancia, observación, vector de entrada o vector de características, que se suministra al algoritmo junto con una salida que se utiliza para comparar el error con respecto a la salida que se obtiene con ella y la esperada. Este planteamiento se engloba en lo que se denomina \textit{aprendizaje supervisado}. Un conjunto de muestras de entrenamiento engloba un cierto número, $n$, de muestras.
+
+Como se ha indicado anteriormente, existe el concepto de \textit{lote} (\textit{batch}) que define el número de muestras utilizadas antes de llevar a cabo una actualización de los pesos de la red en el modelo. Considérese un lote, constando de una o más muestras dentro de un bucle y haciendo predicciones precisamente con esas muestras del lote. Una vez que han pasado todas las muestras del lote, se realizan las predicciones y se comparan con las variables de salida esperadas para obtener el error correspondiente. Con este error, el algoritmo de optimización actualiza los pesos que definen el modelo. Esto significa que hasta que no han pasado todas las muestras del lote no se actualizan dichos pesos. Un conjunto de datos de entrenamiento se puede dividir en uno o más lotes.
+
+Cuando todas las muestras de entrenamiento se utilizan para crear un lote, el algoritmo de aprendizaje se denomina \textit{descenso del gradiente por lotes}. Cuando el lote es del tamaño de una muestra, el algoritmo de aprendizaje se denomina \textit{descenso de gradiente estocástico} (\textit{SGD}) o de otro tipo. Cuando el tamaño del lote posee más de una muestra y es menor que el tamaño del conjunto de datos de entrenamiento, el algoritmo de aprendizaje se denomina \textit{descenso de gradiente de mini-lote} (\textit{mini-batch}). Dimensiones habituales de los mini-lotes son 32, 64 y 128, lo que suele derivar en el hecho de que el último lote a veces tiene un tamaño menor que el resto, al no coincidir el número de muestras totales con esas dimensiones, cuando se reparten las muestras en los lotes. A veces se eliminan algunas muestras para que esto no ocurra.
+
+Por otra parte, existe otro parámetro conocido como \textit{época} (\textit{epoch}), que define el número de veces que el conjunto total de muestras son procesadas por el algoritmo. Esto significa que cada muestra del conjunto $N$ ha tenido una oportunidad de actualizar los pesos en cada \textit{epoch}. Una \textit{epoch} puede tener uno o más lotes. Para mayor claridad, se puede pensar en un bucle sobre el número de \textit{epochs} donde cada iteración o ciclo opera sobre $N$. Dentro de esta iteración, existe otra iteración anidada que actúa sobre cada lote de muestras, teniendo en cuenta que un lote tiene el número especificado de muestras según el tamaño del lote. El número de \textit{epochs} depende del tipo de datos, siendo a veces alto, para garantizar una eficiencia suficiente. Se pueden encontrar aplicaciones con 10, 100, 1000 e incluso más, y naturalmente también con menos. Además, es común representar gráficamente, sobre un sistema de ejes bidimensional (x-y), el proceso de aprendizaje mostrando las \textit{epochs} sobre el eje horizontal $x$ junto con las iteraciones y el error del modelo en el eje $y$. Estas representaciones ayudan a diagnosticar la evolución del aprendizaje, y cómo el modelo se ajusta adecuadamente o no al conjunto de datos de entrenamiento.
+
+En resumen, la dimensión del lote expresa el número de muestras procesadas antes de actualizar los pesos de la red. El número de \textit{epochs} es el número de pases completos de todo el conjunto de muestras de entrenamiento $N$. Se puede establecer que la razón de aprendizaje varíe cada cierto número de \textit{epochs}, por ejemplo, cada 5 \textit{epochs} disminuya un 10\% con respecto al valor inicial. Se puede ejecutar el algoritmo todo el tiempo que se desee e incluso detenerlo utilizando otros criterios además de un número fijo de \textit{epochs}, tal como que el error del modelo o que la función objetivo no cambia con el número de iteraciones. En estos casos se dice que se ha alcanzado la convergencia y los criterios así establecidos se denominan de convergencia. A modo de ejemplo, supóngase un conjunto de datos con 400 muestras, de forma que se define la dimensión del lote en 10 con 100 \textit{epochs}. Esto significa que el conjunto de datos se divide en 40 lotes, cada lote con 10 muestras. La actualización de los pesos del modelo se realizará tras el paso de cada lote con 10 muestras. Así, una \textit{epoch} involucra 40 lotes, es decir, 40 actualizaciones del modelo.
+
+A veces ocurre que el conjunto de muestras de entrenamiento no es divisible por un determinado número de lotes, en este caso cabe la posibilidad de considerar el último lote con menos muestras que los otros, como se ha indicado previamente, o bien eliminar algunas muestras del conjunto de datos o también cambiar el tamaño del lote. Supóngase que se tiene un conjunto de muestras de entrenamiento de 208, y se establece la dimensión del mini-lote en 10 con 4 \textit{epochs}, esto significa que el paso de las 208 muestras determina una \textit{epoch}. El número de mini-lotes se obtiene calculando el resultado de la división $208/10 = 20.8$, lo que significa que se formarán 20 mini-lotes con 10 muestras cada uno, más uno adicional con 8 muestras. En total habrá 21 mini-lotes. Cada uno de estos mini-lotes define una iteración, por lo que en cada \textit{epoch} se realizan 21 iteraciones, de forma que tras cada una de ellas se actualizan los pesos.
+
+Considerando la ecuación (2.9) simplificada $\Delta w = -\eta \nabla J_i(w(t-1))$ y un conjunto con $N$ muestras de entrenamiento, cuando no se definen mini-lotes, o lo que es lo mismo, la dimensión del mini-lote es 1, entonces, cada muestra actualiza los pesos según esta ecuación. Por el contrario, si las $N$ muestras forman un lote, entonces la actualización de los pesos se realiza una única vez, promediando los pesos obtenidos tras el paso de cada muestra como sigue:
+
+\[
+\Delta w = \frac{1}{N} \sum_{k=1}^{N} \Delta w(k)
+\]
+
+Si se establecen mini-lotes de dimensión $m$, la actualización de los pesos también se lleva a cabo de la misma manera que en el caso anterior, si bien promediando con $m$ en lugar de $N$ y realizando tantas actualizaciones por \textit{epoch} como número de mini-lotes existan.
+
+
+
+
+
+\end{comment}
+\section{FUNCION DE ACTIVACION. AJUSTAR LAS FOTOS CUANDO ACABE}
+
+Las funciones de activación en redes neuronales son cruciales ya que introducen no linealidad en el modelo, permitiendo que la red neuronal pueda aprender, representar patrones complejos y modelar relaciones no lineales entre las características de entrada y la salida. En esta sección, describimos varias funciones de activación populares, sus propiedades y aplicaciones \citep{pajares2021aprendizaje}. Todas las gráficas de las funciones se pueden ver en la Figura \ref{img: activf}.
+
+
+\subsubsection*{Función Softmax}
+
+La función Softmax se utiliza comúnmente en la capa de salida de redes neuronales para problemas de clasificación multiclase. Convierte un vector de valores arbitrarios en un vector de probabilidades, donde la suma de todas las probabilidades es 1. La función Softmax está definida como:
+
+\begin{equation}
+    \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
+\end{equation}
+
+donde \(z_i\) es el valor de la \(i\)-ésima neurona de salida, y \(K\) es el número total de clases. La interpretación de esta función es que transforma las salidas en probabilidades, facilitando la toma de decisiones sobre la clase a la que pertenece una muestra en función de las probabilidades más altas. 
+
+
+\subsubsection*{Función Sigmoide}
+
+    La función sigmoide, también conocida como la función logística, convierte entradas en el rango \(0, 1\). Está definida como:
+    \begin{equation}
+        \sigma(x) = \frac{1}{1 + e^{-x}}
+    \end{equation}
+    Proyecta salidas de números reales de entrada al intervalo \([0, 1]\). Sin embargo, tiene problemas como la saturación del gradiente (cuando los valores se aproximan a 0 o 1, el gradiente tiende a 0, lo que afecta en la actualización de los pesos) o los pesos positivos de forma continua (la esperanza de la función de salida no es 0), lo que puede llevar a una convergencia lenta.
+
+
+
+
+
+
+\subsubsection*{Función Sigmoide Dura}
+
+    La función sigmoide dura (\textit{hard-sigmoid}) es una aproximación simplificada de la sigmoide que reduce los problemas de saturación del gradiente:
+
+\begin{equation}
+    f(x) = \max(0, \min(1, \frac{x+1}{2}))
+\end{equation}
+
+Esta función es computacionalmente más eficiente y evita los problemas de saturación en los extremos.
+
+
+
+
+
+\subsubsection*{Función Tangente Hiperbólica (tanh)}
+
+    La función tangente hiperbólica (\textit{tanh}) es similar a la sigmoide pero escala las salidas al rango \([-1, 1]\):
+
+\begin{equation}
+    \tanh(x) = \frac{2}{1 + e^{-2x}} - 1
+\end{equation}
+
+Aunque también sufre de saturación del gradiente, \textit{tanh} centra las salidas alrededor de cero, lo que puede acelerar el entrenamiento. 
+
+
+
+
+\subsubsection*{Función Unidad Lineal Rectificada (ReLU)}
+
+    La función ReLU es popular debido a su simplicidad y efectividad para solventar el problema de la saturación del gradiente. Para $x=0$ no es derivable, por lo que se suele asignar un valor arbitrario como 0, 0.5 o 1:
+
+\begin{equation}
+    f(x) = \max(0, x)
+\end{equation}
+
+Sin embargo, puede llevar a neuronas muertas si reciben un gradiente negativo alto. Para ello, se introduce la siguiente función.
+
+
+
+\subsubsection*{Función Leaky ReLU (LReLU)}
+
+    Leaky ReLU es una variante de ReLU que introduce una pendiente pequeña para entradas negativas:
+
+\begin{equation}
+    f(x) = \max(0.001x, x)
+\end{equation}
+
+Esto ayuda a evitar el problema de neuronas muertas al permitir un pequeño gradiente para valores negativos. 
+
+
+
+
+\subsubsection*{Función Paramétrica ReLU (PReLU)}
+
+Una forma de generalizar la función anterior es introduciendo un parámetro \(\alpha\) para ajustar la pendiente para entradas negativas. Esta función se llama PReLU y se define:
+
+\begin{equation}
+    f(x; \alpha) = 
+    \begin{cases} 
+      \alpha x & \text{si } x < 0 \\ 
+      x & \text{si } x \geq 0 
+    \end{cases}
+    \label{eq:prelu}
+\end{equation}
+
+Cuando $\alpha = 0$, la función se corresponde con ReLU y cuando $\alpha > 0$, con la LReLU. La función se adapta durante el entrenamiento, permitiendo más flexibilidad que ReLU o LReLU. 
+
+
+
+\subsubsection*{Función ReLU6}
+
+ReLU6 es una variante de ReLU que limita la activación a un máximo de 6:
+
+\begin{equation}
+    \text{ReLU6}(x) = \min(\max(x, 0), 6)
+\end{equation}
+
+
+\subsubsection*{Función Unidad Lineal Exponencial (ELU)}
+
+La función ELU es otra variante que proporciona una curva exponencial para entradas negativas, ayudando a suavizar el gradiente:
+
+\begin{equation}
+    f(x; \alpha) = 
+    \begin{cases} 
+      \alpha (e^x - 1) & \text{si } x < 0 \\ 
+      x & \text{si } x \geq 0 
+    \end{cases}
+\end{equation}
+
+
+
+\subsubsection*{Función Unidad Lineal Exponencial Escalada (SELU)}
+
+La función SELU es una versión modificada de ELU, que introduce un parámetro adicional \(\lambda\) para escalar la salida:
+
+\begin{equation}
+    f(x; \alpha) = 
+    \begin{cases} 
+      \lambda x & \text{si } x \geq 0 \\ 
+      \lambda \alpha (e^x - 1) & \text{si } x < 0 
+    \end{cases}
+\end{equation}
+
+
+SELU está diseñada para mantener la activación y la varianza de las entradas constantes en redes profundas, facilitando la normalización interna.
+
+
+\subsubsection*{Funciones Swish y SiLU}
+
+Swish y SiLU combinan la sigmoide con la entrada misma para proporcionar una activación suave y no lineal:
+
+\begin{equation}
+    \text{SiLU}: f(x) = x \cdot \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}
+\end{equation}
+
+donde \(\sigma(x)\) es la función sigmoide. La Figura \ref{img: activf} muestra Swish con \(\beta = 3\) y SiLU con \(\beta = 1\).
+
+
+\subsubsection*{Función Mish}
+
+Mish combina suavidad y capacidad de modelado no lineal, definida como:
+
+	\begin{equation}
+    		f(x) = x \cdot \tanh(\ln(e^x + 1))
+	\end{equation}
+	
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/activation_functions.png}
+    \caption{Gráficas de las funciones de activación.}
+    \label{img: activf}
+\end{figure}
+
+
+Las funciones de activación juegan un papel esencial en la formación de redes neuronales al permitir que las redes aprendan y modelen relaciones complejas. Desde funciones clásicas como la sigmoide y \textit{tanh}, hasta variantes más recientes como ReLU, LReLU, ELU, y SELU, cada función tiene sus propios beneficios y limitaciones. La elección de la función de activación adecuada puede influir significativamente en el rendimiento del modelo. Además, permiten resolver el desvanecimiento del gradiente durante el proceso de aprendizaje, evitando que el gradiente se acerque a cero, ya que es necesario que sean derivables \citep{pajares2021aprendizaje}.
+
+
+\section{Función de perdida}
+
+En el aprendizaje supervisado, las funciones de pérdida son herramientas muy importantes para evaluar qué tan bien un modelo predice los resultados esperados. Su propósito es cuantificar el grado de error en las predicciones realizadas por el modelo, lo cual es fundamental para el ajuste de sus parámetros durante el entrenamiento. En términos generales, estas funciones se dividen en dos grandes categorías: las utilizadas para problemas de clasificación y las utilizadas para problemas de regresión \citep{pajares2021aprendizaje}. Ambas buscan minimizar el error, pero lo hacen con diferentes enfoques dependiendo de la naturaleza de la variable de salida.
+
+\subsection{Clasificación}
+
+En los problemas de clasificación, la tarea del modelo es asignar una etiqueta a cada observación basada en las características de entrada. La etiqueta es una variable categórica que indica a cuál de varias categorías pertenece cada observación. Las funciones de pérdida en clasificación miden la discrepancia entre las etiquetas reales y las etiquetas predichas, o las probabilidades de las categorías predichas.
+
+\subsubsection{Entropía Cruzada}
+
+La entropía cruzada mide la diferencia entre la distribución de probabilidad verdadera de las etiquetas y la distribución de probabilidad predicha por el modelo. Existen dos variantes principales:
+
+\subsubsection*{Entropía Cruzada Categórica}
+
+La entropía cruzada categórica se utiliza cuando se predicen múltiples categorías (multiclase). Se calcula como:
+
+\begin{equation}
+    H(p, q) = -\sum_{x} p(x) \log q(x)
+\end{equation}
+
+Aquí, \(p(x)\) es la distribución verdadera (generalmente representada como \textit{one-hot} para una categoría) y \(q(x)\) es la distribución predicha. Esta función penaliza las predicciones que se desvían de las probabilidades verdaderas, con valores más altos indicando mayores discrepancias. 
+
+\subsubsection*{Entropía Cruzada Binaria}
+
+La entropía cruzada binaria se aplica a problemas de clasificación binaria, donde solo hay dos posibles etiquetas. Se define como:
+
+\begin{equation}
+    H(p, q) = - \left[ p \log q + (1 - p) \log (1 - q) \right]
+\end{equation}
+
+Aquí, \(p\) es la probabilidad de la etiqueta verdadera (1 para la clase positiva, 0 para la clase negativa), y \(q\) es la probabilidad predicha para la clase positiva. Esta variante es más sencilla y específica para problemas donde las etiquetas son binarias.
+
+\subsubsection{Coeficiente de Dice}
+
+El coeficiente de Dice es una métrica especialmente útil en problemas de segmentación de imágenes y clasificación. Esta métrica calcula la similitud entre el conjunto de píxeles predichos y el conjunto de píxeles verdaderos, y se define como:
+
+\begin{equation}
+    D = \frac{2 |P \cap G|}{|P| + |G|}
+\end{equation}
+
+donde \(P\) representa el conjunto de píxeles predichos y \(G\) representa el conjunto de píxeles verdaderos. La interpretación de esta función es que un valor más alto indica una mayor superposición entre las predicciones y la verdad del terreno, siendo 1 el valor ideal cuando hay coincidencia perfecta \cite{pajares2021aprendizaje}.
+
+\subsubsection{Divergencia de Kullback-Leibler}
+
+La divergencia de Kullback-Leibler (KL-divergence) mide la diferencia entre dos distribuciones de probabilidad: la distribución verdadera \(P\) y la distribución predicha \(Q\). Se expresa como:
+
+\begin{equation}
+    D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}
+\end{equation}
+
+Este valor indica cuánta información se pierde al usar \(Q\) para aproximar \(P\). En el contexto de modelos de clasificación, una menor divergencia KL indica que las distribuciones de probabilidades predichas se acercan más a las verdaderas, haciendo al modelo más preciso \cite{pajares2021aprendizaje}.
+
+\subsection{Regresión}
+
+En los problemas de regresión, la tarea del modelo es predecir una variable de salida continua basada en las características de entrada. Las funciones de pérdida en regresión cuantifican la discrepancia entre los valores continuos predichos y los valores reales.
+
+\subsubsection{Error Cuadrático Medio (ECM)}
+
+El error cuadrático medio (MSE, \textit{mean square error}) es una función de pérdida que calcula la media de los cuadrados de los errores entre las predicciones y los valores reales. Se define como:
+
+\begin{equation}
+    \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+
+donde \(n\) es el número de muestras, \(y_i\) es el valor real y \(\hat{y}_i\) es el valor predicho. Esta función penaliza los errores grandes más severamente que los pequeños, debido al cuadrado del término de error. Un valor de MSE más bajo indica predicciones más cercanas a los valores reales \cite{pajares2021aprendizaje}.
+
+\subsubsection{Error Absoluto Medio (EAM)}
+
+El error absoluto medio (MAE, \textit{mean absolute error}) mide la media de los valores absolutos de las diferencias entre las predicciones y los valores reales. Está dado por:
+
+\begin{equation}
+    \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{equation}
+
+A diferencia del MSE, el MAE no penaliza tanto los errores grandes, ya que no los eleva al cuadrado. Esto hace que sea más robusto frente a los valores atípicos. Un MAE más bajo indica un modelo más preciso \cite{pajares2021aprendizaje}.
+
+\subsubsection{Pérdida de Huber}
+
+La función de pérdida de Huber combina las características del ECM y el EAM. Se comporta de manera cuadrática para errores pequeños y de manera lineal para errores grandes. Está definida como:
+
+\begin{equation}
+    L_\delta(y, \hat{y}) = 
+    \begin{cases} 
+      \frac{1}{2}(y - \hat{y})^2 & \text{si } |y - \hat{y}| \leq \delta \\ 
+      \delta |y - \hat{y}| - \frac{1}{2}\delta^2 & \text{si } |y - \hat{y}| > \delta 
+    \end{cases}
+\end{equation}
+
+El parámetro \(\delta\) controla el punto en el que la transición ocurre entre la penalización cuadrática y la lineal. Esto permite combinar la sensibilidad a los errores pequeños del ECM con la robustez frente a los errores grandes del EAM \cite{pajares2021aprendizaje}.
+
+\subsubsection{Pérdida Log-Cosh}
+
+La función de pérdida Log-cosh es otra opción para la regresión que suaviza los errores más que la pérdida cuadrática. Se define por:
+
+\begin{equation}
+    L = \sum_{i=1}^{n} \log(\cosh(\hat{y}_i - y_i))
+\end{equation}
+
+Aquí, \(\cosh\) es la función hiperbólica del coseno. La ventaja de esta función es que, para errores pequeños, se comporta como el ECM, mientras que para errores grandes se asemeja al EAM, lo que permite una suavización de los errores sin la severidad de la penalización cuadrática \cite{pajares2021aprendizaje}.
+
+\subsubsection{Pérdida Basada en Cuantiles}
+
+La función de pérdida basada en cuantiles (quantile loss) se utiliza en regresión cuando se quiere predecir un intervalo en lugar de un punto concreto. Se define como:
+
+\begin{equation}
+    L_{\tau}(y, \hat{y}) = \sum_{i=1}^{n} \left(\tau \max(y_i - \hat{y}_i, 0) + (1 - \tau) \max(\hat{y}_i - y_i, 0)\right)
+\end{equation}
+
+donde \(\tau\) es el cuantil elegido.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Sobreajuste del modelo.}
+
+El sobreajuste es uno de los principales desafíos a los que se enfrentan los expertos en machine learning a día de hoy. Para poder explicar y presentar diferentes soluciones a este problema, vamos a ver primero algunos conceptos.
+
+
+El \textbf{sobreajuste} (también conocido como \textit{overfitting}) se produce cuando un modelo se ajusta demasiado bien a los datos de entrenamiento, capturando incluso el ruido y las fluctuaciones aleatorias. Este ajuste excesivo provoca que el modelo tenga un rendimiento excelente en los datos de entrenamiento pero un rendimiento deficiente en datos nuevos. El overfitting suele ocurrir cuando el modelo es demasiado complejo en comparación con la cantidad de datos disponibles.
+
+El \textbf{subajuste} (también conocido como \textit{underfitting}) ocurre cuando el modelo es demasiado simple para capturar la estructura subyacente en los datos. Esto se manifiesta con un bajo ajuste del polinomio tanto a los datos de entrenamiento como a los de validación, indicando que el modelo no ha capturado patrones importantes en los datos.
+
+En la primera gráfica de la Figura \ref{fig:overfitting}, se puede observar como el modelo no es capaz de captar la complejidad del problema, fallando en las predicciones tanto en los datos de entrenamiento como en los datos nuevos. En la segunda gráfica se puede ver que el modelo captura perfectamente todos los puntos de entrenamiento, pero fallará al predecir datos nuevos debido a que ha aprendido el ruido presente en los datos de entrenamiento.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/overfitting.png}
+    \caption{Ejemplo de sobreajuste, subajuste y buen ajuste.}
+    \label{fig:overfitting}
+\end{figure}
+
+Por último, la gráfica de más a la derecha presenta un ajuste idóneo para este conjunto de datos, ya que se puede observar como se ajusta a todos los puntos pero sin capturar ruido. Para llegar a este tipo de ajuste y evitar los dos primeros casos, vamos a explorar diferentes métodos para mitigar el sobreajuste, como la regularización $L1$ y $L2$, las capas dropout o la parada temprana.
+
+\subsection{Regularización L1 y L2} \label{sec:regularizacion}
+
+La regularización ayuda a evitar el sobreajuste, lo cual ocurre cuando un modelo es demasiado complejo y comienza a captar el ruido o los patrones irrelevantes en los datos de entrenamiento. En lugar de eso, la regularización favorece la creación de modelos más simples que pueden identificar los patrones importantes y generalizar mejor a datos nuevos. Esta técnica es especialmente útil cuando se tiene una cantidad limitada de datos, conjuntos de datos con muchas características o modelos con muchos parámetros \citep{pajares2021aprendizaje}.
+
+Para implementarla, se añade un término de regularización a la función de pérdida durante el entrenamiento. Este término penaliza ciertos parámetros del modelo, ajustando el total de la pérdida. La intensidad de la regularización se controla mediante un parámetro que determina el equilibrio entre ajustar los datos y reducir el impacto de coeficientes muy grandes \citep{geron2022hands}.
+
+\begin{equation}
+loss_{regul}(\theta) = loss(\theta) + \beta \cdot f(\theta) 
+\end{equation}
+
+Aquí, \( loss_{regul}(\theta) \) es la función de pérdida final despues de aplicarle una regularización. \( loss(\theta) \) es la función de pérdida original que mide el ajuste del modelo a los datos, y \( \theta \) representa los parámetros del modelo (pesos y sesgos). El parámetro \(\beta\) controla la intensidad de la regularización, equilibrando entre ajustar el modelo a los datos y mantener los valores de los parámetros bajo control. Por último, el término de regularización \( f(\theta) \) penaliza los parámetros del modelo, siendo comúnmente la regularización $L2$ o la $L1$. 
+ 
+
+La \textbf{regularización \(L2\)} (o regresión Ridge) añade una penalización proporcional a la suma de los pesos al cuadrado. La función de pérdida regularizada \(L2\) se define como:
+
+\begin{equation}
+\text{Loss} = \text{Original Loss} + \lambda \sum_{i} w_i^2
+\end{equation}
+
+donde \(\lambda\) es el parámetro de regularización que controla la importancia de la penalización y $w_i$ los pesos \citep{geron2022hands}. Este método tiende a producir soluciones más estables y reduce la complejidad de los modelos, tendiendo los coeficientes hacia valores más pequeños.
+
+
+La \textbf{regularización \(L1\)} (o regresión Lasso) añade una penalización proporcional a la suma del valor absoluto de los pesos:
+\begin{equation}
+\text{Loss} = \text{Original Loss} + \lambda \sum_{i} |w_i|
+\end{equation}
+Esta técnica puede generar un modelo más sencillo, donde algunos coeficientes se anulan, seleccionando las características más importantes de los datos. Sin embargo, produce soluciones menos estables que aplicando $L2$ \citep{geron2022hands}. 
+
+
+\subsection{Dropout} \label{sec:dropout}
+
+Otro método para evitar el sobreajuste de nuestro modelo es el Dropout, que fue propuesto por Hinton et al. \citep{hinton2012improving} como una forma de regularización para capas de redes neuronales completamente conectadas. El dropout consiste en que cada elemento de la salida de una capa se mantiene en cada iteración con una probabilidad \(p\) (``tasa de dropout''), de lo contrario se establece en 0, con una probabilidad \((1 - p)\). Según \citep{geron2022hands}, este valor de $p$ suele variar entre 0.1 y 0.5, siendo este último uno de los más típicos \citep{srivastava2013improving}, aunque la red neuronal que se esté utilizando influye en el valor óptimo \citep{geron2022hands}. La elección de este parámetro es muy importnate, ya que si tomamos un valor muy alto, puede llevarnos a underfitting.
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/dropout.png}
+    \captionof{figure}{Esquema de la técnica dropout. Fuente \citep{srivastava2014dropout}}
+    \label{fig:dropout}
+\end{figure}
+    
+Al eliminar una neurona, esta se elimina de la red con todas sus conexiones entrantes y salientes (ver Figura \ref{fig:dropout}). La principal ventaja de esto es que la red no depende excesivamente de ninguna neurona, mejorando de esta forma la generalización del modelo. La eliminación se aplica de manera independiente a cada capa oculta y a cada iteración del entrenamiento. 
+
+
+Por lo tanto, aplicar dropout a una red neuronal equivale a seleccionar una submuestra ``reducida'' de la red original. Como cada neurona puede estar activa o inactiva, hay un total de $2^n$ redes posibles, donde $n$ es el número de neuronas que se pueden desactivar \citep{srivastava2013improving}. Puede interpretarse como entrenar una gran colección de redes neuronales diferentes y usar sus promedios para hacer predicciones.
+
+
+Experimentos como los que se harán en el Capítulo \ref{Capitulo_3} muestran como el Dropout mejora la capacidad de generalización de la red, proporcionando un mejor rendimiento del modelo.
+
+
+El uso del \textit{dropout} en una red neuronal se implementa fácilmente en frameworks como Keras. Por ejemplo:
+
+\lstset{language=Python}
+\begin{lstlisting}
+from tensorflow.keras.layers import Dropout
+
+model = Sequential([
+    Dense(128, activation='relu'),
+    Dropout(0.5),
+    Dense(10, activation='softmax') ])
+\end{lstlisting}
+
+En este código, se aplica \textit{dropout} con una tasa del 50\% después de una capa densa con 128 unidades.
+
+
+
+\subsection{Parada temprana}
+
+Además de las técnicas de regularización L1 y L2 y el uso de dropout para prevenir el sobreajuste en redes neuronales, otra estrategia ampliamente utilizada es la parada temprana o \textit{Early Stopping}.
+
+\begin{minipage}{0.35\textwidth}
+\centering
+    \includegraphics[width=0.8\textwidth]{img/earlyStopping.png}
+    \captionof{figure}{Curvas de error de entrenamiento y validación con Early Stopping.}
+    \label{fig:early_stopping}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+     El Early Stopping consiste en que el modelo deja de entrenar cuando el error en el conjunto de validación alcanza un mínimo y comienza a aumentar nuevamente. Esto se observa durante el proceso de entrenamiento, cuando el error de entrenamiento continúa disminuyendo mientras que el error de validación inicialmente disminuye, pero eventualmente comienza a incrementarse debido al sobreajuste \citep{geron2022hands}. La Figura \ref{fig:early_stopping} ilustra este comportamiento, donde la precisión del modelo en el conjunto de validación deja de mejorar después de cierto punto y comienza a empeorar.
+     
+\bigskip
+
+Formalmente, si denotamos el error en el conjunto de entrenamiento después de la \( t \)-ésima época como \( E_{\text{tr}}(t) \) y el error en el conjunto de validación como \( E_{\text{val}}(t) \), Early Stopping interrumpe el entrenamiento cuando \( E_{\text{val}}(t) \) deja de mejorar durante un número definido de épocas consecutivas. 
+\end{minipage}
+
+
+Esta técnica no solo ayuda a prevenir el sobreajuste sino que también optimiza el uso de recursos al detener el entrenamiento cuando ya no se obtienen mejoras en el desempeño del modelo \citep{tian2022comprehensive}.
+
+Para implementarlo en la práctica, frameworks como \texttt{Keras} ofrecen callbacks que facilitan este proceso. A continuación se presenta un ejemplo de código que utiliza \texttt{EarlyStopping} para detener el entrenamiento cuando no se observa ninguna mejora en el error de validación:
+
+
+\lstset{language=Python}
+\begin{lstlisting}
+from tensorflow.keras.callbacks import EarlyStopping
+
+early_stopping_cb = keras.callbacks.EarlyStopping(patience=10,
+                                           restore_best_weights=True)
+history = model.fit(X_train, y_train, epochs=100,
+                    validation_data=(X_valid, y_valid),
+                    callbacks=[early_stopping_cb])
+\end{lstlisting}
+
+En este ejemplo, EarlyStopping detiene el entrenamiento después de un número definido de épocas sin mejora ($patience = 10$), restaurando los pesos que lograron el mejor desempeño \citep{geron2022hands}.
+
+Así, \textit{Early Stopping} se complementa eficazmente con las técnicas de regularización $L1$, $L2$ y dropout, proporcionando una capa adicional de protección contra el sobreajuste y mejorando la robustez del modelo.
+
+\bigskip
+
+
+El sobreajuste es uno de los principales desafíos en el entrenamiento de modelos de aprendizaje automático, incluyendo las redes neuronales. Técnicas como la regularización \(L2\), el \textit{dropout} y la parada temprana son estrategias efectivas para mitigar este problema. Es crucial seleccionar y combinar adecuadamente estas técnicas según las características del problema y los datos disponibles. A través de estos métodos, podemos mejorar la capacidad de generalización de nuestros modelos y lograr un rendimiento más robusto en datos no vistos \citep{geron2022hands, pajares2021aprendizaje}.
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Métricas de evaluación de un modelo de clasificación.}
+
+Para evaluar el rendimiento de un modelo de clasificación, se utilizan una serie de métricas que nos permiten entender el rendimiento y efectividad de un modelo. A continuación, se describen las principales métricas utilizadas, así como las representaciones gráficas asociadas.
+
+\subsection{Matriz de Confusión}
+
+La matriz de confusión es una herramienta que nos permite visualizar el rendimiento del modelo al mostrar los conteos de verdaderos positivos (TP), falsos positivos (FP), verdaderos negativos (TN) y falsos negativos (FN). Cada fila de la matriz representa las etiquetas reales mientras que cada columna representa las etiquetas predichas.
+
+La matriz se define como:
+\[
+\begin{array}{c|cc}
+ & \text{Predicción Positiva} & \text{Predicción Negativa} \\
+\hline
+\text{Real Positiva} & TP & FN \\
+\text{Real Negativa} & FP & TN \\
+\end{array}
+\]
+
+Para calcularla, utilizamos el conjunto de predicciones del modelo y las etiquetas reales. La matriz de confusión nos ofrece una visión clara de cómo se distribuyen los errores del modelo entre las diferentes clases.
+
+\subsection{Métricas}
+
+La matriz de confusión ofrece una gran cantidad de información, pero a veces te interesa una métrica más concreta para evaluar un modelo de clasificación, como la sensibilidad, la tasa de falsos negativos o su sensibilidad. A continuación vamos a definir y explicar las principales métricas a tener en cuenta según \citep{erickson2021magician} junto con su fórmula. 
+
+La \textbf{sensibilidad} es la fracción de casos positivos que el modelo predice correctamente como positivos. También se conoce como recall o tasa de verdaderos positivos (TPR). Se calcula utilizando la fórmula:
+\[
+\text{Sensibilidad} = \frac{TP}{TP + FN}
+\]
+
+La \textbf{especificidad} es la fracción de casos negativos que el modelo predice correctamente como negativos. También se conoce como selectividad o tasa de verdaderos negativos (TNR). Se calcula utilizando la fórmula:
+\[
+\text{Especificidad} = \frac{TN}{TN + FP}
+\]
+
+La \textbf{tasa de falsos positivos} (FPR) es la fracción de casos negativos que el modelo predice incorrectamente como positivos. También se conoce como fall-out o probabilidad de alarma falsa. Se calcula utilizando la fórmula:
+\[
+\text{FPR} = \frac{FP}{TN + FP}
+\]
+
+La \textbf{tasa de falsos negativos} (FNR) es la fracción de casos positivos que el modelo predice incorrectamente como negativos. También se conoce como tasa de error tipo II o tasa de omisión. Se calcula utilizando la fórmula:
+\[
+\text{FNR} = \frac{FN}{TP + FN}
+\]
+
+El \textbf{valor predictivo positivo} (PPV) es la fracción de casos que el modelo predijo como positivos que realmente son positivos. También se conoce como precisión. Se calcula utilizando la fórmula:
+\[
+\text{PPV} = \frac{TP}{TP + FP}
+\]
+
+El \textbf{valor predictivo negativo} (NPV) es la fracción de casos que el modelo predijo como negativos que realmente son negativos. Se calcula utilizando la fórmula:
+\[
+\text{NPV} = \frac{TN}{TN + FN}
+\]
+
+El \textbf{accuracy} es la fracción de casos que el modelo predijo correctamente, ya sean positivos o negativos. Se calcula utilizando la fórmula:
+\[
+\text{Accuracy} = \frac{TP + TN}{TP + FN + TN + FP}
+\]
+
+Por último la \textbf{puntuación F1} es la media armónica del valor predictivo positivo y la sensibilidad. También se conoce como puntuación F, medida F o coeficiente de similitud de Dice. Se calcula utilizando la fórmula:
+\[
+\text{Puntuación F1} = \frac{2TP}{2TP + FP + FN}
+\]
+
+
+
+\subsection{Curva ROC y AUC}
+
+\begin{minipage}{0.5\textwidth}
+La curva ROC (Receiver Operating Characteristic) es otra herramienta utilizada en los modelos de clasificación \citep{geron2022hands}. Consiste en una representación gráfica que muestra la relación entre la tasa de verdaderos positivos (TPR) y la tasa de falsos positivos (FPR) para diferentes umbrales de clasificación. La linea discontinua de la figura \ref{img: roc} indica la curva ROC de un clasificador puramente aleatorio \citep{geron2022hands}. 
+
+\bigskip
+
+Otro término que está relacionado es el AUC (\textit{area under the curve}). El AUC es el área que se encuentra encerrada entre la curva ROC, la recta $y = 0$ y $x = 1$. Cuantifica la capacidad que tiene el modelo para distinguir entre las diferentes clases. Cuanto mayor valor, mejor rendimiento. En la Figura \ref{img: roc} se representa con rallas de intensidad baja. 
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+	\includegraphics[width=1.15\textwidth]{img/roc.png}
+	\captionof{figure}{Interpretación de la curva ROC con el área bajo la curva (AUC).}
+	\label{img: roc}
+\end{minipage}
+
+La interpretación de estos términos consiste en que una curva ROC más cercana al vértice superior izquierdo, o un AUC cercano a 1, indica un mejor rendimiento del modelo \citep{geron2022hands}.
+
+\subsection{Curva de Precisión-Recall}
+
+\begin{minipage}{0.4\textwidth}
+	\includegraphics[width=1.15\textwidth]{img/pr.png}
+	\captionof{figure}{Curva de Precisión-Recall.}
+	\label{img: pr}
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+Por último, se estudiará la curva de Precisión-Recall (PR). Esta curva muestra la precisión frente a la sensibilidad para diferentes umbrales de decisión. Se identifica a partir de qué valor de sensibilidad comienza una disminución en la precisión, y viceversa. Idealmente, se busca una curva que se acerque lo más posible a la esquina superior derecha del gráfico, lo que representaría una combinación óptima de alta precisión y alto recall.
+
+\bigskip
+
+Esta curva es especialmente útil para ajustar un umbral de decisión que permita obtener una precisión tan alta como se desee, pero a costa de la sensibilidad. Por ejemplo, si se desea una precisión del 90\%, se puede aumentar el umbral has-
+\end{minipage}
+
+ta alcanzar este valor de precisión, aunque esto reducirá la sensibilidad. Este proceso se denomina trade-off entre precisión y sensibilidad.
+
+Para calcular este umbral, se utilizan las puntuaciones de decisión obtenidas del clasificador. Primero, se obtienen estas puntuaciones usando la función \texttt{decision\_function()} del clasificador. Luego, se emplea la función \texttt{precision\_recall\_curve()} de Scikit-Learn para calcular la precisión y la sensibilidad para todos los umbrales posibles. Finalmente, se selecciona el umbral que proporciona la precisión deseada. La Figura \ref{img: pr_vs_threshold} ilustra cómo se comportan la precisión y la sensibilidad en función del umbral \citep{geron2022hands}.
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.6\textwidth]{img/precision_recall_vs_threshold.png}
+    \captionof{figure}{Precisión y Sensibilidad vs Umbral de decisión. Fuente \citep{geron2022hands}}
+    \label{img: pr_vs_threshold}
+\end{figure}
+
+
+
+
+
 
 
 
@@ -405,7 +1114,258 @@ Otro paquete que se va a utilizar durante los experimentos y que Scikit-Learn ut
 
 
 
+\begin{comment}
 
+
+\section{perdida}
+Como se ha comentado anteriormente, la función de pérdida se usa como medida de la precisión de un modelo de predicción en términos de predecir el resultado esperado. Es importante distinguir entre problemas de clasificación y regresión, ambas categorías bajo el mismo paraguas del aprendizaje supervisado. La tarea consiste en aprender (aproximar), con la máxima precisión posible, una función de proyección \(f\) desde una variable de entrada \(x\) a una variable de salida discreta \(y\), de forma que \(y = f(x)\), permitiendo que nuevos datos de entrada \(x\) puedan predecir la salida para un conjunto de datos nuevo. Clasificación y regresión comparten el mismo concepto de utilizar un conjunto de datos conocidos, llamados datos de entrenamiento, para realizar predicciones. La principal diferencia entre ellos es que la variable de salida en la regresión es numérica (continua) mientras que en la clasificación es categórica (discreta).
+
+
+Algunas funciones de pérdida que distinguen entre clasificación y regresión se introducen a continuación.
+
+\subsection{Clasificación}
+
+\subsubsection{Entropía Cruzada}
+
+Utilizada generalmente en clasificación, la entropía cruzada (cross-entropy), también conocida como \textit{log loss}, determina el desempeño del modelo de clasificación cuya salida es un valor de probabilidad entre 0 y 1. El valor de la función de entropía cruzada aumenta a medida que la probabilidad predicha diverge de la etiqueta actual. Se define como sigue en términos de probabilidad:
+
+\begin{equation}
+    H(p, q) = -\sum_{x} p(x) \log q(x)
+\end{equation}
+
+Por ejemplo, supongamos que se tiene un problema con tres categorías, A, B y C, de forma que una muestra de entrenamiento dada pertenece a la categoría B, para la que se ha asignado lo que se conoce como \textit{one-hot distribution}, con probabilidades \(p(A) = 0.0\), \(p(B) = 1.0\) y \(p(C) = 0.0\). Si el algoritmo predice la siguiente distribución de probabilidad \(p(A) = 0.2\), \(p(B) = 0.7\) y \(p(C) = 0.1\), el valor de la entropía cruzada \(H = - (0.0 \cdot \log(0.2) + 1.0 \cdot \log(0.7) + 0.0 \cdot \log(0.1)) = 0.357\).
+
+\subsubsection{Coeficiente Dice}
+
+Una función de pérdida utilizada en ocasiones para segmentación de imágenes y clasificación es el coeficiente Dice, propuesto inicialmente por Milletari et al. (2016). Se define como sigue:
+
+\begin{equation}
+    D = \frac{2 |P \cap G|}{|P| + |G|}
+\end{equation}
+
+donde \(P\) es el conjunto de píxeles predichos y \(G\) es el conjunto de píxeles del \textit{ground-truth}. 
+
+\subsubsection{Divergencia de Kullback-Leibler}
+
+Conocida como KL-divergence (Kullback y Leibler, 1951), mide la diferencia entre dos distribuciones de probabilidad \(P\) y \(Q\). Se define como sigue:
+
+\begin{equation}
+    D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}
+\end{equation}
+
+\subsection{Regresión}
+
+\subsubsection{Error Cuadrático Medio (ECM)}
+
+El error cuadrático medio (MSE, mean square error), también conocido como \textit{quadratic loss} o \textit{L2 loss}, se define como:
+
+\begin{equation}
+    \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+
+donde \(n\) es el número de muestras de entrenamiento, \(y_i\) es el valor deseado y \(\hat{y}_i\) es el valor predicho.
+
+\subsubsection{Error Absoluto Medio (EAM)}
+
+El error absoluto medio (MAE, mean absolute error), también conocido como \textit{absolute loss} o \textit{L1 loss}, se define como:
+
+\begin{equation}
+    \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{equation}
+
+\subsubsection{Huber Loss}
+
+La función de pérdida Huber combina ECM y EAM. Es cuadrática cuando el error es pequeño y lineal de otro modo. Se define como:
+
+\begin{equation}
+    L_\delta(y, \hat{y}) = 
+    \begin{cases} 
+      \frac{1}{2}(y - \hat{y})^2 & \text{si } |y - \hat{y}| \leq \delta \\ 
+      \delta |y - \hat{y}| - \frac{1}{2}\delta^2 & \text{si } |y - \hat{y}| > \delta 
+    \end{cases}
+\end{equation}
+
+\subsubsection{Log-Cosh Loss}
+
+Log-cosh es otra de las funciones de pérdida utilizadas en regresión. Es más suave que \(L2\). Se define como:
+
+\begin{equation}
+    L = \sum_{i=1}^{n} \log(\cosh(\hat{y}_i - y_i))
+\end{equation}
+
+
+
+\subsection{Funciones de Activación No Lineales}
+AÑADIR SOFTMAX
+Una función de activación clásica es la función sigmoide definida como:
+
+\begin{equation}
+    f(a, x, c) = \frac{1}{1 + e^{-a(x-c)}}
+\end{equation}
+
+Dependiendo del signo del parámetro $a$, la función sigmoide se abre hacia la izquierda o hacia la derecha, siendo apropiada para representar conceptos tales como ``muy grande'' o ``muy negativo''. La Figura \ref{fig:sigmoid} muestra la representación de sendas funciones sigmoide: en (a) con los siguientes parámetros $a = 2$ y $c = 4$; y en (b) con $a = -2$ y $c = 4$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-4.png}
+    \caption{Funciones sigmoide: (a) con $a=2$ y $c = 4$; (b) con $a = -2$ y $c = 4$.}
+    \label{fig:sigmoid}
+\end{figure}
+
+La función sigmoide que proyecta salidas de números reales de entrada al intervalo $[0, 1]$ posee dos problemas:
+\begin{enumerate}
+    \item Saturación del gradiente. Cuando el valor de la función de activación se aproxima a los extremos 0 o 1, el gradiente de la función tiende a 0, lo que repercute en el ajuste de los pesos de las redes.
+    \item Pesos positivos de forma continua. El valor medio de la función de salida no es 0, lo que origina que los pesos tiendan a ser positivos.
+\end{enumerate}
+
+Estas dos cuestiones provocan una convergencia lenta de los parámetros, afectando a la eficiencia del entrenamiento.
+
+En \cite{Courbariaux2015}, se define lo que denominan función sigmoide dura (\textit{hard-sigmoid}) como:
+
+\begin{equation}
+    f(x) = \max(0, \min(1, \frac{x+1}{2}))
+\end{equation}
+
+La función tangente hiperbólica \textit{tanh} proporciona salidas reales en el rango definido, siendo una variante de la función sigmoide, definida exactamente como:
+
+\begin{equation}
+    \text{tanh}(x) = 2\cdot\sigma(2x) - 1
+\end{equation}
+
+presentando el mismo problema de la saturación del gradiente. La Figura \ref{fig:tanh} muestra la representación de la función \textit{tanh}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-5.png}
+    \caption{Función tanh.}
+    \label{fig:tanh}
+\end{figure}
+
+La función Unidad Lineal Rectificada (ReLU, \textit{Rectified Linear Unit}), $f(x) = \max(0, x)$, representada en la Figura \ref{fig:relu}(a) tiene las siguientes características:
+
+\begin{enumerate}
+    \item Gradiente no saturado. Por el hecho de que $x > 0$, el problema de la dispersión del gradiente en el proceso de propagación inversa se ve aliviado, y los parámetros en la primera capa de la red neuronal pueden actualizarse rápidamente. En $x = 0$ no es derivable, por lo que es habitual asignar un valor arbitrario en este caso, por ejemplo 0, 0.5 o bien 1.0.
+    \item Baja complejidad computacional. Dada su propia definición. No obstante, posee la desventaja de que la neurona ReLU puede morir cuando recibe un gradiente negativo alto durante la retropropagación, lo que impide aprender más porque su derivada es cero cuando su entrada es menor que cero, por lo que el gradiente será finalmente cero. Esto se puede evitar al inicializar cuidadosamente los pesos o utilizar ReLU con ``fugas'', similar a ReLU, pero donde su salida es lineal multiplicada por un valor pequeño (aproximadamente 0.001) cuando la entrada es negativa, esto es $f(x) = \max(0.001x, x)$, tal y como se muestra en la Figura \ref{fig:relu}(b), conocida en ocasiones como \textit{Leaky ReLU} (LReLU, \textit{Leaky ReLU}).
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-6.png}
+    \caption{Funciones: (a) ReLU; (b) LReLU.}
+    \label{fig:relu}
+\end{figure}
+
+En algunos tipos de redes como \textit{MobileNet}, que se estudiarán posteriormente, se define una variante de ReLU como sigue (es la función ReLU6), y cuya representación se muestra en la Figura \ref{fig:relu6}(a). A partir de ella se define \textit{hard-swish} o \textit{h-swish} (Hs) representada en la Figura \ref{fig:relu6}(b):
+
+\begin{equation}
+    \text{ReLU6}(x) = \min(\max(x, 0), 6)
+\end{equation}
+
+\begin{equation}
+    \text{HS}(x) = x \cdot \frac{\text{ReLU6}(x + 3)}{6}
+\end{equation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-7.png}
+    \caption{Funciones: (a) ReLU6; (b) Hard-Swish.}
+    \label{fig:relu6}
+\end{figure}
+
+La función Paramétrica ReLU (PReLU) se define según la ecuación \eqref{eq:prelu} \cite{He2015}:
+
+\begin{equation}
+    f(x; \alpha) = 
+    \begin{cases} 
+      \alpha x & \text{si } x < 0 \\ 
+      x & \text{si } x \geq 0 
+    \end{cases}
+    \label{eq:prelu}
+\end{equation}
+
+de forma que si el parámetro $\alpha = 0$, la función es exactamente ReLU; si $\alpha > 0$, se trata de la función LReLU. Es cuando el parámetro $\alpha$ se incluye como un parámetro a aprender durante el proceso de entrenamiento, cuando la función toma su verdadero significado, de ahí su nombre.
+
+Por otra parte, existe la Unidad lineal exponencial (ELU, \textit{Exponential Linear Unit}) definida en \cite{Clevert2016} como sigue con $\alpha > 0$:
+
+\begin{equation}
+    f(x; \alpha) = 
+    \begin{cases} 
+      \alpha (e^x - 1) & \text{si } x < 0 \\ 
+      x & \text{si } x \geq 0 
+    \end{cases}
+\end{equation}
+
+El parámetro $\alpha$ controla el valor para el cual se produce la saturación para valores de $x$ negativos. En la Figura \ref{fig:elu} se muestran sendas funciones ELU con valores de $\alpha = 0.1$ en (a) y 1.0 en (b), respectivamente.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-8.png}
+    \caption{Funciones ELU: (a) con $\alpha = 0.1$; (b) con $\alpha = 1.0$.}
+    \label{fig:elu}
+\end{figure}
+
+La función SELU hace referencia a Unidad lineal exponencial escalada (SELU, \textit{Scaled Exponential Linear Unit}), siendo una versión ligeramente modificada de ELU por \cite{Klambauer2017} y definida como sigue:
+
+\begin{equation}
+    f(x; \alpha) = 
+    \begin{cases} 
+      \lambda x & \text{si } x \geq 0 \\ 
+      \lambda \alpha (e^x - 1) & \text{si } x < 0 
+    \end{cases}
+\end{equation}
+
+En la Figura \ref{fig:selu} se muestra la representación gráfica de la función SELU con valores $\alpha = 1.0$ y $\lambda = 1.0507$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-9.png}
+    \caption{Función SELU}
+    \label{fig:selu}
+\end{figure}
+
+Las funciones ReLU tienen la ventaja de acelerar el entrenamiento, ya que el cálculo del gradiente es más sencillo y la actualización de los pesos más rápida que con funciones sigmoides o \textit{tanh}. No obstante, en algunos casos pueden ser menos precisas que las funciones tradicionales y pueden llevar a neuronas muertas en redes profundas. Las funciones LReLU y PReLU abordan este problema permitiendo gradientes pequeños cuando la entrada es negativa. ELU y SELU mejoran aún más la estabilidad del gradiente en redes profundas al permitir que las activaciones negativas tengan valores ajustables en el rango negativo, lo que puede ayudar en la normalización de las entradas.
+
+
+La función Swish (Ramachandran et al., 2017) se define como el producto del argumento \(x\) por la función sigmoide parametrizada con \(\beta = 3\) y, si \(\beta = 1\), se define como la Unidad Lineal Sigmoide Ponderada (SiLU, Sigmoid-weighted Linear Unit) (Elfwing et al., 2017), existiendo también su versión derivada (dSiLU). Las ecuaciones son las siguientes:
+
+\begin{equation}
+    \text{SiLU}: f(x) = x \cdot \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}
+\end{equation}
+
+\begin{equation}
+    \text{dSiLU}: f'(x) = \sigma(x) \left(1 + x (1 - \sigma(x))\right)
+\end{equation}
+
+donde \(\sigma(x)\) es la función sigmoide definida como:
+
+\begin{equation}
+    \sigma(x) = \frac{1}{1 + e^{-x}}
+\end{equation}
+
+La Figura \ref{fig:swish_silu} muestra las funciones Swish con \(\beta = 3\) y SiLU con \(\beta = 1\).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-11.png}
+    \caption{Funciones: (a) Swish con \(\beta = 3\); (b) SiLU con \(\beta = 1\).}
+    \label{fig:swish_silu}
+\end{figure}
+
+La función Mish se define como sigue (Misra, 2019):
+
+\begin{equation}
+    f(x) = x \cdot \tanh(\ln(e^x + 1))
+\end{equation}
+
+La Figura \ref{fig:mish} muestra la representación de la función Mish.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig2-12.png}
+    \caption{Función Mish.}
+    \label{fig:mish}
+\end{figure}
+\end{comment}
 
 \begin{comment}
 ¿QUITAR?

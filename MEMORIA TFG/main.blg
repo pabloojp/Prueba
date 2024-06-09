@@ -23,51 +23,55 @@ Warning--entry type for "matplotlib" isn't style-file defined
 --line 343 of file biblio.bib
 Warning--entry type for "autoencoderImage" isn't style-file defined
 --line 471 of file biblio.bib
+Warning--entry type for "categoriCE" isn't style-file defined
+--line 544 of file biblio.bib
 Warning--to sort, need author or key in kagglebig2015
+Warning--to sort, need author or key in simonyan2014very
+Warning--empty author in simonyan2014very
 Warning--empty journal in luoma2023analysis
 Warning--can't use both volume and number fields in maithem2021network
 Warning--empty journal in martinez2017analisis
 Warning--empty journal in pajares2021aprendizaje
 Warning--can't use both volume and number fields in wang2017combining
-You've used 62 entries,
+You've used 72 entries,
             2118 wiz_defined-function locations,
-            807 strings with 14786 characters,
-and the built_in function-call counts, 21294 in all, are:
-= -- 2121
-> -- 950
+            868 strings with 16561 characters,
+and the built_in function-call counts, 24471 in all, are:
+= -- 2430
+> -- 1110
 < -- 24
-+ -- 386
-- -- 314
-* -- 1292
-:= -- 3374
-add.period$ -- 196
-call.type$ -- 62
-change.case$ -- 338
++ -- 453
+- -- 368
+* -- 1533
+:= -- 3907
+add.period$ -- 224
+call.type$ -- 72
+change.case$ -- 395
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 860
-empty$ -- 1732
-format.name$ -- 314
-if$ -- 4627
+cite$ -- 80
+duplicate$ -- 961
+empty$ -- 1977
+format.name$ -- 368
+if$ -- 5267
 int.to.chr$ -- 0
-int.to.str$ -- 62
-missing$ -- 49
-newline$ -- 307
-num.names$ -- 122
-pop$ -- 469
+int.to.str$ -- 72
+missing$ -- 57
+newline$ -- 355
+num.names$ -- 140
+pop$ -- 525
 preamble$ -- 1
-purify$ -- 278
+purify$ -- 325
 quote$ -- 0
-skip$ -- 685
+skip$ -- 757
 stack$ -- 0
-substring$ -- 1194
-swap$ -- 269
+substring$ -- 1406
+swap$ -- 279
 text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 244
-warning$ -- 6
-while$ -- 207
-width$ -- 64
-write$ -- 655
-(There were 15 warnings)
+type$ -- 284
+warning$ -- 8
+while$ -- 238
+width$ -- 74
+write$ -- 757
+(There were 18 warnings)
