@@ -48,22 +48,24 @@ Por otro lado, un filtro de spam basado en técnicas de aprendizaje automático 
 
 \bigskip
 
-El esquema global de aprendizaje consta de tres módulos principales: el generador, el entrenamiento y la decisión. El generador proporciona entradas estructuradas, principalmente vectores con atributos de los datos, para su procesamiento. El entrenamiento ajusta los parámetros del modelo basándose en las salidas deseadas, y por último, la decisión asigna categorías a nuevas muestras de entrada utilizando los parámetros aprendidos durante el entrenamiento \citep{pajares2021aprendizaje}.
+El \textbf{esquema global de aprendizaje} consta de tres módulos principales: el generador, el entrenamiento y la decisión. El generador proporciona entradas estructuradas, principalmente vectores con atributos de los datos, para su procesamiento. El entrenamiento ajusta los parámetros del modelo basándose en las salidas deseadas, y por último, la decisión asigna categorías a nuevas muestras de entrada utilizando los parámetros aprendidos durante el entrenamiento \citep{pajares2021aprendizaje}.
+
+\bigskip
+
+En cuanto a la \textbf{clasificación de los sistemas de aprendizaje} automático, se distinguen cuatro tipos principales: el aprendizaje supervisado, no supervisado, semisupervisado y por refuerzo.
+
+Un aprendizaje se dice que es \textbf{supervisado} si todos los datos tienen asociados las salidas deseadas (también llamadas etiquetas). Es decir, para todo dato de entrada x se conoce su salida y, luego tenemos información necesaria para aprender de la función que los relaciona y = f(x). El aprendizaje supervisado busca estimar la función $\hat{f}$ tal que $\hat{f}$ sea una buena aproximación de la función $f$ que relaciona las entradas x con las salidas Y.
+
+Un aprendizaje se dice que es \textbf{supervisado} si todos los datos tienen asociadas las salidas deseadas (también llamadas etiquetas). Es decir, para todo dato de entrada \( x \) se conoce su salida \( y \), de tal forma que para una función desconocida $f$ que relaciona ambas, $y=f(x)$. El objetivo del aprendizaje supervisado es estimar la función \( f \) con una función \( \hat{f} \) de tal forma que \( \hat{f} \) sea una buena aproximación de la función \( f \) que relaciona las entradas \( x \) con las salidas \( y \). Un ejemplo de aprendizaje supervisado puede ser el del filtro de spam ya que se entrena el modelo con los correos y con la etiqueta de si son spam o no. Otros ejemplos incluyen regresión lineal, regresión logística, árboles de decisión y redes neuronales \citep{geron2022hands}.
 
 
-
-En cuanto a la clasificación de los sistemas de aprendizaje automático, se distinguen cuatro tipos principales:
-
-El \textbf{aprendizaje supervisado}, es un tipo de entrenamiento en el que los datos tienen asociados las salidas deseadas, también llamadas etiquetas. Un ejemplo de aprendizaje supervisado puede ser el del filtro de spam ya que se entrena el modelo con los correos y con la etiqueta de si son spam o no. Otros ejemplos incluyen regresión lineal, regresión logística, árboles de decisión y redes neuronales.
+Un aprendizaje se dice que es \textbf{no supervisado} si, al contrario que el aprendizaje supervisado, los datos de entrenamiento no están etiquetados. De esta forma, el modelo tiene que aprender sin supervisión (tambíen llamado sin ``profesor''). El objetivo principal de este tipo de algoritmos se basa en el agrupamiento, detección de anomalías o reducción de dimensionalidad \citep{geron2022hands}. 
 
 
-Al contrario que el aprendizaje supervisado, en el \textbf{aprendizaje no supervisado}, los datos de entrenamiento no están etiquetados, luego el modelo tiene que aprender sin ``profesor''. El objetivo de este tipo de algoritmos es otro como el de agrupamiento, detección de anomalías o reducción de dimensionalidad. 
+En el caso de encontrarnos ante un problema en el que tengamos datos tanto etiquetados como sin etiquetar, nos encontramos ante un tipo de \textbf{aprendizaje semisupervisado}, que se encuentra entre el supervisado y el no supervisado. Este tipo de aprendizaje suele darse en situaciones en las que obtener etiquetas de los datos puede ser muy costoso pero sin embargo obtener datos sin etiquetar no tanto. Un ejemplo podría ser la agrupación de fotos donde sale la misma persona en Google Photos. La parte no supervisada sería la de agrupación y la supervisada la de dar una etiqueta a cada grupo \citep{geron2022hands}.
 
 
-En el caso de encontrarnos ante un problema en el que tengamos datos tanto etiquetados como sin etiquetar, nos encontramos antes un tipo de \textbf{aprendizaje semisupervisado}, que se encuentra entre el supervisado y el no supervisado. Este tipo de aprendizaje suele darse en situaciones en las que obtener etiquetas de los datos puede ser muy costoso pero sin embargo obtener datos sin etiquetar no tanto. Un ejemplo podría ser la agrupación de fotos donde sale la misma persona en Google Photos. La parte no supervisada sería la de agrupación y la supervisada la de dar una etiqueta a cada grupo.
-
-
-Por último, está el \textbf{aprendizaje por refuenzo}, un tipo de aprendizaje un poco diferente a los otros tres.  El sistema de aprendizaje, llamado agente, observa el entorno, selecciona y realiza acciones para obtener recompensas a cambio (o penalizaciones en forma de recompensas negativas). Luego debe aprender por sí mismo cuál es la mejor estrategia, llamada política, para obtener la mayor recompensa con el tiempo. Una política define qué acción debe elegir el agente cuando se encuentra en una situación determinada. Por ejemplo, muchos robots implementan algoritmos de aprendizaje por refuerzo para aprender a andar.
+Por último, está el \textbf{aprendizaje por refuerzo}, un tipo de aprendizaje un poco diferente a los otros tres.  El sistema de aprendizaje, llamado agente, observa el entorno, selecciona y realiza acciones para obtener recompensas a cambio (o penalizaciones en forma de recompensas negativas). Luego debe aprender por sí mismo cuál es la mejor estrategia, llamada política, para obtener la mayor recompensa con el tiempo. Una política define qué acción debe elegir el agente cuando se encuentra en una situación determinada. Por ejemplo, muchos robots implementan algoritmos de aprendizaje por refuerzo para aprender a andar \citep{geron2022hands}.
 
 
 
@@ -295,91 +297,145 @@ Si se establecen mini-lotes de dimensión $m$, la actualización de los pesos ta
 
 
 \end{comment}
-\section{FUNCION DE ACTIVACION. AJUSTAR LAS FOTOS CUANDO ACABE}
+\section{Función de activación.}
 
-Las funciones de activación en redes neuronales son cruciales ya que introducen no linealidad en el modelo, permitiendo que la red neuronal pueda aprender, representar patrones complejos y modelar relaciones no lineales entre las características de entrada y la salida. En esta sección, describimos varias funciones de activación populares, sus propiedades y aplicaciones \citep{pajares2021aprendizaje}. Todas las gráficas de las funciones se pueden ver en la Figura \ref{img: activf}.
+Entre capa y capa de las redes neuronales, cada neurona suma ponderadamente las entradas provenientes de las neuronas de la capa anterior. Este resultado, se lo pasa a una función no lineal, llamada función de activación, que permiten que la red neuronal pueda aprender, representar patrones complejos y crear relaciones no lineales entre las características de entrada y la salida. El valor resultante de aplicarle la función es el valor que se le queda asociado a esta neurona, para que futuras capas puedan usarlo. En esta sección, describimos varias funciones de activación populares, sus propiedades y aplicaciones \citep{pajares2021aprendizaje}.
 
 
-\subsubsection*{Función Softmax}
+\subsubsection*{Softmax}
 
-La función Softmax se utiliza comúnmente en la capa de salida de redes neuronales para problemas de clasificación multiclase. Convierte un vector de valores arbitrarios en un vector de probabilidades, donde la suma de todas las probabilidades es 1. La función Softmax está definida como:
+
+La función \textbf{Softmax} se utiliza comúnmente en la capa de salida de redes neuronales para problemas de clasificación multiclase. Convierte un vector de valores arbitrarios en un vector de probabilidades, donde la suma de todas las probabilidades es 1. La función Softmax está definida como:
 
 \begin{equation}
     \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
 \end{equation}
 
-donde \(z_i\) es el valor de la \(i\)-ésima neurona de salida, y \(K\) es el número total de clases. La interpretación de esta función es que transforma las salidas en probabilidades, facilitando la toma de decisiones sobre la clase a la que pertenece una muestra en función de las probabilidades más altas. 
-
-
-\subsubsection*{Función Sigmoide}
-
-    La función sigmoide, también conocida como la función logística, convierte entradas en el rango \(0, 1\). Está definida como:
-    \begin{equation}
-        \sigma(x) = \frac{1}{1 + e^{-x}}
-    \end{equation}
-    Proyecta salidas de números reales de entrada al intervalo \([0, 1]\). Sin embargo, tiene problemas como la saturación del gradiente (cuando los valores se aproximan a 0 o 1, el gradiente tiende a 0, lo que afecta en la actualización de los pesos) o los pesos positivos de forma continua (la esperanza de la función de salida no es 0), lo que puede llevar a una convergencia lenta.
+donde \(z_i\) es el valor de la \(i\)-ésima neurona de salida, y \(K\) es el número total de clases. La interpretación de esta función es que transforma las salidas en probabilidades, facilitando la toma de decisiones sobre la clase a la que pertenece una muestra en función de las probabilidades más altas \citep{pajares2021aprendizaje}. 
 
 
 
 
+\subsubsection*{Sigmoide}
 
 
-\subsubsection*{Función Sigmoide Dura}
+\begin{minipage}{0.6\textwidth}
+    La función \textbf{sigmoide}, también conocida como la función logística, convierte entradas en el rango \(0, 1\). Está definida como:
+\begin{equation}
+    \sigma(x) = \frac{1}{1 + e^{-x}} 
+\end{equation}
+Sin embargo, tiene problemas como la saturación del gradiente (cuando los valores se aproximan a 0 o 1, el gradiente tiende a 0, lo que afecta en la actualización de los pesos) o los pesos tienen esperanza de la función de salida positiva, lo que puede llevar a una convergencia lenta \citep{pajares2021aprendizaje}.
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/Sigmoide.png}
+    \captionof{figure}{Gráfica de la función sigmoide.}
+    \label{img: sigmoide}
+\end{minipage}
 
-    La función sigmoide dura (\textit{hard-sigmoid}) es una aproximación simplificada de la sigmoide que reduce los problemas de saturación del gradiente:
+
+
+\subsubsection*{Sigmoide dura}
+
+
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/Sigmoide Dura.png}
+    \captionof{figure}{Gráfica de la función sigmoide dura.}
+    \label{img: sigmoideDura}
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+    Para solucionar el problema de la saturación del gradiente en los extremos, está la función \textbf{sigmoide dura} (\textit{hard-sigmoid}), que es una aproximación simplificada de la función sigmoide. Su fórmula es la siguiente:
 
 \begin{equation}
     f(x) = \max(0, \min(1, \frac{x+1}{2}))
 \end{equation}
 
-Esta función es computacionalmente más eficiente y evita los problemas de saturación en los extremos.
+Esta función es computacionalmente más eficiente y evita los problemas de saturación en los extremos \citep{pajares2021aprendizaje}.
+\end{minipage}
 
 
 
+\subsubsection*{Función Tangente hiperbólica}
+ 
 
-
-\subsubsection*{Función Tangente Hiperbólica (tanh)}
-
-    La función tangente hiperbólica (\textit{tanh}) es similar a la sigmoide pero escala las salidas al rango \([-1, 1]\):
+\begin{minipage}{0.6\textwidth}
+    La función \textbf{tangente hiperbólica (tanh)} es similar a la sigmoide pero escala las salidas al rango \([-1, 1]\):
 
 \begin{equation}
-    \tanh(x) = \frac{2}{1 + e^{-2x}} - 1
+    \tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x + e^{-x}}{e^x + e^{-x}}
 \end{equation}
 
-Aunque también sufre de saturación del gradiente, \textit{tanh} centra las salidas alrededor de cero, lo que puede acelerar el entrenamiento. 
+Aunque también sufre de saturación del gradiente, \textit{tanh} centra las salidas alrededor de cero, lo que puede acelerar el entrenamiento \citep{pajares2021aprendizaje}. 
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/tanh.png}
+    \captionof{figure}{Gráfica de la función tangente hiperbólica.}
+    \label{img: tanh}
+\end{minipage}
 
 
 
+\subsubsection*{Función ReLU}
 
-\subsubsection*{Función Unidad Lineal Rectificada (ReLU)}
-
-    La función ReLU es popular debido a su simplicidad y efectividad para solventar el problema de la saturación del gradiente. Para $x=0$ no es derivable, por lo que se suele asignar un valor arbitrario como 0, 0.5 o 1:
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/ReLU.png}
+    \captionof{figure}{Gráfica de la función ReLU.}
+    \label{img: relu}
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+    La \textbf{función ReLU} es popular debido a su simplicidad y efectividad para solventar el problema de la saturación del gradiente.
 
 \begin{equation}
     f(x) = \max(0, x)
 \end{equation}
-
-Sin embargo, puede llevar a neuronas muertas si reciben un gradiente negativo alto. Para ello, se introduce la siguiente función.
-
+Sin embargo, la función ReLU tiene algunos problemas, como el problema de la ``ReLU muerta'' \citep{maas2013rectifier} y la falta de diferenciabilidad en cero. Para este problema último, se suele asignar un valor arbitrario para este valor como 0, 0.5 o 1 citep{pajares2021aprendizaje}. Esto ocurre cuando se aprende un sesgo negativo grande, haciendo que la salida de la neurona sea siempre cero, sin importar la entrada \citep{apicella2021survey}. Por eso, a continuación, discutimos algunas variantes de ReLU.
+\end{minipage}
 
 
 \subsubsection*{Función Leaky ReLU (LReLU)}
 
-    Leaky ReLU es una variante de ReLU que introduce una pendiente pequeña para entradas negativas:
+\begin{minipage}{0.6\textwidth}
+    Una de las primeras funciones de activación basadas en ReLU fue \textbf{LReLU} \citep{maas2013rectifier}. La función LReLU fue un intento de aliviar los problemas potenciales de ReLU mencionados anteriormente. Se define como:
 
 \begin{equation}
     f(x) = \max(0.001x, x)
 \end{equation}
 
-Esto ayuda a evitar el problema de neuronas muertas al permitir un pequeño gradiente para valores negativos. 
+La función de activación Leaky ReLU permite que la neurona tenga un pequeño gradiente cuando su salida es cero o negativa (es decir, cuando $x \leq 0)$. Sin embargo, se ha demostrado que Leaky ReLU funciona de manera casi idéntica a la ReLU original, por lo que no mejora significativamente el rendimiento de la red. Además, se propuso una versión aleatoria de ReLU, donde el valor de $x$ se elige aleatoriamente de una distribución uniforme \( U(l, u) \) con \( 0 \le l < u < 1 \) \citep{apicella2021survey}.
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/Leaky ReLU.png}
+    \captionof{figure}{Gráfica de la función Leaky ReLU.}
+    \label{img: LReLU}
+\end{minipage}
 
 
+\subsubsection*{Función paramétrica ReLU(PReLU)}
 
-
-\subsubsection*{Función Paramétrica ReLU (PReLU)}
-
-Una forma de generalizar la función anterior es introduciendo un parámetro \(\alpha\) para ajustar la pendiente para entradas negativas. Esta función se llama PReLU y se define:
-
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/PReLU.png}
+    \captionof{figure}{Gráfica de la función Paramétrica ReLU.}
+    \label{img: PReLU}
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+    Una forma de generalizar la función anterior es introduciendo un parámetro \(\alpha\) para ajustar la pendiente para entradas negativas. Esta función se llama PReLU y se define:
 \begin{equation}
     f(x; \alpha) = 
     \begin{cases} 
@@ -388,85 +444,102 @@ Una forma de generalizar la función anterior es introduciendo un parámetro \(\
     \end{cases}
     \label{eq:prelu}
 \end{equation}
-
 Cuando $\alpha = 0$, la función se corresponde con ReLU y cuando $\alpha > 0$, con la LReLU. La función se adapta durante el entrenamiento, permitiendo más flexibilidad que ReLU o LReLU. 
+\end{minipage}
 
+\subsubsection*{Función Softplus}
 
-
-\subsubsection*{Función ReLU6}
-
-ReLU6 es una variante de ReLU que limita la activación a un máximo de 6:
-
+\begin{minipage}{0.6\textwidth}
+    La función softplus puede considerarse una aproximación suave de la función ReLU. Se define como:
 \begin{equation}
-    \text{ReLU6}(x) = \min(\max(x, 0), 6)
+\text{softplus}(a) = \log(1 + \exp(a))
 \end{equation}
 
+La forma más suave de la función y la ausencia de puntos no diferenciables podrían sugerir un mejor comportamiento y un entrenamiento más fácil como función de activación. Sin embargo, los resultados experimentales obtenidos tienden a contradecir esta hipótesis, sugiriendo que las propiedades de ReLU pueden facilitar el entrenamiento supervisado mejor que las funciones softplus \citep{apicella2021survey}.
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/softplus.png}
+    \captionof{figure}{Gráfica de la función Softplus.}
+    \label{img:softplus}
+\end{minipage}
 
-\subsubsection*{Función Unidad Lineal Exponencial (ELU)}
 
-La función ELU es otra variante que proporciona una curva exponencial para entradas negativas, ayudando a suavizar el gradiente:
+\subsubsection*{Función ELU}
 
-\begin{equation}
-    f(x; \alpha) = 
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1.1\textwidth]{img/elu.png}
+    \captionof{figure}{Gráfica de la función ELU.}
+    \label{img:elu}
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+    La \textbf{función ELU} es una función de activación que mantiene la identidad para argumentos positivos pero con valores no nulos para los negativos. Se define como:
+    \[
+    \text{ELU}(a) =
     \begin{cases} 
-      \alpha (e^x - 1) & \text{si } x < 0 \\ 
-      x & \text{si } x \geq 0 
+    a & \text{si } a > 0 \\
+    \alpha \cdot (\exp(a) - 1) & \text{de lo contrario}
     \end{cases}
-\end{equation}
-
-
-
-\subsubsection*{Función Unidad Lineal Exponencial Escalada (SELU)}
-
-La función SELU es una versión modificada de ELU, que introduce un parámetro adicional \(\lambda\) para escalar la salida:
-
-\begin{equation}
-    f(x; \alpha) = 
-    \begin{cases} 
-      \lambda x & \text{si } x \geq 0 \\ 
-      \lambda \alpha (e^x - 1) & \text{si } x < 0 
-    \end{cases}
-\end{equation}
-
-
-SELU está diseñada para mantener la activación y la varianza de las entradas constantes en redes profundas, facilitando la normalización interna.
+    \]
+    donde \( \alpha \) controla el valor para entradas negativas. Los valores dados por las unidades ELU empujan la media de las activaciones más cerca de cero, permitiendo una fase de aprendizaje más rápida, a costa de un hiperparámetro extra (\( \alpha \)) que necesita ser establecido durante el entrenamiento \citep{apicella2021survey}.
+\end{minipage}
 
 
 \subsubsection*{Funciones Swish y SiLU}
 
-Swish y SiLU combinan la sigmoide con la entrada misma para proporcionar una activación suave y no lineal:
+\textbf{Swish y SiLU} combinan la función sigmoide con otros parámetros para proporcionar una activación suave y no lineal. Ambas funciones se han probado en tareas de aprendizaje por refuerzo y en otros contextos, demostrando su efectividad \citep{apicella2021survey}.
 
 \begin{equation}
-    \text{SiLU}: f(x) = x \cdot \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}
+    \text{SiLU}(a) = a \cdot \sigma(a) = \frac{a}{1 + e^{-a}}
 \end{equation}
 
-donde \(\sigma(x)\) es la función sigmoide. La Figura \ref{img: activf} muestra Swish con \(\beta = 3\) y SiLU con \(\beta = 1\).
+La derivada de SiLU se define como:
 
+\begin{equation}
+    \text{dSiLU}(a) = \sigma(a) \left( 1 + a (1 - \sigma(a)) \right)
+\end{equation}
 
-\subsubsection*{Función Mish}
+Donde \(\sigma(a)\) es la función sigmoide.
 
-Mish combina suavidad y capacidad de modelado no lineal, definida como:
+La función Swish se define de manera similar, pero con un parámetro adicional \(\beta\):
+\begin{equation}
+    \text{Swish}(x) = x \cdot \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}
+\end{equation}
 
-	\begin{equation}
-    		f(x) = x \cdot \tanh(\ln(e^x + 1))
-	\end{equation}
-	
+Para \(\beta = 1\), Swish es equivalente a SiLU. La Figura \ref{fig:activf} muestra las gráficas de las funciones Swish (con \(\beta = 3\)) y SiLU.
 
-
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{img/activation_functions.png}
-    \caption{Gráficas de las funciones de activación.}
-    \label{img: activf}
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/Swish.png}
+        \caption{Gráfica de la función Swish con \(\beta = 3\).}
+        \label{fig:swish}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/SiLU.png}
+        \caption{Gráfica de la función SiLU.}
+        \label{fig:silu}
+    \end{minipage}
+    \caption{Comparación de las funciones de activación Swish y SiLU.}
+    \label{fig:activf}
 \end{figure}
 
 
-Las funciones de activación juegan un papel esencial en la formación de redes neuronales al permitir que las redes aprendan y modelen relaciones complejas. Desde funciones clásicas como la sigmoide y \textit{tanh}, hasta variantes más recientes como ReLU, LReLU, ELU, y SELU, cada función tiene sus propios beneficios y limitaciones. La elección de la función de activación adecuada puede influir significativamente en el rendimiento del modelo. Además, permiten resolver el desvanecimiento del gradiente durante el proceso de aprendizaje, evitando que el gradiente se acerque a cero, ya que es necesario que sean derivables \citep{pajares2021aprendizaje}.
+
+Las funciones de activación juegan un papel esencial en la formación de redes neuronales al permitir que las redes aprendan y generen relaciones complejas. Desde funciones clásicas como la sigmoide y tanh, hasta variantes más recientes como ReLU, LReLU y ELU, cada función tiene sus propios beneficios y limitaciones. La elección de la función de activación depende del tipo de problema al que nos enfrentemos y de lo que se busque con el modelo, pero tiene que ser una elección acertada, ya que puede influir significativamente en el rendimiento del modelo. Además, permiten resolver el desvanecimiento del gradiente durante el proceso de aprendizaje, evitando que el gradiente se acerque a cero, cumpliendo la hipótesis de derivabilidad \citep{pajares2021aprendizaje}.
 
 
 \section{Función de perdida}
 
-En el aprendizaje supervisado, las funciones de pérdida son herramientas muy importantes para evaluar qué tan bien un modelo predice los resultados esperados. Su propósito es cuantificar el grado de error en las predicciones realizadas por el modelo, lo cual es fundamental para el ajuste de sus parámetros durante el entrenamiento. En términos generales, estas funciones se dividen en dos grandes categorías: las utilizadas para problemas de clasificación y las utilizadas para problemas de regresión \citep{pajares2021aprendizaje}. Ambas buscan minimizar el error, pero lo hacen con diferentes enfoques dependiendo de la naturaleza de la variable de salida.
+En el aprendizaje supervisado, las funciones de pérdida son herramientas muy importantes para evaluar qué tan bien un modelo predice los resultados esperados. Su objetivo es cuantificar el grado de error en las predicciones realizadas por el modelo, lo cual es fundamental para el ajuste de sus parámetros durante el entrenamiento. En términos generales, estas funciones se dividen en dos grandes categorías: las utilizadas para problemas de clasificación y las utilizadas para problemas de regresión \citep{pajares2021aprendizaje}. Ambas buscan minimizar el error, pero lo hacen con diferentes enfoques dependiendo de la naturaleza de la variable de salida.
 
 \subsection{Clasificación}
 
@@ -476,25 +549,25 @@ En los problemas de clasificación, la tarea del modelo es asignar una etiqueta 
 
 La entropía cruzada mide la diferencia entre la distribución de probabilidad verdadera de las etiquetas y la distribución de probabilidad predicha por el modelo. Existen dos variantes principales:
 
-\subsubsection*{Entropía Cruzada Categórica}
+\begin{itemize}
+	\item La \textbf{entropía cruzada categórica} se utiliza cuando se predicen múltiples categorías (multiclase). Se calcula como:
 
-La entropía cruzada categórica se utiliza cuando se predicen múltiples categorías (multiclase). Se calcula como:
+	\begin{equation}
+    		H(p, q) = -\sum_{x} p(x) \log q(x)
+	\end{equation}
 
-\begin{equation}
-    H(p, q) = -\sum_{x} p(x) \log q(x)
-\end{equation}
+	Aquí, \(p(x)\) es la distribución verdadera (generalmente representada como \textit{one-hot} para una categoría) y \(q(x)\) es la distribución predicha. Esta función penaliza las predicciones que se desvían de las probabilidades verdaderas, con valores más altos indicando mayores discrepancias \citep{pajares2021aprendizaje}. 
 
-Aquí, \(p(x)\) es la distribución verdadera (generalmente representada como \textit{one-hot} para una categoría) y \(q(x)\) es la distribución predicha. Esta función penaliza las predicciones que se desvían de las probabilidades verdaderas, con valores más altos indicando mayores discrepancias. 
+	\item La\textbf{ entropía cruzada binaria} se aplica a problemas de clasificación binaria, donde solo hay dos posibles etiquetas. Se define como:
 
-\subsubsection*{Entropía Cruzada Binaria}
+	\begin{equation}
+    		H(p, q) = - \left[ p \log q + (1 - p) \log (1 - q) \right]
+	\end{equation}
 
-La entropía cruzada binaria se aplica a problemas de clasificación binaria, donde solo hay dos posibles etiquetas. Se define como:
+	Aquí, \(p\) es la probabilidad de la etiqueta verdadera (1 para la clase positiva, 0 para la clase negativa), y \(q\) es la probabilidad predicha para la clase positiva. Esta variante es más sencilla y específica para problemas donde las etiquetas son binarias \citep{pajares2021aprendizaje}.
+\end{itemize}
 
-\begin{equation}
-    H(p, q) = - \left[ p \log q + (1 - p) \log (1 - q) \right]
-\end{equation}
 
-Aquí, \(p\) es la probabilidad de la etiqueta verdadera (1 para la clase positiva, 0 para la clase negativa), y \(q\) es la probabilidad predicha para la clase positiva. Esta variante es más sencilla y específica para problemas donde las etiquetas son binarias.
 
 \subsubsection{Coeficiente de Dice}
 
@@ -605,9 +678,9 @@ En la primera gráfica de la Figura \ref{fig:overfitting}, se puede observar com
     \label{fig:overfitting}
 \end{figure}
 
-Por último, la gráfica de más a la derecha presenta un ajuste idóneo para este conjunto de datos, ya que se puede observar como se ajusta a todos los puntos pero sin capturar ruido. Para llegar a este tipo de ajuste y evitar los dos primeros casos, vamos a explorar diferentes métodos para mitigar el sobreajuste, como la regularización $L1$ y $L2$, las capas dropout o la parada temprana.
+Por último, la gráfica de más a la derecha presenta un ajuste idóneo para este conjunto de datos, ya que se puede observar como se ajusta a todos los puntos pero sin capturar ruido. Para llegar a este tipo de ajuste y evitar los dos primeros casos, vamos a explorar diferentes métodos para mitigar el sobreajuste, como la regularización $l1$ y $l2$, las capas dropout o la parada temprana.
 
-\subsection{Regularización L1 y L2} \label{sec:regularizacion}
+\subsection{Regularización l1 y l2} \label{sec:regularizacion}
 
 La regularización ayuda a evitar el sobreajuste, lo cual ocurre cuando un modelo es demasiado complejo y comienza a captar el ruido o los patrones irrelevantes en los datos de entrenamiento. En lugar de eso, la regularización favorece la creación de modelos más simples que pueden identificar los patrones importantes y generalizar mejor a datos nuevos. Esta técnica es especialmente útil cuando se tiene una cantidad limitada de datos, conjuntos de datos con muchas características o modelos con muchos parámetros \citep{pajares2021aprendizaje}.
 
@@ -617,10 +690,10 @@ Para implementarla, se añade un término de regularización a la función de p�
 loss_{regul}(\theta) = loss(\theta) + \beta \cdot f(\theta) 
 \end{equation}
 
-Aquí, \( loss_{regul}(\theta) \) es la función de pérdida final despues de aplicarle una regularización. \( loss(\theta) \) es la función de pérdida original que mide el ajuste del modelo a los datos, y \( \theta \) representa los parámetros del modelo (pesos y sesgos). El parámetro \(\beta\) controla la intensidad de la regularización, equilibrando entre ajustar el modelo a los datos y mantener los valores de los parámetros bajo control. Por último, el término de regularización \( f(\theta) \) penaliza los parámetros del modelo, siendo comúnmente la regularización $L2$ o la $L1$. 
+Aquí, \( loss_{regul}(\theta) \) es la función de pérdida final despues de aplicarle una regularización. \( loss(\theta) \) es la función de pérdida original que mide el ajuste del modelo a los datos, y \( \theta \) representa los parámetros del modelo (pesos y sesgos). El parámetro \(\beta\) controla la intensidad de la regularización, equilibrando entre ajustar el modelo a los datos y mantener los valores de los parámetros bajo control. Por último, el término de regularización \( f(\theta) \) penaliza los parámetros del modelo, siendo comúnmente la regularización $l2$ o la $l1$. 
  
 
-La \textbf{regularización \(L2\)} (o regresión Ridge) añade una penalización proporcional a la suma de los pesos al cuadrado. La función de pérdida regularizada \(L2\) se define como:
+La \textbf{regularización \(l2\)} (o regresión Ridge) añade una penalización proporcional a la suma de los pesos al cuadrado. La función de pérdida regularizada \(l2\) se define como:
 
 \begin{equation}
 \text{Loss} = \text{Original Loss} + \lambda \sum_{i} w_i^2
@@ -629,11 +702,11 @@ La \textbf{regularización \(L2\)} (o regresión Ridge) añade una penalización
 donde \(\lambda\) es el parámetro de regularización que controla la importancia de la penalización y $w_i$ los pesos \citep{geron2022hands}. Este método tiende a producir soluciones más estables y reduce la complejidad de los modelos, tendiendo los coeficientes hacia valores más pequeños.
 
 
-La \textbf{regularización \(L1\)} (o regresión Lasso) añade una penalización proporcional a la suma del valor absoluto de los pesos:
+La \textbf{regularización \(l1\)} (o regresión Lasso) añade una penalización proporcional a la suma del valor absoluto de los pesos:
 \begin{equation}
 \text{Loss} = \text{Original Loss} + \lambda \sum_{i} |w_i|
 \end{equation}
-Esta técnica puede generar un modelo más sencillo, donde algunos coeficientes se anulan, seleccionando las características más importantes de los datos. Sin embargo, produce soluciones menos estables que aplicando $L2$ \citep{geron2022hands}. 
+Esta técnica puede generar un modelo más sencillo, donde algunos coeficientes se anulan, seleccionando las características más importantes de los datos. Sin embargo, produce soluciones menos estables que aplicando $l2$ \citep{geron2022hands}. 
 
 
 \subsection{Dropout} \label{sec:dropout}
@@ -656,7 +729,7 @@ Por lo tanto, aplicar dropout a una red neuronal equivale a seleccionar una subm
 Experimentos como los que se harán en el Capítulo \ref{Capitulo_3} muestran como el Dropout mejora la capacidad de generalización de la red, proporcionando un mejor rendimiento del modelo.
 
 
-El uso del \textit{dropout} en una red neuronal se implementa fácilmente en frameworks como Keras. Por ejemplo:
+El uso del dropout en una red neuronal se implementa fácilmente en frameworks como Keras. Por ejemplo:
 
 \lstset{language=Python}
 \begin{lstlisting}
@@ -668,13 +741,13 @@ model = Sequential([
     Dense(10, activation='softmax') ])
 \end{lstlisting}
 
-En este código, se aplica \textit{dropout} con una tasa del 50\% después de una capa densa con 128 unidades.
+En este código, se aplica dropout con una tasa del 50\% después de una capa densa con 128 unidades.
 
 
 
 \subsection{Parada temprana}
 
-Además de las técnicas de regularización L1 y L2 y el uso de dropout para prevenir el sobreajuste en redes neuronales, otra estrategia ampliamente utilizada es la parada temprana o \textit{Early Stopping}.
+Además de las técnicas de regularización $l1$ y $l2$ y el uso de dropout para prevenir el sobreajuste en redes neuronales, otra estrategia ampliamente utilizada es la parada temprana o \textit{Early Stopping}.
 
 \begin{minipage}{0.35\textwidth}
 \centering
@@ -693,7 +766,7 @@ Formalmente, si denotamos el error en el conjunto de entrenamiento después de l
 
 Esta técnica no solo ayuda a prevenir el sobreajuste sino que también optimiza el uso de recursos al detener el entrenamiento cuando ya no se obtienen mejoras en el desempeño del modelo \citep{tian2022comprehensive}.
 
-Para implementarlo en la práctica, frameworks como \texttt{Keras} ofrecen callbacks que facilitan este proceso. A continuación se presenta un ejemplo de código que utiliza \texttt{EarlyStopping} para detener el entrenamiento cuando no se observa ninguna mejora en el error de validación:
+Para implementarlo en la práctica, frameworks como Keras ofrecen callbacks que facilitan este proceso. A continuación se presenta un ejemplo de código que utiliza \lstinline|EarlyStopping| para detener el entrenamiento cuando no se observa ninguna mejora en el error de validación:
 
 
 \lstset{language=Python}
@@ -707,14 +780,14 @@ history = model.fit(X_train, y_train, epochs=100,
                     callbacks=[early_stopping_cb])
 \end{lstlisting}
 
-En este ejemplo, EarlyStopping detiene el entrenamiento después de un número definido de épocas sin mejora ($patience = 10$), restaurando los pesos que lograron el mejor desempeño \citep{geron2022hands}.
+En este ejemplo, EarlyStopping detiene el entrenamiento después de un número definido de épocas sin mejora (\lstinline|patience = 10|), restaurando los pesos que lograron el mejor desempeño \citep{geron2022hands}.
 
-Así, \textit{Early Stopping} se complementa eficazmente con las técnicas de regularización $L1$, $L2$ y dropout, proporcionando una capa adicional de protección contra el sobreajuste y mejorando la robustez del modelo.
+Así, \textit{Early Stopping} se complementa eficazmente con las técnicas de regularización $l1$, $l2$ y dropout, proporcionando una capa adicional de protección contra el sobreajuste y mejorando la robustez del modelo.
 
 \bigskip
 
 
-El sobreajuste es uno de los principales desafíos en el entrenamiento de modelos de aprendizaje automático, incluyendo las redes neuronales. Técnicas como la regularización \(L2\), el \textit{dropout} y la parada temprana son estrategias efectivas para mitigar este problema. Es crucial seleccionar y combinar adecuadamente estas técnicas según las características del problema y los datos disponibles. A través de estos métodos, podemos mejorar la capacidad de generalización de nuestros modelos y lograr un rendimiento más robusto en datos no vistos \citep{geron2022hands, pajares2021aprendizaje}.
+El sobreajuste es uno de los principales desafíos en el entrenamiento de modelos de aprendizaje automático, incluyendo las redes neuronales. Técnicas como la regularización \(l2\), el dropout y la parada temprana son estrategias efectivas para mitigar este problema. Es crucial seleccionar y combinar adecuadamente estas técnicas según las características del problema y los datos disponibles. A través de estos métodos, podemos mejorar la capacidad de generalización de nuestros modelos y lograr un rendimiento más robusto en datos no vistos \citep{geron2022hands, pajares2021aprendizaje}.
 
 
 
@@ -833,7 +906,7 @@ Esta curva es especialmente útil para ajustar un umbral de decisión que permit
 
 ta alcanzar este valor de precisión, aunque esto reducirá la sensibilidad. Este proceso se denomina trade-off entre precisión y sensibilidad.
 
-Para calcular este umbral, se utilizan las puntuaciones de decisión obtenidas del clasificador. Primero, se obtienen estas puntuaciones usando la función \texttt{decision\_function()} del clasificador. Luego, se emplea la función \texttt{precision\_recall\_curve()} de Scikit-Learn para calcular la precisión y la sensibilidad para todos los umbrales posibles. Finalmente, se selecciona el umbral que proporciona la precisión deseada. La Figura \ref{img: pr_vs_threshold} ilustra cómo se comportan la precisión y la sensibilidad en función del umbral \citep{geron2022hands}.
+Para calcular este umbral, se utilizan las puntuaciones de decisión obtenidas del clasificador. Primero, se obtienen estas puntuaciones usando la función \lstinline|decision_function()| del clasificador. Luego, se emplea la función \lstinline|precision_recall_curve()| de Scikit-Learn para calcular la precisión y la sensibilidad para todos los umbrales posibles. Finalmente, se selecciona el umbral que proporciona la precisión deseada. La Figura \ref{img: pr_vs_threshold} ilustra cómo se comportan la precisión y la sensibilidad en función del umbral \citep{geron2022hands}.
 
 \begin{figure}[h]
 	\centering
@@ -905,7 +978,7 @@ Los autoencoders se utilizan en una amplia variedad de aplicaciones, incluida la
 Las principales capas que se utilizan en esta red neuronal son las capas densas y las de aplanamiento, aunque también se pueden utilizar capas convolucionales y de pooling para autocodificadores convolucionales\footnote{Autocodificador para imágenes de gran tamaño} o LSTM en el caso de autocodificadores recurrentes\footnote{Autocodificador específico para series temporales o secuencias.}\citep{geron2022hands}. 
 
 
-
+COMENTAR LOS CONVOLUTIONAL AUTOENCODERS
 
 
 
@@ -1087,7 +1160,7 @@ De manera similar, Matthew Carrigan destaca la intuitividad y facilidad de uso d
 
 De forma complementaria, también es importante conocer y utilizar diversas librerías y herramientas esenciales que facilitan el desarrollo y análisis de los modelos de Keras. Estas incluyen herramientas para la manipulación, visualización y análisis de datos.
 
-\textbf{Scikit-Learn} \citep{scikitlearn} es una librería de código abierto con herramientas simples y eficientes para el análisis predictivo de datos. Contiene varios algoritmos de aprendizaje automático, desde clasificación y regresión hasta clustering y reducción de dimensionalidad, con la documentación completa sobre cada algoritmo. Está construida sobre otras librerías que veremos más adelante como Numpy, SciPy y matplotlib. Aunque no se aprovecharán todas estas funcionalidades de scikit-learn, si que se va a utilizar una de sus funciones más populares, \texttt{train\_test\_split()} \citep{traintestsplit}. Esta función divide el dataset en dos subconjuntos de forma aleatoria, manteniendo la correspondencia en caso de que el dataset contenga dos o más partes. Usualmente, a estos subconjuntos se les llama conjunto de prueba y conjunto de entrenamiento, cuyo tamaño se indica con un valor entre 0 y 1 (\texttt{test\_size}). Además, también se suele asignar una semilla a esa división para que cada vez que se quieran reproducir los experimentos, pueda usarse la misma partición. Esa semilla es un número natural que se introduce como parámetro de entrada en la variable \texttt{random\_state}. Veamos un ejemplo de como utilizar esta función.
+\textbf{Scikit-Learn} \citep{scikitlearn} es una librería de código abierto con herramientas simples y eficientes para el análisis predictivo de datos. Contiene varios algoritmos de aprendizaje automático, desde clasificación y regresión hasta clustering y reducción de dimensionalidad, con la documentación completa sobre cada algoritmo. Está construida sobre otras librerías que veremos más adelante como Numpy, SciPy y matplotlib. Aunque no se aprovecharán todas estas funcionalidades de scikit-learn, si que se va a utilizar una de sus funciones más populares, \lstinline|train\_test\_split()| \citep{traintestsplit}. Esta función divide el dataset en dos subconjuntos de forma aleatoria, manteniendo la correspondencia en caso de que el dataset contenga dos o más partes. Usualmente, a estos subconjuntos se les llama conjunto de prueba y conjunto de entrenamiento, cuyo tamaño se indica con un valor entre 0 y 1 (\lstinline|test\_size|). Además, también se suele asignar una semilla a esa división para que cada vez que se quieran reproducir los experimentos, pueda usarse la misma partición. Esa semilla es un número natural que se introduce como parámetro de entrada en la variable \lstinline|random\_state|. Veamos un ejemplo de como utilizar esta función.
 
 
 \lstset{language=Python}
