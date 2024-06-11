@@ -17,65 +17,65 @@
 \contentsline {section}{\numberline {2.5}GENERALIZACIÓN}{7}{section.2.5}%
 \contentsline {section}{\numberline {2.6}COMO SE APRENDE}{7}{section.2.6}%
 \contentsline {section}{\numberline {2.7}OPTIMIZACIÓN}{7}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Función de activación.}{7}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Función de perdida}{11}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Clasificación}{11}{subsection.2.9.1}%
+\contentsline {section}{\numberline {2.8}VALIDACIÓN CRUZADA}{7}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Función de activación.}{7}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Función de perdida}{11}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Clasificación}{11}{subsection.2.10.1}%
 \contentsline {subsubsection}{Entropía Cruzada}{12}{section*.15}%
 \contentsline {subsubsection}{Coeficiente de Dice}{12}{section*.16}%
 \contentsline {subsubsection}{Divergencia de Kullback-Leibler}{12}{section*.17}%
-\contentsline {subsection}{\numberline {2.9.2}Regresión}{13}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.10.2}Regresión}{13}{subsection.2.10.2}%
 \contentsline {subsubsection}{Error Cuadrático Medio (ECM)}{13}{section*.18}%
 \contentsline {subsubsection}{Error Absoluto Medio (EAM)}{13}{section*.19}%
 \contentsline {subsubsection}{Pérdida de Huber}{13}{section*.20}%
 \contentsline {subsubsection}{Pérdida Log-Cosh}{14}{section*.21}%
 \contentsline {subsubsection}{Pérdida Basada en Cuantiles}{14}{section*.22}%
-\contentsline {section}{\numberline {2.10}Sobreajuste del modelo.}{14}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Regularización l1 y l2}{15}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Dropout}{16}{subsection.2.10.2}%
-\contentsline {subsection}{\numberline {2.10.3}Parada temprana}{17}{subsection.2.10.3}%
-\contentsline {section}{\numberline {2.11}Métricas de evaluación de un modelo de clasificación.}{18}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Matriz de Confusión}{18}{subsection.2.11.1}%
-\contentsline {subsection}{\numberline {2.11.2}Métricas}{18}{subsection.2.11.2}%
-\contentsline {subsection}{\numberline {2.11.3}Curva ROC y AUC}{20}{subsection.2.11.3}%
-\contentsline {subsection}{\numberline {2.11.4}Curva de Precisión-Recall}{20}{subsection.2.11.4}%
-\contentsline {section}{\numberline {2.12}Arquitecturas relevantes}{21}{section.2.12}%
-\contentsline {subsection}{\numberline {2.12.1}Autoencoder}{21}{subsection.2.12.1}%
-\contentsline {subsection}{\numberline {2.12.2}Deep Belief Networks}{22}{subsection.2.12.2}%
+\contentsline {section}{\numberline {2.11}Sobreajuste del modelo.}{14}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Regularización l1 y l2}{15}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}Dropout}{16}{subsection.2.11.2}%
+\contentsline {subsection}{\numberline {2.11.3}Parada temprana}{17}{subsection.2.11.3}%
+\contentsline {section}{\numberline {2.12}Métricas de evaluación de un modelo de clasificación.}{18}{section.2.12}%
+\contentsline {subsection}{\numberline {2.12.1}Matriz de Confusión}{18}{subsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12.2}Métricas}{18}{subsection.2.12.2}%
+\contentsline {subsection}{\numberline {2.12.3}Curva ROC y AUC}{20}{subsection.2.12.3}%
+\contentsline {subsection}{\numberline {2.12.4}Curva de Precisión-Recall}{20}{subsection.2.12.4}%
+\contentsline {section}{\numberline {2.13}Arquitecturas relevantes}{21}{section.2.13}%
+\contentsline {subsection}{\numberline {2.13.1}Autoencoder}{21}{subsection.2.13.1}%
+\contentsline {subsection}{\numberline {2.13.2}Deep Belief Networks}{22}{subsection.2.13.2}%
 \contentsline {subsubsection}{Red Neuronal Profunda}{22}{section*.27}%
-\contentsline {subsection}{\numberline {2.12.3}Red Neuronal Convolucional}{22}{subsection.2.12.3}%
-\contentsline {subsection}{\numberline {2.12.4}Red Neuronal Recurrente}{26}{subsection.2.12.4}%
-\contentsline {subsubsection}{Restricted Boltzmann Machine}{26}{section*.36}%
-\contentsline {section}{\numberline {2.13}Bibliotecas utilizadas en Python}{26}{section.2.13}%
-\contentsline {subsection}{\numberline {2.13.1}Principales frameworks. Keras}{26}{subsection.2.13.1}%
-\contentsline {subsection}{\numberline {2.13.2}Librerías y herramientas esenciales.}{27}{subsection.2.13.2}%
-\contentsline {chapter}{\numberline {3}Clasificación de Malware}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Microsoft Malware Classification Challenge}{29}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Distribución del dataset}{31}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Red Neuronal Convolucional}{33}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Visualizar el malware como imagen}{33}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Visualización del modelo}{34}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Aportaciones al modelo}{35}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}GPU (Unidad de Procesamiento Gráfico)}{36}{subsection.3.2.4}%
-\contentsline {subsubsection}{Ventajas}{36}{section*.45}%
-\contentsline {subsubsection}{Desventajas}{36}{section*.46}%
-\contentsline {subsection}{\numberline {3.2.5}CPU (Unidad Central de Procesamiento)}{36}{subsection.3.2.5}%
-\contentsline {subsubsection}{Ventajas}{36}{section*.47}%
-\contentsline {subsubsection}{Desventajas}{36}{section*.48}%
-\contentsline {section}{\numberline {3.3}Autoencoder}{37}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}CAE}{37}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}DAE}{37}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}AE}{37}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Resultados}{37}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Detección de intrusiones}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}KDD Cup 1999}{39}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Autoencoder}{39}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Red Neuronal Convolucional}{39}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Red Neuronal Profunda}{40}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Red Neuronal Recurrente}{40}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Restricted Boltzmann Machine}{40}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Resultados}{40}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{41}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{41}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{43}{chapter*.49}%
-\contentsline {section}{\numberline {.1}Anexo A}{49}{section.Alph0.1}%
+\contentsline {subsection}{\numberline {2.13.3}Red Neuronal Convolucional}{22}{subsection.2.13.3}%
+\contentsline {subsection}{\numberline {2.13.4}Red Neuronal Recurrente}{27}{subsection.2.13.4}%
+\contentsline {subsubsection}{Restricted Boltzmann Machine}{27}{section*.39}%
+\contentsline {section}{\numberline {2.14}Bibliotecas utilizadas en Python}{27}{section.2.14}%
+\contentsline {subsection}{\numberline {2.14.1}Principales frameworks. Keras}{28}{subsection.2.14.1}%
+\contentsline {subsection}{\numberline {2.14.2}Librerías y herramientas esenciales.}{29}{subsection.2.14.2}%
+\contentsline {chapter}{\numberline {3}Clasificación de Malware}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Microsoft Malware Classification Challenge}{31}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Distribución del dataset}{33}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Red Neuronal Convolucional}{35}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Visualizar el malware como imagen}{35}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Visualización del modelo}{36}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Aportaciones al modelo}{37}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}GPU (Unidad de Procesamiento Gráfico)}{38}{subsection.3.2.4}%
+\contentsline {subsubsection}{Ventajas}{38}{section*.48}%
+\contentsline {subsubsection}{Desventajas}{38}{section*.49}%
+\contentsline {subsection}{\numberline {3.2.5}CPU (Unidad Central de Procesamiento)}{38}{subsection.3.2.5}%
+\contentsline {subsubsection}{Ventajas}{38}{section*.50}%
+\contentsline {subsubsection}{Desventajas}{38}{section*.51}%
+\contentsline {section}{\numberline {3.3}Autoencoder}{39}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}CAE}{39}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}DAE}{39}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}AE}{39}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Resultados}{39}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Detección de intrusiones}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}KDD Cup 1999}{41}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Autoencoder}{41}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Red Neuronal Convolucional}{41}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Red Neuronal Profunda}{42}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Red Neuronal Recurrente}{42}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Restricted Boltzmann Machine}{42}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Resultados}{42}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{43}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{45}{chapter*.52}%

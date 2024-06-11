@@ -139,6 +139,13 @@ Daniel Gibert, Jordi Planes, Carles Mateu, and Quan Le.
 {Google Brain Team}.
 \newblock Tensorflow, 2015.
 
+\bibitem{guo2017deep}
+Xifeng Guo, Xinwang Liu, En~Zhu, and Jianping Yin.
+\newblock Deep clustering with convolutional autoencoders.
+\newblock In {\em Neural Information Processing: 24th International Conference,
+  ICONIP 2017, Guangzhou, China, November 14-18, 2017, Proceedings, Part II
+  24}, pages 373--382. Springer, 2017.
+
 \bibitem{gupta2016malware}
 Sanchit Gupta, Harshit Sharma, and Sarvjeet Kaur.
 \newblock Malware characterization using windows api call sequences.
@@ -430,6 +437,12 @@ Ilsun You and Kangbin Yim.
 \newblock Malware obfuscation techniques: A brief survey.
 \newblock In {\em 2010 International conference on broadband, wireless
   computing, communication and applications}, pages 297--300. IEEE, 2010.
+
+\bibitem{zhai2018autoencoder}
+Junhai Zhai, Sufang Zhang, Junfen Chen, and Qiang He.
+\newblock Autoencoder and its various variants.
+\newblock In {\em 2018 IEEE international conference on systems, man, and
+  cybernetics (SMC)}, pages 415--419. IEEE, 2018.
 
 \bibitem{zolkipli2010malware}
 Mohamad~Fadli Zolkipli and Aman Jantan.

@@ -19,6 +19,101 @@ Partes de una neurona y como trabaja(bias, pesos...)
 
 
 
+
+
+
+
+
+
+Las redes neuronales son un subcampo de la inteligencia artificial (IA) y el aprendizaje automático (machine learning) que se inspira en el funcionamiento del cerebro humano para procesar información y aprender de los datos. Estas redes consisten en capas de nodos (también llamados neuronas) que están interconectados y trabajan en conjunto para realizar tareas específicas, como la clasificación, la regresión y el reconocimiento de patrones.
+
+\section{Historia y Desarrollo}
+
+El concepto de redes neuronales fue introducido por Warren McCulloch y Walter Pitts en 1943, quienes propusieron un modelo matemático de una neurona artificial. Sin embargo, fue en los años 80 y 90 cuando el campo experimentó un resurgimiento significativo, gracias al desarrollo del algoritmo de retropropagación (backpropagation) por Geoffrey Hinton y sus colaboradores. Este algoritmo permitió entrenar redes neuronales de múltiples capas, conocidas como redes neuronales profundas, lo que llevó a avances sustanciales en la capacidad de las máquinas para aprender de los datos.
+
+\section{Estructura de una Red Neuronal}
+
+Una red neuronal típica se compone de tres tipos de capas:
+
+\begin{itemize}
+    \item \textbf{Capa de entrada:} Recibe la información inicial y la pasa a la siguiente capa.
+    \item \textbf{Capas ocultas:} Procesan la información a través de múltiples neuronas, aplicando funciones de activación para introducir no linealidades.
+    \item \textbf{Capa de salida:} Produce la salida final de la red, que puede ser una clasificación, una estimación o cualquier otra forma de respuesta.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{neural_network_structure.png}
+    \caption{Estructura básica de una red neuronal.}
+    \label{fig:neural_network_structure}
+\end{figure}
+
+\section{Algoritmo de Retropropagación}
+
+El algoritmo de retropropagación es un método para entrenar redes neuronales ajustando los pesos de las conexiones en función de la diferencia entre la salida esperada y la obtenida. Este proceso se lleva a cabo en varias etapas:
+
+\begin{enumerate}
+    \item \textbf{Propagación hacia adelante:} Los datos de entrada se pasan a través de la red para calcular la salida.
+    \item \textbf{Cálculo del error:} Se mide la diferencia entre la salida calculada y la esperada.
+    \item \textbf{Propagación hacia atrás:} Se ajustan los pesos de la red en función del error calculado, distribuyendo la corrección de manera inversa desde la salida hacia las capas anteriores.
+\end{enumerate}
+
+\section{Funciones de Activación}
+
+Las funciones de activación son fundamentales en las redes neuronales porque introducen no linealidades, permitiendo a la red aprender patrones complejos. Algunas de las funciones de activación más comunes son:
+
+\begin{itemize}
+    \item \textbf{Sigmoide:} Mapea las salidas a un rango entre 0 y 1.
+    \item \textbf{ReLU (Rectified Linear Unit):} Define una función de activación que devuelve 0 si la entrada es negativa, y el valor de la entrada si es positiva.
+    \item \textbf{Tanh:} Similar a la sigmoide, pero mapea las salidas en un rango entre -1 y 1.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{activation_functions.png}
+    \caption{Ejemplos de funciones de activación comunes.}
+    \label{fig:activation_functions}
+\end{figure}
+
+\section{Redes Neuronales Profundas}
+
+Las redes neuronales profundas (Deep Neural Networks, DNN) son un tipo de red neuronal que tiene múltiples capas ocultas entre la capa de entrada y la capa de salida. La profundidad de estas redes les permite aprender características complejas a diferentes niveles de abstracción. Han demostrado un rendimiento excepcional en tareas como el reconocimiento de voz, la visión por computadora y la traducción automática.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{deep_neural_network.png}
+    \caption{Estructura de una red neuronal profunda.}
+    \label{fig:deep_neural_network}
+\end{figure}
+
+\section{Aplicaciones de las Redes Neuronales}
+
+Las redes neuronales tienen una amplia gama de aplicaciones en diversos campos, incluyendo:
+
+\begin{itemize}
+    \item \textbf{Visión por Computadora:} Utilizadas para tareas como la clasificación de imágenes, la detección de objetos y la segmentación de imágenes.
+    \item \textbf{Procesamiento del Lenguaje Natural (NLP):} Empleadas en la traducción automática, la generación de texto y el análisis de sentimientos.
+    \item \textbf{Reconocimiento de Voz:} Implementadas en sistemas de reconocimiento y síntesis de voz.
+    \item \textbf{Finanzas:} Utilizadas para la predicción de precios de acciones y la detección de fraudes.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{nn_applications.png}
+    \caption{Áreas de aplicación de las redes neuronales.}
+    \label{fig:nn_applications}
+\end{figure}
+
+\section{Desafíos y Tendencias Futuras}
+
+A pesar de los éxitos de las redes neuronales, existen desafíos que todavía deben ser abordados, como la interpretación de modelos, el requerimiento de grandes cantidades de datos para el entrenamiento y el consumo de recursos computacionales. Sin embargo, el campo está en constante evolución, con investigaciones en áreas como las redes neuronales convolucionales (CNN), las redes neuronales recurrentes (RNN) y los modelos generativos, que prometen avances significativos en el futuro.
+
+
+
+
+
+
+
 \section{Introducción}
 
 En la última década, la inteligencia artificial (IA) se ha convertido en un tema popular tanto dentro como fuera de la comunidad científica. Una abundancia de artículos en revistas tecnológicas y no tecnológicas han cubierto los temas de aprendizaje automático (ML, por sus siglas en inglés), aprendizaje profundo (DL, por sus siglas en inglés) e IA. Sin embargo, todavía persiste confusión en torno a IA, ML y DL. Los términos están estrechamente relacionados, pero no son intercambiables. 
@@ -132,6 +227,240 @@ La segunda capa consiste en transformar la salida de la primera etapa mediante u
 \section{GENERALIZACIÓN}
 \section{COMO SE APRENDE}
 \section{OPTIMIZACIÓN}
+
+
+
+
+\section{VALIDACIÓN CRUZADA}
+
+
+La calidad y la preparación de los datos son factores cruciales que afectan el rendimiento de las redes neuronales. En esta sección se describen las técnicas de visualización y los métodos de preparación de datos que son fundamentales antes de entrenar un modelo.
+
+\section{Importancia de la Preparación de Datos}
+
+Antes de entrenar una red neuronal, es esencial preparar los datos de manera adecuada para asegurar que el modelo pueda aprender de manera efectiva. La preparación de datos incluye la limpieza, la transformación y la normalización de los datos, lo que mejora la calidad de las entradas y facilita el aprendizaje de patrones relevantes.
+
+\section{Visualización de Datos}
+
+La visualización de datos es un paso crucial en la comprensión y preparación de los datos. Permite identificar patrones, detectar anomalías y entender la distribución de las variables. Algunos métodos comunes de visualización incluyen:
+
+\begin{itemize}
+    \item \textbf{Diagramas de dispersión:} Utilizados para observar la relación entre dos variables.
+    \item \textbf{Histogramas:} Muestran la distribución de una variable.
+    \item \textbf{Diagramas de caja (Boxplots):} Ayudan a identificar la variabilidad y posibles valores atípicos.
+    \item \textbf{Matrices de correlación:} Utilizadas para analizar la relación entre múltiples variables.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{scatter_plot.png}
+    \caption{Diagrama de dispersión que muestra la relación entre dos variables.}
+    \label{fig:scatter_plot}
+\end{figure}
+
+\section{Limpieza de Datos}
+
+La limpieza de datos es el proceso de corregir o eliminar datos incorrectos, incompletos o irrelevantes del conjunto de datos. Esto puede incluir:
+
+\begin{itemize}
+    \item \textbf{Manejo de valores nulos:} Los valores nulos pueden eliminarse o reemplazarse con técnicas de imputación.
+    \item \textbf{Corrección de errores:} Corregir entradas erróneas o inconsistentes en los datos.
+    \item \textbf{Eliminación de duplicados:} Remover filas duplicadas que pueden sesgar el análisis.
+\end{itemize}
+
+\section{Normalización y Escalado}
+
+La normalización y el escalado son técnicas que ajustan los valores de los datos a un rango específico o a una distribución estándar, lo que facilita el entrenamiento de redes neuronales:
+
+\begin{itemize}
+    \item \textbf{Normalización Min-Max:} Escala los valores de las características a un rango específico, generalmente [0, 1].
+    \item \textbf{Estandarización:} Transforma los datos para tener media 0 y desviación estándar 1, útil para datos con diferentes unidades o escalas.
+\end{itemize}
+
+\begin{align}
+    x' &= \frac{x - \min(x)}{\max(x) - \min(x)} \quad \text{(Normalización Min-Max)} \\
+    z &= \frac{x - \mu}{\sigma} \quad \text{(Estandarización)}
+\end{align}
+
+\section{División de Datos}
+
+La división de los datos en conjuntos de entrenamiento, validación y prueba es esencial para evaluar el rendimiento del modelo de manera imparcial:
+
+\begin{itemize}
+    \item \textbf{Conjunto de Entrenamiento:} Utilizado para ajustar los parámetros del modelo.
+    \item \textbf{Conjunto de Validación:} Usado para ajustar los hiperparámetros y evitar el sobreajuste.
+    \item \textbf{Conjunto de Prueba:} Empleado para evaluar el rendimiento final del modelo.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{data_split.png}
+    \caption{División típica de datos en conjuntos de entrenamiento, validación y prueba.}
+    \label{fig:data_split}
+\end{figure}
+
+\section{Aumento de Datos}
+
+El aumento de datos (data augmentation) es una técnica utilizada para incrementar la cantidad de datos de entrenamiento mediante la generación de variaciones del conjunto de datos existente. Esto es particularmente útil en problemas de visión por computadora. Las técnicas comunes incluyen:
+
+\begin{itemize}
+    \item \textbf{Rotación:} Girar las imágenes en diferentes ángulos.
+    \item \textbf{Desplazamiento:} Mover las imágenes horizontal o verticalmente.
+    \item \textbf{Escalado:} Cambiar el tamaño de las imágenes.
+    \item \textbf{Ajuste de brillo:} Modificar el brillo de las imágenes.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{data_augmentation.png}
+    \caption{Ejemplos de técnicas de aumento de datos aplicadas a imágenes.}
+    \label{fig:data_augmentation}
+\end{figure}
+
+\section{Codificación de Variables}
+
+Para utilizar datos categóricos en modelos de redes neuronales, es necesario convertirlos a un formato numérico. Las técnicas comunes incluyen:
+
+\begin{itemize}
+    \item \textbf{Codificación One-Hot:} Crea una columna binaria para cada categoría.
+    \item \textbf{Codificación de Etiquetas:} Asigna un número entero a cada categoría.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{encoding.png}
+    \caption{Ejemplo de codificación One-Hot para variables categóricas.}
+    \label{fig:encoding}
+\end{figure}
+
+\section{Muestreo y Balanceo de Datos}
+
+El muestreo y balanceo son métodos utilizados para manejar conjuntos de datos desequilibrados, donde algunas clases tienen muchas más muestras que otras:
+
+\begin{itemize}
+    \item \textbf{Submuestreo:} Reduce la cantidad de muestras en la clase mayoritaria.
+    \item \textbf{Sobremuestreo:} Aumenta la cantidad de muestras en la clase minoritaria mediante replicación o síntesis de nuevas muestras.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{sampling.png}
+    \caption{Ejemplo de submuestreo y sobremuestreo en un conjunto de datos desequilibrado.}
+    \label{fig:sampling}
+\end{figure}
+
+\section{Conclusión}
+
+La visualización y preparación de datos son pasos críticos en el proceso de desarrollo de modelos de redes neuronales. Estos procesos aseguran que los datos utilizados sean de alta calidad y estén en un formato adecuado, lo que facilita un entrenamiento eficiente y efectivo. Al comprender y aplicar estas técnicas, se pueden construir modelos más robustos y precisos.
+
+
+
+
+
+
+
+
+
+
+
+
+La preparación de datos es un paso fundamental en el proceso de entrenamiento de redes neuronales, ya que la calidad y el formato de los datos impactan directamente en la efectividad del modelo. Este proceso incluye la limpieza de datos, la exploración, el formateo adecuado, la separación de datos en conjuntos de entrenamiento, validación y prueba, así como la evaluación del modelo. A continuación, se detallan estos aspectos clave de la preparación de datos para redes neuronales.
+
+\section{Limpieza de Datos}
+
+La limpieza de datos implica manejar valores perdidos, identificar y tratar datos atípicos, y corregir errores en el conjunto de datos. La mayoría de los algoritmos de aprendizaje automático no pueden manejar datos faltantes de manera efectiva, por lo que es crucial decidir cómo tratar estos valores. Las opciones comunes incluyen la eliminación de las filas o columnas con valores faltantes o la imputación de valores mediante estrategias como la media, la mediana o un valor constante \citep{geron2022hands}.
+
+En \texttt{Python}, la biblioteca \texttt{pandas} facilita estas operaciones. Por ejemplo, para eliminar filas con valores faltantes en una columna específica se puede usar:
+
+\begin{verbatim}
+data = data.dropna(subset=['columna'])
+\end{verbatim}
+
+Para reemplazar valores faltantes por la mediana de la columna:
+
+\begin{verbatim}
+data['columna'].fillna(data['columna'].median(), inplace=True)
+\end{verbatim}
+
+Además, \texttt{scikit-learn} ofrece la clase \texttt{SimpleImputer} para automatizar este proceso:
+
+\begin{verbatim}
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy='median')
+data_imputed = imputer.fit_transform(data)
+\end{verbatim}
+
+\section{Exploración de Datos}
+
+La exploración de datos consiste en analizar el conjunto de datos para comprender sus características básicas. Esto incluye la visualización de distribuciones de variables, la detección de correlaciones y la identificación de posibles problemas como datos sesgados o variables con escalas muy diferentes. Herramientas como \texttt{matplotlib} y \texttt{seaborn} en \texttt{Python} son útiles para la visualización.
+
+\section{Formateo de Datos}
+
+Para entrenar redes neuronales, es esencial que los datos estén en un formato adecuado, como arreglos de \texttt{NumPy}. Además, las etiquetas deben estar codificadas correctamente. En problemas de clasificación, es común utilizar la codificación \textit{one-hot} para las etiquetas, lo que implica transformar las etiquetas categóricas en vectores binarios.
+
+Por ejemplo, en \texttt{Python}, \texttt{scikit-learn} proporciona la clase \texttt{OneHotEncoder}:
+
+\begin{verbatim}
+from sklearn.preprocessing import OneHotEncoder
+encoder = OneHotEncoder()
+encoded_labels = encoder.fit_transform(labels.reshape(-1, 1))
+\end{verbatim}
+
+Este método convierte las etiquetas en una matriz dispersa con columnas binarias.
+
+\section{Separación de Datos}
+
+La separación de los datos en conjuntos de entrenamiento, validación y prueba es crucial para evaluar el rendimiento del modelo y prevenir el sobreajuste. Generalmente, se sigue la estrategia de dividir el conjunto de datos en un 70\% para entrenamiento, un 15\% para validación y un 15\% para prueba. Esta separación permite entrenar el modelo en una parte de los datos, ajustar los hiperparámetros usando el conjunto de validación y evaluar el rendimiento final en el conjunto de prueba.
+
+La función \texttt{train\_test\_split} de \texttt{scikit-learn} facilita este proceso:
+
+\begin{verbatim}
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+\end{verbatim}
+
+Para una separación adicional en conjunto de validación:
+
+\begin{verbatim}
+X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2)
+\end{verbatim}
+
+\section{Evaluación del Modelo}
+
+Una vez separado el conjunto de datos, se puede entrenar el modelo utilizando el conjunto de entrenamiento, ajustar los hiperparámetros con el conjunto de validación, y finalmente evaluar el rendimiento en el conjunto de prueba. La métrica de evaluación depende del tipo de problema (regresión o clasificación) y debe ser seleccionada cuidadosamente.
+
+\section{Validación Cruzada}
+
+Aunque la validación cruzada (\textit{cross-validation}) es una técnica robusta para evaluar el modelo, en el contexto de redes neuronales es más común utilizar la separación \texttt{train\_test\_split} debido a los costos computacionales de entrenar múltiples modelos en K subconjuntos diferentes. Sin embargo, para modelos menos complejos o para experimentación inicial, la validación cruzada puede proporcionar una estimación más fiable del rendimiento del modelo al promediar los resultados de múltiples divisiones del conjunto de datos.
+
+La validación cruzada se puede implementar en \texttt{scikit-learn} de la siguiente manera:
+
+\begin{verbatim}
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(model, X, y, cv=5)
+\end{verbatim}
+
+\section{Conclusión}
+
+En resumen, la preparación adecuada de los datos es un paso fundamental para el éxito en el entrenamiento de redes neuronales. Incluye la limpieza y exploración de datos, el formateo en estructuras adecuadas como \texttt{NumPy}, la codificación \textit{one-hot} para etiquetas, y la correcta separación de los datos en conjuntos de entrenamiento, validación y prueba. Aunque la validación cruzada ofrece beneficios, su uso es menos frecuente en redes neuronales debido a los altos costos computacionales asociados \citep{geron2022hands}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{comment}
 \section{Métodos de Optimización}
 
@@ -939,22 +1268,24 @@ Los autoencoders son una clase de redes neuronales artificiales utilizadas en ap
     \label{fig:AE_architecture}
 \end{figure}
 
-El encoder mapea los datos de entrada a una representación oculta de menor dimensión utilizando funciones principalmente no lineales, mientras que el decoder reconstruye los datos de entrada a partir de esta representación oculta. Durante el entrenamiento, los parámetros del autoencoder se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia, como por ejemplo la pérdida de entropía cruzada. Esto concluye el proceso de entrenamiento de un autoencoder.
 
 
-El problema, tal como se define formalmente en \cite{bank2023autoencoders}, es aprender las funciones
-\[
-A : \mathbb{R}^n \rightarrow \mathbb{R}^p \quad \text{(encoder)}
-\]
-y
-\[
-B : \mathbb{R}^p \rightarrow \mathbb{R}^n \quad \text{(decoder)}
-\]
-que satisfacen
-\[
-\arg \min_{A, B} \mathbb{E}[\Delta(x, B \circ A(x))],
-\]
-donde $\mathbb{E}$ es la esperanza sobre la distribución de $x$, y $\Delta$ es la función de pérdida de reconstrucción, que mide la distancia entre la salida del decodificador y la entrada.
+
+el autoencoder ilustrado en la figura \ref{fig:ae_structure} puede modelarse mediante la ecuación (\ref{eq:ae_model}).
+
+\begin{equation}
+\begin{cases}
+z = f(x; w_e, b_e) \\
+r = g(z; w_d, b_d)
+\end{cases}
+\label{eq:ae_model}
+\end{equation}
+
+donde $f(\cdot)$ y $g(\cdot)$ son funciones del codificador y del decodificador que generalmente se implementan mediante redes neuronales. Los parámetros $w_e$ y $b_e$ son del codificador, y $w_d$ y $b_d$ son del decodificador. Si $f(\cdot)$ y $g(\cdot)$ son redes neuronales, entonces $w_i$ y $b_i$ son las matrices de pesos y los vectores de sesgo con respecto a la red neuronal del codificador y la red neuronal del decodificador ($ \forall i \in  {e, d}$). El codificador (encoder) mapea el conjunto de datos $x$  al espacio de características $z$ que normalmente suene tener una menor dimensión. Por otra parte, el decodificador (decoder) reconstruye los datos iniciales $x$ a través de la representación comprimida oculta $z$ \citep{zhai2018autoencoder}. Durante el entrenamiento, los parámetros del autoencoder se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia, como por ejemplo la \lstinline|binary_crossentropy| o el \lstinline|mse|. La expresión matemática puede expresarse como:
+\begin{equation}
+\arg \min_{A, B} \mathbb{E}[\Delta(x, B \circ A(x))]
+\end{equation}
+donde $\mathbb{E}$ es la esperanza sobre la distribución de $x$, y $\Delta$ es la función de pérdida de reconstrucción, que mide la distancia entre la salida del decodificador y la entrada \citep{bank2023autoencoders}. Esto concluye el proceso de entrenamiento de un autoencoder.
 
 
 Las ecuaciones para obtener la salida de un autoencoder serían:
@@ -972,13 +1303,10 @@ y &= z^{(2)}
 donde  $x$ es el input, \( b^{(1)} \) y  \( b^{(2)} \) son los sesgos,  \( W^{(1)} \) y  \( W^{(2)} \) son los pesos, \( z^{(1)} \) es la salida lineal de la primera capa, \( a^{(2)} \) es la activación de la segunda capa, \( z^{(2)} \) es la salida lineal de la segunda capa e \( y \) es la salida final del modelo \citep{martinez2017analisis}.
 
 
-Los autoencoders se utilizan en una amplia variedad de aplicaciones, incluida la reducción de dimensionalidad, la extracción de características, la eliminación de ruido en los datos de entrada y la detección de anomalías. Su versatilidad y capacidad para aprender representaciones útiles de los datos los hacen herramientas poderosas.
+Tradicionalmente, los autoencoders se empleaban principalmente para reducir la dimensionalidad o para extraer características. No obstante, con el auge de diversos modelos de aprendizaje profundo, especialmente los modelos de redes generativas adversarias, los autoencoders han cobrado relevancia en la modelización generativa. Esto ha llevado a numerosos investigadores a proponer una variedad de modelos extendidos de autoencoders, como las convolutional autoencoders (que veremos en más profundidad en la sección \ref{sec:2.CNN}) o los recurrentes \citep{zhai2018autoencoder}. 
 
+Las principales capas que se utilizan en esta red neuronal son las capas densas y las de aplanamiento, aunque también se pueden utilizar capas convolucionales traspuestas y capas unpooling (sección \ref{sec:2.CNN}) para autocodificadores convolucionales\footnote{Autocodificador para imágenes de gran tamaño} o LSTM en el caso de autocodificadores recurrentes\footnote{Autocodificador específico para series temporales o secuencias.}\citep{geron2022hands}. 
 
-Las principales capas que se utilizan en esta red neuronal son las capas densas y las de aplanamiento, aunque también se pueden utilizar capas convolucionales y de pooling para autocodificadores convolucionales\footnote{Autocodificador para imágenes de gran tamaño} o LSTM en el caso de autocodificadores recurrentes\footnote{Autocodificador específico para series temporales o secuencias.}\citep{geron2022hands}. 
-
-
-COMENTAR LOS CONVOLUTIONAL AUTOENCODERS
 
 
 
@@ -997,14 +1325,13 @@ Las redes neuronales convolucionales son una de las métodos de machine learning
     \label{fig:cnn_architecture}
 \end{figure}
 
-\subsubsection*{Capas convolucionales}
+\subsubsection*{Capa convolucional}
 
 La capa convolucional es la capa más importante de una \acrshort{cnn}. En ella se extraen las características más significativas de la imagen de entrada, como los bordes, el color o la forma. Para ello se aplica una convolución a la imagen con un filtro. Esta operación matemática se representa como \( \int (x \star w)(t) \) donde $x$ representa la entrada y $w$ el núcleo de convolución \citep{pajares2021aprendizaje}.
 
 
+En una CNN, la entrada de la convolución es una matriz multidimensional junto con una matriz de parámetros $w$ que se ajusta durante el aprendizaje (llamada núcleo o filtro). Cada píxel de la capa de convolución tiene una neurona, que se conecta con la capa anterior aplicando la convolución con las neuronas de su campo receptivo\footnote{Región de entrada que contribuye a la salida generada por el filtro} \cite{geron2022hands}. Esta convolución se realiza con un solapamiento total del filtro, lo que resulta en una imagen de menor dimensión (Figura \ref{fig:convolucion}). Si se desea mantener la misma dimensión, se puede aplicar zero-padding, que consiste en rellenar con ceros la matriz para obtener las dimensiones deseadas (Figura \ref{fig:convolucionPadding}). En la figura \ref{fig:convolu2} se muestran sendos campos receptivos de la imagen \( I \) que contribuyen a las salidas \( P \) y \( Q \) generadas por el filtro \( K \). La matriz de respuesta al aplicarle el kernel se llama mapa de características ($O$).
 
-En una CNN, la entrada de la convolución es una matriz multidimensional mientras que $w$ es una matriz de parámetros, llamada núcleo o filtro, que se ajusta durante el aprendizaje.
-Cada píxel de la capa de convolución tiene una neurona, que se conecta con la capa anterior aplicando la convolución con las neuronas de su campo receptivo\footnote{Región de entrada que contribuye a la salida generada por el filtro} \cite{geron2022hands}. Esta convolución se realiza con un solapamiento total del filtro, lo que resulta en una imagen de menor dimensión (Figura \ref{fig:convolucion}). Si se desea mantener la misma dimensión, se puede aplicar zero-padding, que consiste en rellenar con ceros la matriz para obtener las dimensiones deseadas (Figura \ref{fig:convolucionPadding}). En la figura \ref{fig:convolu2} se muestran sendos campos receptivos de la imagen \( I \) que contribuyen a las salidas \( P \) y \( Q \) generadas por el filtro \( K \). La matriz de respuesta al aplicarle el kernel se llama mapa de características.
 
 \begin{figure}[h] 
      \centering
@@ -1052,7 +1379,7 @@ i' = i \cdot s_h + u \\
 j' = j \cdot s_w + v
 \end{array}
 \right.
-\end{equation}
+\end{equation} \label{eq:conv}
 
 donde:
 \begin{itemize}
@@ -1068,7 +1395,7 @@ donde:
 
 
 
-\subsubsection*{Capas de pooling}
+\subsubsection*{Capa de pooling}
 
 El siguiente tipo de capa de las \acrshort{cnn} son las pooling, cuyo objetivo es reducir la imagen de entrada para disminuir la carga computacional, el uso de memoria y el número de parámetros, limitando así el riesgo de sobreajuste y proporcionando robustez contra el ruido y las distorsiones. Esta capa se suele colocar entre las capas de convolución, permitiendo reducir el tamaño de las imágenes mientras se preservan las características más importantes \citep{podder2021artificial}. Al igual que en las capas convolucionales, sus neuronas están conectadas a un pequeño grupo de neuronas de la capa anterior a las que se le aplica una función de agregación\footnote{Las funciones de agregación devuelven un valor único de un conjunto de registros.}. Las tres funciones más comunes son el promedio, la suma y el máximo. La Figura \ref{fig:maxpooling} muestra una capa de max pooling, que es el tipo más común \citep{geron2022hands}. 
 
@@ -1091,7 +1418,50 @@ Además de reducir el número de operaciones, el número de parámetros y ayudar
 \label{fig:translacionPooling}
 \end{figure}
 
+Una capa típica de convolución se compone de tres etapas. En la primera etapa, se realizan múltiples convoluciones para producir un conjunto de activaciones lineales. En la segunda etapa, cada activación lineal se procesa a través de una función de activación no lineal, como la función de activación rectificada lineal (ReLU). Esta etapa a menudo se denomina etapa de detección. En la tercera etapa, se aplica una función de pooling para modificar la salida de la capa. Este tipo de capa de convolución compuesta será de utilidad en los experimentos realizados en capítulos posteriores, como por ejemplo en la creación de una M-CNN para el problema de clasificación de malware del Capítulo \ref{Capitulo_3} \citep{pajares2021aprendizaje}.
 
+
+\subsubsection*{Capa de Unpooling}
+
+En la figura \ref{fig:maxpooling} se presenta un ejemplo gráfico relacionado con la operación de max pooling. Durante este proceso, es posible mantener un mapa de localizaciones, que señala la posición de origen del valor máximo que ha generado la capa. Este mapa permite ejecutar la operación inversa conocida como reconstrucción (Unpooling), colocando los valores obtenidos en las posiciones indicadas por el mapa de localizaciones. Una vez completada la reconstrucción, se puede realizar una interpolación lineal usando el método del vecino más próximo para obtener el mapa de características reconstruido \citep{pajares2021aprendizaje}. Este tipo de capa hace el proceso inverso de la capa de pooling. En vez de reducir la dimensión de entrada, la aumenta utilizando o bien interpolación lineal o bilineal o bien rellenando con ceros el resto de casillas \citep{pajares2021aprendizaje}. La operación de Unpooling se suele emplear junto con la operación de convolución transpuesta, como se describe más adelante, y se utiliza, por ejemplo, en el modelo de autoencoder utilizado en la sección \ref{sec: 3.AE}, en un autoencoder convolucional.
+
+En Keras, esta capa se denomina \lstinline|UpSampling2D|.
+
+
+\subsubsection*{Convolución Transpuesta}
+
+La necesidad de realizar convoluciones transpuestas surge generalmente de la necesidad de aplicar una transformación en la dirección inversa a una convolución directa o normal, como la proyección de mapas de características a un espacio de mayor dimensión. Aunque a veces se denomina deconvolución, esta es en realidad una operación distinta. En las redes neuronales convolucionales (CNN), esta operación es más compleja que en las redes totalmente conectadas, donde solo se requiere el uso de una matriz de pesos transpuesta \citep{pajares2021aprendizaje}.
+
+Considere la convolución mostrada en la figura \ref{fig:convolucion}. Sean $I$ y $O$ la entrada y la salida respectivamente expandidas en forma vectorial de izquierda a derecha y de arriba a abajo. Entonces la operación de convolución \ref{eq:conv} puede expresarse ahora como:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/conv2.png}
+    \caption{Convolución y representación matricial.  $C \cdot I = O$}
+    \label{fig:conv2}
+\end{figure}
+
+\begin{minipage}{0.5\textwidth}
+La convolución puede ser expresada como una matriz dispersa \(C\), caracterizada por la presencia de múltiples ceros, donde los elementos no nulos corresponden a los elementos $w_{ij}$ del núcleo \(K\). Aquí, \(i\) y \(j\) denotan la fila y la columna, respectivamente. Esta operación lineal transforma la matriz de entrada en un vector de 20 dimensiones y produce un vector de 6 dimensiones, el cual se reestructura en una matriz de salida de \(2 \times 3\). Usando esta formulación, el paso hacia atrás se obtiene mediante la transposición de \(C\) \citep{pajares2021aprendizaje}.
+
+
+\bigskip
+
+Con la operación mencionada, se tiene un vector de 6 dimensiones como entrada y se obtiene un vector de 20 dimensiones como salida. En ambos casos, los valores $w_{ij}$ del núcleo definen las matrices \(C\) y \(C^t\) utilizadas en la propagación hacia delante y hacia atrás. Si se realiza la multipli-
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+	\textbf{ }	
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+	\includegraphics[width=1.1\textwidth]{img/convT.png}
+    \captionof{figure}{Convolución traspuesta. $C^t \cdot O = I$.}
+    \label{fig:convT}
+\end{minipage}
+cación matricial \(C^t \cdot O\), cuyas dimensiones son \(20x6\) y \(6x1\), se obtiene la matriz esperada $I$ de dimensión \(20x1\), que finalmente habrá que redimensionar \citep{pajares2021aprendizaje}.
+
+Al igual que en las capas convolucionales originales, también puede añadirse zero-padding a la matriz y con desplazamientos (strides) superiores a la unidad \citep{pajares2021aprendizaje}.
+
+Estas dos últimas capas son especialmente utilizadas en los autoencoderes convolucionales, donde hay que construir y reconstruir una versión reducida de los datos de entrada.
 
 \subsubsection*{Capas Totalmente Conectadas (Fully Connected)}
 
