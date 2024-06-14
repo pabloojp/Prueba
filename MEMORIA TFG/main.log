@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  11 JUN 2024 20:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.21)  14 JUN 2024 20:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,6 +1016,10 @@ Package glossaries Info: Writing glossary file main.acn on input line 169.
  (main.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
+
+
+LaTeX Warning: Label `img: pr_vs_threshold' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1108,7 +1112,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<img/ucm.png, id=267, 1204.5pt x 1375.1375pt>
+<img/ucm.png, id=283, 1204.5pt x 1375.1375pt>
 File: img/ucm.png Graphic file (type png)
 <use img/ucm.png>
 Package pdftex.def Info: img/ucm.png  used on input line 194.
@@ -1166,16 +1170,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 ...{2.10.2}Regresión}{13}{subsection.2.10.2}
+l.24 ... Momento Adaptativo}{10}{subsection.2.7.5}
                                                   % [3]
-LaTeX Info: Redefining \. on input line 66.
-LaTeX Info: Redefining \% on input line 66.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 ...mberline {3.3.1}CAE}{39}{subsection.3.3.1}
+l.62 ...rtaciones al modelo}{43}{subsection.3.2.3}
                                                   % [4])
 \tf@toc=\write8
 \openout8 = `main.toc'.
@@ -1198,455 +1202,483 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [2]
 Cap\'{\i }tulo 2.
-[3
+Excluding 'comment' comment. [3
 
 ]
-<img/ia.jpg, id=383, 418.6842pt x 412.4208pt>
+<img/ia.jpg, id=403, 418.6842pt x 412.4208pt>
 File: img/ia.jpg Graphic file (type jpg)
 <use img/ia.jpg>
-Package pdftex.def Info: img/ia.jpg  used on input line 30.
+Package pdftex.def Info: img/ia.jpg  used on input line 125.
 (pdftex.def)             Requested size: 182.09486pt x 179.37013pt.
-LaTeX Info: Redefining \. on input line 47.
-LaTeX Info: Redefining \% on input line 47.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
  [4 <./img/ia.jpg>]
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
  [5]
-<img/perceptron.png, id=407, 643.40375pt x 454.69875pt>
+<img/perceptron.png, id=427, 643.40375pt x 454.69875pt>
 File: img/perceptron.png Graphic file (type png)
 <use img/perceptron.png>
-Package pdftex.def Info: img/perceptron.png  used on input line 100.
+Package pdftex.def Info: img/perceptron.png  used on input line 195.
 (pdftex.def)             Requested size: 182.09486pt x 128.68852pt.
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
+LaTeX Info: Redefining \. on input line 205.
+LaTeX Info: Redefining \% on input line 205.
  [6 <./img/perceptron.png (PNG copy)>]
-Excluding 'comment' comment.
-<img/Sigmoide.png, id=424, 462.528pt x 346.896pt>
+LaTeX Info: Redefining \. on input line 240.
+LaTeX Info: Redefining \% on input line 240.
+ [7]
+LaTeX Info: Redefining \. on input line 260.
+LaTeX Info: Redefining \% on input line 260.
+ [8]
+LaTeX Info: Redefining \. on input line 277.
+LaTeX Info: Redefining \% on input line 277.
+ [9]
+LaTeX Info: Redefining \. on input line 322.
+LaTeX Info: Redefining \% on input line 322.
+ [10] Excluding 'comment' comment.
+<img/Sigmoide.png, id=490, 462.528pt x 346.896pt>
 File: img/Sigmoide.png Graphic file (type png)
 <use img/Sigmoide.png>
-Package pdftex.def Info: img/Sigmoide.png  used on input line 334.
+Package pdftex.def Info: img/Sigmoide.png  used on input line 536.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 335.
+(caption)                particular \caption on input line 537.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 334--335
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 536--537
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 323--338
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 525--540
 []$[]$ $[]$ $[]$ 
  []
 
-LaTeX Info: Redefining \. on input line 341.
-LaTeX Info: Redefining \% on input line 341.
-[7]
-<img/Sigmoide Dura.png, id=433, 462.528pt x 346.896pt>
+LaTeX Info: Redefining \. on input line 543.
+LaTeX Info: Redefining \% on input line 543.
+[11]
+<img/Sigmoide Dura.png, id=497, 462.528pt x 346.896pt>
 File: img/Sigmoide Dura.png Graphic file (type png)
 <use img/Sigmoide Dura.png>
-Package pdftex.def Info: img/Sigmoide Dura.png  used on input line 345.
+Package pdftex.def Info: img/Sigmoide Dura.png  used on input line 547.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 346.
+(caption)                particular \caption on input line 548.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 345--346
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 547--548
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 344--361
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 546--563
 []$[]$ $[]$ $[]$ 
  []
 
-<img/tanh.png, id=436, 462.528pt x 346.896pt>
+<img/tanh.png, id=500, 462.528pt x 346.896pt>
 File: img/tanh.png Graphic file (type png)
 <use img/tanh.png>
-Package pdftex.def Info: img/tanh.png  used on input line 380.
+Package pdftex.def Info: img/tanh.png  used on input line 582.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 381.
+(caption)                particular \caption on input line 583.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 380--381
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 582--583
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 367--384
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 569--586
 []$[]$ $[]$ $[]$ 
  []
 
-<img/ReLU.png, id=437, 462.528pt x 346.896pt>
+<img/ReLU.png, id=501, 462.528pt x 346.896pt>
 File: img/ReLU.png Graphic file (type png)
 <use img/ReLU.png>
-Package pdftex.def Info: img/ReLU.png  used on input line 390.
+Package pdftex.def Info: img/ReLU.png  used on input line 592.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 391.
+(caption)                particular \caption on input line 593.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 390--391
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 592--593
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 389--405
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 591--607
 []$[]$ $[]$ $[]$ 
  []
 
-LaTeX Info: Redefining \. on input line 407.
-LaTeX Info: Redefining \% on input line 407.
-[8 <./img/Sigmoide.png> <./img/Sigmoide Dura.png> <./img/tanh.png>]
-<img/Leaky ReLU.png, id=459, 462.528pt x 346.896pt>
+LaTeX Info: Redefining \. on input line 609.
+LaTeX Info: Redefining \% on input line 609.
+[12 <./img/Sigmoide.png> <./img/Sigmoide Dura.png> <./img/tanh.png>]
+<img/Leaky ReLU.png, id=523, 462.528pt x 346.896pt>
 File: img/Leaky ReLU.png Graphic file (type png)
 <use img/Leaky ReLU.png>
-Package pdftex.def Info: img/Leaky ReLU.png  used on input line 422.
+Package pdftex.def Info: img/Leaky ReLU.png  used on input line 624.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 423.
+(caption)                particular \caption on input line 625.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 422--423
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 624--625
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 409--426
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 611--628
 []$[]$ $[]$ $[]$ 
  []
 
-<img/PReLU.png, id=460, 462.528pt x 346.896pt>
+<img/PReLU.png, id=524, 462.528pt x 346.896pt>
 File: img/PReLU.png Graphic file (type png)
 <use img/PReLU.png>
-Package pdftex.def Info: img/PReLU.png  used on input line 431.
+Package pdftex.def Info: img/PReLU.png  used on input line 633.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 432.
+(caption)                particular \caption on input line 634.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 431--432
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 633--634
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 430--450
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 632--652
 []$[]$ $[]$ $[]$ 
  []
 
-<img/softplus.png, id=462, 462.528pt x 346.896pt>
+<img/softplus.png, id=526, 462.528pt x 346.896pt>
 File: img/softplus.png Graphic file (type png)
 <use img/softplus.png>
-Package pdftex.def Info: img/softplus.png  used on input line 465.
+Package pdftex.def Info: img/softplus.png  used on input line 667.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 466.
+(caption)                particular \caption on input line 668.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 465--466
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 667--668
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 453--469
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 655--671
 []$[]$ $[]$ $[]$ 
  []
 
-LaTeX Info: Redefining \. on input line 471.
-LaTeX Info: Redefining \% on input line 471.
-[9 <./img/ReLU.png> <./img/Leaky ReLU.png> <./img/PReLU.png>]
-<img/elu.png, id=481, 462.528pt x 346.896pt>
+LaTeX Info: Redefining \. on input line 673.
+LaTeX Info: Redefining \% on input line 673.
+[13 <./img/ReLU.png> <./img/Leaky ReLU.png> <./img/PReLU.png>]
+<img/elu.png, id=545, 462.528pt x 346.896pt>
 File: img/elu.png Graphic file (type png)
 <use img/elu.png>
-Package pdftex.def Info: img/elu.png  used on input line 474.
+Package pdftex.def Info: img/elu.png  used on input line 676.
 (pdftex.def)             Requested size: 175.273pt x 131.4566pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 475.
+(caption)                particular \caption on input line 677.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.93478pt too wide) in paragraph at lines 474--475
+Overfull \hbox (15.93478pt too wide) in paragraph at lines 676--677
 [][] 
  []
 
 
-Overfull \hbox (4.87358pt too wide) in paragraph at lines 473--492
+Overfull \hbox (4.87358pt too wide) in paragraph at lines 675--694
 []$[]$ $[]$ $[]$ 
  []
 
-LaTeX Info: Redefining \. on input line 516.
-LaTeX Info: Redefining \% on input line 516.
-[10 <./img/softplus.png> <./img/elu.png>]
-<img/Swish.png, id=500, 462.528pt x 346.896pt>
+LaTeX Info: Redefining \. on input line 718.
+LaTeX Info: Redefining \% on input line 718.
+[14 <./img/softplus.png> <./img/elu.png>]
+<img/Swish.png, id=564, 462.528pt x 346.896pt>
 File: img/Swish.png Graphic file (type png)
 <use img/Swish.png>
-Package pdftex.def Info: img/Swish.png  used on input line 521.
+Package pdftex.def Info: img/Swish.png  used on input line 723.
 (pdftex.def)             Requested size: 204.85846pt x 153.6457pt.
-<img/SiLU.png, id=501, 462.528pt x 346.896pt>
+<img/SiLU.png, id=565, 462.528pt x 346.896pt>
 File: img/SiLU.png Graphic file (type png)
 <use img/SiLU.png>
-Package pdftex.def Info: img/SiLU.png  used on input line 528.
+Package pdftex.def Info: img/SiLU.png  used on input line 730.
 (pdftex.def)             Requested size: 204.85846pt x 153.6457pt.
-LaTeX Info: Redefining \. on input line 552.
-LaTeX Info: Redefining \% on input line 552.
- [11 <./img/Swish.png> <./img/SiLU.png>]
-LaTeX Info: Redefining \. on input line 592.
-LaTeX Info: Redefining \% on input line 592.
- [12]
-LaTeX Info: Redefining \. on input line 630.
-LaTeX Info: Redefining \% on input line 630.
- [13]
-LaTeX Info: Redefining \. on input line 674.
-LaTeX Info: Redefining \% on input line 674.
- [14]
-<img/overfitting.png, id=551, 756.8275pt x 284.06125pt>
+LaTeX Info: Redefining \. on input line 754.
+LaTeX Info: Redefining \% on input line 754.
+ [15 <./img/Swish.png> <./img/SiLU.png>]
+LaTeX Info: Redefining \. on input line 794.
+LaTeX Info: Redefining \% on input line 794.
+ [16]
+LaTeX Info: Redefining \. on input line 832.
+LaTeX Info: Redefining \% on input line 832.
+ [17]
+LaTeX Info: Redefining \. on input line 876.
+LaTeX Info: Redefining \% on input line 876.
+ [18]
+<img/overfitting.png, id=615, 756.8275pt x 284.06125pt>
 File: img/overfitting.png Graphic file (type png)
 <use img/overfitting.png>
-Package pdftex.def Info: img/overfitting.png  used on input line 677.
+Package pdftex.def Info: img/overfitting.png  used on input line 879.
 (pdftex.def)             Requested size: 364.19667pt x 136.69458pt.
-LaTeX Info: Redefining \. on input line 704.
-LaTeX Info: Redefining \% on input line 704.
- [15 <./img/overfitting.png (PNG copy)>]
-<img/dropout.png, id=566, 425.59pt x 231.86626pt>
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
+ [19 <./img/overfitting.png (PNG copy)>]
+<img/dropout.png, id=630, 425.59pt x 231.86626pt>
 File: img/dropout.png Graphic file (type png)
 <use img/dropout.png>
-Package pdftex.def Info: img/dropout.png  used on input line 719.
+Package pdftex.def Info: img/dropout.png  used on input line 921.
 (pdftex.def)             Requested size: 273.14923pt x 148.82198pt.
-LaTeX Info: Redefining \. on input line 734.
-LaTeX Info: Redefining \% on input line 734.
- [16 <./img/dropout.png>]
+LaTeX Info: Redefining \. on input line 936.
+LaTeX Info: Redefining \% on input line 936.
+ [20 <./img/dropout.png>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 737.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 939.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 737.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 939.
 
-<img/earlyStopping.png, id=582, 454.69875pt x 454.69875pt>
+<img/earlyStopping.png, id=646, 454.69875pt x 454.69875pt>
 File: img/earlyStopping.png Graphic file (type png)
 <use img/earlyStopping.png>
-Package pdftex.def Info: img/earlyStopping.png  used on input line 755.
+Package pdftex.def Info: img/earlyStopping.png  used on input line 957.
 (pdftex.def)             Requested size: 127.47105pt x 127.4674pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 756.
+(caption)                particular \caption on input line 958.
 See the caption package documentation for explanation.
 
-LaTeX Info: Redefining \. on input line 786.
-LaTeX Info: Redefining \% on input line 786.
-[17 <./img/earlyStopping.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 834.
-LaTeX Info: Redefining \% on input line 834.
- [18]
-<img/roc.png, id=623, 681.54625pt x 644.4075pt>
+LaTeX Info: Redefining \. on input line 988.
+LaTeX Info: Redefining \% on input line 988.
+[21 <./img/earlyStopping.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:kfold' on page 22 undefined on input line 1015.
+
+<img/kfold.png, id=680, 1098.1025pt x 303.1325pt>
+File: img/kfold.png Graphic file (type png)
+<use img/kfold.png>
+Package pdftex.def Info: img/kfold.png  used on input line 1019.
+(pdftex.def)             Requested size: 273.14923pt x 75.39902pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 1025.
+LaTeX Info: Redefining \% on input line 1025.
+[22]
+LaTeX Info: Redefining \. on input line 1058.
+LaTeX Info: Redefining \% on input line 1058.
+ [23 <./img/kfold.png (PNG copy)>]
+<img/roc.png, id=700, 681.54625pt x 644.4075pt>
 File: img/roc.png Graphic file (type png)
 <use img/roc.png>
-Package pdftex.def Info: img/roc.png  used on input line 883.
+Package pdftex.def Info: img/roc.png  used on input line 1105.
 (pdftex.def)             Requested size: 209.40797pt x 197.99434pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 884.
+(caption)                particular \caption on input line 1106.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (27.31311pt too wide) in paragraph at lines 883--884
+Overfull \hbox (27.31311pt too wide) in paragraph at lines 1105--1106
 [][] 
  []
 
-LaTeX Info: Redefining \. on input line 888.
-LaTeX Info: Redefining \% on input line 888.
-[19]
-<img/pr.png, id=629, 681.54625pt x 644.4075pt>
+LaTeX Info: Redefining \. on input line 1110.
+LaTeX Info: Redefining \% on input line 1110.
+[24]
+<img/pr.png, id=707, 681.54625pt x 644.4075pt>
 File: img/pr.png Graphic file (type png)
 <use img/pr.png>
-Package pdftex.def Info: img/pr.png  used on input line 893.
+Package pdftex.def Info: img/pr.png  used on input line 1115.
 (pdftex.def)             Requested size: 209.40797pt x 197.99434pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 894.
+(caption)                particular \caption on input line 1116.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (27.31311pt too wide) in paragraph at lines 893--894
+Overfull \hbox (27.31311pt too wide) in paragraph at lines 1115--1116
 [][] 
  []
 
 
-Underfull \hbox (badness 4765) in paragraph at lines 894--894
-[]\OT1/cmr/m/n/10.95 Figura 2.18: |[]Curva de Pre-ci-si^^Son-
- []
-
-LaTeX Info: Redefining \. on input line 911.
-LaTeX Info: Redefining \% on input line 911.
-[20 <./img/roc.png (PNG copy)> <./img/pr.png (PNG copy)>]
-<img/precision_recall_vs_threshold.png, id=638, 346.896pt x 165.0165pt>
-File: img/precision_recall_vs_threshold.png Graphic file (type png)
-<use img/precision_recall_vs_threshold.png>
-Package pdftex.def Info: img/precision_recall_vs_threshold.png  used on input l
-ine 914.
-(pdftex.def)             Requested size: 273.14923pt x 129.94109pt.
-<img/AE4.png, id=643, 432.61626pt x 117.43875pt>
-File: img/AE4.png Graphic file (type png)
-<use img/AE4.png>
-Package pdftex.def Info: img/AE4.png  used on input line 938.
-(pdftex.def)             Requested size: 273.14923pt x 74.15164pt.
-
-
-LaTeX Warning: Reference `fig:ae_structure' on page 21 undefined on input line 
-946.
-
-LaTeX Info: Redefining \. on input line 957.
-LaTeX Info: Redefining \% on input line 957.
-[21 <./img/precision_recall_vs_threshold.png (PNG copy)> <./img/AE4.png>]
-<img/convlayers.png, id=668, 437.38406pt x 216.05719pt>
-File: img/convlayers.png Graphic file (type png)
-<use img/convlayers.png>
-Package pdftex.def Info: img/convlayers.png  used on input line 995.
-(pdftex.def)             Requested size: 273.14923pt x 134.9299pt.
-LaTeX Info: Redefining \. on input line 998.
-LaTeX Info: Redefining \% on input line 998.
-
-[22]
-<img/convolucion.png, id=693, 681.54625pt x 473.77pt>
-File: img/convolucion.png Graphic file (type png)
-<use img/convolucion.png>
-Package pdftex.def Info: img/convolucion.png  used on input line 1012.
-(pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
-<img/convolucionPadding.png, id=694, 681.54625pt x 473.77pt>
-File: img/convolucionPadding.png Graphic file (type png)
-<use img/convolucionPadding.png>
-Package pdftex.def Info: img/convolucionPadding.png  used on input line 1019.
-(pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
-LaTeX Info: Redefining \. on input line 1028.
-LaTeX Info: Redefining \% on input line 1028.
- [23 <./img/convlayers.png> <./img/convolucion.png (PNG copy)> <./img/convoluci
-onPadding.png (PNG copy)>]
-<img/stride.png, id=706, 871.255pt x 303.1325pt>
-File: img/stride.png Graphic file (type png)
-<use img/stride.png>
-Package pdftex.def Info: img/stride.png  used on input line 1031.
-(pdftex.def)             Requested size: 273.14923pt x 95.03395pt.
-LaTeX Info: Redefining \. on input line 1073.
-LaTeX Info: Redefining \% on input line 1073.
- [24 <./img/stride.png (PNG copy)>]
-<img/maxpooling.png, id=727, 548.0475pt x 264.99pt>
-File: img/maxpooling.png Graphic file (type png)
-<use img/maxpooling.png>
-Package pdftex.def Info: img/maxpooling.png  used on input line 1078.
-(pdftex.def)             Requested size: 182.09486pt x 88.0454pt.
-<img/translacionPooling.png, id=729, 144.54pt x 90.0966pt>
-File: img/translacionPooling.png Graphic file (type png)
-<use img/translacionPooling.png>
-Package pdftex.def Info: img/translacionPooling.png  used on input line 1088.
-(pdftex.def)             Requested size: 182.09486pt x 113.5113pt.
-LaTeX Info: Redefining \. on input line 1099.
-LaTeX Info: Redefining \% on input line 1099.
- [25 <./img/maxpooling.png (PNG copy)> <./img/translacionPooling.png (PNG copy)
->]
-<img/conv2.png, id=749, 1097.09875pt x 378.41376pt>
-File: img/conv2.png Graphic file (type png)
-<use img/conv2.png>
-Package pdftex.def Info: img/conv2.png  used on input line 1111.
-(pdftex.def)             Requested size: 364.19667pt x 125.61601pt.
-<img/convT.png, id=751, 871.255pt x 757.83125pt>
-File: img/convT.png Graphic file (type png)
-<use img/convT.png>
-Package pdftex.def Info: img/convT.png  used on input line 1128.
-(pdftex.def)             Requested size: 225.34555pt x 196.00232pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1129.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (20.48709pt too wide) in paragraph at lines 1128--1129
-[][] 
- []
-
-
-Overfull \hbox (4.86665pt too wide) in paragraph at lines 1116--1133
-[]$[]$ $[]$ $[]$
+Underfull \hbox (badness 4765) in paragraph at lines 1116--1116
+[]\OT1/cmr/m/n/10.95 Figura 2.19: |[]Curva de Pre-ci-si^^Son-
  []
 
 LaTeX Info: Redefining \. on input line 1133.
 LaTeX Info: Redefining \% on input line 1133.
-[26 <./img/conv2.png (PNG copy)>] Excluding 'comment' comment.
-LaTeX Info: Redefining \. on input line 1170.
-LaTeX Info: Redefining \% on input line 1170.
- [27 <./img/convT.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 1189.
-LaTeX Info: Redefining \% on input line 1189.
- [28]
-LaTeX Info: Redefining \. on input line 1222.
-LaTeX Info: Redefining \% on input line 1222.
- [29] Excluding 'comment' comment.
+[25 <./img/roc.png (PNG copy)> <./img/pr.png (PNG copy)>]
+<img/precision_recall_vs_threshold.png, id=716, 346.896pt x 165.0165pt>
+File: img/precision_recall_vs_threshold.png Graphic file (type png)
+<use img/precision_recall_vs_threshold.png>
+Package pdftex.def Info: img/precision_recall_vs_threshold.png  used on input l
+ine 1136.
+(pdftex.def)             Requested size: 273.14923pt x 129.94109pt.
+<img/AE4.png, id=721, 432.61626pt x 117.43875pt>
+File: img/AE4.png Graphic file (type png)
+<use img/AE4.png>
+Package pdftex.def Info: img/AE4.png  used on input line 1160.
+(pdftex.def)             Requested size: 273.14923pt x 74.15164pt.
+
+
+LaTeX Warning: Reference `fig:ae_structure' on page 26 undefined on input line 
+1168.
+
+LaTeX Info: Redefining \. on input line 1179.
+LaTeX Info: Redefining \% on input line 1179.
+[26 <./img/precision_recall_vs_threshold.png (PNG copy)> <./img/AE4.png>]
+<img/convlayers.png, id=746, 437.38406pt x 216.05719pt>
+File: img/convlayers.png Graphic file (type png)
+<use img/convlayers.png>
+Package pdftex.def Info: img/convlayers.png  used on input line 1217.
+(pdftex.def)             Requested size: 273.14923pt x 134.9299pt.
+LaTeX Info: Redefining \. on input line 1220.
+LaTeX Info: Redefining \% on input line 1220.
+
+[27]
+<img/convolucion.png, id=768, 681.54625pt x 473.77pt>
+File: img/convolucion.png Graphic file (type png)
+<use img/convolucion.png>
+Package pdftex.def Info: img/convolucion.png  used on input line 1234.
+(pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
+<img/convolucionPadding.png, id=769, 681.54625pt x 473.77pt>
+File: img/convolucionPadding.png Graphic file (type png)
+<use img/convolucionPadding.png>
+Package pdftex.def Info: img/convolucionPadding.png  used on input line 1241.
+(pdftex.def)             Requested size: 204.85846pt x 142.4068pt.
+LaTeX Info: Redefining \. on input line 1250.
+LaTeX Info: Redefining \% on input line 1250.
+ [28 <./img/convlayers.png> <./img/convolucion.png (PNG copy)> <./img/convoluci
+onPadding.png (PNG copy)>]
+<img/stride.png, id=780, 871.255pt x 303.1325pt>
+File: img/stride.png Graphic file (type png)
+<use img/stride.png>
+Package pdftex.def Info: img/stride.png  used on input line 1253.
+(pdftex.def)             Requested size: 273.14923pt x 95.03395pt.
+LaTeX Info: Redefining \. on input line 1295.
+LaTeX Info: Redefining \% on input line 1295.
+ [29 <./img/stride.png (PNG copy)>]
+<img/maxpooling.png, id=800, 548.0475pt x 264.99pt>
+File: img/maxpooling.png Graphic file (type png)
+<use img/maxpooling.png>
+Package pdftex.def Info: img/maxpooling.png  used on input line 1300.
+(pdftex.def)             Requested size: 182.09486pt x 88.0454pt.
+<img/translacionPooling.png, id=802, 144.54pt x 90.0966pt>
+File: img/translacionPooling.png Graphic file (type png)
+<use img/translacionPooling.png>
+Package pdftex.def Info: img/translacionPooling.png  used on input line 1310.
+(pdftex.def)             Requested size: 182.09486pt x 113.5113pt.
+LaTeX Info: Redefining \. on input line 1321.
+LaTeX Info: Redefining \% on input line 1321.
+ [30 <./img/maxpooling.png (PNG copy)> <./img/translacionPooling.png (PNG copy)
+>]
+<img/conv2.png, id=823, 1097.09875pt x 378.41376pt>
+File: img/conv2.png Graphic file (type png)
+<use img/conv2.png>
+Package pdftex.def Info: img/conv2.png  used on input line 1333.
+(pdftex.def)             Requested size: 364.19667pt x 125.61601pt.
+<img/convT.png, id=825, 871.255pt x 757.83125pt>
+File: img/convT.png Graphic file (type png)
+<use img/convT.png>
+Package pdftex.def Info: img/convT.png  used on input line 1350.
+(pdftex.def)             Requested size: 225.34555pt x 196.00232pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 1351.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (20.48709pt too wide) in paragraph at lines 1350--1351
+[][] 
+ []
+
+
+Overfull \hbox (4.86665pt too wide) in paragraph at lines 1338--1355
+[]$[]$ $[]$ $[]$
+ []
+
+LaTeX Info: Redefining \. on input line 1355.
+LaTeX Info: Redefining \% on input line 1355.
+[31 <./img/conv2.png (PNG copy)>] Excluding 'comment' comment.
+LaTeX Info: Redefining \. on input line 1392.
+LaTeX Info: Redefining \% on input line 1392.
+ [32 <./img/convT.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 1411.
+LaTeX Info: Redefining \% on input line 1411.
+ [33]
+LaTeX Info: Redefining \. on input line 1444.
+LaTeX Info: Redefining \% on input line 1444.
+ [34] Excluding 'comment' comment.
 Excluding 'comment' comment. Excluding 'comment' comment.
 Excluding 'comment' comment. Excluding 'comment' comment.) (capitulo03.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-[30]
-Cap\'{\i }tulo 3.
-[31
+[35]
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [36
 
 ]
-<img/previewMMC.png, id=829, 963.6pt x 542.025pt>
+Cap\'{\i }tulo 3.
+[37]
+<img/previewMMC.png, id=906, 963.6pt x 542.025pt>
 File: img/previewMMC.png Graphic file (type png)
 <use img/previewMMC.png>
 Package pdftex.def Info: img/previewMMC.png  used on input line 40.
 (pdftex.def)             Requested size: 318.66948pt x 179.24924pt.
 LaTeX Info: Redefining \. on input line 53.
 LaTeX Info: Redefining \% on input line 53.
- [32 <./img/previewMMC.png (PNG copy)>]
-<img/botnetStructure.png, id=840, 204.765pt x 212.2329pt>
+ [38 <./img/previewMMC.png (PNG copy)>]
+<img/botnetStructure.png, id=917, 204.765pt x 212.2329pt>
 File: img/botnetStructure.png Graphic file (type png)
 <use img/botnetStructure.png>
 Package pdftex.def Info: img/botnetStructure.png  used on input line 65.
 (pdftex.def)             Requested size: 150.23138pt x 155.71889pt.
 LaTeX Info: Redefining \. on input line 89.
 LaTeX Info: Redefining \% on input line 89.
- [33 <./img/botnetStructure.png>]
+ [39 <./img/botnetStructure.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 92--92
 [][][]\OT1/cmr/m/n/9 Los iden-ti-fi-ca-do-res de es-tos ar-chi-vos son 58kxh-Xo
 uHzFd4g3rmInB, 6tfw0xSL2FNHOCJBdlaA,
  []
 
-<img/circularMMC.png, id=862, 462.528pt x 346.896pt>
+<img/circularMMC.png, id=939, 462.528pt x 346.896pt>
 File: img/circularMMC.png Graphic file (type png)
 <use img/circularMMC.png>
 Package pdftex.def Info: img/circularMMC.png  used on input line 96.
 (pdftex.def)             Requested size: 273.14923pt x 204.87329pt.
 LaTeX Info: Redefining \. on input line 127.
 LaTeX Info: Redefining \% on input line 127.
-[34 <./img/circularMMC.png>]
-<img/visualMalware.png, id=883, 1933.2225pt x 341.275pt>
+[40 <./img/circularMMC.png>]
+<img/visualMalware.png, id=960, 1933.2225pt x 341.275pt>
 File: img/visualMalware.png Graphic file (type png)
 <use img/visualMalware.png>
 Package pdftex.def Info: img/visualMalware.png  used on input line 144.
 (pdftex.def)             Requested size: 455.24411pt x 80.36105pt.
-<img/visualFamilias.png, id=891, 2509.375pt x 979.66pt>
+<img/visualFamilias.png, id=968, 2509.375pt x 979.66pt>
 File: img/visualFamilias.png Graphic file (type png)
 <use img/visualFamilias.png>
 Package pdftex.def Info: img/visualFamilias.png  used on input line 154.
@@ -1657,16 +1689,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 165.
 LaTeX Info: Redefining \% on input line 165.
-[35 <./img/visualMalware.png (PNG copy)>]
-<img/cnnMMC.png, id=908, 1425.325pt x 429.605pt>
+[41 <./img/visualMalware.png (PNG copy)>]
+<img/cnnMMC.png, id=985, 1425.325pt x 429.605pt>
 File: img/cnnMMC.png Graphic file (type png)
 <use img/cnnMMC.png>
 Package pdftex.def Info: img/cnnMMC.png  used on input line 168.
 (pdftex.def)             Requested size: 455.24411pt x 137.21419pt.
 LaTeX Info: Redefining \. on input line 179.
 LaTeX Info: Redefining \% on input line 179.
- [36 <./img/visualFamilias.png (PNG copy)> <./img/cnnMMC.png>]
-<img/malware_classifier_dropout0.png, id=922, 867.24pt x 433.62pt>
+ [42 <./img/visualFamilias.png (PNG copy)> <./img/cnnMMC.png>]
+<img/malware_classifier_dropout0.png, id=999, 867.24pt x 433.62pt>
 File: img/malware_classifier_dropout0.png Graphic file (type png)
 <use img/malware_classifier_dropout0.png>
 Package pdftex.def Info: img/malware_classifier_dropout0.png  used on input lin
@@ -1674,50 +1706,50 @@ e 191.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 LaTeX Info: Redefining \. on input line 198.
 LaTeX Info: Redefining \% on input line 198.
- [37 <./img/malware_classifier_dropout0.png>]
+ [43 <./img/malware_classifier_dropout0.png>]
 LaTeX Info: Redefining \. on input line 233.
 LaTeX Info: Redefining \% on input line 233.
- [38]
+ [44]
 Excluding 'comment' comment.) (capitulo04.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [39]
+ [45]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [40
+ [46
 
 ]
 Cap\'{\i }tulo 4.
-[41]) (capitulo05.tex
+[47]) (capitulo05.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [42]
+ [48]
 Cap\'{\i }tulo 5.
-) Excluding 'comment' comment. [43
+) Excluding 'comment' comment. [49
 
 ] (main.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [44
+ [50
 
-] [45]
+] [51]
 LaTeX Info: Redefining \. on input line 194.
 LaTeX Info: Redefining \% on input line 194.
- [46]
+ [52]
 LaTeX Info: Redefining \. on input line 288.
 LaTeX Info: Redefining \% on input line 288.
- [47]
+ [53]
 LaTeX Info: Redefining \. on input line 391.
 LaTeX Info: Redefining \% on input line 391.
- [48])
+ [54])
 LaTeX Info: Redefining \. on input line 487.
 LaTeX Info: Redefining \% on input line 487.
 
-[49]
+[55]
 No file main.gls.
 LaTeX Info: Redefining \. on input line 493.
 LaTeX Info: Redefining \% on input line 493.
-[50
+[56
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 31.
@@ -1726,14 +1758,17 @@ LaTeX Info: Redefining \% on input line 31.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 30C7F425260D6ADC26F49E7BE07B96B8;11374.
+(rerunfilecheck)             Checksum: D75B8CCE4616791A0772621C36EC7524;12276.
  ) 
 Here is how much of TeX's memory you used:
- 27142 strings out of 475385
- 468218 string characters out of 2776906
- 879694 words of memory out of 3000000
- 47709 multiletter control sequences out of 15000+600000
+ 27170 strings out of 475385
+ 468609 string characters out of 2776906
+ 878745 words of memory out of 3000000
+ 47721 multiletter control sequences out of 15000+600000
  485454 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,11n,91p,2390b,1351s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1749,29 +1784,31 @@ placed by a fixed one
 95.pk><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pjime/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/pjime/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pjime/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/User
-s/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+e1/public/amsfonts/cm/cmbx8.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Users/pjime/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pjime/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/pjime/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/User
+s/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
 <C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr8.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/pjime/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/pjime/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pjime/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/pjime/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/User
-s/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb
-><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb>
-Output written on main.pdf (57 pages, 4072925 bytes).
+mi8.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/pjime/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pjime/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/pjime/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/pjime/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
+s/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+<C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb><C:/Users/pjime/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (63 pages, 4170693 bytes).
 PDF statistics:
- 1198 PDF objects out of 1200 (max. 8388607)
- 321 named destinations out of 1000 (max. 500000)
- 704 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1286 PDF objects out of 1440 (max. 8388607)
+ 336 named destinations out of 1000 (max. 500000)
+ 741 words of extra memory for PDF output out of 10000 (max. 10000000)
 

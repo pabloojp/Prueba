@@ -23,7 +23,7 @@ Partes de una neurona y como trabaja(bias, pesos...)
 
 
 
-
+\begin{comment}
 
 Las redes neuronales son un subcampo de la inteligencia artificial (IA) y el aprendizaje automático (machine learning) que se inspira en el funcionamiento del cerebro humano para procesar información y aprender de los datos. Estas redes consisten en capas de nodos (también llamados neuronas) que están interconectados y trabajan en conjunto para realizar tareas específicas, como la clasificación, la regresión y el reconocimiento de patrones.
 
@@ -109,7 +109,7 @@ Las redes neuronales tienen una amplia gama de aplicaciones en diversos campos, 
 A pesar de los éxitos de las redes neuronales, existen desafíos que todavía deben ser abordados, como la interpretación de modelos, el requerimiento de grandes cantidades de datos para el entrenamiento y el consumo de recursos computacionales. Sin embargo, el campo está en constante evolución, con investigaciones en áreas como las redes neuronales convolucionales (CNN), las redes neuronales recurrentes (RNN) y los modelos generativos, que prometen avances significativos en el futuro.
 
 
-
+\end{comment}
 
 
 
@@ -130,7 +130,7 @@ En 1956, un grupo de científicos informáticos propuso que las computadoras pod
 
 \section{Aprendizaje Automático}
 
-Por otro lado, el Aprendizaje Automático (ML, por sus siglas en inglés) es la ciencia o el arte de programar ordenadores para que puedan aprender a partir de datos. Arthur Samuel lo definió en 1959 como ``el campo de estudio que otorga a las computadoras la capacidad de aprender sin ser explícitamente programadas''. Más formalmente, según Tom Mitchell (1997), ``se dice que un programa de computadora aprende de la experiencia \(E\) con respecto a alguna tarea \(T\) y alguna medida de rendimiento \(P\), si su rendimiento en \(T\), medido por \(P\), mejora con la experiencia \(E\)'' \citep{geron2022hands}. El aprendizaje automático ha revolucionado numerosos campos, permitiendo a las máquinas realizar tareas que antes requerían intervención humana directa. Desde la conducción autónoma hasta el diagnóstico médico, las aplicaciones del aprendizaje automático son diversas. A diferencia de los métodos tradicionales de programación, donde se codifican reglas explícitas, el aprendizaje automático permite que los sistemas descubran patrones y relaciones directamente a partir de los datos, adaptándose y mejorando con el tiempo.
+Dentro de la inteligencia artificill Aprendizaje Automático (ML, por sus siglas en inglés) es la ciencia o el arte de programar ordenadores para que puedan aprender a partir de datos. Arthur Samuel lo definió en 1959 como ``el campo de estudio que otorga a las computadoras la capacidad de aprender sin ser explícitamente programadas''. Más formalmente, según Tom Mitchell (1997), ``se dice que un programa de computadora aprende de la experiencia \(E\) con respecto a alguna tarea \(T\) y alguna medida de rendimiento \(P\), si su rendimiento en \(T\), medido por \(P\), mejora con la experiencia \(E\)'' \citep{geron2022hands}. El aprendizaje automático ha revolucionado numerosos campos, permitiendo a las máquinas realizar tareas que antes requerían intervención humana directa. Desde la conducción autónoma hasta el diagnóstico médico, las aplicaciones del aprendizaje automático son diversas. A diferencia de los métodos tradicionales de programación, donde se codifican reglas explícitas, el aprendizaje automático permite que los sistemas descubran patrones y relaciones directamente a partir de los datos, adaptándose y mejorando con el tiempo.
 
 
 
@@ -215,6 +215,7 @@ La segunda capa consiste en transformar la salida de la primera etapa mediante u
 
 
 
+METODOS DE OPTIMIZACIÓN, METODO DESCENSO DE GRADIENTE, OTROS MÉTODOS
 
 
 
@@ -226,231 +227,97 @@ La segunda capa consiste en transformar la salida de la primera etapa mediante u
 
 \section{GENERALIZACIÓN}
 \section{COMO SE APRENDE}
-\section{OPTIMIZACIÓN}
+\section{Optimización del modelo} MEJOR CONEXIÓN DE INTRODUCCIÓN
 
+La optimización consiste en minimizar o maximizar una función $f(\mathbf{x})$ modificando $\mathbf{x}$. En general, la optimización hace referencia a una minimización, ya que la maximización es equivalente a la minimización de $-f(\mathbf{x})$. La función a minimizar se conoce como función objetivo, función de coste, función de pérdida o función de error. La función de pérdida calcula la discrepancia entre la salida de la red neuronal (predicción) y la etiqueta verdadera. Su objetivo es minimizar este error a lo largo del entrenamiento. A la función o grupo de funciones que se están minimizando se denominan \textit{loss functions}, y el valor mínimo se identifica mediante el símbolo $x* = \arg \min f(\mathbf{x})$ \citep{pajares2021aprendizaje}. 
 
+Se sabe de Cálculo Diferencial que la derivada de una función en un punto $x$ calcula la pendiente de la función en dicho punto. Sea $\delta$ un valor, entonces se tiene que $f(x + \delta) \approx f(x) + f'(x)\delta$, es decir, un pequeño cambio en la entrada permite aproximar su valor en la salida gracias a la derivada de la función. Para poder utilizar esta aproximación, es necesario que la función sea diferenciable \footnote{En la red neuronal se realizan cálculos en cada capa y si estos cálculos son diferenciables, la función de pérdida también lo será. Sin embargo, a veces se usan funciones de activación como ReLU, que no son diferenciables en todos los puntos. En estos casos, se debe aplicar una aproximación de la derivada para poder utilizar la función en el método de descenso de gradiente.}. Este método se conoce como descenso de gradiente (\textit{gradient descent}). Durante este método, se propaga el error hacia atrás a través de la estructura del modelo, de forma que los pesos en las redes neuronales vayan ajustándose a lo largo del entrenamiento. Esto cierra el ciclo de aprendizaje entre el envío de los datos hacia adelante, la generación de predicciones y la mejora durante la propagación hacia atrás. Al adaptar los pesos, el modelo probablemente mejore (a veces mucho, a veces ligeramente) y, por lo tanto, se dice que se ha realizado el aprendizaje \citep{pajares2021aprendizaje}. 
 
+\subsection{Descenso de gradiente}
 
-\section{VALIDACIÓN CRUZADA}
 
+Sea $f: S \in \mathbb{R}^n \to \mathbb{R}^m$, donde $n$ y $m$ son enteros. Cuando $f'(x) = 0$, la derivada no proporciona información sobre la dirección en la que hay que moverse. De esta forma, los puntos con $f'(x) = 0$ se conocen como puntos críticos o puntos estacionarios. Un punto $x_0$ es un \textbf{mínimo local} si $\exists \epsilon$ tal que $f(x_0) \leq f(x)$ para todo $x \in B(x_0, \epsilon)$\footnote{$B(a,b)$ hace referencia a la bola o disco de centro $a$ y radio $b$}. Por otra parte, un punto \( x_0 \) es un \textbf{punto de inflexión} de la función \( f \) si \( f \) es continua en \( x_0 \) y existe un entorno \( B(x_0, \epsilon) \) tal que \( f'' \) cambia de signo en \( x_0 \). Esto implica que en un lado de \( x_0 \),  \( f''(x) \) es positiva y en el otro lado es negativa, o viceversa. Si un punto $x_0$ cumple que $\exists \epsilon$ tal que $f(x_0) \leq f(x)$ para todo $x \in S$, entonces $x_0$ es un \textbf{mínimo global}. Puede haber solo un mínimo global o múltiples mínimos globales de la función. También es posible que haya mínimos locales que no sean globalmente óptimos. En el contexto del aprendizaje automático, se optimizan funciones que pueden tener muchos mínimos locales que no son óptimos y muchos puntos de inflexión rodeados de regiones muy planas. Todo esto hace que la optimización sea difícil, especialmente cuando la entrada a la función es multidimensional. Por lo tanto, se suele conformar con encontrar un valor que sea muy bajo pero no necesariamente mínimo en ningún sentido formal \citep{pajares2021aprendizaje}.
 
-La calidad y la preparación de los datos son factores cruciales que afectan el rendimiento de las redes neuronales. En esta sección se describen las técnicas de visualización y los métodos de preparación de datos que son fundamentales antes de entrenar un modelo.
 
-\section{Importancia de la Preparación de Datos}
+A menudo es necesario minimizar funciones que tienen múltiples ($n$) entradas: $f : \mathbb{R}^n \to \mathbb{R}$, con una única salida. Con múltiples entradas, se debe utilizar el concepto de derivadas parciales $\frac{\partial f}{\partial x_i}$, que mide cómo cambia $f$ según aumenta la variable $x_i$, en el punto $\mathbf{x}$. El gradiente de $f$ es el vector que contiene todas las derivadas parciales, denotado por $\nabla f(\mathbf{x})$. En múltiples dimensiones, los puntos críticos son puntos en los que cada elemento del gradiente es igual a cero. La derivada direccional en la dirección $\mathbf{u}$ (vector unitario) es la pendiente de la función $f$ en esa dirección $\mathbf{u}$. En otras palabras, la derivada direccional es la derivada de la función $f(\mathbf{x} + \alpha \mathbf{u})$ con respecto a $\alpha$, evaluada en $\alpha = 0$. Usando la regla de la cadena, se determina que $f(\mathbf{x} + \alpha \mathbf{u})$ evalúa $\mathbf{u} \cdot \nabla f(\mathbf{x})$ cuando $\alpha = 0$ \citep{pajares2021aprendizaje}.
 
-Antes de entrenar una red neuronal, es esencial preparar los datos de manera adecuada para asegurar que el modelo pueda aprender de manera efectiva. La preparación de datos incluye la limpieza, la transformación y la normalización de los datos, lo que mejora la calidad de las entradas y facilita el aprendizaje de patrones relevantes.
+Para minimizar $f$, es deseable encontrar la dirección en la que $f$ disminuye de forma más rápida, lo que se puede hacer usando la derivada direccional:
+\begin{equation}
+    \min_{\mathbf{u}} D_{\mathbf{u}} f(\mathbf{x}) = \min_{\mathbf{u}} \nabla f(\mathbf{x}) \cdot \mathbf{u} = - \|\nabla f(\mathbf{x})\|,
+\end{equation}
+donde $\theta$ es el ángulo entre $\mathbf{u}$ y el gradiente. Sustituyendo $||u||_2 = 1$ e ignorando factores que no dependen de $u$, se concreta en minimizar $min_u \cos \theta$. Se puede hacer decrecer $f$ moviéndose en la dirección opuesta del gradiente, lo que se conoce como método del gradiente descendente por lotes (\textit{steepest descent} o \textit{gradient descent}), que propone un nuevo punto:
+\begin{equation}
+    \mathbf{x}' = \mathbf{x} - \eta \nabla f(\mathbf{x}),
+\end{equation}
+donde $\eta$ es la razón de aprendizaje (o \textit{learning rate}), que determina el tamaño del paso. En caso de aplicar esta ecuación a cada uno de los datos de entrada, se llamará \textbf{descenso de gradiente por lotes}. El learning rate se puede elegir de varias formas, una de ellas es fijarlo a un valor constante pequeño. Algunas veces se puede determinar la dimensión del paso que hace desaparecer la derivada direccional. Otra aproximación consiste en evaluar $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$ para varios valores de $\eta$ y escoger el que proporciona el valor de la función objetivo menor. Esta estrategia se denomina búsqueda en línea. El gradiente descendente converge cuando cada elemento del gradiente es cero o muy próximo a él \citep{pajares2021aprendizaje}.  Escoger valores de $\eta$ muy pequeños hace que la convergencia sea muy lenta. Sin embargo, valores muy grandes pueden hacer que el algoritmo diverja y se aleje en cada paso más del valor óptimo.
 
-\section{Visualización de Datos}
+También esta la posibilidad de añadirle momentum al SGD, que es un hiperparámetro mayor o igual a 0 que acelera el descenso del gradiente en la dirección relevante y amortigua las oscilaciones. Su valor por defecto es 0. 
 
-La visualización de datos es un paso crucial en la comprensión y preparación de los datos. Permite identificar patrones, detectar anomalías y entender la distribución de las variables. Algunos métodos comunes de visualización incluyen:
+\subsection{Descenso de gradiente estocástico}
 
-\begin{itemize}
-    \item \textbf{Diagramas de dispersión:} Utilizados para observar la relación entre dos variables.
-    \item \textbf{Histogramas:} Muestran la distribución de una variable.
-    \item \textbf{Diagramas de caja (Boxplots):} Ayudan a identificar la variabilidad y posibles valores atípicos.
-    \item \textbf{Matrices de correlación:} Utilizadas para analizar la relación entre múltiples variables.
-\end{itemize}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{scatter_plot.png}
-    \caption{Diagrama de dispersión que muestra la relación entre dos variables.}
-    \label{fig:scatter_plot}
-\end{figure}
+El Descenso de Gradiente Estocástico (SGD, por sus siglas en inglés) es un algoritmo utilizado para minimizar una función objetivo en problemas de aprendizaje automático. 
+\[
+w^{(t+1)} = w^{(t)} - \eta \nabla J_i (w^{(t)})
+\]
+donde $w$ son los pesos que desean estimarse en cada iteración y $J_i$ es la i-ésima observación del conjunto de datos. El SGD selecciona aleatoriamente una elemento del conjunto de entrenamiento en cada iteración y calcula los gradientes basándose únicamente en esa instancia individual \citep{pajares2021aprendizaje}. Esto hace que el algoritmo sea mucho más rápido que calculándolo para todos los datos, debido a que en cada iteración solo se necesita manipular una pequeña cantidad de datos. Además, permite entrenar con conjuntos de datos muy grandes. Sin embargo, debido a su naturaleza aleatoria, el SGD es mucho menos regular que el Descenso de Gradiente por Lote. En lugar de disminuir suavemente hasta alcanzar el mínimo, la función de perdida oscilará, disminuyendo solo en promedio. Con el tiempo, el algoritmo se acercará mucho al mínimo, pero continuará oscilando alrededor de él sin asentarse completamente \citep{geron2022hands}.
 
-\section{Limpieza de Datos}
+Una solución a este problema es reducir gradualmente la tasa de aprendizaje. Al principio, los pasos son grandes, lo que ayuda a hacer un progreso rápido y a escapar de mínimos locales. Luego, los pasos se hacen más pequeños, permitiendo que el algoritmo se asiente en el mínimo global \citep{geron2022hands}.
 
-La limpieza de datos es el proceso de corregir o eliminar datos incorrectos, incompletos o irrelevantes del conjunto de datos. Esto puede incluir:
 
-\begin{itemize}
-    \item \textbf{Manejo de valores nulos:} Los valores nulos pueden eliminarse o reemplazarse con técnicas de imputación.
-    \item \textbf{Corrección de errores:} Corregir entradas erróneas o inconsistentes en los datos.
-    \item \textbf{Eliminación de duplicados:} Remover filas duplicadas que pueden sesgar el análisis.
-\end{itemize}
+Los pasos de este método de optimización son: Primero, se elige un vector inicial de parámetros \( w \) (que puede ser seleccionado aleatoriamente) y una razón de aprendizaje \( \eta \). Los siguientes pasos se repiten hasta que se consiga un mínimo aproximado. En cada iteración, se seleccionan aleatoriamente ejemplos del conjunto de entrenamiento. Para cada ejemplo \( i = 1, 2, \ldots, n \), se actualiza el vector de parámetros utilizando la fórmula \( w^{(t+1)} = w^{(t)} - \eta \nabla J_i (w^{(t)}) \) \citep{pajares2021aprendizaje}.
 
-\section{Normalización y Escalado}
 
-La normalización y el escalado son técnicas que ajustan los valores de los datos a un rango específico o a una distribución estándar, lo que facilita el entrenamiento de redes neuronales:
+\subsection{Descenso de gradiente por mini-lotes}
 
-\begin{itemize}
-    \item \textbf{Normalización Min-Max:} Escala los valores de las características a un rango específico, generalmente [0, 1].
-    \item \textbf{Estandarización:} Transforma los datos para tener media 0 y desviación estándar 1, útil para datos con diferentes unidades o escalas.
-\end{itemize}
 
-\begin{align}
-    x' &= \frac{x - \min(x)}{\max(x) - \min(x)} \quad \text{(Normalización Min-Max)} \\
-    z &= \frac{x - \mu}{\sigma} \quad \text{(Estandarización)}
-\end{align}
+El Descenso de Gradiente por Mini-lote (Mini-batch Gradient Descent) es un algoritmo que combina aspectos del Descenso de Gradiente por Lote y el SGD (Stochastic Gradient Descent). A diferencia de estos métodos, en lugar de calcular los gradientes basándose en todo el conjunto de entrenamiento o en una única instancia, el Descenso de Gradiente por Mini-lote calcula los gradientes basándose en pequeños subconjuntos aleatorios de instancias llamados mini-lotes (mini-batch). Estos subconjuntos definen el número de muestras utilizadas antes de actualizar los pesos de la red en el modelo. Si se utilizan todas las muestras de entrenamiento para crear un lote, se denomina \textbf{descenso del gradiente por lotes}. Si el lote tiene el tamaño de una muestra, se llama \textbf{descenso de gradiente estocástico}. Cuando el lote tiene más de una muestra pero es menor que el tamaño del conjunto de datos de entrenamiento, se denomina \textbf{descenso de gradiente de mini-lote}. Este enfoque logra un progreso menos errático que el SGD, especialmente con mini-lotes relativamente grandes, y se acerca más al mínimo, aunque puede ser más difícil escapar de mínimos locales. No obstante, con un buen plan de aprendizaje, tanto el SGD como el Descenso de Gradiente por Mini-lote pueden llegar al mínimo \citep{geron2022hands}.
 
-\section{División de Datos}
+Otro parámetro relevante es la \textbf{época (epoch)}, que define cuántas veces el conjunto total de muestras es procesado por el algoritmo. Cada muestra del conjunto \(N\) tiene una oportunidad de actualizar los pesos en cada epoch. Una epoch puede contener uno o más lotes. Para mayor claridad, se puede pensar en un bucle sobre el número de epochs, donde cada iteración opera sobre \(N\). Dentro de esta iteración, existe otra iteración anidada que actúa sobre cada lote de muestras. El número de epochs varía según el tipo de datos y puede ser alto, como 10, 100, 1000 o más, garantizando una eficiencia suficiente, aunque también puede ser menor \citep{pajares2021aprendizaje}.
 
-La división de los datos en conjuntos de entrenamiento, validación y prueba es esencial para evaluar el rendimiento del modelo de manera imparcial:
 
-\begin{itemize}
-    \item \textbf{Conjunto de Entrenamiento:} Utilizado para ajustar los parámetros del modelo.
-    \item \textbf{Conjunto de Validación:} Usado para ajustar los hiperparámetros y evitar el sobreajuste.
-    \item \textbf{Conjunto de Prueba:} Empleado para evaluar el rendimiento final del modelo.
-\end{itemize}
+\subsection{Propagación de la raíz Media Cuadrada}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{data_split.png}
-    \caption{División típica de datos en conjuntos de entrenamiento, validación y prueba.}
-    \label{fig:data_split}
-\end{figure}
+Además de estos métodos, existen optimizadores avanzados que mejoran la eficiencia del entrenamiento. Entre ellos se encuentra la \textbf{Propagación de la Raíz Media Cuadrática (RMSProp)}. Este método adapta la tasa de aprendizaje para cada parámetro manteniendo una media móvil de los cuadrados de los gradientes. La actualización del parámetro \(w(t)\) se realiza de la siguiente manera \citep{pajares2021aprendizaje}:
 
-\section{Aumento de Datos}
+\[
+v(t) = \beta v(t-1) + (1-\beta) (g(t))^2
+\]
 
-El aumento de datos (data augmentation) es una técnica utilizada para incrementar la cantidad de datos de entrenamiento mediante la generación de variaciones del conjunto de datos existente. Esto es particularmente útil en problemas de visión por computadora. Las técnicas comunes incluyen:
+\[
+w(t) = w(t-1) - \frac{\eta}{\sqrt{v(t) + \epsilon}} g(t)
+\]
 
-\begin{itemize}
-    \item \textbf{Rotación:} Girar las imágenes en diferentes ángulos.
-    \item \textbf{Desplazamiento:} Mover las imágenes horizontal o verticalmente.
-    \item \textbf{Escalado:} Cambiar el tamaño de las imágenes.
-    \item \textbf{Ajuste de brillo:} Modificar el brillo de las imágenes.
-\end{itemize}
+donde \(\beta\) es el factor de decaimiento de la media, \(\eta\) es la tasa de aprendizaje y \(\epsilon\) es una constante pequeña para evitar divisiones por cero \citep{pajares2021aprendizaje}.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{data_augmentation.png}
-    \caption{Ejemplos de técnicas de aumento de datos aplicadas a imágenes.}
-    \label{fig:data_augmentation}
-\end{figure}
 
-\section{Codificación de Variables}
 
-Para utilizar datos categóricos en modelos de redes neuronales, es necesario convertirlos a un formato numérico. Las técnicas comunes incluyen:
 
-\begin{itemize}
-    \item \textbf{Codificación One-Hot:} Crea una columna binaria para cada categoría.
-    \item \textbf{Codificación de Etiquetas:} Asigna un número entero a cada categoría.
-\end{itemize}
+\subsection{Estimación del Momento Adaptativo}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{encoding.png}
-    \caption{Ejemplo de codificación One-Hot para variables categóricas.}
-    \label{fig:encoding}
-\end{figure}
+Otro optimizador relevante es \textbf{Adam (Adaptive Moment Estimation)}, que combina las ideas de RMSProp con el momento. Adam mantiene medias móviles de los gradientes y de los cuadrados de los gradientes. Las actualizaciones de los parámetros se realizan de la siguiente manera \citep{pajares2021aprendizaje}:
 
-\section{Muestreo y Balanceo de Datos}
+\[
+m(t) = \beta_1 m(t-1) + (1-\beta_1) g(t)
+\]
 
-El muestreo y balanceo son métodos utilizados para manejar conjuntos de datos desequilibrados, donde algunas clases tienen muchas más muestras que otras:
+\[
+v(t) = \beta_2 v(t-1) + (1-\beta_2) (g(t))^2
+\]
 
-\begin{itemize}
-    \item \textbf{Submuestreo:} Reduce la cantidad de muestras en la clase mayoritaria.
-    \item \textbf{Sobremuestreo:} Aumenta la cantidad de muestras en la clase minoritaria mediante replicación o síntesis de nuevas muestras.
-\end{itemize}
+\[
+\hat{m}(t) = \frac{m(t)}{1 - \beta_1^t}
+\]
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{sampling.png}
-    \caption{Ejemplo de submuestreo y sobremuestreo en un conjunto de datos desequilibrado.}
-    \label{fig:sampling}
-\end{figure}
+\[
+\hat{v}(t) = \frac{v(t)}{1 - \beta_2^t}
+\]
 
-\section{Conclusión}
+\[
+w(t) = w(t-1) - \frac{\eta \hat{m}(t)}{\sqrt{\hat{v}(t)} + \epsilon}
+\]
 
-La visualización y preparación de datos son pasos críticos en el proceso de desarrollo de modelos de redes neuronales. Estos procesos aseguran que los datos utilizados sean de alta calidad y estén en un formato adecuado, lo que facilita un entrenamiento eficiente y efectivo. Al comprender y aplicar estas técnicas, se pueden construir modelos más robustos y precisos.
-
-
-
-
-
-
-
-
-
-
-
-
-La preparación de datos es un paso fundamental en el proceso de entrenamiento de redes neuronales, ya que la calidad y el formato de los datos impactan directamente en la efectividad del modelo. Este proceso incluye la limpieza de datos, la exploración, el formateo adecuado, la separación de datos en conjuntos de entrenamiento, validación y prueba, así como la evaluación del modelo. A continuación, se detallan estos aspectos clave de la preparación de datos para redes neuronales.
-
-\section{Limpieza de Datos}
-
-La limpieza de datos implica manejar valores perdidos, identificar y tratar datos atípicos, y corregir errores en el conjunto de datos. La mayoría de los algoritmos de aprendizaje automático no pueden manejar datos faltantes de manera efectiva, por lo que es crucial decidir cómo tratar estos valores. Las opciones comunes incluyen la eliminación de las filas o columnas con valores faltantes o la imputación de valores mediante estrategias como la media, la mediana o un valor constante \citep{geron2022hands}.
-
-En \texttt{Python}, la biblioteca \texttt{pandas} facilita estas operaciones. Por ejemplo, para eliminar filas con valores faltantes en una columna específica se puede usar:
-
-\begin{verbatim}
-data = data.dropna(subset=['columna'])
-\end{verbatim}
-
-Para reemplazar valores faltantes por la mediana de la columna:
-
-\begin{verbatim}
-data['columna'].fillna(data['columna'].median(), inplace=True)
-\end{verbatim}
-
-Además, \texttt{scikit-learn} ofrece la clase \texttt{SimpleImputer} para automatizar este proceso:
-
-\begin{verbatim}
-from sklearn.impute import SimpleImputer
-imputer = SimpleImputer(strategy='median')
-data_imputed = imputer.fit_transform(data)
-\end{verbatim}
-
-\section{Exploración de Datos}
-
-La exploración de datos consiste en analizar el conjunto de datos para comprender sus características básicas. Esto incluye la visualización de distribuciones de variables, la detección de correlaciones y la identificación de posibles problemas como datos sesgados o variables con escalas muy diferentes. Herramientas como \texttt{matplotlib} y \texttt{seaborn} en \texttt{Python} son útiles para la visualización.
-
-\section{Formateo de Datos}
-
-Para entrenar redes neuronales, es esencial que los datos estén en un formato adecuado, como arreglos de \texttt{NumPy}. Además, las etiquetas deben estar codificadas correctamente. En problemas de clasificación, es común utilizar la codificación \textit{one-hot} para las etiquetas, lo que implica transformar las etiquetas categóricas en vectores binarios.
-
-Por ejemplo, en \texttt{Python}, \texttt{scikit-learn} proporciona la clase \texttt{OneHotEncoder}:
-
-\begin{verbatim}
-from sklearn.preprocessing import OneHotEncoder
-encoder = OneHotEncoder()
-encoded_labels = encoder.fit_transform(labels.reshape(-1, 1))
-\end{verbatim}
-
-Este método convierte las etiquetas en una matriz dispersa con columnas binarias.
-
-\section{Separación de Datos}
-
-La separación de los datos en conjuntos de entrenamiento, validación y prueba es crucial para evaluar el rendimiento del modelo y prevenir el sobreajuste. Generalmente, se sigue la estrategia de dividir el conjunto de datos en un 70\% para entrenamiento, un 15\% para validación y un 15\% para prueba. Esta separación permite entrenar el modelo en una parte de los datos, ajustar los hiperparámetros usando el conjunto de validación y evaluar el rendimiento final en el conjunto de prueba.
-
-La función \texttt{train\_test\_split} de \texttt{scikit-learn} facilita este proceso:
-
-\begin{verbatim}
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-\end{verbatim}
-
-Para una separación adicional en conjunto de validación:
-
-\begin{verbatim}
-X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2)
-\end{verbatim}
-
-\section{Evaluación del Modelo}
-
-Una vez separado el conjunto de datos, se puede entrenar el modelo utilizando el conjunto de entrenamiento, ajustar los hiperparámetros con el conjunto de validación, y finalmente evaluar el rendimiento en el conjunto de prueba. La métrica de evaluación depende del tipo de problema (regresión o clasificación) y debe ser seleccionada cuidadosamente.
-
-\section{Validación Cruzada}
-
-Aunque la validación cruzada (\textit{cross-validation}) es una técnica robusta para evaluar el modelo, en el contexto de redes neuronales es más común utilizar la separación \texttt{train\_test\_split} debido a los costos computacionales de entrenar múltiples modelos en K subconjuntos diferentes. Sin embargo, para modelos menos complejos o para experimentación inicial, la validación cruzada puede proporcionar una estimación más fiable del rendimiento del modelo al promediar los resultados de múltiples divisiones del conjunto de datos.
-
-La validación cruzada se puede implementar en \texttt{scikit-learn} de la siguiente manera:
-
-\begin{verbatim}
-from sklearn.model_selection import cross_val_score
-scores = cross_val_score(model, X, y, cv=5)
-\end{verbatim}
-
-\section{Conclusión}
-
-En resumen, la preparación adecuada de los datos es un paso fundamental para el éxito en el entrenamiento de redes neuronales. Incluye la limpieza y exploración de datos, el formateo en estructuras adecuadas como \texttt{NumPy}, la codificación \textit{one-hot} para etiquetas, y la correcta separación de los datos en conjuntos de entrenamiento, validación y prueba. Aunque la validación cruzada ofrece beneficios, su uso es menos frecuente en redes neuronales debido a los altos costos computacionales asociados \citep{geron2022hands}.
-
-
-
-
-
-
-
-
+donde \(\beta_1\) y \(\beta_2\) son factores de decaimiento de las medias, \(\eta\) es la tasa de aprendizaje y \(\epsilon\) es una constante pequeña para evitar divisiones por cero \citep{pajares2021aprendizaje}.
 
 
 
@@ -462,7 +329,8 @@ En resumen, la preparación adecuada de los datos es un paso fundamental para el
 
 
 \begin{comment}
-\section{Métodos de Optimización}
+\section{Métodos de Optimización} NO
+
 
 La optimización se refiere a la tarea de minimizar o maximizar una función $f(x)$ modificando $x$. En general, la optimización alude a una minimización, ya que la maximización es equivalente a la minimización de $-f(x)$. La función a minimizar (o maximizar) se conoce como función objetivo o criterio, que se utiliza para evaluar una solución candidata, por ejemplo, los pesos en una red neuronal. Cuando se está minimizando, según Goodfellow y col. (2016), se le denomina también función de coste (\textit{cost function}), función de pérdida (\textit{loss function}), o función de error (\textit{error function}). La función de pérdida es necesaria para poder disponer de un error que retropropagar durante la etapa de aprendizaje. Así pues, la función o grupo de funciones que se están minimizando se denominan \textit{loss functions}, y el valor que obtiene la minimización o maximización se identifica con el símbolo $\hat{x} = \arg \min f(x)$.
 
@@ -551,6 +419,7 @@ J(w) = \sum_{i=1}^{n} (w_1 + w_2 x_i - y_i)^2.
 El punto 2.2 del pseudocódigo resulta en:
 
 \begin{equation}
+
 w_1(t+1) = w_1(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i),
 \end{equation}
 
@@ -626,6 +495,8 @@ Si se establecen mini-lotes de dimensión $m$, la actualización de los pesos ta
 
 
 \end{comment}
+
+
 \section{Función de activación.}
 
 Entre capa y capa de las redes neuronales, cada neurona suma ponderadamente las entradas provenientes de las neuronas de la capa anterior. Este resultado, se lo pasa a una función no lineal, llamada función de activación, que permiten que la red neuronal pueda aprender, representar patrones complejos y crear relaciones no lineales entre las características de entrada y la salida. El valor resultante de aplicarle la función es el valor que se le queda asociado a esta neurona, para que futuras capas puedan usarlo. En esta sección, describimos varias funciones de activación populares, sus propiedades y aplicaciones \citep{pajares2021aprendizaje}.
@@ -908,6 +779,7 @@ El coeficiente de Dice es una métrica especialmente útil en problemas de segme
 
 donde \(P\) representa el conjunto de píxeles predichos y \(G\) representa el conjunto de píxeles verdaderos. La interpretación de esta función es que un valor más alto indica una mayor superposición entre las predicciones y la verdad del terreno, siendo 1 el valor ideal cuando hay coincidencia perfecta \cite{pajares2021aprendizaje}.
 
+\begin{comment}
 \subsubsection{Divergencia de Kullback-Leibler}
 
 La divergencia de Kullback-Leibler (KL-divergence) mide la diferencia entre dos distribuciones de probabilidad: la distribución verdadera \(P\) y la distribución predicha \(Q\). Se expresa como:
@@ -917,6 +789,7 @@ La divergencia de Kullback-Leibler (KL-divergence) mide la diferencia entre dos 
 \end{equation}
 
 Este valor indica cuánta información se pierde al usar \(Q\) para aproximar \(P\). En el contexto de modelos de clasificación, una menor divergencia KL indica que las distribuciones de probabilidades predichas se acercan más a las verdaderas, haciendo al modelo más preciso \cite{pajares2021aprendizaje}.
+\end{comment}
 
 \subsection{Regresión}
 
@@ -942,6 +815,7 @@ El error absoluto medio (MAE, \textit{mean absolute error}) mide la media de los
 
 A diferencia del MSE, el MAE no penaliza tanto los errores grandes, ya que no los eleva al cuadrado. Esto hace que sea más robusto frente a los valores atípicos. Un MAE más bajo indica un modelo más preciso \cite{pajares2021aprendizaje}.
 
+\begin{comment}
 \subsubsection{Pérdida de Huber}
 
 La función de pérdida de Huber combina las características del ECM y el EAM. Se comporta de manera cuadrática para errores pequeños y de manera lineal para errores grandes. Está definida como:
@@ -965,6 +839,7 @@ La función de pérdida Log-cosh es otra opción para la regresión que suaviza 
 \end{equation}
 
 Aquí, \(\cosh\) es la función hiperbólica del coseno. La ventaja de esta función es que, para errores pequeños, se comporta como el ECM, mientras que para errores grandes se asemeja al EAM, lo que permite una suavización de los errores sin la severidad de la penalización cuadrática \cite{pajares2021aprendizaje}.
+\end{comment}
 
 \subsubsection{Pérdida Basada en Cuantiles}
 
@@ -1129,9 +1004,29 @@ El sobreajuste es uno de los principales desafíos en el entrenamiento de modelo
 
 
 
-\section{Métricas de evaluación de un modelo de clasificación.}
+\section{Evaluación del modelo.} CYA HE ESTUDIADO SUPERVISADO, NO SUPERVISADO Y LOS MÉTODOS DE ML.
 
-Para evaluar el rendimiento de un modelo de clasificación, se utilizan una serie de métricas que nos permiten entender el rendimiento y efectividad de un modelo. A continuación, se describen las principales métricas utilizadas, así como las representaciones gráficas asociadas.
+
+Una vez discutidos los fundamentos del aprendizaje supervisado y no supervisado, y explorado una variedad de algoritmos de machine learning, profundizaremos ahora en la evaluación de los diferenes modelos. Nos centraremos en los métodos supervisados, tanto en regresión como en clasificación, ya que la evaluación y selección de modelos en aprendizaje no supervisado suele ser un proceso más cualitativo \citep{muller2016introduction}. 
+
+
+Para evaluar los modelos supervisados, primero se divide el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba utilizando la función \lstinline|train_test_split|, que divide los datos de manera aleatoria. Algunos modelo como la \acrshort{cnn} o los autoencoders también necesitan un conjunto de validación durante su entrenamiento para ir evaluando el rendimiento del modelo en cada iteración. Además, proporciona información muy valiosa para detectar si un modelo empieza a sobreaprender de los datos de entrenamiento. Los porcentajes de estos subconjuntos suelen encontrarse entre el 70 - 80 \%, 10 - 20 \% y 10 - 20 \% para entrenamiento, test y validación respectivamente. El conjunto de entrenamiento sirve para entrenar la red neuronal. Por otro lado, el conjunto de prueba sirve para medir definitivamente el rendimiento del modelo con nuevas muestras de datos que no han sido utilizadas durante del entrenamiento para evaluar el modelo \citep{muller2016introduction}.
+
+
+El problema de esta técnica radica en que las distribuciones de los datos pueden no ser uniformes en los tres subconjuntos y que no sea una divisón muy óptima. Para evitar este inconveniente, se puede usar una técnica de evaluación del modelo más avanzada llamada \textbf{validación cruzada} (\textit{cross-validation}), donde los datos se dividen en varios subconjuntos, y el modelo se entrena y valida múltiples veces, garantizando una evaluación más robusta del rendimiento. La variante más comúnmente utilizada es la validación cruzada \textit{k-fold}. Aquí, el conjunto de datos se divide en $k$ partes aproximadamente iguales, llamadas pliegues. Cada uno de los $k$ pliegues se utiliza una vez como conjunto de prueba, mientras que los $k-1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Este proceso se repite $k$ veces, generando $k$ modelos y $k$ evaluaciones. La Figura~\ref{fig:kfold} ilustra este procedimiento \citep{muller2016introduction}.
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.6\textwidth]{img/kfold.png}
+    \captionof{figure}{Validación cruzada k-fold.}
+    \label{img: pr_vs_threshold}
+\end{figure}
+
+Al final de la validación cruzada \textit{k-fold}, se recopilan $k$ valores de desempeño (por ejemplo, precisión en clasificación) que se pueden promediar para obtener una estimación más robusta del rendimiento del modelo. La validación cruzada no solo proporciona una evaluación más precisa del modelo, sino que también ayuda a detectar variaciones en el desempeño debido a diferentes particiones de datos, ofreciendo así una visión más completa de la capacidad del modelo para generalizar \citep{muller2016introduction}. Aunque la validación cruzada ofrece bastantes beneficios, su uso es menos frecuente en redes neuronales debido a los altos costos computacionales asociados \citep{geron2022hands}. En su defecto, es más frecuente usar \lstinline|train_test_split()|.
+
+
+
+Una vez ya se ha entrenado el modelo, utilizamos el conjunto de prueba para medir el rendimiento del modelo. Para ello, se utilizan una serie de métricas que nos permiten entender el rendimiento y efectividad de un modelo. A continuación, se describen las principales métricas utilizadas, así como las representaciones gráficas asociadas.
 
 \subsection{Matriz de Confusión}
 
