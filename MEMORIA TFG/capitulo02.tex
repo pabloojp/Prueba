@@ -1,119 +1,4 @@
 \chapter{Fundamentos de las redes neuronales} \label{Capitulo_2}
-\begin{itemize}
-	\item Supervisado y no supervisado
-	\item one-hot encoder
-	\item validacion cruzada
-	\item dropout, l2
-	\item optiizadores
-	\item arquitectuas
-	\item metricas
-\end{itemize}
-en la pagina 458 de hands aparece la arquitectura mía
-
-
-\section{Revisión teórica} \label{Subsec: 3_1}
-Puedo introducir los tipos de funciones de activavion. Esta bien explicado en el TFG wuolah o en el articulo de KDD cup 199 de DNN network intrusion.
-Puedo añadir overfitting y underfitting.
-lo que es aprendizaje supervisado y no supervisao
-Partes de una neurona y como trabaja(bias, pesos...)
-
-
-
-
-
-
-
-\begin{comment}
-
-Las redes neuronales son un subcampo de la inteligencia artificial (IA) y el aprendizaje automático (machine learning) que se inspira en el funcionamiento del cerebro humano para procesar información y aprender de los datos. Estas redes consisten en capas de nodos (también llamados neuronas) que están interconectados y trabajan en conjunto para realizar tareas específicas, como la clasificación, la regresión y el reconocimiento de patrones.
-
-\section{Historia y Desarrollo}
-
-El concepto de redes neuronales fue introducido por Warren McCulloch y Walter Pitts en 1943, quienes propusieron un modelo matemático de una neurona artificial. Sin embargo, fue en los años 80 y 90 cuando el campo experimentó un resurgimiento significativo, gracias al desarrollo del algoritmo de retropropagación (backpropagation) por Geoffrey Hinton y sus colaboradores. Este algoritmo permitió entrenar redes neuronales de múltiples capas, conocidas como redes neuronales profundas, lo que llevó a avances sustanciales en la capacidad de las máquinas para aprender de los datos.
-
-\section{Estructura de una Red Neuronal}
-
-Una red neuronal típica se compone de tres tipos de capas:
-
-\begin{itemize}
-    \item \textbf{Capa de entrada:} Recibe la información inicial y la pasa a la siguiente capa.
-    \item \textbf{Capas ocultas:} Procesan la información a través de múltiples neuronas, aplicando funciones de activación para introducir no linealidades.
-    \item \textbf{Capa de salida:} Produce la salida final de la red, que puede ser una clasificación, una estimación o cualquier otra forma de respuesta.
-\end{itemize}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{neural_network_structure.png}
-    \caption{Estructura básica de una red neuronal.}
-    \label{fig:neural_network_structure}
-\end{figure}
-
-\section{Algoritmo de Retropropagación}
-
-El algoritmo de retropropagación es un método para entrenar redes neuronales ajustando los pesos de las conexiones en función de la diferencia entre la salida esperada y la obtenida. Este proceso se lleva a cabo en varias etapas:
-
-\begin{enumerate}
-    \item \textbf{Propagación hacia adelante:} Los datos de entrada se pasan a través de la red para calcular la salida.
-    \item \textbf{Cálculo del error:} Se mide la diferencia entre la salida calculada y la esperada.
-    \item \textbf{Propagación hacia atrás:} Se ajustan los pesos de la red en función del error calculado, distribuyendo la corrección de manera inversa desde la salida hacia las capas anteriores.
-\end{enumerate}
-
-\section{Funciones de Activación}
-
-Las funciones de activación son fundamentales en las redes neuronales porque introducen no linealidades, permitiendo a la red aprender patrones complejos. Algunas de las funciones de activación más comunes son:
-
-\begin{itemize}
-    \item \textbf{Sigmoide:} Mapea las salidas a un rango entre 0 y 1.
-    \item \textbf{ReLU (Rectified Linear Unit):} Define una función de activación que devuelve 0 si la entrada es negativa, y el valor de la entrada si es positiva.
-    \item \textbf{Tanh:} Similar a la sigmoide, pero mapea las salidas en un rango entre -1 y 1.
-\end{itemize}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{activation_functions.png}
-    \caption{Ejemplos de funciones de activación comunes.}
-    \label{fig:activation_functions}
-\end{figure}
-
-\section{Redes Neuronales Profundas}
-
-Las redes neuronales profundas (Deep Neural Networks, DNN) son un tipo de red neuronal que tiene múltiples capas ocultas entre la capa de entrada y la capa de salida. La profundidad de estas redes les permite aprender características complejas a diferentes niveles de abstracción. Han demostrado un rendimiento excepcional en tareas como el reconocimiento de voz, la visión por computadora y la traducción automática.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{deep_neural_network.png}
-    \caption{Estructura de una red neuronal profunda.}
-    \label{fig:deep_neural_network}
-\end{figure}
-
-\section{Aplicaciones de las Redes Neuronales}
-
-Las redes neuronales tienen una amplia gama de aplicaciones en diversos campos, incluyendo:
-
-\begin{itemize}
-    \item \textbf{Visión por Computadora:} Utilizadas para tareas como la clasificación de imágenes, la detección de objetos y la segmentación de imágenes.
-    \item \textbf{Procesamiento del Lenguaje Natural (NLP):} Empleadas en la traducción automática, la generación de texto y el análisis de sentimientos.
-    \item \textbf{Reconocimiento de Voz:} Implementadas en sistemas de reconocimiento y síntesis de voz.
-    \item \textbf{Finanzas:} Utilizadas para la predicción de precios de acciones y la detección de fraudes.
-\end{itemize}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{nn_applications.png}
-    \caption{Áreas de aplicación de las redes neuronales.}
-    \label{fig:nn_applications}
-\end{figure}
-
-\section{Desafíos y Tendencias Futuras}
-
-A pesar de los éxitos de las redes neuronales, existen desafíos que todavía deben ser abordados, como la interpretación de modelos, el requerimiento de grandes cantidades de datos para el entrenamiento y el consumo de recursos computacionales. Sin embargo, el campo está en constante evolución, con investigaciones en áreas como las redes neuronales convolucionales (CNN), las redes neuronales recurrentes (RNN) y los modelos generativos, que prometen avances significativos en el futuro.
-
-
-\end{comment}
-
-
-
-
 \section{Introducción}
 
 En la última década, la inteligencia artificial (IA) se ha convertido en un tema popular tanto dentro como fuera de la comunidad científica. Una abundancia de artículos en revistas tecnológicas y no tecnológicas han cubierto los temas de aprendizaje automático (ML, por sus siglas en inglés), aprendizaje profundo (DL, por sus siglas en inglés) e IA. Sin embargo, todavía persiste confusión en torno a IA, ML y DL. Los términos están estrechamente relacionados, pero no son intercambiables. 
@@ -183,12 +68,12 @@ El aprendizaje automático es excelente para:
 
 \section{Aprendizaje profundo}
 
-Dentro del Machine Learning, se encuentra el Deep Learning, cuya base son las redes neuronales artificiales (ANN). Una red neuronal artificial es un modelo matemático inspirado en la estructura de una red neuronal biológica. Consiste en una red de neuronas interconectadas organizadas por capas, con una capa de entrada, una o más capas ocultas y una capa de salida \citep{dolling2002artificial}. En cada neurona se aplica una suma ponderada de las señales recibidas a las que se le aplica una función de activación o conexión no lineal. La capa de entrada recibe la información del exterior y la agrupa en la capa de entrada, mandando una salida a la siguiente capa a través de sus neuronas con pesos asociados en cada conexión. Las capas ocultas reciben información de otras neuronas artificiales y cuyas señales de entrada y salida permanecen dentro de la red. Por último, la capa de salida recibe la información procesada y la devuelve al exterior con la salida predicha por nuestro modelo. Además de los pesos que se van ajustando durante el entrenamiento, también está el sesgo o bias, que es un valor que se asigna a cada neurona de cada capa para añadir características adicionales a la red neuronal que antes no tenía. 
+Dentro del Machine Learning, se encuentra el Deep Learning, cuya base son las redes neuronales artificiales (ANN). Las ANN son unas estructuras versátiles, potentes y escalables, lo que las hace ideales para abordar tareas grandes y complicadas para el aprendizaje profundo. Según \citep{pajares2021aprendizaje}, se definen como un modelo matemático inspirado en la estructura de una red neuronal biológica. Consiste en una red de neuronas interconectadas organizadas por capas, con una capa de entrada, una o más capas ocultas y una capa de salida \citep{dolling2002artificial}. En cada neurona se aplica una suma ponderada de las señales recibidas a las que se le aplica una función de activación o conexión no lineal. La capa de entrada recibe la información del exterior y la agrupa en la capa de entrada, mandando una salida a la siguiente capa a través de sus neuronas con \textbf{pesos} asociados en cada conexión. Las capas ocultas reciben información de otras neuronas artificiales y cuyas señales de entrada y salida permanecen dentro de la red. Por último, la capa de salida recibe la información procesada y la devuelve al exterior con la salida predicha por nuestro modelo. Además de los pesos que se van ajustando durante el entrenamiento, también está el \textbf{sesgo o bias}, que es un valor que se asigna a cada neurona de cada capa para añadir características adicionales a la red neuronal que antes no tenía. 
 
 
 \subsection{Perceptrón}
 
-Antes de profundizar en los modelos de redes neuronales más complejos y profundos, veamos el funcionamiento del modelo más simple, el \textit{Perceptrón}. Este modelo es la base del resto de modelos de aprendizaje automático. Consiste en una capa de entrada y en una de salida en la que hay que aplicar dos etapas. En la figura \ref{img: perceptron} podemos ver el esquema para dos clases.
+Antes de profundizar en los modelos de redes neuronales más complejos y profundos, veamos el funcionamiento del modelo de ANN más simple, el \textit{perceptrón}. Este modelo es la base del resto de modelos de aprendizaje automático. Consiste en una capa de entrada y en una de salida en la que hay que aplicar dos etapas. En la figura \ref{img: perceptron} podemos ver el esquema para dos posibles salidas.
 
 \begin{figure}[h!]
     \centering
@@ -201,32 +86,57 @@ La primera etapa del proceso consiste en calcular la suma promediada de sus entr
 \begin{equation}
 f(x) = \sum_{i=1}^{n} w_i \cdot x_i + b
 \end{equation}
-Los coeficientes $w_i$, $i=1,2, \ldots, n$ llamados pesos, dan un valor determinado a cada una de las entradas en función de la importancia para obtener la salida. Además, el coeficiente $b$ es el sesgo o bias que se añade a la función. Otra forma práctica de escribir esta ecuación sería: $f(x) = \sum_{i=1}^{n+1} w_i \cdot z_i = w^t\cdot z  donde w = (w_1, \ldots, w_n, b)^t y z^t = (x_1, \ldots, x_n, 1)^t$
+Los coeficientes $w_i$, $i=1,2, \ldots, n$ llamados pesos, dan un valor determinado a cada una de las entradas en función de la importancia para obtener la salida. Además, el coeficiente $b$ es el sesgo o bias que se añade a la función. Otra forma práctica de escribir esta ecuación sería: $f(x) = \sum_{i=1}^{n} (w_i \cdot x_i) + b= w^t \cdot x + b$  donde $w^t = (w_1, \ldots, w_n)$ y $x^t = (x_1, \ldots, x_n)$
 
-La segunda capa consiste en transformar la salida de la primera etapa mediante una función de activación. En el caso de un problema de clasificación binaria (0 o 1), si esta salida sobrepasa un cierto umbral predefinido al principio, su salida será 1 y en caso contrario, será 0. Es decir, siendo $c$ una constante real:
-
+La segunda capa consiste en transformar la salida de la primera etapa mediante una función de activación. Se podría generalizar de la siguiente manera:
 \begin{equation}
-\text{y} = 
-\begin{cases} 
-1  \text{  si  }  \sum_{i=1}^{n} w_i \cdot x_i + b > c\\
-0  \text{  si  }  \sum_{i=1}^{n} w_i \cdot x_i + b <= c.
-\end{cases}
+y = \phi(w^t \cdot x + b)
 \end{equation}
 
+Pero, ¿cómo ajusta los parámetros el perceptrón? El algoritmo de entrenamiento del perceptrón se basa en la regla de aprendizaje de Hebb y tiene en cuenta el error cometido por la red al hacer una predicción. El perceptrón se alimenta con una entrada de entrenamiento a la vez, y para cada una, realiza sus predicciones. Para cada neurona de salida que produce una predicción errónea, se refuerzan los pesos de conexión desde las entradas que habrían contribuido a la predicción correcta \citep{geron2022hands}. La regla se muestra en la Ecuación \ref{eq:perceptron_learning_rule}.
+
+\begin{equation}
+w_{i,j}^{(t+1)} = w_{i,j}^{(t)} + \eta (y_j - \hat{y_j}) x_i
+\label{eq:perceptron_learning_rule}
+\end{equation}
+
+En esta ecuación, $w_{i,j}^{(t+1)}$ es el peso de conexión actualizado entre la $i$-ésima neurona de entrada y la $j$-ésima neurona de salida, $w_{i,j}^{(t)}$ es el peso de conexión actual entre la $i$-ésima neurona de entrada y la $j$-ésima neurona de salida, $x_i$ es el valor de la $i$-ésima entrada de la instancia de entrenamiento actual, $\hat{y_j}$ es la salida de la $j$-ésima neurona de salida, $y_j$ es la salida objetivo de la $j$-ésima neurona de salida y $\eta$ es la tasa de aprendizaje \citep{geron2022hands}.
 
 
-METODOS DE OPTIMIZACIÓN, METODO DESCENSO DE GRADIENTE, OTROS MÉTODOS
+El límite de decisión de cada neurona de salida es lineal, por lo que los perceptrones son incapaces de aprender patrones complejos. Esto significa que solo pueden separar los datos si hay una línea recta (o un hiperplano en dimensiones superiores) que divida las distintas clases de datos. Sin embargo, si las instancias de entrenamiento son linealmente separables, Rosenblatt demostró que este algoritmo convergería a una solución, es decir, encontraría un conjunto de pesos que clasifique correctamente todas las instancias de entrenamiento \citep{geron2022hands}. Esto se conoce como el Teorema de Convergencia del Perceptrón.
 
 
 
+\subsection{El Perceptrón Multicapa y la Retropropagación}
+
+Un Perceptrón Multicapa (MLP) está compuesto por una capa de entrada, una o más capas ocultas, y una capa final llamada capa de salida. Todas las capas, excepto la capa de salida, incluyen una neurona de sesgo y están completamente conectadas a la siguiente capa \citep{geron2022hands}.
+
+Cuando una red neuronal artificial (ANN) contiene un conjunto profundo de capas ocultas\footnote{Se suele considerar más de dos capas oculatas como un conjunto profundo de capas ocultas}, se 
+\begin{minipage}{0.54\textwidth}
+llama red neuronal profunda (DNN). El campo del Aprendizaje Profundo estudia las DNNs, y más generalmente modelos que contienen conjuntos profundos de cálculos. Sin embargo, muchas personas hablan de Aprendizaje Profundo siempre que están involucradas redes neuronales.
+
+\bigskip
+
+David Rumelhart, Geoffrey Hinton y Ronald Williams publicaron un artículo revolucionario que introdujo el algoritmo de entrenamiento de retropropagación, que todavía se usa hoy en día. Consiste en un Descenso de Gradiente que utiliza una técnica eficiente para calcular los gradientes automáticamente. En solo dos etapas (una hacia adelante, una hacia atrás), el algoritmo de retropropagación puede determinar cómo se deben ajustar cada peso de conexión y cada término de sesgo para reducir el error. Para ello, calcula los gradientes del erro y a continuación, simplemente realiza un paso regular de Descenso de Gradiente, y todo el proceso se repite hasta que la red converge a la solución.
+
+\end{minipage}
+\begin{minipage}{0.05\textwidth}
+\textbf{ }
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+	\includegraphics[width=1.1\textwidth]{img/multicapa}
+	\captionof{figure}{Arquitectura de un Perceptrón Multicapa con tres entradas, dos capas ocultas de tres neuronas cada una y una neurona de salida (las neuronas de sesgo se muestran aquí, pero normalmente son implícitas).}
+	\label{fig:mlp_architecture}
+\end{minipage}
+
+El algoritmo maneja un mini-lote a la vez (batch size), y pasa por el conjunto completo de entrenamiento múltiples veces. Cada pasada se llama época (epoch). Cada mini-lote se pasa a la capa de entrada de la red, que lo envía a la primera capa oculta. El algoritmo luego calcula la salida de todas las neuronas en esta capa (para cada instancia en el mini-lote). El resultado se pasa a la siguiente capa, su salida se calcula y se pasa a la siguiente capa, y así sucesivamente hasta obtener la salida de la última capa, la capa de salida. Esta es la pasada hacia adelante: es exactamente como hacer predicciones, excepto que todos los resultados intermedios se preservan ya que son necesarios para la pasada hacia atrás. A continuación, el algoritmo mide el error de salida de la red (es decir, utiliza una función de pérdida que compara la salida deseada y la salida real de la red, y devuelve alguna medida del error). Luego, calcula cuánto contribuyó cada conexión de salida al error. Esto se hace analíticamente aplicando la regla de la cadena, lo que hace que este paso sea rápido y preciso. El algoritmo luego mide cuánto de estas contribuciones de error provienen de cada conexión en la capa inferior, nuevamente utilizando la regla de la cadena, trabajando hacia atrás hasta que el algoritmo llega a la capa de entrada. Como se explicó anteriormente, esta pasada inversa mide eficientemente el gradiente de error en todos los pesos de conexión en la red propagando el gradiente de error hacia atrás a través de la red (de ahí el nombre del algoritmo). Finalmente, el algoritmo realiza un paso de Descenso de Gradiente para ajustar todos los pesos de conexión en la red, utilizando los gradientes de error que acaba de calcular \citep{geron2022hands}.
+
+Este algoritmo es tan importante que vale la pena resumirlo nuevamente: para cada instancia de entrenamiento, el algoritmo de retropropagación primero hace una predicción (pasada hacia adelante) y mide el error, luego pasa por cada capa en reversa para medir la contribución del error de cada conexión (pasada hacia atrás), y finalmente ajusta los pesos de conexión para reducir el error (paso de Descenso de Gradiente).
+
+Es importante inicializar aleatoriamente todos los pesos de conexión de las capas ocultas, de lo contrario, el entrenamiento fallará. Por ejemplo, si inicializas todos los pesos y sesgos a cero, entonces todas las neuronas en una capa dada serán perfectamente idénticas, y por lo tanto la retropropagación las afectará de la misma manera, por lo que permanecerán idénticas. En otras palabras, a pesar de tener cientos de neuronas por capa, tu modelo actuará como si tuviera solo una neurona por capa: no será muy inteligente. Si en cambio inicializas aleatoriamente los pesos, rompes la simetría y permites que la retropropagación entrene un equipo diverso de neuronas \citep{geron2022hands}.
 
 
 
-
-
-
-\section{GENERALIZACIÓN}
-\section{COMO SE APRENDE}
 \section{Optimización del modelo} MEJOR CONEXIÓN DE INTRODUCCIÓN
 
 La optimización consiste en minimizar o maximizar una función $f(\mathbf{x})$ modificando $\mathbf{x}$. En general, la optimización hace referencia a una minimización, ya que la maximización es equivalente a la minimización de $-f(\mathbf{x})$. La función a minimizar se conoce como función objetivo, función de coste, función de pérdida o función de error. La función de pérdida calcula la discrepancia entre la salida de la red neuronal (predicción) y la etiqueta verdadera. Su objetivo es minimizar este error a lo largo del entrenamiento. A la función o grupo de funciones que se están minimizando se denominan \textit{loss functions}, y el valor mínimo se identifica mediante el símbolo $x* = \arg \min f(\mathbf{x})$ \citep{pajares2021aprendizaje}. 
@@ -328,173 +238,6 @@ donde \(\beta_1\) y \(\beta_2\) son factores de decaimiento de las medias, \(\et
 
 
 
-\begin{comment}
-\section{Métodos de Optimización} NO
-
-
-La optimización se refiere a la tarea de minimizar o maximizar una función $f(x)$ modificando $x$. En general, la optimización alude a una minimización, ya que la maximización es equivalente a la minimización de $-f(x)$. La función a minimizar (o maximizar) se conoce como función objetivo o criterio, que se utiliza para evaluar una solución candidata, por ejemplo, los pesos en una red neuronal. Cuando se está minimizando, según Goodfellow y col. (2016), se le denomina también función de coste (\textit{cost function}), función de pérdida (\textit{loss function}), o función de error (\textit{error function}). La función de pérdida es necesaria para poder disponer de un error que retropropagar durante la etapa de aprendizaje. Así pues, la función o grupo de funciones que se están minimizando se denominan \textit{loss functions}, y el valor que obtiene la minimización o maximización se identifica con el símbolo $\hat{x} = \arg \min f(x)$.
-
-Conviene destacar que la función de pérdida debe ser diferenciable, y en este sentido, durante el entrenamiento, mediante dicha función se compara la salida de la red neuronal (predicción) con la etiqueta del objetivo verdadera (\textit{ground-truth}). Según los distintos modelos de red, se definen diferentes funciones de pérdida. En la red neuronal se obtienen todos los cálculos realizados por cada una de las capas. Por tanto, si cada uno de estos cálculos es diferenciable, entonces la función de pérdida también será diferenciable. No obstante, a veces se utilizan funciones de activación, tales como ReLU, que no son diferenciables; en estos casos es necesario aplicar alguna aproximación derivativa para poder utilizar la función en los procesos de retropropagación, mediante gradiente descendente, como se verá posteriormente.
-
-Una función de pérdida es una medida de cuán bueno es un modelo de predicción en términos de poder aproximarse lo más posible (predecir) al resultado esperado. Uno de los métodos más utilizados para encontrar el punto mínimo de una función es el denominado \textit{descenso de gradiente}. Se puede pensar en la función de pérdida como una montaña ondulada y el descenso en pendiente es como deslizarse por la montaña para llegar al punto más bajo; de aquí surge el concepto de optimización mediante el gradiente (\textit{gradient-based optimization}). Cuando se calcula la pérdida, se debe mejorar el modelo. Esto se hace propagando el error hacia atrás a través de la estructura del modelo, de forma que en las redes neuronales son los pesos del modelo los que terminan ajustándose. Esto cierra el ciclo de aprendizaje entre el envío de los datos hacia adelante, la generación de predicciones y la mejora durante la propagación hacia atrás. Al adaptar los pesos, el modelo probablemente mejore (a veces mucho, a veces ligeramente) y, por lo tanto, se dice que se ha realizado el aprendizaje.
-
-Resulta bien conocido que la derivada de una función en un punto $x$ proporciona la pendiente de la función en dicho punto. La derivada permite escalar un pequeño cambio en la entrada para obtener el correspondiente cambio en la salida: $f(x+\delta) = f(x) + \delta f'(x)$. La derivada es, por tanto, útil para minimizar una función porque indica cómo cambiar $x$ para conseguir una pequeña mejora en la salida $y$. Por ejemplo, se sabe que $f(x - \delta \cdot \text{sign}(f'(x)))$ es menor que $f(x)$ para un $\delta$ suficientemente pequeño. Se puede entonces disminuir $f(x)$ moviéndose en pequeños pasos con el signo opuesto de la derivada. Esto se conoce como \textit{gradiente descendente} (\textit{gradient descent}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{gradiente_descendente.png}
-    \caption{Gradiente descendente}
-    \label{fig:gradiente}
-\end{figure}
-
-Para $x < 0$, $f'(x) < 0$ y $f$ disminuye hacia la derecha. Para $x > 0$, $f'(x) > 0$ y $f$ disminuye hacia la izquierda. Para $x = 0$, el gradiente se detiene puesto que $f'(x) = 0$.
-
-Cuando $f'(x) = 0$, la derivada no proporciona información sobre la dirección en la que hay que moverse, de esta forma, los puntos con $f'(x) = 0$ se conocen como puntos críticos o puntos estacionarios. Un mínimo local es un punto donde $f(x)$ es menor que todos los puntos vecinos, de modo que no es posible disminuir $f(x)$ mediante pasos infinitesimales. Un máximo local es un punto donde $f(x)$ es mayor que todos los puntos vecinos, de modo que no es posible incrementar $f(x)$ mediante pasos infinitesimales. Otros puntos críticos denominados puntos de inflexión son los que tienen vecinos que son mayores y menores que el punto mismo, pero no son ni máximos ni mínimos.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{puntos_criticos.png}
-    \caption{Puntos críticos}
-    \label{fig:puntos_criticos}
-\end{figure}
-
-Un punto que obtiene el valor más bajo de $f(x)$ es un mínimo global. Puede haber solo un mínimo global o múltiples mínimos globales de la función. También es posible que haya mínimos locales que no sean globalmente óptimos. En el contexto del aprendizaje profundo, se optimizan las funciones que pueden tener muchas limitaciones locales que no son óptimas y muchos puntos de inflexión rodeados de regiones muy planas. Todo esto hace que la optimización sea difícil, especialmente cuando la entrada a la función es multidimensional.
-
-A menudo es necesario minimizar funciones que tienen múltiples ($n$) entradas: $f: \mathbb{R}^n \to \mathbb{R}$, con una única salida (escalar). Con múltiples entradas, se debe utilizar el concepto de derivadas parciales $\frac{\partial f(x)}{\partial x_i}$, que mide cómo cambia $f$ según aumenta la variable $x_i$ en el punto $x$. El gradiente generaliza la noción de derivada al caso en que la derivada es con respecto a un vector: el gradiente de $f$ es el vector que contiene todas las derivadas parciales, denotado por $\nabla f(x)$. El elemento $i$-ésimo del gradiente es la derivada parcial de $f$ con respecto a $x_i$. En múltiples dimensiones, los puntos críticos son puntos en los que cada elemento del gradiente es igual a cero. La derivada direccional en la dirección $u$ (vector unitario) es la pendiente de la función $f$ en esa dirección $u$. En otras palabras, la derivada direccional es la derivada de la función $f(x + \alpha u)$ con respecto a $\alpha$, evaluada en $\alpha = 0$. Usando la regla de la cadena, se determina que $f(x + \alpha u)$ evalúa $u \cdot \nabla f(x)$ cuando $\alpha = 0$.
-
-Para minimizar $f$, es deseable encontrar la dirección en la que $f$ disminuye de forma más rápida, lo que se puede hacer usando la derivada direccional:
-\[
-\min_u \nabla f(x) \cdot u = \min_{\theta} \|\nabla f(x)\| \cos(\theta)
-\]
-donde $\theta$ es el ángulo entre $u$ y el gradiente. Sustituyendo $\|u\| = 1$ e ignorando factores que no dependen de $\theta$, se concreta en minimizar $\min_{u} \cos \theta$. Esto se consigue cuando $u$ apunta en la dirección opuesta del gradiente. En otras palabras, el gradiente apunta directamente hacia arriba. Se puede hacer decrecer $f$ moviéndose en la dirección opuesta del gradiente, lo que se conoce como método del gradiente descendente (\textit{steepest descent} o \textit{gradient descent}), que propone un nuevo punto,
-\[
-x' = x - \eta \nabla f(x)
-\]
-donde $\eta$ es la razón de aprendizaje, que es un valor escalar que determina la dimensión del paso. Se puede elegir de varias formas, una de ellas es fijarlo a un valor pequeño constante. Algunas veces se puede determinar la dimensión del paso que hace desaparecer la derivada direccional. Otra aproximación consiste en evaluar $f(x - \eta \nabla f(x))$ para varios valores de $\eta$ y elegir el que proporciona el valor de la función objetivo más pequeño. Esta estrategia se denomina \textit{búsqueda en línea} (\textit{line search}).
-
-El gradiente descendente converge cuando cada elemento del gradiente es cero (o, en la práctica, muy próximo a cero). En algunos casos, se puede evitar ejecutar este algoritmo iterativo y simplemente saltar al punto en el que el gradiente es igual a cero. En muchas situaciones es posible resolver analíticamente la ecuación $\nabla f(x) = 0$. En la optimización convexa, la optimización de funciones cóncavas y diferenciables que tienen una única solución óptima global, se puede obtener una solución cerrada sin necesidad de recurrir a métodos iterativos, como el gradiente descendente. Sin embargo, las redes neuronales, así como otros modelos que pueden tener múltiples óptimos locales y limitaciones no convexas, se enfrentan a mayores desafíos en este aspecto.
-
-
-
-\subsection{Gradiente Descendente Estocástico}
-
-En el ámbito del aprendizaje automático, el problema del Gradiente Descendente Estocástico (SGD, Stochastic Gradient Descent) consiste en minimizar una función objetivo que tiene la forma (Bishop, 2006; Ruder, 2017),
-
-\begin{equation}
-J(w) = \sum_{i=1}^{n} L(y_i, f(x_i; w)),
-\end{equation}
-
-donde el parámetro \( w \), que minimiza \( J(w) \), debe estimarse. \( J_i \) se asocia con la i-ésima observación en el conjunto de datos utilizados para el entrenamiento (ajuste). El término estocástico proviene del hecho relativo a la selección de las muestras (observaciones) para el ajuste de forma aleatoria, que incluso se pueden seleccionar por lotes en cada iteración. \( J(w) \) es el valor de la función de pérdida (loss function) en el i-ésimo ejemplo y \( J(w) \) es el riesgo empírico.
-
-El gradiente descendente se usa para minimizar la siguiente función de forma iterativa, con iteraciones \( t \). En el Anexo se proporciona un mayor nivel de detalle.
-
-\begin{equation}
-w(t+1) = w(t) - \eta \nabla J(w(t)),
-\end{equation}
-
-donde \( \eta \) es la tasa de aprendizaje. De esta forma iterativa, el método recorre el conjunto de entrenamiento y realiza la actualización indicada anteriormente para cada muestra de entrenamiento. Según la ecuación (2.5), gradientes negativos incrementan el peso y viceversa, siempre con el fin de minimizar la función objetivo. Se pueden realizar varios pasos sobre el conjunto de entrenamiento hasta que el algoritmo converja. Si se hace esto, los datos se pueden seleccionar aleatoriamente en cada paso para evitar ciclos; es lo que se conoce como criterio estocástico. Estas muestras así seleccionadas constituyen lo que se denomina un lote (batch). Las implementaciones típicas pueden usar una razón de aprendizaje adaptativa para que el algoritmo converja.
-
-En pseudocódigo, el método del gradiente descendente estocástico es como sigue:
-
-\begin{enumerate}
-    \item Elegir un vector inicial de parámetros \( w \) (puede ser aleatoriamente) y una tasa de aprendizaje \( \eta \).
-    \item Repetir hasta que se consiga un mínimo aproximado:
-    \begin{enumerate}
-        \item Seleccionar aleatoriamente ejemplos en el conjunto de entrenamiento.
-        \item Para \( i = 1, 2, \ldots, n \), hacer:
-        \begin{equation}
-        w(t+1) = w(t) - \eta \nabla J_i(w).
-        \end{equation}
-    \end{enumerate}
-\end{enumerate}
-
-\subsection{Ejemplo}
-
-Supóngase que se quiere ajustar una línea recta \( y = w_1 + w_2 x \) a partir de un conjunto de observaciones \( (x_1, x_2, \ldots, x_n) \) con sus correspondientes respuestas estimadas \( (y_1, y_2, \ldots, y_n) \) utilizando mínimos cuadrados. La función objetivo a minimizar es:
-
-\begin{equation}
-J(w) = \sum_{i=1}^{n} (w_1 + w_2 x_i - y_i)^2.
-\end{equation}
-
-El punto 2.2 del pseudocódigo resulta en:
-
-\begin{equation}
-
-w_1(t+1) = w_1(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i),
-\end{equation}
-
-\begin{equation}
-w_2(t+1) = w_2(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i)x_i.
-\end{equation}
-
-En cada iteración (también llamada actualización), solo se evalúa el gradiente en un único punto \( x \) en lugar de evaluar en el conjunto de todas las muestras. La diferencia clave en comparación con el gradiente descendente estándar es que solo se utiliza un dato del total del conjunto de datos disponible para obtener la actualización, y el dato se selecciona de forma aleatoria en cada paso.
-
-Existen diversas variantes, extensiones y mejoras del algoritmo. Resulta de particular interés el hecho de fijar la razón de aprendizaje, ya que valores altos tienden hacia la divergencia de los datos, mientras que valores demasiado pequeños hacen que la convergencia sea lenta. Una forma de abordar este problema es que dicha razón sea variable disminuyendo a medida que se incorporan nuevas muestras (mayor aprendizaje). Esto se consigue haciéndola dependiente del número de datos o iteraciones. Una de tales extensiones es la del método del momentum (Rumelhart y col., 1986; Murphy 2012). Este método recuerda la actualización \( \Delta w \) en cada iteración, determinando la siguiente actualización como una combinación lineal del gradiente y la actualización previa (Sutskever y col., 2013):
-
-\begin{equation}
-\Delta w(t) = \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1)),
-\end{equation}
-
-\begin{equation}
-w(t) = w(t-1) + \Delta w(t).
-\end{equation}
-
-En resumen, la dimensión del lote expresa el número de muestras procesadas antes de actualizar los pesos de la red. El número de épocas (epochs) es el número de pases completos de todo el conjunto de muestras de entrenamiento \( N \). Se puede establecer que la razón de aprendizaje varíe cada cierto número de épocas, por ejemplo, cada 5 épocas disminuye un 10\% con respecto al valor inicial. Se puede ejecutar el algoritmo todo el tiempo que se desee e incluso detenerlo utilizando otros criterios además de un número fijo de épocas, tal como que el error del modelo o que la función objetivo no cambia con el número de iteraciones. En estos casos se dice que se ha alcanzado la convergencia y los criterios así establecidos se denominan de convergencia.
-
-A modo de ejemplo, supóngase un conjunto de datos con 400 muestras, de forma que se define la dimensión del lote en 10 con 100 épocas. Esto significa que el conjunto de datos se divide en 40 lotes, cada lote con 10 muestras. La actualización de los pesos del modelo se realizará tras el paso de cada lote con 10 muestras. Así, una época involucra 40 lotes, es decir, 40 actualizaciones del modelo.
-
-
-
-
-Esto se consigue haciéndola dependiente del número de datos o iteraciones. Una de tales extensiones es la del método del \textit{momentum} (Rumelhart y col., 1986; Murphy, 2012). Este método recuerda la actualización $\Delta w$ en cada iteración, determinando la siguiente actualización como una combinación lineal del gradiente y la actualización previa (Sutskever y col., 2013):
-
-\[
-\Delta w(t) = \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1))
-\]
-
-La anterior expresión conduce a:
-
-\[
-w(t) = w(t-1) + \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1))
-\]
-
-donde $\eta > 0$ es la razón de aprendizaje y $\alpha \in [0,1]$ es la constante de momento que controla la velocidad de actualización de $\Delta w(t-1)$. El vector de parámetros, $w$, que minimiza $J(w)$ es realmente el que se estima en el proceso de optimización. El nombre de \textit{momentum} proviene del concepto de momento en física, de forma que el vector de pesos $w$, visto como una partícula viajando a través del espacio de parámetros, adquiere una aceleración a partir de la fuerza, tendiendo a mantenerse en la misma dirección, evitando así oscilaciones.
-
-En los procesos de optimización de redes neuronales, si los gradientes incrementan su magnitud exponencialmente, por ejemplo, porque los pesos toman valores altos afectando a los resultados de las multiplicaciones, el entrenamiento se hace inestable y puede divergir en unas pocas iteraciones. Esto es lo que se conoce como \textit{explosión del gradiente}. Pascanu y col. (2013) proponen el \textit{recorte de gradiente} (\textit{gradient clipping}), que ayuda a prevenir dicha explosión estabilizando el entrenamiento ante la presencia de \textit{outliers}. Para ello se propone considerar un determinado umbral $T$ de forma que si:
-
-\[
-\|\nabla J(w)\| > T \text{ entonces } \nabla J(w) = T \frac{\nabla J(w)}{\|\nabla J(w)\|}
-\]
-
-De forma similar, si los valores del gradiente son muy pequeños también por influencia de valores de pesos pequeños, el problema se conoce como \textit{desaparición del gradiente}. En la literatura se han investigado diversas aproximaciones en aras de la mejora de la convergencia, por ejemplo, mediante el promediado de trayectorias (Polyak y Juditsky, 1992).
-
-Durante el proceso de actualización de los pesos de la red, mediante el cálculo del error, existen básicamente tres tipos de estrategias. En todas ellas, se dispone de $N$ muestras de entrenamiento, la diferencia estriba en cómo se realiza la actualización (Kim, 2017; Brownlee, 2018). El proceso de optimización es iterativo, lo que quiere decir que cuando se busca el mínimo, se realizan una serie de pasos, siendo el objetivo de cada paso ajustar lo mejor posible los pesos. Cada paso consiste en utilizar el modelo con los parámetros actuales, realizar una predicción sobre algunas muestras, comparar las predicciones con las muestras, calcular el error y propagar el error hacia atrás para actualizar de nuevo los pesos del modelo.
-
-Una muestra es un dato simple, también llamada instancia, observación, vector de entrada o vector de características, que se suministra al algoritmo junto con una salida que se utiliza para comparar el error con respecto a la salida que se obtiene con ella y la esperada. Este planteamiento se engloba en lo que se denomina \textit{aprendizaje supervisado}. Un conjunto de muestras de entrenamiento engloba un cierto número, $n$, de muestras.
-
-Como se ha indicado anteriormente, existe el concepto de \textit{lote} (\textit{batch}) que define el número de muestras utilizadas antes de llevar a cabo una actualización de los pesos de la red en el modelo. Considérese un lote, constando de una o más muestras dentro de un bucle y haciendo predicciones precisamente con esas muestras del lote. Una vez que han pasado todas las muestras del lote, se realizan las predicciones y se comparan con las variables de salida esperadas para obtener el error correspondiente. Con este error, el algoritmo de optimización actualiza los pesos que definen el modelo. Esto significa que hasta que no han pasado todas las muestras del lote no se actualizan dichos pesos. Un conjunto de datos de entrenamiento se puede dividir en uno o más lotes.
-
-Cuando todas las muestras de entrenamiento se utilizan para crear un lote, el algoritmo de aprendizaje se denomina \textit{descenso del gradiente por lotes}. Cuando el lote es del tamaño de una muestra, el algoritmo de aprendizaje se denomina \textit{descenso de gradiente estocástico} (\textit{SGD}) o de otro tipo. Cuando el tamaño del lote posee más de una muestra y es menor que el tamaño del conjunto de datos de entrenamiento, el algoritmo de aprendizaje se denomina \textit{descenso de gradiente de mini-lote} (\textit{mini-batch}). Dimensiones habituales de los mini-lotes son 32, 64 y 128, lo que suele derivar en el hecho de que el último lote a veces tiene un tamaño menor que el resto, al no coincidir el número de muestras totales con esas dimensiones, cuando se reparten las muestras en los lotes. A veces se eliminan algunas muestras para que esto no ocurra.
-
-Por otra parte, existe otro parámetro conocido como \textit{época} (\textit{epoch}), que define el número de veces que el conjunto total de muestras son procesadas por el algoritmo. Esto significa que cada muestra del conjunto $N$ ha tenido una oportunidad de actualizar los pesos en cada \textit{epoch}. Una \textit{epoch} puede tener uno o más lotes. Para mayor claridad, se puede pensar en un bucle sobre el número de \textit{epochs} donde cada iteración o ciclo opera sobre $N$. Dentro de esta iteración, existe otra iteración anidada que actúa sobre cada lote de muestras, teniendo en cuenta que un lote tiene el número especificado de muestras según el tamaño del lote. El número de \textit{epochs} depende del tipo de datos, siendo a veces alto, para garantizar una eficiencia suficiente. Se pueden encontrar aplicaciones con 10, 100, 1000 e incluso más, y naturalmente también con menos. Además, es común representar gráficamente, sobre un sistema de ejes bidimensional (x-y), el proceso de aprendizaje mostrando las \textit{epochs} sobre el eje horizontal $x$ junto con las iteraciones y el error del modelo en el eje $y$. Estas representaciones ayudan a diagnosticar la evolución del aprendizaje, y cómo el modelo se ajusta adecuadamente o no al conjunto de datos de entrenamiento.
-
-En resumen, la dimensión del lote expresa el número de muestras procesadas antes de actualizar los pesos de la red. El número de \textit{epochs} es el número de pases completos de todo el conjunto de muestras de entrenamiento $N$. Se puede establecer que la razón de aprendizaje varíe cada cierto número de \textit{epochs}, por ejemplo, cada 5 \textit{epochs} disminuya un 10\% con respecto al valor inicial. Se puede ejecutar el algoritmo todo el tiempo que se desee e incluso detenerlo utilizando otros criterios además de un número fijo de \textit{epochs}, tal como que el error del modelo o que la función objetivo no cambia con el número de iteraciones. En estos casos se dice que se ha alcanzado la convergencia y los criterios así establecidos se denominan de convergencia. A modo de ejemplo, supóngase un conjunto de datos con 400 muestras, de forma que se define la dimensión del lote en 10 con 100 \textit{epochs}. Esto significa que el conjunto de datos se divide en 40 lotes, cada lote con 10 muestras. La actualización de los pesos del modelo se realizará tras el paso de cada lote con 10 muestras. Así, una \textit{epoch} involucra 40 lotes, es decir, 40 actualizaciones del modelo.
-
-A veces ocurre que el conjunto de muestras de entrenamiento no es divisible por un determinado número de lotes, en este caso cabe la posibilidad de considerar el último lote con menos muestras que los otros, como se ha indicado previamente, o bien eliminar algunas muestras del conjunto de datos o también cambiar el tamaño del lote. Supóngase que se tiene un conjunto de muestras de entrenamiento de 208, y se establece la dimensión del mini-lote en 10 con 4 \textit{epochs}, esto significa que el paso de las 208 muestras determina una \textit{epoch}. El número de mini-lotes se obtiene calculando el resultado de la división $208/10 = 20.8$, lo que significa que se formarán 20 mini-lotes con 10 muestras cada uno, más uno adicional con 8 muestras. En total habrá 21 mini-lotes. Cada uno de estos mini-lotes define una iteración, por lo que en cada \textit{epoch} se realizan 21 iteraciones, de forma que tras cada una de ellas se actualizan los pesos.
-
-Considerando la ecuación (2.9) simplificada $\Delta w = -\eta \nabla J_i(w(t-1))$ y un conjunto con $N$ muestras de entrenamiento, cuando no se definen mini-lotes, o lo que es lo mismo, la dimensión del mini-lote es 1, entonces, cada muestra actualiza los pesos según esta ecuación. Por el contrario, si las $N$ muestras forman un lote, entonces la actualización de los pesos se realiza una única vez, promediando los pesos obtenidos tras el paso de cada muestra como sigue:
-
-\[
-\Delta w = \frac{1}{N} \sum_{k=1}^{N} \Delta w(k)
-\]
-
-Si se establecen mini-lotes de dimensión $m$, la actualización de los pesos también se lleva a cabo de la misma manera que en el caso anterior, si bien promediando con $m$ en lugar de $N$ y realizando tantas actualizaciones por \textit{epoch} como número de mini-lotes existan.
-
-
-
-
-
-\end{comment}
 
 
 \section{Función de activación.}
@@ -1019,7 +762,7 @@ El problema de esta técnica radica en que las distribuciones de los datos puede
 	\centering
     \includegraphics[width=0.6\textwidth]{img/kfold.png}
     \captionof{figure}{Validación cruzada k-fold.}
-    \label{img: pr_vs_threshold}
+    \label{img: k-fold}
 \end{figure}
 
 Al final de la validación cruzada \textit{k-fold}, se recopilan $k$ valores de desempeño (por ejemplo, precisión en clasificación) que se pueden promediar para obtener una estimación más robusta del rendimiento del modelo. La validación cruzada no solo proporciona una evaluación más precisa del modelo, sino que también ayuda a detectar variaciones en el desempeño debido a diferentes particiones de datos, ofreciendo así una visión más completa de la capacidad del modelo para generalizar \citep{muller2016introduction}. Aunque la validación cruzada ofrece bastantes beneficios, su uso es menos frecuente en redes neuronales debido a los altos costos computacionales asociados \citep{geron2022hands}. En su defecto, es más frecuente usar \lstinline|train_test_split()|.
@@ -1155,6 +898,7 @@ Mini tabla resumen en Deep Cybersecurity: A Comprehensive Overview from Neural N
 \subsection{Autoencoder}
 
 Los autoencoders son una clase de redes neuronales artificiales utilizadas en aprendizaje no supervisado para aprender representaciones eficientes de los datos. Su funcionamiento consiste en codificar la entrada en una representación comprimida y significativa, y luego decodificarla de manera que la reconstrucción sea lo más similar posible a la entrada original \citep{lopes2022effective}. La arquitectura básica de un autoencoder consta de tres partes: el encoder, el cuello de bottela y el decoder (Figura \ref{fig:AE_architecture}). 
+
 
 \begin{figure}[h]
     \centering
@@ -1363,18 +1107,6 @@ Estas dos últimas capas son especialmente utilizadas en los autoencoderes convo
 Por último están las capas totalmente conectadas (\textit{fully connected}), que realizan la clasificación sobre la salida generada por las capas de convolución y pooling. Como el input de una capa densa debe ser un vector, primero se debe aplanar la salida de la última capa para poder utilizar después esta capa. Cada una de sus neuronas está conectada a todas las de la capa anterior, estableciendo una red densa de conexiones. Este tipo de neuronas suele ir seguido de una capa Dropout para mejorar la generalización del modelo. Este diseño permite a las CNN manejar datos complejos y variados, aprovechando la jerarquía de características aprendidas durante el entrenamiento. Este tipo de capa suele ir seguido de una capa de Dropout que mejora la capacidad de generalización del modelo al prevenir el sobreajuste, un problema común en el ámbito del aprendizaje profundo \citep{hossain2019classification}.
 
 
-\begin{comment}
-%Adicionalmente, las CNN pueden utilizar técnicas de regularización que ayudan a reducir el sobreajuste. Una de las técnicas más exitosas se llama \textit{dropout} \citep{srivastava2014dropout}. Al entrenar un modelo utilizando \textit{dropout}, durante cada iteración de entrenamiento, un porcentaje especificado de nodos en una capa dada y sus conexiones entrantes y salientes se eliminan aleatoriamente. Incluir \textit{dropout} típicamente mejora la precisión y la capacidad de generalización de un modelo porque aumenta la probabilidad de que un nodo sea útil.
-
-\subsubsection{Aplicaciones y Éxitos}
-
-Los usos de las CNN son significativamente variados. El mayor éxito se ha logrado en tareas de visión por computadora, como la detección y reconocimiento de objetos y escenas \citep{krizhevsky2012imagenet}. Las aplicaciones van desde la biología \citep{ronneberger2015u} hasta el reconocimiento facial \citep{parkhi2015deep}. El mejor ejemplo del éxito de las CNN tuvo lugar en 2012 en la competencia ImageNet, donde una CNN superó el rendimiento de otros métodos y luego la precisión humana en 2015 mediante el uso de GPUs, ReLUs, \textit{dropout} y la generación de imágenes adicionales \citep{he2015delving}. Además, las CNN se han utilizado con éxito en modelos de lenguaje para la detección de fonemas \citep{hinton2012deep}, reconocimiento de letras \citep{lecun1998gradient}, reconocimiento de voz \citep{graves2013speech} y construcción de modelos de lenguaje \citep{collobert2008unified}.
-
-
-
-Una de las redes neuronales más importantes y más utilizadas en el campo de la ciberseguridad son la \acrfull{cnn}. Las CNN tienen su origen en el estudio de la corteza visual del cerebro y han sido utilizadas en el reconocimiento de imágenes desde la década de los 80. Actualmente, debido al aumento en la capacidad computacional, la disponibilidad de grandes volúmenes de datos de entrenamiento y las técnicas avanzadas de redes profundas, han permitido que las CNN alcancen un rendimiento excepcional en tareas visuales complejas. Estas redes son la base de servicios como la búsqueda de imágenes o los vehículos autónomos. Además, las CNN no se limitan únicamente a la percepción visual, también han demostrado ser efectivas en tareas como el reconocimiento de voz y el procesamiento del lenguaje natural \citep{geron2022hands}. No obstante, nos enfocaremos únicamente en sus aplicaciones visuales.
-
-\end{comment}
 
 \subsection{Red Neuronal Recurrente}
 \subsubsection{Restricted Boltzmann Machine}
@@ -1452,7 +1184,77 @@ Otro paquete que se va a utilizar durante los experimentos y que Scikit-Learn ut
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{comment}
+
+
+
+
+
+\begin{itemize}
+	\item Supervisado y no supervisado
+	\item one-hot encoder
+	\item validacion cruzada
+	\item dropout, l2
+	\item optiizadores
+	\item arquitectuas
+	\item metricas
+\end{itemize}
+en la pagina 458 de hands aparece la arquitectura mía
+
+
+\section{Revisión teórica} \label{Subsec: 3_1}
+Puedo introducir los tipos de funciones de activavion. Esta bien explicado en el TFG wuolah o en el articulo de KDD cup 199 de DNN network intrusion.
+Puedo añadir overfitting y underfitting.
+lo que es aprendizaje supervisado y no supervisao
+Partes de una neurona y como trabaja(bias, pesos...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{perdida}
@@ -1703,9 +1505,337 @@ La Figura \ref{fig:mish} muestra la representación de la función Mish.
     \caption{Función Mish.}
     \label{fig:mish}
 \end{figure}
-\end{comment}
 
-\begin{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Las redes neuronales son un subcampo de la inteligencia artificial (IA) y el aprendizaje automático (machine learning) que se inspira en el funcionamiento del cerebro humano para procesar información y aprender de los datos. Estas redes consisten en capas de nodos (también llamados neuronas) que están interconectados y trabajan en conjunto para realizar tareas específicas, como la clasificación, la regresión y el reconocimiento de patrones.
+
+\section{Historia y Desarrollo}
+
+El concepto de redes neuronales fue introducido por Warren McCulloch y Walter Pitts en 1943, quienes propusieron un modelo matemático de una neurona artificial. Sin embargo, fue en los años 80 y 90 cuando el campo experimentó un resurgimiento significativo, gracias al desarrollo del algoritmo de retropropagación (backpropagation) por Geoffrey Hinton y sus colaboradores. Este algoritmo permitió entrenar redes neuronales de múltiples capas, conocidas como redes neuronales profundas, lo que llevó a avances sustanciales en la capacidad de las máquinas para aprender de los datos.
+
+\section{Estructura de una Red Neuronal}
+
+Una red neuronal típica se compone de tres tipos de capas:
+
+\begin{itemize}
+    \item \textbf{Capa de entrada:} Recibe la información inicial y la pasa a la siguiente capa.
+    \item \textbf{Capas ocultas:} Procesan la información a través de múltiples neuronas, aplicando funciones de activación para introducir no linealidades.
+    \item \textbf{Capa de salida:} Produce la salida final de la red, que puede ser una clasificación, una estimación o cualquier otra forma de respuesta.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{neural_network_structure.png}
+    \caption{Estructura básica de una red neuronal.}
+    \label{fig:neural_network_structure}
+\end{figure}
+
+\section{Algoritmo de Retropropagación}
+
+El algoritmo de retropropagación es un método para entrenar redes neuronales ajustando los pesos de las conexiones en función de la diferencia entre la salida esperada y la obtenida. Este proceso se lleva a cabo en varias etapas:
+
+\begin{enumerate}
+    \item \textbf{Propagación hacia adelante:} Los datos de entrada se pasan a través de la red para calcular la salida.
+    \item \textbf{Cálculo del error:} Se mide la diferencia entre la salida calculada y la esperada.
+    \item \textbf{Propagación hacia atrás:} Se ajustan los pesos de la red en función del error calculado, distribuyendo la corrección de manera inversa desde la salida hacia las capas anteriores.
+\end{enumerate}
+
+\section{Funciones de Activación}
+
+Las funciones de activación son fundamentales en las redes neuronales porque introducen no linealidades, permitiendo a la red aprender patrones complejos. Algunas de las funciones de activación más comunes son:
+
+\begin{itemize}
+    \item \textbf{Sigmoide:} Mapea las salidas a un rango entre 0 y 1.
+    \item \textbf{ReLU (Rectified Linear Unit):} Define una función de activación que devuelve 0 si la entrada es negativa, y el valor de la entrada si es positiva.
+    \item \textbf{Tanh:} Similar a la sigmoide, pero mapea las salidas en un rango entre -1 y 1.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{activation_functions.png}
+    \caption{Ejemplos de funciones de activación comunes.}
+    \label{fig:activation_functions}
+\end{figure}
+
+\section{Redes Neuronales Profundas}
+
+Las redes neuronales profundas (Deep Neural Networks, DNN) son un tipo de red neuronal que tiene múltiples capas ocultas entre la capa de entrada y la capa de salida. La profundidad de estas redes les permite aprender características complejas a diferentes niveles de abstracción. Han demostrado un rendimiento excepcional en tareas como el reconocimiento de voz, la visión por computadora y la traducción automática.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{deep_neural_network.png}
+    \caption{Estructura de una red neuronal profunda.}
+    \label{fig:deep_neural_network}
+\end{figure}
+
+\section{Aplicaciones de las Redes Neuronales}
+
+Las redes neuronales tienen una amplia gama de aplicaciones en diversos campos, incluyendo:
+
+\begin{itemize}
+    \item \textbf{Visión por Computadora:} Utilizadas para tareas como la clasificación de imágenes, la detección de objetos y la segmentación de imágenes.
+    \item \textbf{Procesamiento del Lenguaje Natural (NLP):} Empleadas en la traducción automática, la generación de texto y el análisis de sentimientos.
+    \item \textbf{Reconocimiento de Voz:} Implementadas en sistemas de reconocimiento y síntesis de voz.
+    \item \textbf{Finanzas:} Utilizadas para la predicción de precios de acciones y la detección de fraudes.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{nn_applications.png}
+    \caption{Áreas de aplicación de las redes neuronales.}
+    \label{fig:nn_applications}
+\end{figure}
+
+\section{Desafíos y Tendencias Futuras}
+
+A pesar de los éxitos de las redes neuronales, existen desafíos que todavía deben ser abordados, como la interpretación de modelos, el requerimiento de grandes cantidades de datos para el entrenamiento y el consumo de recursos computacionales. Sin embargo, el campo está en constante evolución, con investigaciones en áreas como las redes neuronales convolucionales (CNN), las redes neuronales recurrentes (RNN) y los modelos generativos, que prometen avances significativos en el futuro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Métodos de Optimización} NO
+
+
+La optimización se refiere a la tarea de minimizar o maximizar una función $f(x)$ modificando $x$. En general, la optimización alude a una minimización, ya que la maximización es equivalente a la minimización de $-f(x)$. La función a minimizar (o maximizar) se conoce como función objetivo o criterio, que se utiliza para evaluar una solución candidata, por ejemplo, los pesos en una red neuronal. Cuando se está minimizando, según Goodfellow y col. (2016), se le denomina también función de coste (\textit{cost function}), función de pérdida (\textit{loss function}), o función de error (\textit{error function}). La función de pérdida es necesaria para poder disponer de un error que retropropagar durante la etapa de aprendizaje. Así pues, la función o grupo de funciones que se están minimizando se denominan \textit{loss functions}, y el valor que obtiene la minimización o maximización se identifica con el símbolo $\hat{x} = \arg \min f(x)$.
+
+Conviene destacar que la función de pérdida debe ser diferenciable, y en este sentido, durante el entrenamiento, mediante dicha función se compara la salida de la red neuronal (predicción) con la etiqueta del objetivo verdadera (\textit{ground-truth}). Según los distintos modelos de red, se definen diferentes funciones de pérdida. En la red neuronal se obtienen todos los cálculos realizados por cada una de las capas. Por tanto, si cada uno de estos cálculos es diferenciable, entonces la función de pérdida también será diferenciable. No obstante, a veces se utilizan funciones de activación, tales como ReLU, que no son diferenciables; en estos casos es necesario aplicar alguna aproximación derivativa para poder utilizar la función en los procesos de retropropagación, mediante gradiente descendente, como se verá posteriormente.
+
+Una función de pérdida es una medida de cuán bueno es un modelo de predicción en términos de poder aproximarse lo más posible (predecir) al resultado esperado. Uno de los métodos más utilizados para encontrar el punto mínimo de una función es el denominado \textit{descenso de gradiente}. Se puede pensar en la función de pérdida como una montaña ondulada y el descenso en pendiente es como deslizarse por la montaña para llegar al punto más bajo; de aquí surge el concepto de optimización mediante el gradiente (\textit{gradient-based optimization}). Cuando se calcula la pérdida, se debe mejorar el modelo. Esto se hace propagando el error hacia atrás a través de la estructura del modelo, de forma que en las redes neuronales son los pesos del modelo los que terminan ajustándose. Esto cierra el ciclo de aprendizaje entre el envío de los datos hacia adelante, la generación de predicciones y la mejora durante la propagación hacia atrás. Al adaptar los pesos, el modelo probablemente mejore (a veces mucho, a veces ligeramente) y, por lo tanto, se dice que se ha realizado el aprendizaje.
+
+Resulta bien conocido que la derivada de una función en un punto $x$ proporciona la pendiente de la función en dicho punto. La derivada permite escalar un pequeño cambio en la entrada para obtener el correspondiente cambio en la salida: $f(x+\delta) = f(x) + \delta f'(x)$. La derivada es, por tanto, útil para minimizar una función porque indica cómo cambiar $x$ para conseguir una pequeña mejora en la salida $y$. Por ejemplo, se sabe que $f(x - \delta \cdot \text{sign}(f'(x)))$ es menor que $f(x)$ para un $\delta$ suficientemente pequeño. Se puede entonces disminuir $f(x)$ moviéndose en pequeños pasos con el signo opuesto de la derivada. Esto se conoce como \textit{gradiente descendente} (\textit{gradient descent}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{gradiente_descendente.png}
+    \caption{Gradiente descendente}
+    \label{fig:gradiente}
+\end{figure}
+
+Para $x < 0$, $f'(x) < 0$ y $f$ disminuye hacia la derecha. Para $x > 0$, $f'(x) > 0$ y $f$ disminuye hacia la izquierda. Para $x = 0$, el gradiente se detiene puesto que $f'(x) = 0$.
+
+Cuando $f'(x) = 0$, la derivada no proporciona información sobre la dirección en la que hay que moverse, de esta forma, los puntos con $f'(x) = 0$ se conocen como puntos críticos o puntos estacionarios. Un mínimo local es un punto donde $f(x)$ es menor que todos los puntos vecinos, de modo que no es posible disminuir $f(x)$ mediante pasos infinitesimales. Un máximo local es un punto donde $f(x)$ es mayor que todos los puntos vecinos, de modo que no es posible incrementar $f(x)$ mediante pasos infinitesimales. Otros puntos críticos denominados puntos de inflexión son los que tienen vecinos que son mayores y menores que el punto mismo, pero no son ni máximos ni mínimos.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{puntos_criticos.png}
+    \caption{Puntos críticos}
+    \label{fig:puntos_criticos}
+\end{figure}
+
+Un punto que obtiene el valor más bajo de $f(x)$ es un mínimo global. Puede haber solo un mínimo global o múltiples mínimos globales de la función. También es posible que haya mínimos locales que no sean globalmente óptimos. En el contexto del aprendizaje profundo, se optimizan las funciones que pueden tener muchas limitaciones locales que no son óptimas y muchos puntos de inflexión rodeados de regiones muy planas. Todo esto hace que la optimización sea difícil, especialmente cuando la entrada a la función es multidimensional.
+
+A menudo es necesario minimizar funciones que tienen múltiples ($n$) entradas: $f: \mathbb{R}^n \to \mathbb{R}$, con una única salida (escalar). Con múltiples entradas, se debe utilizar el concepto de derivadas parciales $\frac{\partial f(x)}{\partial x_i}$, que mide cómo cambia $f$ según aumenta la variable $x_i$ en el punto $x$. El gradiente generaliza la noción de derivada al caso en que la derivada es con respecto a un vector: el gradiente de $f$ es el vector que contiene todas las derivadas parciales, denotado por $\nabla f(x)$. El elemento $i$-ésimo del gradiente es la derivada parcial de $f$ con respecto a $x_i$. En múltiples dimensiones, los puntos críticos son puntos en los que cada elemento del gradiente es igual a cero. La derivada direccional en la dirección $u$ (vector unitario) es la pendiente de la función $f$ en esa dirección $u$. En otras palabras, la derivada direccional es la derivada de la función $f(x + \alpha u)$ con respecto a $\alpha$, evaluada en $\alpha = 0$. Usando la regla de la cadena, se determina que $f(x + \alpha u)$ evalúa $u \cdot \nabla f(x)$ cuando $\alpha = 0$.
+
+Para minimizar $f$, es deseable encontrar la dirección en la que $f$ disminuye de forma más rápida, lo que se puede hacer usando la derivada direccional:
+\[
+\min_u \nabla f(x) \cdot u = \min_{\theta} \|\nabla f(x)\| \cos(\theta)
+\]
+donde $\theta$ es el ángulo entre $u$ y el gradiente. Sustituyendo $\|u\| = 1$ e ignorando factores que no dependen de $\theta$, se concreta en minimizar $\min_{u} \cos \theta$. Esto se consigue cuando $u$ apunta en la dirección opuesta del gradiente. En otras palabras, el gradiente apunta directamente hacia arriba. Se puede hacer decrecer $f$ moviéndose en la dirección opuesta del gradiente, lo que se conoce como método del gradiente descendente (\textit{steepest descent} o \textit{gradient descent}), que propone un nuevo punto,
+\[
+x' = x - \eta \nabla f(x)
+\]
+donde $\eta$ es la razón de aprendizaje, que es un valor escalar que determina la dimensión del paso. Se puede elegir de varias formas, una de ellas es fijarlo a un valor pequeño constante. Algunas veces se puede determinar la dimensión del paso que hace desaparecer la derivada direccional. Otra aproximación consiste en evaluar $f(x - \eta \nabla f(x))$ para varios valores de $\eta$ y elegir el que proporciona el valor de la función objetivo más pequeño. Esta estrategia se denomina \textit{búsqueda en línea} (\textit{line search}).
+
+El gradiente descendente converge cuando cada elemento del gradiente es cero (o, en la práctica, muy próximo a cero). En algunos casos, se puede evitar ejecutar este algoritmo iterativo y simplemente saltar al punto en el que el gradiente es igual a cero. En muchas situaciones es posible resolver analíticamente la ecuación $\nabla f(x) = 0$. En la optimización convexa, la optimización de funciones cóncavas y diferenciables que tienen una única solución óptima global, se puede obtener una solución cerrada sin necesidad de recurrir a métodos iterativos, como el gradiente descendente. Sin embargo, las redes neuronales, así como otros modelos que pueden tener múltiples óptimos locales y limitaciones no convexas, se enfrentan a mayores desafíos en este aspecto.
+
+
+
+\subsection{Gradiente Descendente Estocástico}
+
+En el ámbito del aprendizaje automático, el problema del Gradiente Descendente Estocástico (SGD, Stochastic Gradient Descent) consiste en minimizar una función objetivo que tiene la forma (Bishop, 2006; Ruder, 2017),
+
+\begin{equation}
+J(w) = \sum_{i=1}^{n} L(y_i, f(x_i; w)),
+\end{equation}
+
+donde el parámetro \( w \), que minimiza \( J(w) \), debe estimarse. \( J_i \) se asocia con la i-ésima observación en el conjunto de datos utilizados para el entrenamiento (ajuste). El término estocástico proviene del hecho relativo a la selección de las muestras (observaciones) para el ajuste de forma aleatoria, que incluso se pueden seleccionar por lotes en cada iteración. \( J(w) \) es el valor de la función de pérdida (loss function) en el i-ésimo ejemplo y \( J(w) \) es el riesgo empírico.
+
+El gradiente descendente se usa para minimizar la siguiente función de forma iterativa, con iteraciones \( t \). En el Anexo se proporciona un mayor nivel de detalle.
+
+\begin{equation}
+w(t+1) = w(t) - \eta \nabla J(w(t)),
+\end{equation}
+
+donde \( \eta \) es la tasa de aprendizaje. De esta forma iterativa, el método recorre el conjunto de entrenamiento y realiza la actualización indicada anteriormente para cada muestra de entrenamiento. Según la ecuación (2.5), gradientes negativos incrementan el peso y viceversa, siempre con el fin de minimizar la función objetivo. Se pueden realizar varios pasos sobre el conjunto de entrenamiento hasta que el algoritmo converja. Si se hace esto, los datos se pueden seleccionar aleatoriamente en cada paso para evitar ciclos; es lo que se conoce como criterio estocástico. Estas muestras así seleccionadas constituyen lo que se denomina un lote (batch). Las implementaciones típicas pueden usar una razón de aprendizaje adaptativa para que el algoritmo converja.
+
+En pseudocódigo, el método del gradiente descendente estocástico es como sigue:
+
+\begin{enumerate}
+    \item Elegir un vector inicial de parámetros \( w \) (puede ser aleatoriamente) y una tasa de aprendizaje \( \eta \).
+    \item Repetir hasta que se consiga un mínimo aproximado:
+    \begin{enumerate}
+        \item Seleccionar aleatoriamente ejemplos en el conjunto de entrenamiento.
+        \item Para \( i = 1, 2, \ldots, n \), hacer:
+        \begin{equation}
+        w(t+1) = w(t) - \eta \nabla J_i(w).
+        \end{equation}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Ejemplo}
+
+Supóngase que se quiere ajustar una línea recta \( y = w_1 + w_2 x \) a partir de un conjunto de observaciones \( (x_1, x_2, \ldots, x_n) \) con sus correspondientes respuestas estimadas \( (y_1, y_2, \ldots, y_n) \) utilizando mínimos cuadrados. La función objetivo a minimizar es:
+
+\begin{equation}
+J(w) = \sum_{i=1}^{n} (w_1 + w_2 x_i - y_i)^2.
+\end{equation}
+
+El punto 2.2 del pseudocódigo resulta en:
+
+\begin{equation}
+
+w_1(t+1) = w_1(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i),
+\end{equation}
+
+\begin{equation}
+w_2(t+1) = w_2(t) - \eta \sum_{i=1}^{n} 2(w_1 + w_2 x_i - y_i)x_i.
+\end{equation}
+
+En cada iteración (también llamada actualización), solo se evalúa el gradiente en un único punto \( x \) en lugar de evaluar en el conjunto de todas las muestras. La diferencia clave en comparación con el gradiente descendente estándar es que solo se utiliza un dato del total del conjunto de datos disponible para obtener la actualización, y el dato se selecciona de forma aleatoria en cada paso.
+
+Existen diversas variantes, extensiones y mejoras del algoritmo. Resulta de particular interés el hecho de fijar la razón de aprendizaje, ya que valores altos tienden hacia la divergencia de los datos, mientras que valores demasiado pequeños hacen que la convergencia sea lenta. Una forma de abordar este problema es que dicha razón sea variable disminuyendo a medida que se incorporan nuevas muestras (mayor aprendizaje). Esto se consigue haciéndola dependiente del número de datos o iteraciones. Una de tales extensiones es la del método del momentum (Rumelhart y col., 1986; Murphy 2012). Este método recuerda la actualización \( \Delta w \) en cada iteración, determinando la siguiente actualización como una combinación lineal del gradiente y la actualización previa (Sutskever y col., 2013):
+
+\begin{equation}
+\Delta w(t) = \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1)),
+\end{equation}
+
+\begin{equation}
+w(t) = w(t-1) + \Delta w(t).
+\end{equation}
+
+En resumen, la dimensión del lote expresa el número de muestras procesadas antes de actualizar los pesos de la red. El número de épocas (epochs) es el número de pases completos de todo el conjunto de muestras de entrenamiento \( N \). Se puede establecer que la razón de aprendizaje varíe cada cierto número de épocas, por ejemplo, cada 5 épocas disminuye un 10\% con respecto al valor inicial. Se puede ejecutar el algoritmo todo el tiempo que se desee e incluso detenerlo utilizando otros criterios además de un número fijo de épocas, tal como que el error del modelo o que la función objetivo no cambia con el número de iteraciones. En estos casos se dice que se ha alcanzado la convergencia y los criterios así establecidos se denominan de convergencia.
+
+A modo de ejemplo, supóngase un conjunto de datos con 400 muestras, de forma que se define la dimensión del lote en 10 con 100 épocas. Esto significa que el conjunto de datos se divide en 40 lotes, cada lote con 10 muestras. La actualización de los pesos del modelo se realizará tras el paso de cada lote con 10 muestras. Así, una época involucra 40 lotes, es decir, 40 actualizaciones del modelo.
+
+
+
+
+Esto se consigue haciéndola dependiente del número de datos o iteraciones. Una de tales extensiones es la del método del \textit{momentum} (Rumelhart y col., 1986; Murphy, 2012). Este método recuerda la actualización $\Delta w$ en cada iteración, determinando la siguiente actualización como una combinación lineal del gradiente y la actualización previa (Sutskever y col., 2013):
+
+\[
+\Delta w(t) = \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1))
+\]
+
+La anterior expresión conduce a:
+
+\[
+w(t) = w(t-1) + \alpha \Delta w(t-1) - \eta \nabla J_i(w(t-1))
+\]
+
+donde $\eta > 0$ es la razón de aprendizaje y $\alpha \in [0,1]$ es la constante de momento que controla la velocidad de actualización de $\Delta w(t-1)$. El vector de parámetros, $w$, que minimiza $J(w)$ es realmente el que se estima en el proceso de optimización. El nombre de \textit{momentum} proviene del concepto de momento en física, de forma que el vector de pesos $w$, visto como una partícula viajando a través del espacio de parámetros, adquiere una aceleración a partir de la fuerza, tendiendo a mantenerse en la misma dirección, evitando así oscilaciones.
+
+En los procesos de optimización de redes neuronales, si los gradientes incrementan su magnitud exponencialmente, por ejemplo, porque los pesos toman valores altos afectando a los resultados de las multiplicaciones, el entrenamiento se hace inestable y puede divergir en unas pocas iteraciones. Esto es lo que se conoce como \textit{explosión del gradiente}. Pascanu y col. (2013) proponen el \textit{recorte de gradiente} (\textit{gradient clipping}), que ayuda a prevenir dicha explosión estabilizando el entrenamiento ante la presencia de \textit{outliers}. Para ello se propone considerar un determinado umbral $T$ de forma que si:
+
+\[
+\|\nabla J(w)\| > T \text{ entonces } \nabla J(w) = T \frac{\nabla J(w)}{\|\nabla J(w)\|}
+\]
+
+De forma similar, si los valores del gradiente son muy pequeños también por influencia de valores de pesos pequeños, el problema se conoce como \textit{desaparición del gradiente}. En la literatura se han investigado diversas aproximaciones en aras de la mejora de la convergencia, por ejemplo, mediante el promediado de trayectorias (Polyak y Juditsky, 1992).
+
+Durante el proceso de actualización de los pesos de la red, mediante el cálculo del error, existen básicamente tres tipos de estrategias. En todas ellas, se dispone de $N$ muestras de entrenamiento, la diferencia estriba en cómo se realiza la actualización (Kim, 2017; Brownlee, 2018). El proceso de optimización es iterativo, lo que quiere decir que cuando se busca el mínimo, se realizan una serie de pasos, siendo el objetivo de cada paso ajustar lo mejor posible los pesos. Cada paso consiste en utilizar el modelo con los parámetros actuales, realizar una predicción sobre algunas muestras, comparar las predicciones con las muestras, calcular el error y propagar el error hacia atrás para actualizar de nuevo los pesos del modelo.
+
+Una muestra es un dato simple, también llamada instancia, observación, vector de entrada o vector de características, que se suministra al algoritmo junto con una salida que se utiliza para comparar el error con respecto a la salida que se obtiene con ella y la esperada. Este planteamiento se engloba en lo que se denomina \textit{aprendizaje supervisado}. Un conjunto de muestras de entrenamiento engloba un cierto número, $n$, de muestras.
+
+Como se ha indicado anteriormente, existe el concepto de \textit{lote} (\textit{batch}) que define el número de muestras utilizadas antes de llevar a cabo una actualización de los pesos de la red en el modelo. Considérese un lote, constando de una o más muestras dentro de un bucle y haciendo predicciones precisamente con esas muestras del lote. Una vez que han pasado todas las muestras del lote, se realizan las predicciones y se comparan con las variables de salida esperadas para obtener el error correspondiente. Con este error, el algoritmo de optimización actualiza los pesos que definen el modelo. Esto significa que hasta que no han pasado todas las muestras del lote no se actualizan dichos pesos. Un conjunto de datos de entrenamiento se puede dividir en uno o más lotes.
+
+Cuando todas las muestras de entrenamiento se utilizan para crear un lote, el algoritmo de aprendizaje se denomina \textit{descenso del gradiente por lotes}. Cuando el lote es del tamaño de una muestra, el algoritmo de aprendizaje se denomina \textit{descenso de gradiente estocástico} (\textit{SGD}) o de otro tipo. Cuando el tamaño del lote posee más de una muestra y es menor que el tamaño del conjunto de datos de entrenamiento, el algoritmo de aprendizaje se denomina \textit{descenso de gradiente de mini-lote} (\textit{mini-batch}). Dimensiones habituales de los mini-lotes son 32, 64 y 128, lo que suele derivar en el hecho de que el último lote a veces tiene un tamaño menor que el resto, al no coincidir el número de muestras totales con esas dimensiones, cuando se reparten las muestras en los lotes. A veces se eliminan algunas muestras para que esto no ocurra.
+
+Por otra parte, existe otro parámetro conocido como \textit{época} (\textit{epoch}), que define el número de veces que el conjunto total de muestras son procesadas por el algoritmo. Esto significa que cada muestra del conjunto $N$ ha tenido una oportunidad de actualizar los pesos en cada \textit{epoch}. Una \textit{epoch} puede tener uno o más lotes. Para mayor claridad, se puede pensar en un bucle sobre el número de \textit{epochs} donde cada iteración o ciclo opera sobre $N$. Dentro de esta iteración, existe otra iteración anidada que actúa sobre cada lote de muestras, teniendo en cuenta que un lote tiene el número especificado de muestras según el tamaño del lote. El número de \textit{epochs} depende del tipo de datos, siendo a veces alto, para garantizar una eficiencia suficiente. Se pueden encontrar aplicaciones con 10, 100, 1000 e incluso más, y naturalmente también con menos. Además, es común representar gráficamente, sobre un sistema de ejes bidimensional (x-y), el proceso de aprendizaje mostrando las \textit{epochs} sobre el eje horizontal $x$ junto con las iteraciones y el error del modelo en el eje $y$. Estas representaciones ayudan a diagnosticar la evolución del aprendizaje, y cómo el modelo se ajusta adecuadamente o no al conjunto de datos de entrenamiento.
+
+En resumen, la dimensión del lote expresa el número de muestras procesadas antes de actualizar los pesos de la red. El número de \textit{epochs} es el número de pases completos de todo el conjunto de muestras de entrenamiento $N$. Se puede establecer que la razón de aprendizaje varíe cada cierto número de \textit{epochs}, por ejemplo, cada 5 \textit{epochs} disminuya un 10\% con respecto al valor inicial. Se puede ejecutar el algoritmo todo el tiempo que se desee e incluso detenerlo utilizando otros criterios además de un número fijo de \textit{epochs}, tal como que el error del modelo o que la función objetivo no cambia con el número de iteraciones. En estos casos se dice que se ha alcanzado la convergencia y los criterios así establecidos se denominan de convergencia. A modo de ejemplo, supóngase un conjunto de datos con 400 muestras, de forma que se define la dimensión del lote en 10 con 100 \textit{epochs}. Esto significa que el conjunto de datos se divide en 40 lotes, cada lote con 10 muestras. La actualización de los pesos del modelo se realizará tras el paso de cada lote con 10 muestras. Así, una \textit{epoch} involucra 40 lotes, es decir, 40 actualizaciones del modelo.
+
+A veces ocurre que el conjunto de muestras de entrenamiento no es divisible por un determinado número de lotes, en este caso cabe la posibilidad de considerar el último lote con menos muestras que los otros, como se ha indicado previamente, o bien eliminar algunas muestras del conjunto de datos o también cambiar el tamaño del lote. Supóngase que se tiene un conjunto de muestras de entrenamiento de 208, y se establece la dimensión del mini-lote en 10 con 4 \textit{epochs}, esto significa que el paso de las 208 muestras determina una \textit{epoch}. El número de mini-lotes se obtiene calculando el resultado de la división $208/10 = 20.8$, lo que significa que se formarán 20 mini-lotes con 10 muestras cada uno, más uno adicional con 8 muestras. En total habrá 21 mini-lotes. Cada uno de estos mini-lotes define una iteración, por lo que en cada \textit{epoch} se realizan 21 iteraciones, de forma que tras cada una de ellas se actualizan los pesos.
+
+Considerando la ecuación (2.9) simplificada $\Delta w = -\eta \nabla J_i(w(t-1))$ y un conjunto con $N$ muestras de entrenamiento, cuando no se definen mini-lotes, o lo que es lo mismo, la dimensión del mini-lote es 1, entonces, cada muestra actualiza los pesos según esta ecuación. Por el contrario, si las $N$ muestras forman un lote, entonces la actualización de los pesos se realiza una única vez, promediando los pesos obtenidos tras el paso de cada muestra como sigue:
+
+\[
+\Delta w = \frac{1}{N} \sum_{k=1}^{N} \Delta w(k)
+\]
+
+Si se establecen mini-lotes de dimensión $m$, la actualización de los pesos también se lleva a cabo de la misma manera que en el caso anterior, si bien promediando con $m$ en lugar de $N$ y realizando tantas actualizaciones por \textit{epoch} como número de mini-lotes existan.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ¿QUITAR?
 La ecuación \ref{eq:conv} resume las explicaciones anteriores en una gran ecuación matemática \citep{pajares2021aprendizaje}:
 
@@ -1720,11 +1850,32 @@ j' = j \cdot s_w + v
 \end{equation} \label{eq:conv}
 
 donde \( z_{i,j,k} \) es la salida de la neurona ubicada en \((i,j)\) en el mapa de características \(k\) de la capa convolucional \(l\). \( s_h \) y \( s_w \) es el stride vertical y horizontal. \( f_h \) y \( f_w \) son las dimensiones del campo receptivo y \( f_{n'} \) es el número de mapas de características de la capa anterior. \( x_{i',j',k'} \) es la salida de la neurona situada en \((i',j')\) y en mapa de características \(k'\). \( b_k \) es el término de sesgo para el mapa de características \(k\) en la capa \(l\) y \( w_{u,v,k',k} \) es el peso de conexión entre cualquier neurona del mapa de características \(k\) de la capa \(l\) y su entrada en \((u,v)\) y el mapa de características \(k'\).
-\end{comment}
 
 
 
-\begin{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Una de las redes neuronales más importantes y más utilizadas en el campo de la ciberseguridad son las \acrfull{cnn}. Las CNN tienen su origen en el estudio de la corteza visual del cerebro y han sido utilizadas en el reconocimiento de imágenes desde la década de los 80. Actualmente, debido al aumento en la capacidad computacional, la disponibilidad de grandes volúmenes de datos de entrenamiento y las técnicas avanzadas de redes profundas, han permitido que las CNN alcancen un rendimiento excepcional en tareas visuales complejas. Estas redes son la base de servicios como la búsqueda de imágenes o los vehículos autónomos \citep{geron2022hands}.
 
 
@@ -1926,11 +2077,32 @@ donde:
     \item \( b_k \) es el término de sesgo para el mapa de características \(k\) (en la capa \(l\)).
     \item \( w_{u,v,k',k} \) es el peso de conexión entre cualquier neurona del mapa de características \(k\) de la capa \(l\) y su entrada situada en la fila \(u\), columna \(v\) (relativa al campo receptivo de la neurona) y el mapa de características \(k'\).
 \end{itemize}
-\end{comment}
 
 
 
-\begin{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Dentro del AA se encuadra el conocido como Aprendizaje Profundo (AP). En la literatura especializada a nivel internacional es muy común referirse al AP por sus términos en inglés, esto es, Deep Learning, que es el núcleo central del presente libro. Por otra parte, y al hilo de esta cuestión, conviene reseñar que son muchos y diversos los términos en inglés utilizados para definir y describir los conceptos involucrados bajo el paradigma del AP. Muchos de los cuales no poseen una clara traducción conceptual al español, razón por la cual los considerados bajo esta situación se mantienen a lo largo del libro con el fin de que el lector pueda fácilmente identificarlos en la literatura especializada escrita en inglés. Solo se han traducido aquellos conceptos que no admiten discusión, manteniendo en todo caso su expresión original en inglés.
 
 Bien es cierto que desde los años 50 del siglo pasado, la IA a veces se ha sobrevalorado y se ha considerado como muy prometedora en diversas ocasiones, eso pese a que no se han llegado a alcanzar las perspectivas iniciales. Por otra parte, no es menos cierto que en los últimos años se están viendo avances importantes gracias al AP. Ello a pesar de que todavía es relativamente frágil de cara a su generalización y adaptación a entornos o escenarios cambiantes, principalmente por falta de datos suficientes que capturen los cambios de dicho entorno, pudiendo aparecer ciertos sesgos por falta de la información necesaria extraíble de los datos. Algunos autores como Marcus y Davis (2019), expresan, no sin cierta razón, algunos aspectos relativos a las ventajas e inconvenientes de los procesos de AP, achacándoles que muchas arquitecturas basadas en redes neuronales hacen cosas increíbles, sin ser conscientes por parte de quien las aplica del conocimiento real sobre lo que están haciendo, y por ello, no son sistemas totalmente inteligentes.
@@ -2192,21 +2364,66 @@ En la segunda, se transforma la salida de la primera etapa mediante una función
 A continuación, se presenta un conjunto de ejemplos de patrones de entrada con el objetivo de encontrar el hiperplano que permite separar dos clases de forma adecuada. El conjunto de patrones de entrada es denotado como \(x_1, x_2, ..., x_n\), y cada patrón de entrada tiene una dimensión de \(m\). La salida deseada es denotada como \(d_1, d_2, ..., d_n\), donde cada \(d_i\) pertenece a \{0,1\}.
 
 
-\end{comment}
 
 
 
-\begin{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \textbf{MXNet} \citep{mxnet} es un marco de trabajo de aprendizaje profundo de código abierto fundado como una colaboración entre la Universidad Carnegie Mellon, la Universidad de Washington y Microsoft. Es una librería escalable que permite el entrenamiento de redes neuronales profundas utilizando diferentes lenguajes de programación, incluyendo C++, Python, MATLAB, JavaScript, R, Julia y Scala. MXNet incluye la interfaz de Gluon que permite a los desarrolladores con cualquier nivel de experiencia comenzar a usar el aprendizaje profundo en la nube, en dispositivos de borde \footnote{dispositivos más cercanos al usuario, como teléfonos móviles, sistemas ciberfísicos (CPS), dispositivos portátiles, IoT, \ldots.} y en aplicaciones para dispositivos móviles. MXNet admite además el paralelismo de datos en múltiples CPUs o GPUs, así como el paralelismo de modelos. Ofrece dos modos de entrenamiento diferentes: síncrono y asíncrono \footnote{síncrono: interactúan en el mismo momento en el que tiene lugar la comunicación; asíncrono: la interacción no es inmediata y puede tener lugar en momentos diferentes} y además proporciona operaciones primitivas de tolerancia a fallas a través de guardar y cargar: guardar almacena los parámetros del modelo en un archivo de punto de control y cargar restaura los parámetros del modelo desde un archivo de punto de control. MXNet admite tanto la programación declarativa como la programación imperativa.
 \textbf{Theano} \citep{theano} es una biblioteca de Python de código abierto para cálculos a gran escala que ha sido desarrollado por investigadores y desarrolladores de la Universidad de Montreal. Es una biblioteca que facilita la construcción de modelos de aprendizaje profundo y se puede ejecutar en diferentes plataformas informáticas, incluyendo CPU y GPU. Los cálculos se expresan utilizando una sintaxis similar a la de Numpy y funciona creando una representación simbólica de las operaciones que se traducen a C++ y luego se compilan en moléculas Python. Theano admite tanto el paralelismo de datos como el paralelismo de modelos.
 \textbf{Chainer} \citep{chainer} es un marco de aprendizaje profundo de código abierto implementado en Python. El desarrollo de Chainer está liderado por investigadores y desarrolladores de la Universidad de Tokio. Chainer proporciona APIs de diferenciación automática para construir y entrenar redes neuronales, con un enfoque de ``definir por ejecutar'', lo que permite construir el grafo computacional durante el entrenamiento y permite al usuario cambiarlo en cada iteración. Chainer es un marco flexible ya que proporciona una API imperativa en Python y NumPy. Se admiten tanto cálculos en CPU como en GPU.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%Adicionalmente, las CNN pueden utilizar técnicas de regularización que ayudan a reducir el sobreajuste. Una de las técnicas más exitosas se llama \textit{dropout} \citep{srivastava2014dropout}. Al entrenar un modelo utilizando \textit{dropout}, durante cada iteración de entrenamiento, un porcentaje especificado de nodos en una capa dada y sus conexiones entrantes y salientes se eliminan aleatoriamente. Incluir \textit{dropout} típicamente mejora la precisión y la capacidad de generalización de un modelo porque aumenta la probabilidad de que un nodo sea útil.
+
+\subsubsection{Aplicaciones y Éxitos}
+
+Los usos de las CNN son significativamente variados. El mayor éxito se ha logrado en tareas de visión por computadora, como la detección y reconocimiento de objetos y escenas \citep{krizhevsky2012imagenet}. Las aplicaciones van desde la biología \citep{ronneberger2015u} hasta el reconocimiento facial \citep{parkhi2015deep}. El mejor ejemplo del éxito de las CNN tuvo lugar en 2012 en la competencia ImageNet, donde una CNN superó el rendimiento de otros métodos y luego la precisión humana en 2015 mediante el uso de GPUs, ReLUs, \textit{dropout} y la generación de imágenes adicionales \citep{he2015delving}. Además, las CNN se han utilizado con éxito en modelos de lenguaje para la detección de fonemas \citep{hinton2012deep}, reconocimiento de letras \citep{lecun1998gradient}, reconocimiento de voz \citep{graves2013speech} y construcción de modelos de lenguaje \citep{collobert2008unified}.
+
+
+
+Una de las redes neuronales más importantes y más utilizadas en el campo de la ciberseguridad son la \acrfull{cnn}. Las CNN tienen su origen en el estudio de la corteza visual del cerebro y han sido utilizadas en el reconocimiento de imágenes desde la década de los 80. Actualmente, debido al aumento en la capacidad computacional, la disponibilidad de grandes volúmenes de datos de entrenamiento y las técnicas avanzadas de redes profundas, han permitido que las CNN alcancen un rendimiento excepcional en tareas visuales complejas. Estas redes son la base de servicios como la búsqueda de imágenes o los vehículos autónomos. Además, las CNN no se limitan únicamente a la percepción visual, también han demostrado ser efectivas en tareas como el reconocimiento de voz y el procesamiento del lenguaje natural \citep{geron2022hands}. No obstante, nos enfocaremos únicamente en sus aplicaciones visuales.
+
 \end{comment}
-
-
-
-
-
 
 
 

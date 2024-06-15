@@ -1,0 +1,34 @@
+\chapter{Detección de intrusiones} 
+\section{KDD Cup 1999}
+\section{Autoencoder}
+Para la clasificacion binaria usar autoencoder con el entrenamiento de las imágenes (buenas o malas) y según el error que den, se clasifica.
+Para la multiclasificación, tenemos dos opciones:
+\begin{itemize}
+\item Usamos autoencoder para comprimir la información de entrada y despues esa informacion la usamos para clasificarla usando una DNN \citep{lopes2022effective}
+\item Usamos una cadena de autoencoders en el cual la salida de h es la entrada del autoencoder h+1. Utilizo el articulo \citep{farahnakian2018deep} donde se desarrolla todo el modelo y explicacion y ademas se hace referencia al artículo \citep{bengio2006greedy} porque se basa en él (lo de salida de h es la entrada de h+1). Ver tambien:
+\begin{itemize}
+\item Asymmetric Stacked Autoencoder
+\item Constrained Nonlinear Control Allocation based on Deep Auto-Encoder Neural Networks.
+
+\end{itemize} El algoritmo consiste en entrenar las capas por separado en la que el input del autoencoder es la salida del autoencoder anterior. Lo que de verdad nos interesa es la capa oculta, que tiene una representación comprimida de los datos de entrada y sus pesos. Estos pesos son con los que se inicializa el entrenamiento de la stacked autoencoder acabando en softmax. He usado el url para enterlo \url{https://amiralavi.com/tied-autoencoders/}. Además en \citep{bao2017deep} explica bastante bien la diferencia entre capa autoencoder y un autoencoder.
+\end{itemize}
+
+
+\section{Red Neuronal Convolucional}
+Para clasificar los datos del dataset KDD 1999 usando las \gls{cnn} vamos a seguir los siguientes articulos \citep{kim2020cnn, yang2006anomaly, nguyen2018design, kim2018encoding}. Prácticamente todo el cuerpo del experimento se encuentra en el artículo \citep{kim2020cnn}, pero en el artículo \citep{kim2018encoding} aparece la parte de normalización de los datos y algunos hiperparametros de inicio.
+
+
+\section{Red Neuronal Profunda}
+Por otro lado, el método \gls{dnn} utiliza una arquitectura muy parecida a una CNN. Podemos ver todo el procesamiento de los datos y el modelo en el artículo \citep{maithem2021network}. Además, hay buena explicacion del experimento en \citep{vigneswaran2018evaluating}. Por último, en el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
+
+\section{Red Neuronal Recurrente}
+En el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
+
+\section{Restricted Boltzmann Machine}
+En el articulo \citep{elmasry2019empirical} están los experimentos con DNN, RNN,  RBM que puedo tomar también como referencia porque está muy bien explicado las capas e hiperparametros que utiliza.
+
+
+\section{Resultados}
+
+
+
