@@ -494,12 +494,36 @@ and Prevention System.
 
 \appendix
 
+\chapter{Anexo A} \label{anexoa}
 
+Para determinar estos pesos, deben calcularse usando la siguiente fórmula:
 
+\[
+W_j = \sqrt{\frac{s}{c \cdot S_j}}
+\]
 
+Donde $W_j$ representa el peso de la clase $j$, $s$ es el número total de muestras, $c$ es el número total de clases y $S_j$ es el número de muestras de la clase $j$. Estos pesos se emplean durante el cálculo de la función de pérdida. Una vez que se ha calculado la pérdida para cada clase, esta se multiplica por el peso correspondiente de la clase. Este procedimiento permite ``balancear'' la importancia relativa de cada clase durante el entrenamiento de la red.
 
+\chapter{Anexo B} \label{anexob}
 
-
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Clase & Precisión & TPR (Sensibilidad) & FPR & F1 Score \\ \hline
+1 & 0.94 & 0.97 & 0.06 & 0.96 \\ \hline
+2 & 0.92 & 0.97 & 0.07 & 0.94 \\ \hline
+3 & 0.97 & 0.99 & 0.03 & 0.98 \\ \hline
+4 & 0.91 & 1.00 & 0.09 & 0.95 \\ \hline
+5 & 0.49 & 0.33 & 0.06 & 0.39 \\ \hline
+6 & 0.94 & 0.90 & 0.03 & 0.92 \\ \hline
+7 & 0.95 & 0.95 & 0.05 & 0.95 \\ \hline
+8 & 0.88 & 0.90 & 0.12 & 0.89 \\ \hline
+9 & 0.94 & 0.93 & 0.06 & 0.94 \\ \hline
+\end{tabular}
+\caption{Métricas de rendimiento por clase}
+\label{tab:metrics}
+\end{table}
 
 \end{document}
 

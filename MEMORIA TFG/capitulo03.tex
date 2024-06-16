@@ -158,7 +158,7 @@ Después de tener todos los bytes agrupados en un vector con sus elementos en fo
 \end{figure}
 
 
-\subsection{Visualización del modelo}
+\subsection{Visualización del modelo} \label{sec: visMalware}
 
 
 Una vez ya hemos explorado y preparado los datos, el siguiente paso es crear nuestra red neuronal convolucional. Para ello hemos seguido el artículo \citep{kalash2018malware}, en el que se crea una M-CNN (malware CNN) con múltiples capas. Vemos su arquitectura en la Figura \ref{img: cnnMMC}.
@@ -196,39 +196,154 @@ Este modelo obtiene un accuracy bastante bueno 0.9613, sin embargo, si lo compar
 
 10800 archivos de prueba de tipo .bytes (otros 10800 de tipo .asm) pero solo usaremos los .bytes. Convertimos cada archivo en una imagen. Primero, cada código hexadecimal lo convertimos a numeros decimales y estos los pasamos a un array de numpy. Hacemos reshape (lado,lado2) de forma que obtengamos la mayor dimension posible que sea casi cuadrado consiguiendo perder la menor información posible. Este reshape lo pasamos a np.uint8 y finalmente lo interpolamos usando bilinal, cubic, bicubic, nearest y observamos cual es la mejor de todas {zhao2023new} (hacer una grafica o algo para comprobarlo). Además, para caragr los datos he usado multiprocessing con los diferentes datos de tiempo. En el caso de algunas imagenes, los archivos .bytes no contienen ningun tipo de informacion(?? ?? ?? ..) todos los byte son ??. Estos ficheros, no estan incluidos en las imagenes ni de entrenamiento ni validación porque no contienen ningun tpo de información. 
 
-La diferencia principal entre realizar el entrenamiento del modelo en la GPU o en la CPU radica en el rendimiento y la velocidad de entrenamiento.
 
-\subsection{GPU (Unidad de Procesamiento Gráfico)}
-
-\subsubsection{Ventajas}
-\begin{itemize}
-    \item Las GPU están diseñadas específicamente para manejar operaciones matriciales y paralelas, que son comunes en el entrenamiento de modelos de redes neuronales.
-    \item Pueden realizar cálculos en paralelo en grandes cantidades de datos, lo que acelera significativamente el entrenamiento de modelos, especialmente en tareas intensivas en cálculos, como las redes neuronales profundas.
-    \item Ofrecen un rendimiento superior en comparación con las CPU para tareas de aprendizaje profundo.
-\end{itemize}
-
-\subsubsection{Desventajas}
-\begin{itemize}
-    \item Pueden ser más costosas y consumir más energía que las CPU.
-    \item Puede haber limitaciones en la cantidad de memoria de la GPU disponible, lo que podría ser un factor en modelos muy grandes.
-\end{itemize}
-
-\subsection{CPU (Unidad Central de Procesamiento)}
-
-\subsubsection{Ventajas}
-\begin{itemize}
-    \item Disponibles en la mayoría de las computadoras y servidores sin necesidad de hardware adicional.
-    \item Adecuadas para tareas generales de propósito múltiple y no solo para aprendizaje profundo.
-    \item Pueden ser más económicas en términos de hardware y consumo de energía.
-\end{itemize}
-
-\subsubsection{Desventajas}
-\begin{itemize}
-    \item Las CPU no están diseñadas específicamente para tareas de aprendizaje profundo y pueden ser menos eficientes en términos de velocidad para ciertos tipos de operaciones, especialmente en modelos grandes.
-\end{itemize}
 
 \section{Autoencoder} \label{sec: 3.AE}
-Debido a la alta cantidad de parametros del deep ae y la alta carga computacional, se decide añadir capas de dropout.
+
+Veamos ahora otro planteamiento para resolver este problema de clasificación de malware. Hemos visto en la sección \ref{sec:ae} que los autoencoders son métodos de machine learning no supervisados y que entre sus funcionalidades no se encuentra la clasificación. Sin embargo, sus principales utilidades son la reducción de dimensionalidad, la detección de intrusiones o la eliminación de ruido. La motivación detrás del uso de un autoencoder es su capacidad para aprender una representación comprimida de los datos de entrada, que luego se puede utilizar para mejorar el rendimiento de un modelo de clasificación usando una secuencia de capas densas fully connected. A diferencia del modelo de CNN, no hemos usado de base ningún artículo que ya haya realizado experimentos con un autoencoder para resolver este problema de clasificación de malware, sino que todo ha sido trabajo propio. 
+
+
+Para este método de machine learning, vamos a usar todos los datos de la base de datos Microsoft Malware Classification (BIG 2015), tanto los 10.873 programas sin etiquetar como los 10.868 programas de entrenamiento con etiquetas. Primero, se preparan los datos para utilizarlos en el modelo. Para ello, vamos a utilizar el mismo procedimiento explicado en la sección \ref{sec: visMalware} y crearemos imagenes $224 \times 224$ en escala de grises. A continuación, dependiendo de si las entradas del autoencoder tiene que ser en imagen o en vector, se aplanarán los datos o no. En segundo lugar, se entrenará el autoencoder. La dimensión del cuello de botella es de $4.096$ para que coincida con la dimensión de la primera capa densa de la CNN. Para entrenarla, vamos a utilizar los 21.741 programas disponibles ya que no necesita las etiquetas para entrenarlo, además, el autoencoder se entrena minimizando el error cuadrático medio (MSE) entre los datos de entrada y su reconstrucción \citep{guo2017deep}, optimizado con el algoritmo Adam \citep{aekeras}. Una vez se ha entrenado el AE y ya tenemos los parámetros entrenados para obtener una versión comprimida de los datos de entrada, ahora se entrena la segunda parte del modelo, una ANN. Para ello, las primeras capas del ANN se corresponden con el encoder entrenado antes. Durante el entrenamiento del clasificador no seguirán entrenandose los pesos y bias de esta primera parte, sino que estos parámetros se bloquean \citep{lopes2022effective}. A continuación de estas capas, se añaden varias capas densas intercaladas con capas de dropout(0,5). Esta parte final coincide con la parte final de la CNN. Para entrenar esta segunda parte del modelo solo se utilizan los 10.860 programas etiquetados.
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.9\textwidth]{img/aeMMCgen.png}
+    \end{center}
+    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \label{img: aeMMCgen}
+\end{figure}
+
+Para realizar este modelo, se utilizan 3 formas diferentes para comprimir los datos: un autoencoder simple, un autoencoder con varias capas ocultas y un autoencoder convolucional. Se decide hacer de estas tres formas diferentes siguiendo un poco el ejemplo de \citep{aekeras} para reconocimiento de dígitos MNIST. 
+
+\subsection{Autoencoder}
+
+El primer método para comprimir la información de entrada es usando un autoencoder simple con una capa oculta que se corresponde con el cuello de botella. La arquitectura de este método se puede observar en la figura \ref{img: aeMMC}
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.9\textwidth]{img/aeMMC1.png}
+    \end{center}
+    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \label{img: aeMMC}
+\end{figure}
+
+Para ello, como las capas utilizadas en esta arquitectura son densas, es necesario que los datos de entrada estén aplanados en un vector, luego lo primero que hacemos es preparar los datos para que tengan de dimensión $50.176$. Esta capa se conecta completamente con el cuello de botella $4.096$ que a su vez se vuelve a conectar con otra capa densa de $50.176$ neuronas. Se entrenará este modelo durante 36 épocas y con mini-lotes de 8. Al acabar su entrenamiento, obtenemos una pérdida en los datos de entrenamiento del 0.04598 y en los datos de validación ($20\% del total$), un 0.04741. 
+
+A continuación, se extrae el encoder y se agrega una secuencia de 2 capas densas con activación ReLU junto con una capa de dropout cada una para evitar el sobreajuste. Para finalizar, se añade una capa densa con 9 neuronas y activación softmax para clasificar cada una de las instancias. La tasa de dropout utilizada es 0,4. Entrenamos el modelo durante 25 épocas con mini-lotes de 8. Además añadimos el callback \lstinline|EarlyStopping| con \lstinline|patience = 4| y restaurando los pesos del mejor modelo en caso de parada temprana para prevenir el sobreajuste.El optimizador utilizado para entrenar el modelo de clasificación es el optimizador SGD (Stochastic Gradient Descent) con un learning rate inicial de 0.001. Además, fijamos el momentum en 0.9 y el weight decay en 0.0005. En cuanto a la función de pérdida, vamos a hacer 2 experimentos con \lstinline|categorical_crossentropy| y con \lstinline|mse| para comparar el rendimiento de diferentes configuraciones del modelo de clasificación. A continuación, se presentan los resultados de ambos modelos y se determina cuál es el más adecuado.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot3.png}
+    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_MSE}
+    \label{fig:sgd_mse}
+\end{figure}
+
+En el primer modelo, se utiliza como función de coste \lstinline|mse|. Podemos observar como muestra una pérdida de entrenamiento y validación que disminuyen consistentemente a lo largo de las épocas, con valores que oscilan entre 0.076 y 0.066. La precisión tanto en entrenamiento como en validación se mantiene alrededor de 0.6, lo que indica una capacidad limitada del modelo para generalizar. Aunque el modelo es estable y no muestra signos de sobreajuste, la precisión relativamente baja sugiere que podría beneficiarse de una arquitectura más compleja o de más datos de entrenamiento.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot2.png}
+    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_CE\_2}
+    \label{fig:sgd_ce}
+\end{figure}
+
+En el siguinte modelo, se utiliza como función de coste \lstinline|categorical_crossentropy|. Podemos observar como obtiene una la función de pérdida presenta una dinámica diferente. La pérdida de entrenamiento disminuye de manera constante, alcanzando un valor alrededor del 1.1, mientras que la pérdida de validación también disminuye, aunque de manera menos pronunciada, estabilizándose alrededor de 1.3. La precisión de entrenamiento aumenta de manera constante hasta alcanzar aproximadamente 0.7, mientras que la de validación, aunque con más fluctuaciones, muestra una tendencia positiva alcanzando alrededor de 0.6. Este modelo muestra una mejor capacidad de aprendizaje en comparación con el modelo anterior y tiene un buen balance entre la pérdida de entrenamiento y validación, lo que sugiere que es capaz de generalizar mejor.
+
+La diferencia de rendimiento entre \lstinline|mse| y \lstinline|categorical_crossentropy| en los modelos de clasificación se debe a sus diferentes enfoques hacia la salida esperada. MSE, al penalizar las diferencias cuadráticas entre predicciones y etiquetas, puede no ajustarse adecuadamente a problemas de clasificación multiclase que requieren distribuciones de probabilidad sobre las clases. En contraste, \lstinline|categorical_crossentropy| está diseñado específicamente para este tipo de problemas, evaluando la distancia entre la distribución predicha y la distribución real de las clases. En el análisis presentado, el modelo que utiliza \lstinline|categorical_crossentropy| mostró una mejor capacidad para aprender y generalizar, reflejado en una dinámica de pérdida y precisión más favorable en comparación con el modelo que emplea \lstinline|mse|.
+
+
+
+\subsection{Autoencoder profundo}
+
+No tenemos que limitarnos a una sola capa como codificador o decodificador, en su lugar podríamos usar una pila de capas. El segundo método que vamos a abordar para resolver este problema de clasificación en usando un autoencoder con 3 capas densas en el encoder y otras tres capas densas en el decoder. En la figura \ref{img: daeMMC} podemos ver su arquitectura y el número de neuronas en cada capa. Se ha decidido ese número de neuronas en base a poder tener una red profunda de capas densas sin llegar a perjudicar computacionalmente el problema. Aun así, al aumentar el número de capas y de parámetros con respecto al modelo anterior, el tiempo de entrenamiento de cada época se multiplica por 4. 
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.9\textwidth]{img/daeMMC.png}
+    \end{center}
+    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \label{img: daeMMC}
+\end{figure}
+
+Al igual que en el modelo anterior, como vamos a usar capas densas, es necesario que los datos de entrada estén aplanados en un vecto de dimensión $50.176$. Este modelo se entrenará durante 25 épocas y con mini-lotes de 8. Se usará el optimizador Adam y función de pérdida \lstinline|mse| como ya se comentó antes. Al acabar el entrenamiento, obtenemos una pérdida en los datos de entrenamiento del 0.04027 y en los datos de validación ($20\% del total$), un 0.04053. A pesar de que el modelo nos mostraba indicios de que podía seguir mejorando su rendimiento, debido a su alta carga computacional, decidimos parar su entrenamiento en su vuelta 25 ya que sus resultado ya mejoran a los del autoencoder con 1 única capa oculta. Con esta nueva representación comprimida de los datos, se vuelve a aplicar la capa de clasificación pero ahora solo con optimizador SGD y función de pérdida \lstinline|categorical_crossentropy|.
+
+
+
+A continuación, se crea la misma arquitectura que en el ejemplo anterior para clasificación. Entrenamos el modelo durante 50 épocas con mini-lotes de 8. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot3.png}
+    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_MSE}
+    \label{fig:sgd_mse}
+\end{figure}
+
+En la gráfica proporcionada, se observa el comportamiento de las curvas de pérdida y precisión tanto para el conjunto de entrenamiento como para el de validación a lo largo de 50 épocas. La pérdida de entrenamiento disminuye constantemente desde un valor inicial cercano a 1.2 hasta aproximadamente 0.5, lo que indica un buen ajuste del modelo a los datos de entrenamiento. La pérdida de validación también baja, aunque de manera más moderada, desde cerca de 1.0 hasta alrededor de 0.65 en la época 30. Posteriormente, el \lstinline|val_loss| muestra fluctuaciones y se estabiliza en torno a 0.57 a partir de la época 44, sugiriendo que el modelo ha dejado de mejorar significativamente en términos de generalización. La precisión de entrenamiento incrementa consistentemente de 0.62 a aproximadamente 0.83, mientras que la precisión de validación, aunque inicialmente ascendente, se estabiliza alrededor de 0.82 después de la época 44, reflejando un estancamiento en la mejora del modelo para los datos de validación. Este patrón sugiere que el modelo ha alcanzado su capacidad óptima de generalización, y futuras mejoras en la precisión de entrenamiento no se reflejan en los datos de validación.
+
+Comparado con el modelo anterior, este modelo muestra un mejor rendimiento en todas sus métricas, tanto en la pérdida como en la precisión, lo que sugiere una mejor capacidad de aprendizaje. La arquitectura mejorada de este modelo, con más capas ocultas en el autoencoder, permite un aprendizaje más profundo y efectivo, resultando en un ajuste más fino a los datos de entrenamiento y una mejor generalización.
+
+
+
+\subsection{Autoencoder convolucional}
+
+Por último, como nuestros datos de entrada los tenemos agrupados en imágenes, se nos ha ocurrido utilizar redes neuronales convolucionales como codificadores y decodificadores. Para ello, se van a utilizar capas convolucionales y capas de max pooling como encoders y capas convolucionales y de upsampling como decoders. En la imagen \ref{img: caeMMC} se muestra la arquitectura de este modelo. Se ha seguido la arquitectura propuesta por Kayikcci et al. \citep{kayikcci2020convolutional} en su artículo \textit{Convolutional Autoencoder Model for Reproducing Fingerprint} añadiendo alguna capa extra para llegar al cuello de botella con una dimensión exacta que en la CNN, $7 \times 7$ con 512 mapas de características.
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.9\textwidth]{img/caeMMC.png}
+    \end{center}
+    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \label{img: caeMMC}
+\end{figure} 
+
+Este modelo se entrenará durante 100 épocas y con mini-lotes de 8. Se usará el optimizador Adam y función de pérdida \lstinline|mse| como ya se comentó antes. Al acabar el entrenamiento, observamos que la pérdida en la segunda época ya mejora la perdida obtenida en los otros dos modelos anteriores, con un 0.03967 en los datos de entrenamiento y un 0.03885en los datos de validación. Después de las 100 vueltas, obtenemos 0.03528 en los datos de entrenamiento y 0.03498 en los datos de validación ($20\% del total$). A pesar de que el modelo nos mostraba indicios de que podía seguir mejorando su rendimiento, debido a su alta descenso continuo de la pérdida en los valores de entrenamiento y validación, se decide parar en la vuelta 100 debido a sus excelentes resultados obtenido hasta ese moemento. En la imagen \ref{img: reprComprimMMC}, podemos ver como funciona nuestro autoencoder convolucional y como la predicción de nuestro modelo se asemeja bastante a la imagen original. 
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.9\textwidth]{img/reprComprimMMC.png}
+    \end{center}
+    \caption{Visualización de la imagen original, versión comprimida y versión decodificada usando el autoencoder convolucional.}
+    \label{img: reprComprimMMC}
+\end{figure}
+
+Con esta nueva representación comprimida de los datos, se vuelve a aplicar la capa de clasificación con optimizador SGD y función de pérdida \lstinline|categorical_crossentropy|.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot3.png}
+    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_MSE}
+    \label{fig:resultados_daec}
+\end{figure}
+
+En la Figura \ref{fig:resultados_daec} se observa el comportamiento de las curvas de pérdida y precisión tanto para el conjunto de entrenamiento como para el de validación a lo largo de 25 épocas. La pérdida de entrenamiento disminuye de manera constante desde un valor inicial cercano a 0.9 hasta aproximadamente 0.015, indicando un buen ajuste del modelo a los datos de entrenamiento. La pérdida de validación también decrece, aunque de manera más moderada, desde cerca de 0.5 hasta estabilizarse alrededor de 0.2 a partir de la época 12, sugiriendo que el modelo ha dejado de mejorar significativamente en términos de generalización. La precisión de entrenamiento incrementa consistentemente de 0.85 a aproximadamente 1, mientras que la precisión de validación, aunque inicialmente asciende, se estabiliza alrededor de 0.95 después de la época 12, reflejando un estancamiento en la mejora del modelo para los datos de validación. Sin embargo, dado que el modelo utiliza \textit{EarlyStopping} con restauración de los pesos del mejor modelo, se ha guardado el estado del modelo en el punto donde mejor generaliza, mitigando así el impacto del \textit{overfitting}.
+
+
+En esta sección, hemos explorado tres tipos de autoencoders: un autoencoder simple, un autoencoder profundo, y un autoencoder convolucional, cada uno evaluado en términos de pérdida y precisión tanto en entrenamiento como en validación. Los resultados muestran que el autoencoder convolucional destaca por su capacidad superior de compresión y generalización, alcanzando una precisión de validación del 95.8\% y una pérdida de validación de 0.192, superando significativamente a los autoencoders simples y profundos. Mientras que el autoencoder simple con una sola capa oculta presentó limitaciones en su capacidad de generalización, el autoencoder profundo mostró mejoras notables, aunque a costa de una mayor complejidad computacional. Por su parte, el autoencoder convolucional, al aprovechar la estructura espacial de los datos de entrada, logró una mayor precisión y una menor pérdida, estableciendo un gran equilibrio entre la complejidad del modelo y la capacidad de generalización, convirtiéndose así en la opción más precisa para esta tarea de clasificación.
+
+
+Para evaluar el rendimiento del autoencoder convolucional en el problema de Microsoft Malware Clasification, se ha generado una matriz de confusión con los datos de prueba. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/confusionMatrixCAENorm1.png}
+    \caption{Matriz de confusión del modelo utilizando un autoencoder convolucional.}
+    \label{fig: caeConfusionMatrix}
+\end{figure}
+
+
+En ella se puede observar como la mayoría de las predicciones estan bien clasificadas ya que la diagonal principal de la matriz tiene los todos azules más oscuros, lo que indica un porcentaje mayor a 0,9. Sin embargo, hay una clase que no sigue este patrón. Esta clase es la clase con etiqueta 5, que se corresponde con el tipo de malware Simbda. Esta clase obtiene un 33\% de éxito, lo que contrasta bastante con el resultado global de éxito ( 95.8 \%). Estos malos resultados nos dan a entender que el modelo no ha generalizado muy bien con los programas de este tipo de malware. Esto se puede deber a su bajo número de muestras en el dataset, ya que solamente representaba un 0.4\% del total.
+ 
+Además en la tabla del anexo \ref{anexob}, se puede observar una alta precisión y sensibilidad en la mayoría de las clases, con F1-scores que oscilan entre 0.89 y 0.98 para las clases 1, 2, 3, 4, 6, 7, 8 y 9, lo que indica un gran equilibrio entre la precisión y la sensibilidad. La clase 3 sobresale con un F1-score de 0.98, reflejando una excelente precisión (0.97) y sensibilidad (0.99). Sin embargo, la clase 5 presenta un rendimiento significativamente inferior, con una precisión de 0.49, una sensibilidad de 0.33 y un F1-score de 0.39, señalando que el modelo tiene dificultades en identificar correctamente los ejemplos de esta clase. 
+
+Este problema se podría resolver usando pesos de clase. Esta técnica consiste en asignar un peso específico a cada clase dentro de la red neuronal, permitiendo que la red preste más atención a aquellas clases con un peso mayor. Para mayor explicación de como se calcula, ir al anexo \ref{anexoa}.
+
+
+
+
+ 
 
 \subsection{CAE}
 parametros de optimizador y loss: \citep{guo2017deep}
@@ -237,6 +352,10 @@ En AE se decide escoger MSE porque queremos medir regresión, no clasificación
 Para el resto de modelos hemos usado las mismas funciones para poder comparar parámetros
 \subsection{AE}
 Convolutional autoencoder modelo \citep{xing2022malware}
+
+
+
+
 \section{Resultados}
 
 Discusión de resultados con recapitulación de todos los resultados discutiendolos, resumiendo un poco todos los resultados obtenidos

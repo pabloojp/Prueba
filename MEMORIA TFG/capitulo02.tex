@@ -236,7 +236,7 @@ Este algoritmo es tan importante que vale la pena resumirlo nuevamente: para cad
 Es importante inicializar aleatoriamente todos los pesos de conexión de las capas ocultas, de lo contrario, el entrenamiento fallará. Por ejemplo, si inicializas todos los pesos y sesgos a cero, entonces todas las neuronas en una capa dada serán perfectamente idénticas, y por lo tanto la retropropagación las afectará de la misma manera, por lo que permanecerán idénticas. En otras palabras, a pesar de tener cientos de neuronas por capa, tu modelo actuará como si tuviera solo una neurona por capa: no será muy inteligente. Si en cambio inicializas aleatoriamente los pesos, rompes la simetría y permites que la retropropagación entrene un equipo diverso de neuronas \citep{geron2022hands}.
 
 
-\subsection{Autoencoder}
+\subsection{Autoencoder} \label{sec:ae}
 
 Los autoencoders son una clase de redes neuronales artificiales utilizadas en aprendizaje no supervisado para aprender representaciones eficientes de los datos. Su funcionamiento consiste en codificar la entrada en una representación comprimida y significativa, y luego decodificarla de manera que la reconstrucción sea lo más similar posible a la entrada original \citep{lopes2022effective}. La arquitectura básica de un autoencoder consta de tres partes: el encoder, el cuello de bottela y el decoder (Figura \ref{fig:AE_architecture}). 
 
@@ -1069,7 +1069,7 @@ Por último la \textbf{puntuación F1} es la media armónica del valor predictiv
 \text{Puntuación F1} = \frac{2TP}{2TP + FP + FN}
 \]
 
-
+Un buen modelo de clasificación, evaluado mediante el F1-score, es aquel que presenta un F1-score cercano a 1. Esto indica que el modelo tiene un excelente equilibrio entre precisión y exhaustividad, identificando correctamente la mayoría de los verdaderos positivos y minimizando tanto los falsos positivos como los falsos negativos. 
 
 \subsection{Curva ROC y AUC}
 
