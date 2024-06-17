@@ -54,26 +54,25 @@
 \contentsline {subsection}{\numberline {3.2.1}Visualizar el malware como imagen}{39}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Visualización del modelo}{40}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Aportaciones al modelo}{41}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}GPU (Unidad de Procesamiento Gráfico)}{42}{subsection.3.2.4}%
-\contentsline {subsubsection}{Ventajas}{42}{section*.45}%
-\contentsline {subsubsection}{Desventajas}{42}{section*.46}%
-\contentsline {subsection}{\numberline {3.2.5}CPU (Unidad Central de Procesamiento)}{42}{subsection.3.2.5}%
-\contentsline {subsubsection}{Ventajas}{42}{section*.47}%
-\contentsline {subsubsection}{Desventajas}{42}{section*.48}%
-\contentsline {section}{\numberline {3.3}Autoencoder}{43}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}CAE}{43}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}DAE}{43}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}AE}{43}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Resultados}{43}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Detección de intrusiones}{45}{chapter.4}%
-\contentsline {section}{\numberline {4.1}KDD Cup 1999}{45}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Autoencoder}{45}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Red Neuronal Convolucional}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Red Neuronal Profunda}{46}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Red Neuronal Recurrente}{46}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Restricted Boltzmann Machine}{46}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Resultados}{46}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{47}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{47}{section.5.2}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{49}{chapter*.49}%
+\contentsline {section}{\numberline {3.3}Autoencoder}{42}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Autoencoder simple}{43}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Autoencoder profundo}{45}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Autoencoder convolucional}{47}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}CAE}{50}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}DAE}{51}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}AE}{51}{subsection.3.3.6}%
+\contentsline {section}{\numberline {3.4}Resultados}{51}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Detección de intrusiones}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}KDD Cup 1999}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Autoencoder}{53}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Red Neuronal Convolucional}{53}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Red Neuronal Profunda}{54}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Red Neuronal Recurrente}{54}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Restricted Boltzmann Machine}{54}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Resultados}{54}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{55}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{55}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{57}{chapter*.55}%
+\contentsline {chapter}{\numberline {A}Anexo A}{63}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Anexo B}{65}{appendix.Alph2}%

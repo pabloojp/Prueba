@@ -251,7 +251,7 @@ Los autoencoders son una clase de redes neuronales artificiales utilizadas en ap
 
 
 
-el autoencoder ilustrado en la figura \ref{fig:AE_structure} puede modelarse mediante la ecuación (\ref{eq:ae_model}).
+El autoencoder ilustrado en la figura \ref{fig:AE_architecture} puede modelarse mediante la ecuación (\ref{eq:ae_model}).
 
 \begin{equation}
 \begin{cases}
@@ -994,7 +994,7 @@ Una vez discutidos los fundamentos del aprendizaje supervisado y no supervisado,
 Para evaluar los modelos supervisados, primero se divide el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba utilizando la función \lstinline|train_test_split|, que divide los datos de manera aleatoria. Algunos modelo como la \acrshort{cnn} o los autoencoders también necesitan un conjunto de validación durante su entrenamiento para ir evaluando el rendimiento del modelo en cada iteración. Además, proporciona información muy valiosa para detectar si un modelo empieza a sobreaprender de los datos de entrenamiento. Los porcentajes de estos subconjuntos suelen encontrarse entre el 70 - 80 \%, 10 - 20 \% y 10 - 20 \% para entrenamiento, test y validación respectivamente. El conjunto de entrenamiento sirve para entrenar la red neuronal. Por otro lado, el conjunto de prueba sirve para medir definitivamente el rendimiento del modelo con nuevas muestras de datos que no han sido utilizadas durante del entrenamiento para evaluar el modelo \citep{muller2016introduction}.
 
 
-El problema de esta técnica radica en que las distribuciones de los datos pueden no ser uniformes en los tres subconjuntos y que no sea una divisón muy óptima. Para evitar este inconveniente, se puede usar una técnica de evaluación del modelo más avanzada llamada \textbf{validación cruzada} (\textit{cross-validation}), donde los datos se dividen en varios subconjuntos, y el modelo se entrena y valida múltiples veces, garantizando una evaluación más robusta del rendimiento. La variante más comúnmente utilizada es la validación cruzada \textit{k-fold}. Aquí, el conjunto de datos se divide en $k$ partes aproximadamente iguales, llamadas pliegues. Cada uno de los $k$ pliegues se utiliza una vez como conjunto de prueba, mientras que los $k-1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Este proceso se repite $k$ veces, generando $k$ modelos y $k$ evaluaciones. La Figura~\ref{fig:kfold} ilustra este procedimiento \citep{muller2016introduction}.
+El problema de esta técnica radica en que las distribuciones de los datos pueden no ser uniformes en los tres subconjuntos y que no sea una divisón muy óptima. Para evitar este inconveniente, se puede usar una técnica de evaluación del modelo más avanzada llamada \textbf{validación cruzada} (\textit{cross-validation}), donde los datos se dividen en varios subconjuntos, y el modelo se entrena y valida múltiples veces, garantizando una evaluación más robusta del rendimiento. La variante más comúnmente utilizada es la validación cruzada \textit{k-fold}. Aquí, el conjunto de datos se divide en $k$ partes aproximadamente iguales, llamadas pliegues. Cada uno de los $k$ pliegues se utiliza una vez como conjunto de prueba, mientras que los $k-1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Este proceso se repite $k$ veces, generando $k$ modelos y $k$ evaluaciones. La Figura~\ref{img: k-fold} ilustra este procedimiento \citep{muller2016introduction}.
 
 \begin{figure}[h]
 	\centering

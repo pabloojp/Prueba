@@ -215,15 +215,15 @@ Para este método de machine learning, vamos a usar todos los datos de la base d
 
 Para realizar este modelo, se utilizan 3 formas diferentes para comprimir los datos: un autoencoder simple, un autoencoder con varias capas ocultas y un autoencoder convolucional. Se decide hacer de estas tres formas diferentes siguiendo un poco el ejemplo de \citep{aekeras} para reconocimiento de dígitos MNIST. 
 
-\subsection{Autoencoder}
+\subsection{Autoencoder simple}
 
 El primer método para comprimir la información de entrada es usando un autoencoder simple con una capa oculta que se corresponde con el cuello de botella. La arquitectura de este método se puede observar en la figura \ref{img: aeMMC}
 
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[width=0.9\textwidth]{img/aeMMC1.png}
+    \includegraphics[width=0.9\textwidth]{img/aeMMC.png}
     \end{center}
-    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \caption{Esquema de la arquitectura usando un autoencoder simple.}
     \label{img: aeMMC}
 \end{figure}
 
@@ -234,17 +234,17 @@ A continuación, se extrae el encoder y se agrega una secuencia de 2 capas densa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot3.png}
-    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_MSE}
-    \label{fig:sgd_mse}
+    \includegraphics[width=0.8\textwidth]{img/aeMMC_sgd_mse.png}
+    \caption{Entrenamiento y validación del modelo de clasificación usando un autoencoder con pérdida \lstinline|categorical_crossentropy|.}
+    \label{fig:ae_sgd_mse}
 \end{figure}
 
 En el primer modelo, se utiliza como función de coste \lstinline|mse|. Podemos observar como muestra una pérdida de entrenamiento y validación que disminuyen consistentemente a lo largo de las épocas, con valores que oscilan entre 0.076 y 0.066. La precisión tanto en entrenamiento como en validación se mantiene alrededor de 0.6, lo que indica una capacidad limitada del modelo para generalizar. Aunque el modelo es estable y no muestra signos de sobreajuste, la precisión relativamente baja sugiere que podría beneficiarse de una arquitectura más compleja o de más datos de entrenamiento.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot2.png}
-    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_CE\_2}
+    \includegraphics[width=0.8\textwidth]{img/aeMMC_sgd_ce.png}
+    \caption{Entrenamiento y validación del modelo de clasificación usando un autoencoder con pérdida \lstinline|categorical_crossentropy|.}
     \label{fig:sgd_ce}
 \end{figure}
 
@@ -262,7 +262,7 @@ No tenemos que limitarnos a una sola capa como codificador o decodificador, en s
     \begin{center}
     \includegraphics[width=0.9\textwidth]{img/daeMMC.png}
     \end{center}
-    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \caption{Esquema de la arquitectura usando un autoencoder profundo.}
     \label{img: daeMMC}
 \end{figure}
 
@@ -275,9 +275,9 @@ A continuación, se crea la misma arquitectura que en el ejemplo anterior para c
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot3.png}
-    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_MSE}
-    \label{fig:sgd_mse}
+    \includegraphics[width=0.8\textwidth]{img/daeMMC_sgd_ce.png}
+    \caption{Entrenamiento y validación del modelo de clasificación usando un autoencoder profundo}
+    \label{fig:dae_sgd_mse}
 \end{figure}
 
 En la gráfica proporcionada, se observa el comportamiento de las curvas de pérdida y precisión tanto para el conjunto de entrenamiento como para el de validación a lo largo de 50 épocas. La pérdida de entrenamiento disminuye constantemente desde un valor inicial cercano a 1.2 hasta aproximadamente 0.5, lo que indica un buen ajuste del modelo a los datos de entrenamiento. La pérdida de validación también baja, aunque de manera más moderada, desde cerca de 1.0 hasta alrededor de 0.65 en la época 30. Posteriormente, el \lstinline|val_loss| muestra fluctuaciones y se estabiliza en torno a 0.57 a partir de la época 44, sugiriendo que el modelo ha dejado de mejorar significativamente en términos de generalización. La precisión de entrenamiento incrementa consistentemente de 0.62 a aproximadamente 0.83, mientras que la precisión de validación, aunque inicialmente ascendente, se estabiliza alrededor de 0.82 después de la época 44, reflejando un estancamiento en la mejora del modelo para los datos de validación. Este patrón sugiere que el modelo ha alcanzado su capacidad óptima de generalización, y futuras mejoras en la precisión de entrenamiento no se reflejan en los datos de validación.
@@ -294,15 +294,15 @@ Por último, como nuestros datos de entrada los tenemos agrupados en imágenes, 
     \begin{center}
     \includegraphics[width=0.9\textwidth]{img/caeMMC.png}
     \end{center}
-    \caption{Esquema de la arquitectura usando un autoencoder.}
+    \caption{Esquema de la arquitectura usando un autoencoder convolucional.}
     \label{img: caeMMC}
 \end{figure} 
 
-Este modelo se entrenará durante 100 épocas y con mini-lotes de 8. Se usará el optimizador Adam y función de pérdida \lstinline|mse| como ya se comentó antes. Al acabar el entrenamiento, observamos que la pérdida en la segunda época ya mejora la perdida obtenida en los otros dos modelos anteriores, con un 0.03967 en los datos de entrenamiento y un 0.03885en los datos de validación. Después de las 100 vueltas, obtenemos 0.03528 en los datos de entrenamiento y 0.03498 en los datos de validación ($20\% del total$). A pesar de que el modelo nos mostraba indicios de que podía seguir mejorando su rendimiento, debido a su alta descenso continuo de la pérdida en los valores de entrenamiento y validación, se decide parar en la vuelta 100 debido a sus excelentes resultados obtenido hasta ese moemento. En la imagen \ref{img: reprComprimMMC}, podemos ver como funciona nuestro autoencoder convolucional y como la predicción de nuestro modelo se asemeja bastante a la imagen original. 
+Este modelo se entrenará durante 100 épocas y con mini-lotes de 8. Se usará el optimizador Adam y función de pérdida \lstinline|mse| como ya se comentó antes. Al acabar el entrenamiento, observamos que la pérdida en la segunda época ya mejora la perdida obtenida en los otros dos modelos anteriores, con un 0.03967 en los datos de entrenamiento y un 0.03885en los datos de validación. Después de las 100 vueltas, obtenemos 0.03528 en los datos de entrenamiento y 0.03498 en los datos de validación ($20\% del total$). A pesar de que el modelo nos mostraba indicios de que podía seguir mejorando su rendimiento, debido a su alta descenso continuo de la pérdida en los valores de entrenamiento y validación, se decide parar en la vuelta 100 debido a sus excelentes resultados obtenido hasta ese momento. En la imagen \ref{img: reprComprimMMC}, podemos ver como funciona nuestro autoencoder convolucional y como la predicción de nuestro modelo se asemeja bastante a la imagen original. 
 
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[width=0.9\textwidth]{img/reprComprimMMC.png}
+    \includegraphics[width=0.8\textwidth]{img/reprComprimMMC.png}
     \end{center}
     \caption{Visualización de la imagen original, versión comprimida y versión decodificada usando el autoencoder convolucional.}
     \label{img: reprComprimMMC}
@@ -312,12 +312,12 @@ Con esta nueva representación comprimida de los datos, se vuelve a aplicar la c
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{/mnt/data/myplot3.png}
-    \caption{Entrenamiento y validación del modelo autoencoder\_training\_clas\_ae\_SGD\_MSE}
-    \label{fig:resultados_daec}
+    \includegraphics[width=0.8\textwidth]{img/caeMMC_sgd_ce.png}
+    \caption{Entrenamiento y validación del modelo de clasificación usando un autoencoder convolucional.}
+    \label{fig:resultados_cae}
 \end{figure}
 
-En la Figura \ref{fig:resultados_daec} se observa el comportamiento de las curvas de pérdida y precisión tanto para el conjunto de entrenamiento como para el de validación a lo largo de 25 épocas. La pérdida de entrenamiento disminuye de manera constante desde un valor inicial cercano a 0.9 hasta aproximadamente 0.015, indicando un buen ajuste del modelo a los datos de entrenamiento. La pérdida de validación también decrece, aunque de manera más moderada, desde cerca de 0.5 hasta estabilizarse alrededor de 0.2 a partir de la época 12, sugiriendo que el modelo ha dejado de mejorar significativamente en términos de generalización. La precisión de entrenamiento incrementa consistentemente de 0.85 a aproximadamente 1, mientras que la precisión de validación, aunque inicialmente asciende, se estabiliza alrededor de 0.95 después de la época 12, reflejando un estancamiento en la mejora del modelo para los datos de validación. Sin embargo, dado que el modelo utiliza \textit{EarlyStopping} con restauración de los pesos del mejor modelo, se ha guardado el estado del modelo en el punto donde mejor generaliza, mitigando así el impacto del \textit{overfitting}.
+En la Figura \ref{fig:resultados_cae} se observa el comportamiento de las curvas de pérdida y precisión tanto para el conjunto de entrenamiento como para el de validación a lo largo de 25 épocas. La pérdida de entrenamiento disminuye de manera constante desde un valor inicial cercano a 0.9 hasta aproximadamente 0.015, indicando un buen ajuste del modelo a los datos de entrenamiento. La pérdida de validación también decrece, aunque de manera más moderada, desde cerca de 0.5 hasta estabilizarse alrededor de 0.2 a partir de la época 12, sugiriendo que el modelo ha dejado de mejorar significativamente en términos de generalización. La precisión de entrenamiento incrementa consistentemente de 0.85 a aproximadamente 1, mientras que la precisión de validación, aunque inicialmente asciende, se estabiliza alrededor de 0.95 después de la época 12, reflejando un estancamiento en la mejora del modelo para los datos de validación. Sin embargo, dado que el modelo utiliza \textit{EarlyStopping} con restauración de los pesos del mejor modelo, se ha guardado el estado del modelo en el punto donde mejor generaliza, mitigando así el impacto del \textit{overfitting}.
 
 
 En esta sección, hemos explorado tres tipos de autoencoders: un autoencoder simple, un autoencoder profundo, y un autoencoder convolucional, cada uno evaluado en términos de pérdida y precisión tanto en entrenamiento como en validación. Los resultados muestran que el autoencoder convolucional destaca por su capacidad superior de compresión y generalización, alcanzando una precisión de validación del 95.8\% y una pérdida de validación de 0.192, superando significativamente a los autoencoders simples y profundos. Mientras que el autoencoder simple con una sola capa oculta presentó limitaciones en su capacidad de generalización, el autoencoder profundo mostró mejoras notables, aunque a costa de una mayor complejidad computacional. Por su parte, el autoencoder convolucional, al aprovechar la estructura espacial de los datos de entrada, logró una mayor precisión y una menor pérdida, estableciendo un gran equilibrio entre la complejidad del modelo y la capacidad de generalización, convirtiéndose así en la opción más precisa para esta tarea de clasificación.
