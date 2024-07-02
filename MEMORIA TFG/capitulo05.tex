@@ -1,9 +1,39 @@
-\chapter{Conclusiones y Trabajo Futuro} \label{Capítulo 5}
+\chapter{Conclusiones y Trabajo Futuro} \label{Capitulo_5}
 
-Resaltar los experimentos propios que he hecho
-
-\section{Conclusiones} \label{Subsec: 5_1}
+En este capítulo, se resumen los principales resultados de este trabajo sobre la aplicación de las redes neuronales en la ciberseguridad, incluyendo una serie de direcciones futuras para posibles investigaciones en este campo.
 
 
+\section{Conclusiones}
 
-\section{Trabajo futuro} \label{Subsec: 5_2}
+Los objetivos que se establecieron al principio del curso fueron el estudio de las redes neuronales y su aplicación para abordar problemas específicos de ciberseguridad, con un enfoque en la detección y clasificación de malware.  A lo largo del trabajo, hemos logrado cumplir satisfactoriamente con estos objetivos, empezando con un estudio en profundidad del funcionamiento de las redes neuronales, sus diferentes arquitecturas y las diferentes métricas para medir su eficacia. A continuación, se puso en práctica estos conocimientos para abordar los diferentes problemas de ciberseguridad mencionados, para finalizar evaluando el rendimiento de las diferentes redes neuronales utilizadas.
+
+Además, aunque nuestro objetivo inicial no era mejorar los modelos existentes ni realizar experimentos extra, el conocimiento adquirido durante todo el año junto con el análisis de los resultados obtenidos, ha llevado, como resultado secundario, a mejoras en la arquitectura de algunos modelos, obteniendo resultados destacables tanto en precisión como en eficiencia.
+
+En el Capítulo \ref{Capitulo_3}, se realizaron  experimentos extra para mejorar el rendimiento de los modelos. En la CNN se añadieron capas de \lstinline|Dropout| después de las capas densas para obtener una mejor generalización del modelo. Además, se realizaron experimentos para garantizar que el uso de los hiperparámetros indicados en los artículos eran los idóneos para cada modelo. Por otro lado, en los modelos que se utilizaron \textit{Autoencoders}, se desarrollaron y probaron diferentes modelos sin seguir investigaciones previas para este problema de clasificación. Con estas mejoras en los modelos, la CNN con capas de \textit{dropout} de 0.5 y con \lstinline|EarlyStopping| es el modelo que mejor resultados ha obtenido para este problema, por encima de los diferentes modelos de \textit{autoencoders}, llegando a un nivel de precisión cercano al 97\% en el conjunto de prueba. 
+
+Por otro lado, en el Capítulo \ref{Capitulo4} se siguieron diferentes artículos para crear las arquitecturas de redes neuronales. Comparando sus resultados, podemos observar cómo todas ellas obtienen una precisión y una generalización óptima, con resultados superiores al 93 \% en todas sus métricas estudiadas. Sin embargo, el modelo que mejor rendimiento ha demostrado a lo largo del entrenamiento y que mejor se ha adaptado a los datos de entrada ha sido la red neuronal recurrente RNN-LSTM. Este modelo alcanzó un nivel de precisión del 99.79 \% y una pérdida de 0.0045 en el conjunto de validación, resultados consistentes y prácticamente idénticos a los obtenidos en el conjunto de entrenamiento, lo que indica una excelente capacidad de generalización. Además, ha mostrado una gran estabilidad en sus curvas de precisión y pérdida a lo largo de las épocas. Todo ello la convierten en la opción más efectiva y robusta para la detección de intrusiones en comparación con los otros modelos evaluados. 
+
+
+En lo personal, este trabajo me ha dado la oportunidad de descubrir en profundidad el funcionamiento de las redes neuronales, un campo que siempre me había despertado curiosidad y del cual comencé a estudiar de manera autodidacta. En el segundo cuatrimestre, recibí una pequeña introducción formal en la asignatura \textit{Geometría Computacional}, que consolidó mis conocimientos previos. Gracias a este trabajo, he podido experimentar de primera mano el gran potencial que tienen estas técnicas para abordar problemas complejos, como la ciberseguridad. Este estudio me ha permitido apreciar la importancia de aplicar el aprendizaje automático en la defensa contra ciberamenazas, destacando cómo la inteligencia artificial puede ser una herramienta crucial para mejorar la seguridad digital en un mundo cada vez más conectado.
+
+\section{Trabajo Futuro}
+
+A pesar de haber alcanzado los objetivos propuestos, el estudio sobre redes neuronales aplicadas a la ciberseguridad abre múltiples líneas de estudio para futuras exploraciones. A continuación, se proponen algunas de ellas:
+
+\begin{enumerate}    
+    \item \textbf{Manejo del desbalance de clases:} Como se observó en los resultados del Capítulo~\ref{Capitulo_3}, la clase número 5 no obtuvo buenos resultados en las pruebas con las redes neuronales. Este problema de desbalanceo de clases, especialmente en la clasificación de malware, ha demostrado ser un desafío notable. Futuras estudios podrían centrarse en implementar técnicas de pesos de clase (como vimos en los resultados del capítulo \ref{Capitulo_3}) para abordar este desbalance.
+
+    \item \textbf{Entrenamiento Greedy de Autoencoders:} Otra ampliación interesante de este trabajo podría ser el entrenamiento de \textit{autoencoders} de forma \textit{greedy}, donde cada capa sea la representación comprimida de un \textit{autoencoder} simple entrenado previamente. Según lo propuesto en ~\cite{geron2022hands} en el Capítulo 17, esta técnica podría adaptarse y aplicarse a nuestro contexto de ciberseguridad para mejorar la eficiencia del entrenamiento de \textit{autoencoders}.
+
+    \item \textbf{Análisis multiclase de RNN, DNN y CNN:} Otra área de investigación futura podría ser realizar el análisis de detección de intrusiones en un contexto multiclase utilizando los modelos RNN, DNN y CNN y la base de datos \textit{KDD CUP 1999} del capítulo \ref{Capitulo4}. Este análisis permitiría evaluar la capacidad de estos modelos para clasificar distintos tipos de ataques en lugar de una simple clasificación binaria de registros benignos y anómalos.
+    
+    \item \textbf{Detección de intrusiones usando RBM:} Una posible extensión de este trabajo podría ser la implementación y evaluación de un modelo utilizando Máquinas de Boltzmann Restringidas (RBM) \citep{alrawashdeh2016toward} para la detección de intrusiones. Este método es una técnica de aprendizaje automático que ha demostrado ser efectiva en la modelización de datos complejos. Las RBM pueden aprender una representación probabilística de los datos y podrían ofrecer ventajas en términos de precisión y capacidad de detección de anomalías.
+
+\end{enumerate}
+
+
+
+
+
+
+

@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2.8cm]{geometry}
 \setlength{\parskip}{4mm}
+\usepackage{multirow}
 
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 
@@ -120,7 +121,7 @@
 }
 
 
-\usepackage{caption}
+\usepackage[hypcap=false]{caption}
 \usepackage{subcaption}
 \usepackage[acronym]{glossaries}
 
@@ -158,10 +159,10 @@
 \date{Julio 2024}
 
 
-\newacronym{cnn}{CNN}{Convolutional Neural Network}
-\newacronym{dnn}{DNN}{Deep Neural Network}
+\newacronym{cnn}{CNN}{Red Neuronal Convolucional}
+\newacronym{dnn}{DNN}{Red Neuronal Profunda}
+\newacronym{rnn}{RNN}{Red Neuronal Recurrente}
 \newacronym{dbns}{DBNs}{Deep Belief Networks}
-\newacronym{rnn}{RNN}{Recurrent Neural Network}
 \newacronym{rbm}{RBM}{Restricted Boltzmann Machine}
 
 
@@ -220,6 +221,22 @@
    {\bf Agradecimientos} 
 \end{center}
 
+Quiero expresar mi profunda gratitud hacia todas las personas que han sido indispensables en esta etapa. Sin su apoyo, guía y compañía, este camino no habría sido posible.
+
+En primer lugar, dedico este trabajo a mis amigos de la carrera: María, Miguel, Nerea, Alex, Meléndez, Claudia, Tofi, Vicky, Luna, Celia, Paula, Pablo y Carlos. Gracias por compartir conmigo este viaje lleno de desafíos y logros. A pesar de las dificultades y las largas horas de estudio, vuestra presencia ha hecho que esta carrera sea mucho más llevadera y divertida. Sois parte esencial de esta etapa inolvidable.
+
+También quiero reconocer a todos mis profesores, especialmente a Rafa, Óscar Martín, Natalia, María Isabel y Óscar Domínguez. Cada uno de vosotros ha dejado una marca especial en mí, convirtiendo este difícil camino en una aventura especial y enriquecedora. Agradezco sinceramente vuestro apoyo constante, pasión y ayuda durante estos años.
+
+A Luis Llana, quien me ha guiado a lo largo de este año. Muchas gracias por la dedicación que has tenido conmigo durante todo el curso, con reuniones semanales, aunque alguna semana yo no tuviera mucho que decirte, han sido un impulso constante para mí. Muchas gracias también por tu apoyo, orientación y consejos han sido cruciales para la finalización de este trabajo.
+
+No quiero olvidar a las dos personas que despertaron mi interés y pasión por las matemáticas, Carmen Zamarro y Eulalia. Vuestra energía, pasión e inspiración han sido fundamentales en mi trayectoria académica. Gracias por guiarme hacia este fascinante mundo.
+ 
+
+A mis padres, gracias por vuestro amor y apoyo incondicional. Habéis estado ahí en todo momento, dándome la fuerza para seguir adelante incluso en los momentos más difíciles. Vuestra confianza en mí ha sido fundamental para alcanzar este logro. No hay palabras para expresar lo agradecido que estoy por todo lo que habéis hecho por mí.
+
+Por último y más importante, a mi novia. Noe, eres mi motor y mi fuente de inspiración. Gracias por estar siempre a mi lado, por tu paciencia y por creer en mí. Tu apoyo ha sido esencial para superar todos los obstáculos y lograr este objetivo. Gracias por apoyarme y escucharme en todo momento, aunque a veces me ponga un poco pesado. Te agradezco de corazón por ser parte de mi vida y por todo lo que has hecho para ayudarme a llegar hasta aquí. Te quiero.
+
+Gracias a todos por hacer posible este momento tan importante.
 
 
 
@@ -230,25 +247,30 @@
 \setcounter{page}{1}
 
 
-\newpage
 \begin{center}
-   {\bf Resumen} 
+{\bf Resumen}
 \end{center}
-   
+Vivimos en un mundo cada vez más digital, donde la seguridad de la información se ha convertido en una prioridad. Este trabajo se enfoca en aplicar métodos de aprendizaje automático para intentar encontrar soluciones eficaces a problemas de ciberseguridad. Partiendo de un análisis exhaustivo sobre los fundamentos del aprendizaje profundo y sus diferentes arquitecturas, se estudia su uso en la clasificación y detección de intrusiones. Para el problema de clasificación de malware, se utiliza el \textit{Microsoft Malware Classification Challenge}, aplicando redes neuronales convolucionales y autoencoders para evaluar su rendimiento. En la detección de intrusiones, se emplean los datos del \textit{KDD Cup 1999}, implementando modelos de redes neuronales profundas, recurrentes, convolucionales y \textit{autoencoders}. Finalmente, se discuten los resultados obtenidos en función de su precisión y capacidad de generalización de los datos, destacando el gran potencial de estas técnicas de aprendizaje automático para fortalecer la seguridad informática.
+
+
 
 \vspace{0.6 cm}
-\textsl{\textbf{Palabras clave:} } 
+\textsl{\textbf{Palabras clave:} Aprendizaje Automático, Ciberseguridad, Detección de Intrusiones, Clasificación de Malware, Redes Neuronales.}
+
 
 
 
 \begin{center}
    {\bf Abstract} 
 \end{center}
+We live in an increasingly digital world where information security has become a priority. This work focuses on applying machine learning methods to attempt to find effective solutions to cybersecurity problems. Starting from a comprehensive analysis of the fundamentals of deep learning and its different architectures, its use in classification and intrusion detection is studied. For the malware classification problem, the \textit{Microsoft Malware Classification Challenge} is used, applying convolutional neural networks and autoencoders to evaluate their performance. For intrusion detection, data from the \textit{KDD Cup 1999} is used, implementing deep, recurrent, convolutional neural network models and autoencoders. Finally, the results obtained are discussed in terms of their accuracy and data generalization capability, highlighting the great potential of these machine learning techniques to strengthen information security.
+
+
 
 
 
 \vspace{0.6 cm}
-\textsl{\textbf{Keywords:} } 
+\textsl{\textbf{Keywords:} Machine learning, Cibersecuity, Intrusion Detection, Malware Classification, Neural Networks} 
 
 
 \newpage
@@ -494,37 +516,6 @@ and Prevention System.
 
 \appendix
 
-\chapter{Anexo A} \label{anexoa}
-
-Para determinar estos pesos, deben calcularse usando la siguiente fórmula:
-
-\[
-W_j = \sqrt{\frac{s}{c \cdot S_j}}
-\]
-
-Donde $W_j$ representa el peso de la clase $j$, $s$ es el número total de muestras, $c$ es el número total de clases y $S_j$ es el número de muestras de la clase $j$. Estos pesos se emplean durante el cálculo de la función de pérdida. Una vez que se ha calculado la pérdida para cada clase, esta se multiplica por el peso correspondiente de la clase. Este procedimiento permite ``balancear'' la importancia relativa de cada clase durante el entrenamiento de la red.
-
-\chapter{Anexo B} \label{anexob}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Clase & Precisión & TPR (Sensibilidad) & FPR & F1 Score \\ \hline
-1 & 0.94 & 0.97 & 0.06 & 0.96 \\ \hline
-2 & 0.92 & 0.97 & 0.07 & 0.94 \\ \hline
-3 & 0.97 & 0.99 & 0.03 & 0.98 \\ \hline
-4 & 0.91 & 1.00 & 0.09 & 0.95 \\ \hline
-5 & 0.49 & 0.33 & 0.06 & 0.39 \\ \hline
-6 & 0.94 & 0.90 & 0.03 & 0.92 \\ \hline
-7 & 0.95 & 0.95 & 0.05 & 0.95 \\ \hline
-8 & 0.88 & 0.90 & 0.12 & 0.89 \\ \hline
-9 & 0.94 & 0.93 & 0.06 & 0.94 \\ \hline
-\end{tabular}
-\caption{Métricas de rendimiento por clase}
-\label{tab:metrics}
-\end{table}
 
 \end{document}
-
 

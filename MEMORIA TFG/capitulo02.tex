@@ -2,183 +2,188 @@
 
 
 \begin{minipage}{0.65\textwidth}
-La Inteligencia Artificial (IA) es un campo que busca desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.  Desde su conceptualización en la conferencia de Dartmouth en 1956, donde se propuso la idea de que ``cada aspecto del aprendizaje o cualquier otra característica de la inteligencia podría, en principio, ser descrito tan precisamente que una máquina podría simularlo'' \citep{moor2006dartmouth}, la IA ha evolucionado significativamente y ha encontrado aplicaciones en una amplia gama de sectores. La inteligencia artificial (IA) permite que los sistemas informáticos extraigan conclusiones a partir de datos, creando nuevos algoritmos en el proceso. Aunque la cultura popular a menudo representa la IA de manera exagerada, como en la película de Terminator, estamos lejos de alcanzar ese nivel de sofisticación. Sin embargo, con los avances en chatbots que pueden mantener conversaciones más naturales, estamos superando algunas limitaciones. A pesar de esto, estos sistemas todavía dependen de datos preexistentes y no pueden pensar de manera independiente.
+La Inteligencia Artificial (IA) es un campo que busca desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.  Desde su conceptualización en la conferencia de Dartmouth en 1956, donde se propuso la idea de que ``cada aspecto del aprendizaje o cualquier otra característica de la inteligencia podría, en principio, ser descrito tan precisamente que una máquina podría simularlo'' \citep{moor2006dartmouth}, la IA ha evolucionado significativamente y ha encontrado aplicaciones en una amplia gama de sectores. La inteligencia artificial permite que los sistemas informáticos extraigan conclusiones a partir de datos, creando cada vez algoritmos más complejos para obtener mejores resultados. Aunque la cultura popular a menudo representa la IA de manera exagerada, como en la película de \textit{Terminator}, estamos lejos de alcanzar ese nivel de sofisticación. Sin embargo, con los avances en \textit{chatbots} que pueden mantener conversaciones más naturales, estamos superando algunas limitaciones. A pesar de esto, estos sistemas todavía dependen de datos preexistentes y no pueden pensar de manera independiente.
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 \textbf{ }
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
     \includegraphics[width=1.1\textwidth]{img/ia.jpg}
-    \captionof{figure}{Relación entre Ciencia de Datos, Inteligencia Artificial, Machine Learning y Deep Learning.}
+    \captionof{figure}{Relación entre Ciencia de Datos, Inteligencia Artificial, \textit{Machine Learning} y \textit{Deep Learning}. Fuente \citep{articleia}}
     \label{fig: ia}
 \end{minipage}
 
 
-\section{Aprendizaje Automático}
+\section{Aprendizaje automático}
 
-Dentro del ámbito de la IA, el aprendizaje automático (Machine Learning, ML) se destaca como una de las técnicas fundamentales. A diferencia de los enfoques tradicionales de programación, donde las instrucciones son codificadas por los programadores, el ML es la ciencia o el arte de programar ordenadores para que puedan aprender a partir de datos.
+Dentro del ámbito de la IA, el aprendizaje automático (\textit{Machine Learning}, ML) se destaca como una de sus técnicas fundamentales. A diferencia de los enfoques tradicionales de programación, donde las instrucciones son codificadas por los programadores, el ML es la ciencia o el arte de programar ordenadores para que puedan aprender a partir de datos \citep{knuth1997art}.
 
-Arthur Samuel lo definió en 1959 como ``el campo de estudio que otorga a las computadoras la capacidad de aprender sin ser explícitamente programadas''. Más formalmente, según Tom Mitchell (1997), ``se dice que un programa de computadora aprende de la experiencia \(E\) con respecto a alguna tarea \(T\) y alguna medida de rendimiento \(P\), si su rendimiento en \(T\), medido por \(P\), mejora con la experiencia \(E\)'' \citep{geron2022hands}. El aprendizaje automático ha revolucionado numerosos campos, permitiendo a las máquinas realizar tareas que antes requerían intervención humana directa. Desde la conducción autónoma hasta el diagnóstico médico, las aplicaciones del aprendizaje automático son diversas. A diferencia de los métodos tradicionales de programación, donde se codifican reglas explícitas, el aprendizaje automático permite que los sistemas descubran patrones y relaciones directamente a partir de los datos, adaptándose y mejorando con el tiempo. Los modelos se entrenan utilizando conjuntos de datos y, a partir de este entrenamiento, pueden predecir las salidas para nuevas entradas.
-
-
-Un \textbf{ejemplo} de aprendizaje automático es un filtro de spam que, dado ejemplos de correos electrónicos de spam y ejemplos de correos electrónicos normales (no spam, también llamados ``ham''), puede aprender a marcar el spam \citep{geron2022hands}. Los ejemplos que el sistema utiliza para aprender se llaman el conjunto de entrenamiento. Cada ejemplo de entrenamiento se llama una instancia de entrenamiento (o muestra). En este caso, la tarea \(T\) es marcar el spam en los nuevos correos electrónicos, la experiencia \(E\) son los datos de entrenamiento, y la medida de rendimiento \(P\) podría ser la precisión del filtro. Un filtro de spam utilizando técnicas tradicionales de programación, en primer lugar, consideraría cómo se ve normalmente el spam, detectando palabras comunes u otros patrones como el nombre del remitente y escribiendo reglas para cada una de estas. Pero si los encargados de mandar el spam detectan que todos los correos que incluyen la palabra ``para usted'' o  ``cuenta bancaria'' son rechazados, pueden modificar estas palabras por otras y así ser aceptados por el filtro. Luego un filtro de spam que utiliza técnicas tradicionales de programación necesitaría ser actualizado continuamente para detectar correos electrónicos spam. Por otro lado, un filtro de spam basado en técnicas de aprendizaje automático nota automáticamente que "para ti" se ha vuelto inusualmente frecuente en el spam marcado por los usuarios, y comienza a marcarlos sin intervención humana \citep{geron2022hands}.
+Arthur Samuel lo definió en 1959 como ``el campo de estudio que otorga a las computadoras la capacidad de aprender sin ser explícitamente programadas''\citep{geron2022hands}. Más formalmente, según Tom Mitchell (1997), ``se dice que un programa de computadora aprende de la experiencia \(E\) con respecto a alguna tarea \(T\) y alguna medida de rendimiento \(P\), si su rendimiento en \(T\), medido por \(P\), mejora con la experiencia \(E\)'' \citep{geron2022hands}. El aprendizaje automático ha revolucionado numerosos campos, permitiendo a las máquinas realizar tareas que antes requerían intervención humana directa. Desde la conducción autónoma hasta el diagnóstico médico, las aplicaciones del aprendizaje automático son diversas. A diferencia de los métodos tradicionales de programación, el aprendizaje automático permite que los sistemas descubran patrones y relaciones directamente a partir de los datos, adaptándose y mejorando con el tiempo. Los modelos se entrenan utilizando conjuntos de datos y, a partir de este entrenamiento, pueden predecir las salidas para nuevas entradas.
 
 
-El \textbf{esquema global de aprendizaje} consta de tres módulos principales: el generador, el entrenamiento y la decisión. El generador proporciona entradas estructuradas, principalmente vectores con atributos de los datos, para su procesamiento. El entrenamiento ajusta los parámetros del modelo basándose en las salidas deseadas, y por último, la decisión asigna categorías a nuevas muestras de entrada utilizando los parámetros aprendidos durante el entrenamiento \citep{pajares2021aprendizaje}.
+Un \textbf{ejemplo} de aprendizaje automático es un filtro de \textit{spam} que, dadole ejemplos de correos \textit{spam} y ejemplos de correos electrónicos normales (llamados \textit{ham}), puede aprender a marcar el \textit{spam} \citep{geron2022hands}. Los ejemplos que el sistema utiliza para aprender se llaman el conjunto de entrenamiento. Cada ejemplo de entrenamiento se llama una instancia de entrenamiento (o muestra). En este caso, la tarea \(T\) es marcar el \textit{spam} en los nuevos correos electrónicos, la experiencia \(E\) son los datos de entrenamiento, y la medida de rendimiento \(P\) podría ser la precisión del filtro. Un filtro de \textit{spam} utilizando técnicas tradicionales de programación, en primer lugar, consideraría cómo se ve normalmente el \textit{spam}, detectando palabras comunes u otros patrones como el nombre del remitente y escribiendo reglas para cada una de estas. Pero si los encargados de mandar el \textit{spam} detectan que todos los correos que incluyen la palabra ``para usted'' o  ``cuenta bancaria'' son rechazados, pueden modificar estas palabras por otras y así ser aceptados por el filtro. Luego un filtro de \textit{spam} que utiliza técnicas tradicionales de programación necesitaría ser actualizado continuamente para detectar correos electrónicos \textit{spam}. Por otro lado, un filtro de \textit{spam} basado en técnicas de aprendizaje automático nota automáticamente que ``para ti'', se ha vuelto inusualmente frecuente en el \textit{spam} marcado por los usuarios, y comienza a marcarlos sin intervención humana \citep{geron2022hands}.
 
 
-En cuanto a la \textbf{clasificación de los sistemas de aprendizaje automático}, se distinguen cuatro tipos principales: el aprendizaje supervisado, aprendizaje no supervisado, aprendizaje semisupervisado y aprendizaje por refuerzo.
+El \textbf{esquema global de aprendizaje} consta de tres módulos principales: el generador, el entrenamiento y la decisión. El generador proporciona entradas estructuradas, principalmente vectores con los datos para su procesamiento. El entrenamiento ajusta los parámetros del modelo basándose en las salidas deseadas, y por último, la decisión asigna categorías a nuevas muestras de entrada utilizando los parámetros aprendidos durante el entrenamiento \citep{pajares2021aprendizaje}.
+
+
+En cuanto a la \textbf{clasificación de los sistemas de aprendizaje automático}, se distinguen cuatro tipos principales: el aprendizaje supervisado, aprendizaje no supervisado, aprendizaje semisupervisado y aprendizaje por refuerzo. Toda esta información proporcionada a continuación ha sido extraida de \citep{geron2022hands}.
 
 \begin{enumerate}
-	\item En el aprendizaje \textbf{supervisado}, todos los datos de entrenamiento tienen asociados las salidas deseadas (también llamadas etiquetas). Todo dato de entrada \( x \), conoce su salida \( y \), de tal forma que existe una funcion $f$ desconocida que relaciona ambas, $y=f(x)$. El objetivo del aprendizaje supervisado consiste en estimar la función $\hat{f}$ de tal forma que $\hat{f}$ sea una buena aproximación de la función $f$ que relaciona las entradas $x$ con las salidas $Y$. Un ejemplo puede ser el del filtro de spam ya que se entrena el modelo con los correos y con la etiqueta de si son spam o no. Otros ejemplos incluyen regresión lineal, regresión logística, árboles de decisión y redes neuronales \citep{geron2022hands}.
+	\item En el aprendizaje \textbf{supervisado}, todos los datos de entrenamiento tienen asociados las salidas deseadas (también llamadas etiquetas). Todo dato de entrada \( x \), conoce su salida \( y \), de tal forma que existe una función $f$ desconocida que relaciona ambas, $y=f(x)$. El objetivo del aprendizaje supervisado consiste en estimar la función $\hat{f}$ de tal forma que $\hat{f}$ sea una buena aproximación de la función $f$ que relaciona las entradas $x$ con las salidas $Y$. Un ejemplo puede ser el del filtro de \textit{spam} ya que se entrena el modelo con los correos y con la etiqueta de si son \textit{spam} o no. Otros ejemplos incluyen regresión lineal, regresión logística, árboles de decisión y redes neuronales.
 
-	\item En el aprendizaje \textbf{no supervisado}, al contrario que en el supervisado, los datos de entrenamiento no están etiquetados. De esta forma, el modelo tiene que aprender sin supervisión (tambíen llamado sin ``profesor''). El objetivo principal de este tipo de algoritmos se basa en el agrupamiento, detección de anomalías o reducción de dimensionalidad \citep{geron2022hands}. 
+	\item En el aprendizaje \textbf{no supervisado}, al contrario que en el supervisado, los datos de entrenamiento no están etiquetados. De esta forma, el modelo tiene que aprender sin supervisión (tambíen llamado sin ``profesor''). El objetivo principal de este tipo de algoritmos se basa en el agrupamiento, detección de anomalías o reducción de dimensionalidad. Un ejemplo podría ser el clustering, que se usa principalmente cuando queremos clasificar una muestra de datos según su similitud.
 
-	\item En el caso de encontrarnos ante un problema en el que tengamos datos tanto etiquetados como sin etiquetar, nos encontramos ante un problema de \textbf{aprendizaje semisupervisado}. Este tipo de aprendizaje suele darse en situaciones en las que obtener etiquetas de los datos puede ser muy costoso pero sin embargo obtener datos sin etiquetar no tanto. Un ejemplo podría ser la agrupación de fotos donde sale la misma persona en Google Photos. La parte no supervisada sería la de agrupación y la supervisada la de dar una etiqueta a cada grupo \citep{geron2022hands}.
+	\item En el caso de encontrarnos ante un problema en el que tengamos datos tanto etiquetados como sin etiquetar, nos encontramos ante un problema de \textbf{aprendizaje semisupervisado}. Este tipo de aprendizaje suele darse en situaciones en las que obtener etiquetas de los datos puede ser muy costoso pero sin embargo obtener datos sin etiquetar no tanto. Un ejemplo podría ser la agrupación de fotos donde sale la misma persona en Google Photos. La parte no supervisada sería la de agrupación y la supervisada la de dar una etiqueta a cada grupo.
 
-	\item Por último, está el \textbf{aprendizaje por refuerzo}, un tipo de aprendizaje un poco diferente a los otros tres. Es un método en el cual un agente (como un robot o un programa) interactúa con su entorno y toma decisiones para recibir recompensas o evitar penalizaciones. El agente aprende a través de la experiencia que obtiene al observar qué acciones le proporcionan las mejores recompensas a lo largo del tiempo. Este proceso implica desarrollar una estrategia, llamada política, que le indica qué acción tomar en cada situación para maximizar sus recompensas futuras. Por ejemplo, un robot que usa aprendizaje por refuerzo podría aprender a caminar ajustando sus movimientos según las recompensas y penalizaciones que recibe por sus acciones, mejorando gradualmente su habilidad para andar. \citep{geron2022hands}.
+	\item Por último, está el \textbf{aprendizaje por refuerzo}, un tipo de aprendizaje un poco diferente a los otros tres. Es un método en el cual un agente (como un robot o un programa) interactúa con su entorno y toma decisiones para recibir recompensas o evitar penalizaciones. El agente aprende a través de la experiencia que obtiene al observar qué acciones le proporcionan las mejores recompensas a lo largo del tiempo. Este proceso implica desarrollar una estrategia, llamada política, que le indica qué acción tomar en cada situación para maximizar sus recompensas futuras. Por ejemplo, un robot que usa aprendizaje por refuerzo podría aprender a caminar ajustando sus movimientos según las recompensas y penalizaciones que recibe por sus acciones, mejorando gradualmente su habilidad para andar.
 \end{enumerate}
 
 
 \section{Aprendizaje profundo}
 
-Dentro del Machine Learning, se encuentra el Deep Learning, cuya base son las redes neuronales artificiales (ANN). Las ANN son unas estructuras versátiles, potentes y escalables, lo que las hace ideales para abordar tareas grandes y complicadas para el aprendizaje profundo. Según \citep{pajares2021aprendizaje}, se definen como un modelo matemático inspirado en la estructura de una red neuronal biológica. Consiste en una red de neuronas interconectadas organizadas por capas, con una capa de entrada, una o más capas ocultas y una capa de salida \citep{dolling2002artificial}. En cada neurona se aplica una suma ponderada de las señales recibidas a las que se le aplica una función de activación o conexión no lineal. La capa de entrada recibe la información del exterior y la agrupa en la capa de entrada, mandando una salida a la siguiente capa a través de sus neuronas con \textbf{pesos} asociados en cada conexión. Las capas ocultas reciben información de otras neuronas artificiales y cuyas señales de entrada y salida permanecen dentro de la red. Por último, la capa de salida recibe la información procesada y la devuelve al exterior con la salida predicha por nuestro modelo. Además de los pesos que se van ajustando durante el entrenamiento, también está el \textbf{sesgo o bias}, que es un valor que se asigna a cada neurona de cada capa para añadir características adicionales a la red neuronal que antes no tenía. 
+Dentro del \textit{Machine Learning}, se encuentra el\textit{ Deep Learning}, cuya base son las redes neuronales artificiales (ANN). Las ANN son unas estructuras versátiles, potentes y escalables, lo que las hace ideales para abordar tareas grandes y complicadas para el aprendizaje profundo. 
+
+Según \citep{pajares2021aprendizaje}, se definen como un modelo matemático inspirado en la estructura de una red neuronal biológica. Consiste en una red de neuronas interconectadas organizadas por capas, con una capa de entrada, una o más capas ocultas y una capa de salida \citep{dolling2002artificial}. En cada neurona se aplica una suma ponderada de las señales recibidas a las que se le aplica una función de activación o conexión no lineal. 
+
+La capa de entrada recibe la información del exterior y la agrupa en la capa de entrada, mandando una salida a la siguiente capa a través de sus neuronas con \textbf{pesos} asociados en cada conexión. Las capas ocultas reciben información de otras neuronas artificiales y cuyas señales de entrada y salida permanecen dentro de la red. Por último, la capa de salida recibe la información procesada y la devuelve al exterior con la salida predicha por nuestro modelo. Además de los pesos que se van ajustando durante el entrenamiento, también está el \textbf{sesgo o bias}, que es un valor que se asigna a cada neurona de cada capa para añadir características adicionales a la red neuronal que antes no tenía. 
 
 Para optimizar el rendimiento de estas redes, es esencial entender y aplicar conceptos de optimización.
 
 
 \section{Optimización de los modelos de machine learning} 
 
-La optimización consiste en minimizar o maximizar\footnote{En general, la optimización hace referencia a una minimización, ya que la maximización es equivalente a la minimización de $-f(\mathbf{x})$.} una función $f(\mathbf{x})$ modificando $\mathbf{x}$. La función a minimizar se conoce como función objetivo, función de coste, función de pérdida o función de error. La función de pérdida calcula la discrepancia entre la salida de nuestra red neuronal (predicción) y la etiqueta verdadera. Su objetivo es minimizar este error a lo largo del entrenamiento. El valor mínimo se identifica mediante el símbolo $x* = \arg \min f(\mathbf{x})$ \citep{pajares2021aprendizaje}. 
+Sea $f: S \subseteq \mathbb{R}^n \to \mathbb{R}^m$, una función donde $n$ y $m$ son números enteros y sea $w \in \mathbb{R}^n$. La optimización de $f(w)$ consiste en minimizar o maximizar\footnote{En general, optimización hace referencia a una minimización, ya que la maximizar $f(w)$ es equivalente a minimizar $-f(w)$.} su valor variando $w$. La función $f$ que se pretende optimizar se conoce como función objetivo, función de pérdida o función de error. 
 
-En Cálculo Diferencial, aprendemos que la derivada de una función en un punto $x$ nos da la inclinación o pendiente de la función en ese punto. Si hacemos un pequeño cambio en la entrada $x$, representado por $\delta$, podemos aproximar el valor de la función en este nuevo punto $x + \delta$ mediante la siguiente relación: $f(x + \delta) \approx f(x) + f'(x)\delta$, lo que significa que el valor de la función en el punto $x + \delta$ es aproximadamente igual al valor de la función en $x$, más el producto de la derivada de la función en $x$ y el desplazamiento $\delta$. Para poder utilizar esta aproximación, es necesario que la función sea diferenciable \footnote{En una red neuronal se realizan cálculos en cada capa y si estos cálculos son diferenciables, la función de pérdida también lo será. Si se utilizan funciones que no son diferenciables en todos los puntos,  entonces se debe aplicar una aproximación de la derivada para poder utilizar la función en el método de descenso de gradiente.}. 
+En Cálculo Diferencial, aprendemos que la derivada de una función en un punto $w$ nos da la inclinación o pendiente de la función en ese punto. Si aplicamos un pequeño desplazamiento $\delta \in \mathbb{R}^n$ en la entrada $w$, podemos aproximar el valor de la función en este nuevo punto $w + \delta$ mediante la siguiente relación: 
+\begin{equation}
+    f(w + \delta) \approx f(w) + f'(w)\cdot \delta
+\end{equation}
+Para poder utilizar esta aproximación, podemos observar que es necesario que la función sea diferenciable. Si se utilizan funciones que no son diferenciables en todos los puntos,  entonces se debe aplicar una aproximación de la derivada para poder utilizar la función en el método de descenso de gradiente. 
 
 
-Se va a presentar ahora un método de optimización conocido como método de descenso de gradiente (\textit{gradient descent}). Durante este método, se propaga el error hacia atrás a través de la estructura del modelo, de forma que los pesos en las redes neuronales vayan ajustándose a lo largo del entrenamiento. Esto cierra el ciclo de aprendizaje entre el envío de los datos hacia adelante, la generación de predicciones y la mejora durante la propagación hacia atrás. Al adaptar los pesos, el modelo probablemente mejore (a veces mucho, a veces ligeramente) y, por lo tanto, se dice que se ha realizado el aprendizaje \citep{pajares2021aprendizaje}. 
+En el caso particular de las redes neuronales, la función de pérdida calcula la discrepancia entre la salida de nuestra red neuronal (predicción) y la etiqueta verdadera. Se va a presentar ahora un método de optimización conocido como método de descenso de gradiente (\textit{gradient descent}). Durante este método, se propaga el error hacia atrás a través de la estructura del modelo, de forma que los pesos en las redes neuronales se vayan ajustando a lo largo del entrenamiento. Este proceso cierra el ciclo de aprendizaje entre el envío de los datos hacia adelante, la generación de predicciones y la mejora durante la propagación hacia atrás. Al adaptar los pesos, el modelo probablemente mejore (a veces mucho, a veces ligeramente) y, por lo tanto, se dice que se ha realizado el aprendizaje \citep{pajares2021aprendizaje}. 
 
 
 \subsection{Descenso de gradiente}
 
 
-Sea $f: S \in \mathbb{R}^n \to \mathbb{R}^m$, donde $n$ y $m$ son enteros. Cuando $f'(x) = 0$, la derivada no proporciona información sobre la dirección en la que hay que moverse. Estos puntos se conocen como puntos críticos o puntos estacionarios. Un punto $x_0$ es un \textbf{mínimo local} si $\exists \epsilon$ tal que $f(x_0) \leq f(x)$ para todo $x \in B(x_0, \epsilon)$\footnote{$B(a,b)$ hace referencia a la bola o disco de centro $a$ y radio $b$}. Por otra parte, un punto \( x_0 \) es un \textbf{punto de inflexión} de la función \( f \) si \( f \) es continua en \( x_0 \) y existe un entorno \( B(x_0, \epsilon) \) tal que \( f'' \) cambia de signo en \( x_0 \). Si un punto $x_0$ cumple que $\exists \epsilon$ tal que $f(x_0) \leq f(x)$ para todo $x \in S$, entonces $x_0$ es un \textbf{mínimo global}. Una función puede tener solo un mínimo global o múltiples mínimos globales de la función. También es posible que haya mínimos locales que no sean globalmente óptimos. 
+Sea $f: S \subseteq \mathbb{R}^n \to \mathbb{R}^m$, donde $n$ y $m$ son enteros y sea $w \in \mathbb{R}^n$. Cuando $f'(w) = 0$, la derivada no proporciona información sobre la dirección en la que hay que moverse. Estos puntos se conocen como puntos críticos o puntos estacionarios. 
 
-En el contexto del aprendizaje automático, se optimizan funciones que pueden tener muchos mínimos locales que no son óptimos y muchos puntos de inflexión rodeados de regiones muy planas. Todo esto hace que la optimización sea difícil, especialmente cuando la entrada a la función es multidimensional. Por lo tanto, se suele conformar con encontrar un valor que sea muy bajo pero no necesariamente mínimo en ningún sentido formal \citep{pajares2021aprendizaje}. 
+\textbf{Definición 2.1}. Un punto $w_0 \in \mathbb{R}^n$ es un \textbf{mínimo local} si $\exists \epsilon \in \mathbb{R}$ tal que $f(w_0) \leq f(w)$ para todo $w \in B(w_0, \epsilon)$\footnote{$B(a,b)$ hace referencia a la bola o disco de centro $a$ y radio $b$}. 
 
-Cuando queremos minimizar una función que tiene varias entradas (\(n\) entradas) pero solo una salida (una función \( f : \mathbb{R}^n \to \mathbb{R} \)), usamos el concepto de derivadas parciales. La derivada parcial \(\frac{\partial f}{\partial w_i}\) nos dice cómo cambia el valor de la función \(f\) cuando una de las variables de entrada, \(w_i\), cambia mientras las demás se mantienen constantes.
+\textbf{Definición 2.2}. Un punto \( w_0 \in \mathbb{R}^n \) es un \textbf{punto de inflexión} de \( f \) si es continua en \( w_0 \) y existe un entorno \( B(w_0, \epsilon) \) tal que \( f'' \) cambia de signo. 
 
-El gradiente de la función \( f \) es un vector que agrupa todas estas derivadas parciales y se denota como \(\nabla f(\mathbf{w})\). Este gradiente nos muestra la dirección en la que la función \( f \) crece más rápidamente.
+\textbf{Definición 2.3}. Un punto $w_0$ es un \textbf{mínimo global} de $f$ si para todo $w \in S$,  $f(w_0) \leq f(w)$ . 
 
-La derivada direccional nos dice cómo cambia la función \( f \) en una dirección específica, indicada por un vector unitario \(\mathbf{u}\). Para encontrar la derivada direccional en la dirección \(\mathbf{u}\), consideramos cómo cambia la función \( f \) en el punto \(\mathbf{w} + \alpha \mathbf{u}\) cuando \(\alpha\) varía. Usando la regla de la cadena, podemos ver que esta derivada direccional es igual a $\mathbf{u} \cdot \nabla f(\mathbf{w})$ cuando $\alpha = 0$. Esto nos proporciona una forma de evaluar cómo cambiará la función en cualquier dirección específica desde el punto \(\mathbf{w}\) \citep{pajares2021aprendizaje}.
 
-Para minimizar $f$, es deseable encontrar la dirección en la que $f$ disminuye de forma más rápida, lo que se puede hacer usando la derivada direccional:
+Una función puede tener solo un mínimo global o múltiples mínimos globales de la función. También es posible que haya mínimos locales que no sean globalmente óptimos.  
+
+Si queremos minimizar una función que tiene varias entradas pero solo una salida, (\( f : \mathbb{R}^n \to \mathbb{R} \)), usamos el concepto de derivada parcial. Recordemos que si $w = (w_1, w_2, \cdots, w_n) \in \mathbb{R}^n$, entonces \(\frac{\partial f}{\partial w_i}(w)\) nos dice cómo cambia el valor de \(f\) cuando \(w_i\) varía. 
+
+\textbf{Definición 2.4}. La derivada direccional nos dice cómo cambia la función \( f \) en una dirección específica, indicada por un vector unitario \(u \in \mathbb{R}^n\). Para encontrar la derivada direccional en la dirección \(u\), consideramos cómo cambia la función \( f \) en el punto \(w + \alpha u\) cuando \(\alpha\) varía. Usando la regla de la cadena, podemos ver que esta derivada direccional es igual a:
 \begin{equation}
-    \min_{\mathbf{u}} u^t \nabla_w f(\mathbf{w}) = \min_{\mathbf{u}} ||u||_2 ||\nabla_w f(\mathbf{w})||_2 \cos \theta
+    f'(w + \alpha u) = u^t \cdot \nabla f(w)
 \end{equation}
-donde $\theta$ es el ángulo entre $\mathbf{u}$ y el gradiente del vector $w$. Sustituyendo $||\textbf{u}||_2 = 1$ e ignorando factores que no dependen de $\textbf{u}$, se concreta en minimizar $min_\textbf{u} \cos \theta$. Luego moviéndose en dirección opuesta al gradiente se consigue minimizar el valor de $f$. Este método se conoce como método del gradiente descendente (\textit{steepest descent} o \textit{gradient descent}), que propone un nuevo valor que hace decrecer la función $f$:
+Esto nos proporciona una forma de evaluar cómo cambiará la función en cualquier dirección específica desde el punto $w$ \citep{pajares2021aprendizaje}.
+
+
+En el contexto del aprendizaje automático, se optimizan funciones que pueden tener muchos mínimos locales que no son óptimos y muchos puntos de inflexión rodeados de regiones muy planas. Todo esto hace que la optimización sea difícil, especialmente cuando la entrada a la función es multidimensional. Por lo tanto, se suele conformar con encontrar un valor que sea muy bajo pero no necesariamente mínimo en ningún sentido formal \citep{pajares2021aprendizaje}.
+
+Sea $u \in \mathbb{R}^n$ una dirección y sean $w \in \mathbb{R}^n$ los pesos de la red neuronal. Para minimizar $f$, es deseable encontrar la dirección $u \in \mathbb{R}^n$ en la que $f$ disminuye de forma más rápida. Esto se puede conseguir minimizando la derivada direccional:
 \begin{equation}
-    \mathbf{w}' = \mathbf{w} - \eta \nabla f(\mathbf{w}),
-\end{equation} \label{eq: actuPesos}
-donde $\eta$ es la razón de aprendizaje (o \textit{learning rate}), que determina el tamaño del paso. 
+    \min_{u \in \mathbb{R}^n} f'(w + \alpha u) = \min_{u \in \mathbb{R}^n} u^t \cdot \nabla f(w) = \min_{u \in \mathbb{R}^n} ||u|| \cdot ||\nabla f(w)|| \cos(\theta)
+\end{equation}
+donde $\theta$ es el ángulo entre $u$ y el gradiente del vector $w$. Asumiendo la normalidad en el vector $u$ e ignorando factores que no dependen de $u$, se concluye que hay que minimizar:
+\begin{equation}
+    \min_{u \in \mathbb{R}^n} \cos(\theta)
+\end{equation}
+Esto nos sugiere que para minimizar el valor de $f(w)$, hay que moverse en dirección opuesta al gradiente. Este método se conoce como método de descenso de gradiente (\textit{steepest descent} o \textit{gradient descent}). El nuevo valor que propone este método para obtener un valor menor en la función de coste es:
+\begin{equation} \label{eq: actuPesos}
+    w' = w - \eta \nabla f(w),
+\end{equation} 
+donde $\eta \in \mathbb{R}$ es la razón de aprendizaje (o \textit{learning rate}), que determina el tamaño del paso. En caso de aplicar esta ecuación a cada uno de los datos de entrada, se llamará \textbf{descenso de gradiente por lotes}. 
 
-En caso de aplicar esta ecuación a cada uno de los datos de entrada, se llamará \textbf{descenso de gradiente por lotes}. El learning rate se puede elegir de varias formas, una de ellas es fijarlo a un valor constante pequeño. Algunas veces se puede determinar la dimensión del paso que hace desaparecer la derivada direccional. Otra aproximación consiste en evaluar $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$ para varios valores de $\eta$ y escoger el que proporciona el valor de la función objetivo menor. Esta estrategia se denomina búsqueda en línea. El gradiente descendente converge cuando cada elemento del gradiente es cero o muy próximo a él \citep{pajares2021aprendizaje}.  Escoger valores de $\eta$ muy pequeños hace que la convergencia sea muy lenta. Sin embargo, valores muy grandes pueden hacer que el algoritmo diverja y se aleje en cada paso más del valor óptimo.
+Según \citep{pajares2021aprendizaje}, el \textit{learning rate} se puede elegir de varias formas. Una de ellas es fijarlo a un valor constante pequeño. Otra forma es determinando la dimensión del paso que hace desaparecer la derivada direccional. Por último, otra aproximación consiste en evaluar $f(\mathbf{w} - \eta \nabla f(\mathbf{w}))$ para varios valores de $\eta$ y escoger el que proporciona el valor de la función objetivo menor. Escoger valores de $\eta$ muy pequeños hace que la convergencia sea muy lenta. Sin embargo, valores muy grandes pueden hacer que el algoritmo diverja y se aleje en cada paso más del valor óptimo.
 
-También esta la posibilidad de añadirle momentum al SGD, que es un hiperparámetro mayor o igual a 0 que acelera el descenso del gradiente en la dirección relevante y amortigua las oscilaciones. Su valor por defecto es 0. 
+Este método converge cuando cada elemento del gradiente es cero o muy próximo a él.  
 
 
 \subsection{Descenso de gradiente estocástico}
 
-El Descenso de Gradiente Estocástico (SGD, por sus siglas en inglés) es un algoritmo utilizado para minimizar una función objetivo en problemas de aprendizaje automático. El SGD selecciona aleatoriamente un elemento del conjunto de entrenamiento en cada iteración y calcula los gradientes basándose únicamente en esa instancia individual \citep{pajares2021aprendizaje}. Esto hace que el algoritmo sea mucho más rápido que calculándolo para todos los datos, debido a que en cada iteración solo se necesita manipular una pequeña cantidad de datos. Además, permite entrenar con conjuntos de datos muy grandes. Sin embargo, debido a su naturaleza aleatoria, el SGD es mucho menos regular que el Descenso de Gradiente por Lote. En lugar de disminuir suavemente hasta alcanzar el mínimo, la función de perdida oscilará, disminuyendo solo en promedio. Con el tiempo, el algoritmo se acercará mucho al mínimo, pero continuará oscilando alrededor de él sin asentarse completamente \citep{geron2022hands}.
+El Descenso de Gradiente Estocástico (SGD, por sus siglas en inglés) es otro método utilizado en aprendizaje automático para minimizar una función objetivo. El funcionamiento del SGD consiste en seleccionar aleatoriamente un elemento del conjunto de entrenamiento en cada iteración y calcular los gradientes basándose únicamente en esa instancia individual \citep{pajares2021aprendizaje}. Esto hace que se pueda entrenar una muestra de datos más grandes y que el algoritmo sea mucho más eficiente que calculándolo para todo el conjunto de datos. 
 
-Una solución a este problema es reducir gradualmente la tasa de aprendizaje. Al principio, los pasos son grandes, lo que ayuda a hacer un progreso rápido y a escapar de mínimos locales. Luego, los pasos se hacen más pequeños, permitiendo que el algoritmo se asiente en el mínimo global \citep{geron2022hands}.
+Sin embargo, debido a su naturaleza aleatoria, el SGD es mucho menos regular que el Descenso de Gradiente por Lote. En lugar de disminuir suavemente hasta alcanzar el mínimo, la función de perdida oscilará, disminuyendo solo en promedio. Con el tiempo, el algoritmo se acercará mucho al mínimo, pero continuará oscilando alrededor de él sin asentarse completamente \citep{geron2022hands}. Una solución a este problema es reducir gradualmente la tasa de aprendizaje. Al principio, los pasos son grandes, lo que ayuda a hacer un progreso rápido y a escapar de mínimos locales. Luego, los pasos se hacen más pequeños, permitiendo que el algoritmo se asiente en el mínimo global \citep{geron2022hands}.
 
 
-Los pasos de este método de optimización son: Primero, se elige un vector inicial de parámetros \( w \) (que puede ser seleccionado aleatoriamente) y una razón de aprendizaje \( \eta \). Los siguientes pasos se repiten hasta que se consiga un mínimo aproximado: En cada iteración, se seleccionan aleatoriamente ejemplos del conjunto de entrenamiento. Para cada ejemplo \( i = 1, 2, \ldots, n \), se actualiza el vector de parámetros utilizando la fórmula \ref{eq: actuPesos} \citep{pajares2021aprendizaje}.
+Para aplicar este algoritmo, primero se elige un vector inicial de parámetros \( w \in \mathbb{R}^n\) (que puede ser seleccionado aleatoriamente) y una razón de aprendizaje \( \eta \in \mathbb{R} \). A continuación, se selecciona aleatoriamente una instancia del conjunto de entrenamiento y se actualizan los pesos según la fórmula \ref{eq: actuPesos}. Después, con estos nuevos pesos, se vuelve a seleccionar otra nueva instancia y se vuelven a actualizar los pesos. Estos pasos se repiten iterativamente según el número de veces que se haya fijado \citep{pajares2021aprendizaje}. 
+
+También está la posibilidad de añadirle \textit{momentum} al SGD, que es un hiperparámetro positivo que acelera el descenso del gradiente en la dirección relevante. 
 
 
 \subsection{Descenso de gradiente por mini-lotes}
 
+Por último, se verá el método de descenso de gradiente por mini-lote (\textit{Mini-batch Gradient Descent}). Es un algoritmo que combina aspectos del Descenso de Gradiente por Lote y el SGD. El descenso de gradiente por mini-lote calcula los gradientes basándose en pequeños subconjuntos aleatorios de instancias llamados mini-lotes (\textit{mini-batch}). Estos subconjuntos definen el número de muestras utilizadas antes de actualizar los pesos de la red en el modelo. 
 
-El Descenso de Gradiente por Mini-lote (Mini-batch Gradient Descent) es un algoritmo que combina aspectos del Descenso de Gradiente por Lote y el SGD (Stochastic Gradient Descent). A diferencia de estos métodos, en lugar de calcular los gradientes basándose en todo el conjunto de entrenamiento o en una única instancia, el Descenso de Gradiente por Mini-lote calcula los gradientes basándose en pequeños subconjuntos aleatorios de instancias llamados mini-lotes (mini-batch). Estos subconjuntos definen el número de muestras utilizadas antes de actualizar los pesos de la red en el modelo. Resumiendo los tres tipos de descenso de gradiente usando la definición de mini-lotes:
+Este enfoque logra un progreso menos errático que el SGD, especialmente con mini-lotes relativamente grandes, y se acerca más al mínimo, aunque puede ser más difícil escapar de mínimos locales. No obstante, con un buen plan de aprendizaje, tanto el SGD como el Descenso de Gradiente por Mini-lote pueden llegar al mínimo \citep{geron2022hands}.
+
+Otro parámetro relevante es la \textbf{época} (\textit{epoch}), que define cuántas veces el conjunto total de muestras es procesado por el algoritmo. Cada muestra del conjunto de entrenamiento tiene una oportunidad de actualizar los pesos en cada ápoca. El número de épocas varía según el tipo de datos y la arquitectura de red neuronal que se esté usando \citep{pajares2021aprendizaje}.
+
+Resumimos los tres tipos de descenso de gradiente usando la definición de mini-lotes:
 \begin{enumerate}
 \item Si se utilizan todas las muestras de entrenamiento para crear un lote, se denomina \textbf{descenso del gradiente por lotes}. 
 \item Si el lote tiene el tamaño de una muestra, se llama \textbf{descenso de gradiente estocástico}. 
 \item Cuando el lote tiene más de una muestra pero es menor que el tamaño del conjunto de datos de entrenamiento, se denomina \textbf{descenso de gradiente de mini-lote}. 
 \end{enumerate}
-Este enfoque logra un progreso menos errático que el SGD, especialmente con mini-lotes relativamente grandes, y se acerca más al mínimo, aunque puede ser más difícil escapar de mínimos locales. No obstante, con un buen plan de aprendizaje, tanto el SGD como el Descenso de Gradiente por Mini-lote pueden llegar al mínimo \citep{geron2022hands}.
-
-Otro parámetro relevante es la \textbf{época} (\textit{epoch}), que define cuántas veces el conjunto total de muestras es procesado por el algoritmo. Cada muestra del conjunto \(N\) tiene una oportunidad de actualizar los pesos en cada epoch. El número de epochs varía según el tipo de datos \citep{pajares2021aprendizaje}.
 
 
-\subsection{Propagación de la raíz Media Cuadrada}
 
-Además de estos métodos, existen optimizadores avanzados que mejoran la eficiencia del entrenamiento. Entre ellos se encuentra la \textbf{Propagación de la Raíz Media Cuadrática (RMSProp)}. Este método adapta la tasa de aprendizaje para cada parámetro manteniendo una media móvil de los cuadrados de los gradientes. La actualización del parámetro \(w(t)\) se realiza de la siguiente manera \citep{pajares2021aprendizaje}:
+\subsection{Propagación de la raíz media cuadrática}
 
-\[
-v(t) = \beta v(t-1) + (1-\beta) (g(t))^2
-\]
+Además de estos métodos, existen optimizadores avanzados que mejoran la eficiencia del entrenamiento. Entre ellos se encuentra el algoritmo RMSProp (\textit{Root Mean Square Propagation}). Es un método de optimización que ajusta la tasa de aprendizaje para cada parámetro manteniendo una media móvil de los cuadrados de los gradientes. Este método se basa en la observación de que la magnitud de los gradientes puede variar significativamente, lo que puede dificultar la convergencia del algoritmo de optimización. RMSProp aborda este problema adaptando dinámicamente la tasa de aprendizaje \citep{pajares2021aprendizaje}. 
 
-\[
-w(t) = w(t-1) - \frac{\eta}{\sqrt{v(t) + \epsilon}} g(t)
-\]
+Sea $v_t$ la media móvil de los cuadrados del gradiente, $\beta \in \mathbb{R}^+$ el factor de decaimiento de la media, $\nabla f(w_t) \in \mathbb{R}^n$ el gradiente de los pesos en la iteración t, $\eta \in \mathbb{R}^n$ la tasa de aprendizaje, $\epsilon > 0$ la constante de ajuste que evita divisiones por cero y $w_t$ el valor de los pesos en la iteración t. Entonces, las ecuaciones del algoritmo se definen como:
 
-donde \(\beta\) es el factor de decaimiento de la media, \(\eta\) es la tasa de aprendizaje y \(\epsilon\) es una constante pequeña para evitar divisiones por cero \citep{pajares2021aprendizaje}.
+\begin{align}
+    v_t &= \beta \cdot v_{t-1}+ (1-\beta) (\nabla f(w_t))^2 \\
+    w_t &= w_{t-1} - \frac{\eta}{\sqrt{v_t + \epsilon}} (\nabla f(w_t))
+\end{align}
+
+donde $w_t$ es la actualización de los pesos en la iteración $t$. Se inicializa este método con el valor de las constantes $v_0 = 0$ y $w_0 = 0$. Además, $\sqrt{v_t + \epsilon}$ es siempre distinto de cero ya que $v_t$ es siempre mayor o igual que cero y $\epsilon$ es mayor que cero.
 
 
 
 
 \subsection{Estimación del Momento Adaptativo}
 
-Otro optimizador relevante es \textbf{Adam (Adaptive Moment Estimation)}, que combina las ideas de RMSProp con el momento. Adam mantiene medias móviles de los gradientes y de los cuadrados de los gradientes. Las actualizaciones de los parámetros se realizan de la siguiente manera \citep{pajares2021aprendizaje}:
-\begin{align*}
-    m(t) &= \beta_1 m(t-1) + (1-\beta_1) g(t), \\
-    v(t) &= \beta_2 v(t-1) + (1-\beta_2) (g(t))^2, \\
-    \hat{m}(t) &= \frac{m(t)}{1 - \beta_1^t}, \\
-    \hat{v}(t) &= \frac{v(t)}{1 - \beta_2^t}, \\
-    w(t) &= w(t-1) - \frac{\eta \hat{m}(t)}{\sqrt{\hat{v}(t)} + \epsilon},
-\end{align*}
-donde \(\beta_1\) y \(\beta_2\) son factores de decaimiento de las medias, \(\eta\) es la tasa de aprendizaje y \(\epsilon\) es una constante pequeña para evitar divisiones por cero \citep{pajares2021aprendizaje}.
+Por último se verá el algoritmo Adam (\textit{Adaptive Moment Estimation}), que combina las ideas de RMSProp y momentum, manteniendo medias móviles de los gradientes y de los cuadrados de los gradientes. Esto permite una optimización más estable y eficiente \citep{pajares2021aprendizaje}. 
 
+Sea \( m_t \in \mathbb{R}^n \) la media móvil de los gradientes en la iteración \( t \), \( v_t \in \mathbb{R}^n \) la media móvil de los cuadrados de los gradientes en la iteración \( t \), \( \beta_1^t \in [0, 1) \) el factor de decaimiento de la media para los gradientes en el instante $t$, \( \beta_2^t \in [0, 1) \) el factor de decaimiento de la media para los cuadrados de los gradientes en el instante $t$, \( \hat{m}_t \in \mathbb{R}^n \) la media móvil de los gradientes corregida por el sesgo en la iteración \( t \), \( \hat{v}_t \in \mathbb{R}^n \) la media móvil de los cuadrados de los gradientes corregida por el sesgo en la iteración \( t \), \( \eta \in \mathbb{R} \) la tasa de aprendizaje, \( \epsilon \in \mathbb{R} \) la constante de ajuste para evitar divisiones por cero y \( w_t \in \mathbb{R}^n \) el valor de los pesos en la iteración \( t \).
 
+\begin{align}
+    m_t &= \beta_1 \cdot m_{t-1} + (1 - \beta_1) \cdot \nabla f(w_t), \\
+    v_t &= \beta_2 \cdot v_{t-1} + (1 - \beta_2) (\nabla f(w_t))^2, \\
+    \hat{m}_t &= \frac{m_t}{1 - \beta_1^t}, \\
+    \hat{v}_t &= \frac{v_t}{1 - \beta_2^t}, \\
+    w_t &= w_{t-1} - \frac{\eta \cdot \hat{m}_t}{\sqrt{\hat{v}_t + \epsilon}},
+\end{align}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+donde $w_t$ es la actualización de los pesos en la iteración $t$. Los denominadores no se anulan ya que $\beta_1^t,\beta_2^t \in [0, 1)$ y $v_t$ es siempre mayor o igual que cero y $\epsilon$ es mayor que cero.
 
 
 
 \section{Arquitecturas relevantes} \label{Subsec: 3_2}
 
+En esta sección vamos a hacer un estudio de las arquitecturas de redes neuronales más utilizadas en ciberseguridad. Para ello, primero vamos a estudiar la arquitectura más básica, el perceptrón simple.
 
 \subsection{Perceptrón}
 
-Antes de profundizar en los modelos de redes neuronales más complejos y profundos, veamos el funcionamiento del modelo de ANN más simple, el \textit{perceptrón}. Este modelo es la base del resto de modelos de aprendizaje automático. Consiste en una capa de entrada y en una de salida en la que hay que aplicar dos etapas. En la figura \ref{img: perceptron} podemos ver el esquema para dos posibles salidas.
+Antes de profundizar en los modelos de redes neuronales más complejos y profundos, veamos el funcionamiento del modelo de ANN más simple, el perceptrón. Este modelo es la base del resto de modelos de aprendizaje automático. Consiste en una capa de entrada y en una de salida en la que hay que aplicar dos etapas. En la figura \ref{img: perceptron} podemos ver el esquema para dos posibles salidas.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\textwidth]{img/perceptron.png}
-    \caption{Modelo del perceptrón simple}
+    \caption{Modelo del perceptrón simple. Adaptación de \citep{percep}}
     \label{img: perceptron}
 \end{figure}
 
@@ -186,14 +191,18 @@ La primera etapa del proceso consiste en calcular la suma promediada de sus entr
 \begin{equation}
 f(x) = \sum_{i=1}^{n} w_i \cdot x_i + b
 \end{equation}
-Los coeficientes $w_i$, $i=1,2, \ldots, n$ llamados pesos, dan un valor determinado a cada una de las entradas en función de la importancia para obtener la salida. Además, el coeficiente $b$ es el sesgo o bias que se añade a la función. Otra forma práctica de escribir esta ecuación sería: $f(x) = \sum_{i=1}^{n} (w_i \cdot x_i) + b= w^t \cdot x + b$  donde $w^t = (w_1, \ldots, w_n)$ y $x^t = (x_1, \ldots, x_n)$
+Los coeficientes $w_i \in \mathbb{R}$, $i=1,2, \ldots, n$ se llaman pesos y dan un valor determinado a cada una de las entradas en función de la importancia para obtener la salida. Además, el coeficiente $b$ es el sesgo o bias que se añade a la función. Otra forma práctica de escribir esta ecuación sería:
+\begin{equation}
+    f(x) = \sum_{i=1}^{n} (w_i \cdot x_i) + b= w^t \cdot x + b
+\end{equation}  
+donde $w^t = (w_1, \ldots, w_n)$ y $x^t = (x_1, \ldots, x_n)$
 
-La segunda capa consiste en transformar la salida de la primera etapa mediante una función de activación. Se podría generalizar de la siguiente manera:
+La segunda capa consiste en transformar la salida de la primera etapa mediante una función de activación $\phi: \mathbb{R}^n \to \mathbb{R}$. Se podría generalizar de la siguiente manera:
 \begin{equation}
 y = \phi(w^t \cdot x + b)
 \end{equation}
 
-Pero, ¿cómo ajusta los parámetros el perceptrón? El algoritmo de entrenamiento del perceptrón se basa en la regla de aprendizaje de Hebb y tiene en cuenta el error cometido por la red al hacer una predicción. El perceptrón se alimenta con una entrada de entrenamiento a la vez, y para cada una, realiza sus predicciones. Para cada neurona de salida que produce una predicción errónea, se refuerzan los pesos de conexión desde las entradas que habrían contribuido a la predicción correcta \citep{geron2022hands}. La regla se muestra en la Ecuación \ref{eq:perceptron_learning_rule}.
+Pero, ¿cómo ajusta los parámetros el perceptrón? El algoritmo de entrenamiento del perceptrón se basa en la regla de aprendizaje de Hebb\citep{caporale2008spike} y tiene en cuenta el error cometido por la red al hacer una predicción. El perceptrón se alimenta con una entrada de entrenamiento a la vez, y para cada una, realiza sus predicciones. Para cada neurona de salida que produce una predicción errónea, se refuerzan los pesos de conexión que habrían contribuido a la predicción fallida \citep{geron2022hands}. La regla se muestra en la Ecuación \ref{eq:perceptron_learning_rule}.
 
 \begin{equation}
 w_{i,j}^{(t+1)} = w_{i,j}^{(t)} + \eta (y_j - \hat{y_j}) x_i
@@ -207,18 +216,16 @@ El límite de decisión de cada neurona de salida es lineal, por lo que los perc
 
 
 
-\subsection{Perceptrón Multicapa}
+\subsection{Perceptrón Multicapa} \label{sec: ANN}
 
 Un Perceptrón Multicapa (MLP) está compuesto por una capa de entrada, una o más capas ocultas, y una capa final llamada capa de salida. Todas las capas, excepto la capa de salida, incluyen una neurona de sesgo y están completamente conectadas a la siguiente capa \citep{geron2022hands}.
 
-Cuando una red neuronal artificial (ANN) contiene un conjunto profundo de capas ocultas\footnote{Se suele considerar más de dos capas oculatas como un conjunto profundo de capas ocultas}, se 
 \begin{minipage}{0.54\textwidth}
-llama red neuronal profunda (DNN). El campo del Aprendizaje Profundo estudia las DNNs, y más generalmente modelos que contienen conjuntos profundos de cálculos. Sin embargo, muchas personas hablan de Aprendizaje Profundo siempre que están involucradas redes neuronales.
+Cuando una red neuronal artificial (ANN) contiene un conjunto profundo de capas ocultas, se llama red neuronal profunda (DNN). El campo del Aprendizaje Profundo estudia las DNNs, y más generalmente modelos que contienen conjuntos profundos de capas. Sin embargo, muchas personas hablan de Aprendizaje Profundo siempre que están involucradas redes neuronales.
 
 \bigskip
 
-David Rumelhart, Geoffrey Hinton y Ronald Williams publicaron un artículo revolucionario que introdujo el algoritmo de entrenamiento de retropropagación, que todavía se usa hoy en día. Consiste en un Descenso de Gradiente que utiliza una técnica eficiente para calcular los gradientes automáticamente. En solo dos etapas (una hacia adelante, una hacia atrás), el algoritmo de retropropagación puede determinar cómo se deben ajustar cada peso de conexión y cada término de sesgo para reducir el error. Para ello, calcula los gradientes del erro y a continuación, simplemente realiza un paso regular de Descenso de Gradiente, y todo el proceso se repite hasta que la red converge a la solución.
-
+David Rumelhart, Geoffrey Hinton y Ronald Williams publicaron un artículo revolucionario que introdujo el algoritmo de entrenamiento de retropropagación \citep{rumelhart1986learning} , que todavía se usa hoy en día. Consiste en un descenso de gradiente que utiliza una técnica eficiente para calcular los gradientes automáticamente. En solo dos etapas (una hacia adelante, una hacia atrás), el algoritmo puede determinar cómo se deben ajustar cada peso de conexión y cada término de sesgo para reducir el error. 
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 \textbf{ }
@@ -229,45 +236,53 @@ David Rumelhart, Geoffrey Hinton y Ronald Williams publicaron un artículo revol
 	\label{fig:mlp_architecture}
 \end{minipage}
 
-El algoritmo maneja un mini-lote a la vez (batch size), y pasa por el conjunto completo de entrenamiento múltiples veces. Cada pasada se llama época (epoch). Cada mini-lote se pasa a la capa de entrada de la red, que lo envía a la primera capa oculta. El algoritmo luego calcula la salida de todas las neuronas en esta capa (para cada instancia en el mini-lote). El resultado se pasa a la siguiente capa, su salida se calcula y se pasa a la siguiente capa, y así sucesivamente hasta obtener la salida de la última capa, la capa de salida. Esta es la pasada hacia adelante: es exactamente como hacer predicciones, excepto que todos los resultados intermedios se preservan ya que son necesarios para la pasada hacia atrás. A continuación, el algoritmo mide el error de salida de la red (es decir, utiliza una función de pérdida que compara la salida deseada y la salida real de la red, y devuelve alguna medida del error). Luego, calcula cuánto contribuyó cada conexión de salida al error. Esto se hace analíticamente aplicando la regla de la cadena, lo que hace que este paso sea rápido y preciso. El algoritmo luego mide cuánto de estas contribuciones de error provienen de cada conexión en la capa inferior, nuevamente utilizando la regla de la cadena, trabajando hacia atrás hasta que el algoritmo llega a la capa de entrada. Como se explicó anteriormente, esta pasada inversa mide eficientemente el gradiente de error en todos los pesos de conexión en la red propagando el gradiente de error hacia atrás a través de la red (de ahí el nombre del algoritmo). Finalmente, el algoritmo realiza un paso de Descenso de Gradiente para ajustar todos los pesos de conexión en la red, utilizando los gradientes de error que acaba de calcular \citep{geron2022hands}.
+El algoritmo maneja un mini-lote a la vez (\textit{batch size}), y pasa por el conjunto completo de entrenamiento múltiples veces. Cada pasada se llama época. Cada mini-lote se pasa a la capa de entrada de la red, que lo envía a la primera capa oculta. El algoritmo luego calcula la salida de todas las neuronas en esta capa (para cada instancia en el mini-lote). El resultado se pasa a la siguiente capa, su salida se calcula y se pasa a la siguiente capa, y así sucesivamente hasta obtener la salida de la última capa, la capa de salida. Esta es la pasada hacia adelante, que consiste  en hacer predicciones y los resultados intermedios se preservan ya que son necesarios para la pasada hacia atrás. A continuación, el algoritmo mide el error de salida de la red (es decir, utiliza una función de pérdida que compara la salida deseada y la salida real de la red, y devuelve alguna medida del error). Luego, calcula cuánto contribuyó cada conexión de salida al error. Esto se hace analíticamente aplicando la regla de la cadena, lo que hace que este paso sea rápido y preciso. El algoritmo luego mide cuánto de estas contribuciones de error provienen de cada conexión en la capa anterior, nuevamente utilizando la regla de la cadena, trabajando hacia atrás hasta que el algoritmo llega a la capa de entrada. Como se explicó anteriormente, esta pasada inversa mide eficientemente el gradiente de error en todos los pesos de conexión en la red propagando el gradiente de error hacia atrás a través de la red (de ahí el nombre del algoritmo). Finalmente, el algoritmo realiza un paso de descenso de gradiente para ajustar todos los pesos de conexión en la red \citep{geron2022hands}.
 
 Este algoritmo es tan importante que vale la pena resumirlo nuevamente: para cada instancia de entrenamiento, el algoritmo de retropropagación primero hace una predicción (pasada hacia adelante) y mide el error, luego pasa por cada capa en reversa para medir la contribución del error de cada conexión (pasada hacia atrás), y finalmente ajusta los pesos de conexión para reducir el error (paso de Descenso de Gradiente).
 
-Es importante inicializar aleatoriamente todos los pesos de conexión de las capas ocultas, de lo contrario, el entrenamiento fallará. Por ejemplo, si inicializas todos los pesos y sesgos a cero, entonces todas las neuronas en una capa dada serán perfectamente idénticas, y por lo tanto la retropropagación las afectará de la misma manera, por lo que permanecerán idénticas. En otras palabras, a pesar de tener cientos de neuronas por capa, tu modelo actuará como si tuviera solo una neurona por capa: no será muy inteligente. Si en cambio inicializas aleatoriamente los pesos, rompes la simetría y permites que la retropropagación entrene un equipo diverso de neuronas \citep{geron2022hands}.
+Es importante inicializar aleatoriamente todos los pesos de conexión de las capas ocultas, de lo contrario, el entrenamiento fallará. Por ejemplo, si inicializas todos los pesos y sesgos a cero, todas las neuronas en una capa dada serán perfectamente idénticas, y por lo tanto la retropropagación las afectará de la misma manera, por lo que permanecerán idénticas. En otras palabras, a pesar de tener cientos de neuronas por capa, tu modelo actuará como si tuviera solo una neurona por capa: no será muy inteligente. Si en cambio inicializas aleatoriamente los pesos, rompes la simetría y permites que la retropropagación entrene un equipo diverso de neuronas \citep{geron2022hands}.
+
+Las capas básicas de esta arquitectura son las capas totalmente conectadas o \textit{fully connected}. 
+
+
+La \textbf{capa densa} o \textbf{capa totalmente conectada} (\textit{fully connected layer}) es la unidad básica del perceptrón multicapa. En una capa densa, cada neurona de la capa está conectada a todas las neuronas de la capa anterior. Esto permite una integración completa de la información entre las capas y es crucial para la capacidad de aprendizaje del modelo.
+
+Las capas densas son utilizadas en muchos tipos de arquitecturas de redes neuronales, desde las redes \textit{feedforward} básicas hasta redes más complejas como las convolucionales (CNN) y las recurrentes (RNN), sirviendo como el componente principal para la combinación de características aprendidas.
+
 
 
 \subsection{Autoencoder} \label{sec:ae}
 
-Los autoencoders son una clase de redes neuronales artificiales utilizadas en aprendizaje no supervisado para aprender representaciones eficientes de los datos. Su funcionamiento consiste en codificar la entrada en una representación comprimida y significativa, y luego decodificarla de manera que la reconstrucción sea lo más similar posible a la entrada original \citep{lopes2022effective}. La arquitectura básica de un autoencoder consta de tres partes: el encoder, el cuello de bottela y el decoder (Figura \ref{fig:AE_architecture}). 
+Los \textit{autoencoders} son una clase de redes neuronales artificiales utilizadas en aprendizaje no supervisado para aprender representaciones eficientes de los datos. Su funcionamiento consiste en codificar la entrada en una representación comprimida y significativa, y luego decodificarla de manera que la reconstrucción sea lo más similar posible a la entrada original \citep{lopes2022effective}. La arquitectura básica de un \textit{autoencoder} consta de tres partes: el \textit{encoder}, el cuello de botella y el \textit{decoder} (Figura \ref{fig:AE_architecture}). 
 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{img/AE4.png}
-    \caption{Arquitectura de un autoencoder. Fuente:\citep{autoencoderImage}.}
+    \caption{Arquitectura de un \textit{autoencoder}. Fuente:\citep{autoencoderImage}.}
     \label{fig:AE_architecture}
 \end{figure}
 
 
 
 
-El autoencoder ilustrado en la figura \ref{fig:AE_architecture} puede modelarse mediante la ecuación (\ref{eq:ae_model}).
+Sean $z = f(x): \mathbb{R}^n \to \mathbb{R}^m$ y $x' = g(z): \mathbb{R}^m \to \mathbb{R}^n$ dos funciones que representan al codificador y decodificador respectivamente. Además, $n,m \in \mathbb{N}$ donde normalmente $n \leq m$. El \textit{autoencoder} ilustrado en la figura \ref{fig:AE_architecture} puede modelarse mediante la ecuación (\ref{eq:ae_model}). Sea $e$ y $d$ dos conjuntos de índices pertenecientes al codificador y decodificador respectivamente. Entonces,
 
 \begin{equation}
 \begin{cases}
 z = f(x; w_e, b_e) \\
-r = g(z; w_d, b_d)
+x' = g(z; w_d, b_d)
 \end{cases}
 \label{eq:ae_model}
 \end{equation}
 
-donde $f(\cdot)$ y $g(\cdot)$ son funciones del codificador y del decodificador que generalmente se implementan mediante redes neuronales. Los parámetros $w_e$ y $b_e$ son del codificador, y $w_d$ y $b_d$ son del decodificador. Si $f(\cdot)$ y $g(\cdot)$ son redes neuronales, entonces $w_i$ y $b_i$ son las matrices de pesos y los vectores de sesgo con respecto a la red neuronal del codificador y la red neuronal del decodificador ($ \forall i \in  {e, d}$). El codificador (encoder) mapea el conjunto de datos $x$  al espacio de características $z$ que normalmente suene tener una menor dimensión. Por otra parte, el decodificador (decoder) reconstruye los datos iniciales $x$ a través de la representación comprimida oculta $z$ \citep{zhai2018autoencoder}. Durante el entrenamiento, los parámetros del autoencoder se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia, como por ejemplo la \lstinline|binary_crossentropy| o el \lstinline|mse|. La expresión matemática puede expresarse como:
+donde $x'$ es la reconstrucción del \textit{autoencoder}. Si $f(\cdot)$ y $g(\cdot)$ son redes neuronales, entonces $w_i$ y $b_i$ son las matrices de pesos y los vectores de sesgo con respecto a la red neuronal del codificador y decodificador respectivamente ($ \forall i \in  {e, d}$). El codificador mapea el conjunto de datos $x$ al espacio de características $z$ que normalmente suene tener una menor dimensión. Por otra parte, el decodificador reconstruye los datos iniciales $x$ a través de la representación comprimida oculta $z$ \citep{zhai2018autoencoder}. Durante el entrenamiento, los parámetros del \textit{autoencoder} se optimizan para minimizar la diferencia entre la entrada y la salida reconstruida, utilizando una función de pérdida que mide esta discrepancia, como por ejemplo la \lstinline|binary_crossentropy| o el \lstinline|mse|. Esto puede expresarse matemáticamente como:
 \begin{equation}
-\arg \min_{A, B} \mathbb{E}[\Delta(x, B \circ A(x))]
+\min_{f : \mathbb{R}^n \to \mathbb{R}^m ; g: \mathbb{R}^m \to \mathbb{R}^n} \Delta(x, g \circ f(x))
 \end{equation}
-donde $\mathbb{E}$ es la esperanza sobre la distribución de $x$, y $\Delta$ es la función de pérdida de reconstrucción, que mide la distancia entre la salida del decodificador y la entrada \citep{bank2023autoencoders}. Esto concluye el proceso de entrenamiento de un autoencoder.
+donde $\Delta : \mathbb{R} \to \mathbb{R}$ es la función de pérdida de reconstrucción, que mide la distancia entre la salida del decodificador y la entrada \citep{bank2023autoencoders}. Esto concluye el proceso de entrenamiento de un \textit{autoencoder}.
 
-
+\begin{comment}
 Las ecuaciones para obtener la salida de un autoencoder serían:
 \[
 \left\{
@@ -281,36 +296,35 @@ y &= z^{(2)}
 \]
 
 donde  $x$ es el input, \( b^{(1)} \) y  \( b^{(2)} \) son los sesgos,  \( W^{(1)} \) y  \( W^{(2)} \) son los pesos, \( z^{(1)} \) es la salida lineal de la primera capa, \( a^{(2)} \) es la activación de la segunda capa, \( z^{(2)} \) es la salida lineal de la segunda capa e \( y \) es la salida final del modelo \citep{martinez2017analisis}.
-
-
-Tradicionalmente, los autoencoders se empleaban principalmente para reducir la dimensionalidad o para extraer características. No obstante, con el auge de diversos modelos de aprendizaje profundo, especialmente los modelos de redes generativas adversarias, los autoencoders han cobrado relevancia en la modelización generativa. Esto ha llevado a numerosos investigadores a proponer una variedad de modelos extendidos de autoencoders, como las convolutional autoencoders (que veremos en más profundidad en la sección \ref{sec:2.CNN}) o los recurrentes \citep{zhai2018autoencoder}. 
-
-Las principales capas que se utilizan en esta red neuronal son las capas densas y las de aplanamiento, aunque también se pueden utilizar capas convolucionales traspuestas y capas unpooling (sección \ref{sec:2.CNN}) para autocodificadores convolucionales\footnote{Autocodificador para imágenes de gran tamaño} o LSTM en el caso de autocodificadores recurrentes\footnote{Autocodificador específico para series temporales o secuencias.}\citep{geron2022hands}. 
+\end{comment}
 
 
 
+Tradicionalmente, los \textit{autoencoders} se empleaban principalmente para reducir la dimensionalidad o para extraer características. No obstante, con el auge de diversos modelos de aprendizaje profundo, especialmente los modelos de redes generativas adversarias, los \textit{autoencoders} han cobrado relevancia en la modelización generativa. Esto ha llevado a numerosos investigadores a proponer una variedad de modelos extendidos de \textit{autoencoders}, como los \textit{autoencoders} convolucionales (que veremos en más profundidad en la sección \ref{sec:2.CNN}) o los recurrentes \citep{zhai2018autoencoder}. 
 
-\subsection{Deep Belief Networks}
-\subsubsection{Red Neuronal Profunda}
+Las principales capas que se utilizan en esta red neuronal son las capas densas y las de aplanamiento, aunque también se pueden utilizar capas convolucionales traspuestas y capas \textit{unpooling} (sección \ref{sec:2.CNN}) para autocodificadores convolucionales\footnote{Autocodificador para imágenes de gran tamaño} o LSTM en el caso de autocodificadores recurrentes\footnote{Autocodificador específico para series temporales o secuencias.}\citep{geron2022hands}. 
+
 \subsection{Red Neuronal Convolucional} \label{sec:2.CNN}
 
 
-Las redes neuronales convolucionales son una de las métodos de machine learning más importantes y utilizados en el campo de la ciberseguridad. Estas redes neuronales están diseñadas para procesar entradas almacenadas en matrices, como las imágenes.  Son una parte de las redes profundas que procesa y analiza entradas de imágenes visuales, y están compuestas por neuronas con pesos y sesgos que aprenden a lo largo de su entrenamiento \citep{podder2021artificial}. La arquitectura de una CNN (Figura \ref{fig:cnn_architecture}) consta de tres tipos de capas: capas de convolución, capas de pooling y la capa de clasificación. 
+Las redes neuronales convolucionales son una de las métodos de \textit{machine learning} más importantes y utilizados en el campo de la ciberseguridad. Estas redes neuronales están diseñadas para procesar entradas almacenadas en matrices, como las imágenes \citep{podder2021artificial}. La arquitectura de una CNN (Figura \ref{fig:cnn_architecture}) consta de tres tipos de capas: capas de convolución, capas de \textit{pooling} y la capa de clasificación. 
  
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{img/convlayers.png}
-    \caption{Arquitectura de una CNN con capas de convolución, pooling y clasificación. Fuente:\citep{phung2018deep}.}
+    \caption{Arquitectura de una CNN con capas de convolución, \textit{pooling} y clasificación. Fuente:\citep{phung2018deep}.}
     \label{fig:cnn_architecture}
 \end{figure}
 
 \subsubsection*{Capa convolucional}
 
-La capa convolucional es la capa más importante de una \acrshort{cnn}. En ella se extraen las características más significativas de la imagen de entrada, como los bordes, el color o la forma. Para ello se aplica una convolución a la imagen con un filtro. Esta operación matemática se representa como \( \int (x \star w)(t) \) donde $x$ representa la entrada y $w$ el núcleo de convolución \citep{pajares2021aprendizaje}.
+La capa convolucional es la capa más importante de una \acrshort{cnn}. En ella se extraen las características más significativas de la imagen de entrada, como los bordes, el color o la forma. Para ello, se aplica una convolución a la imagen con un filtro. Esta operación matemática se representa como \( \int (x \star w)(t) \) donde $x$ y $w$ son dos funciones que se denominan entrada y núcleo de convolución respectivamente \citep{pajares2021aprendizaje}.
 
 
-En una CNN, la entrada de la convolución es una matriz multidimensional junto con una matriz de parámetros $w$ que se ajusta durante el aprendizaje (llamada núcleo o filtro). Cada píxel de la capa de convolución tiene una neurona, que se conecta con la capa anterior aplicando la convolución con las neuronas de su campo receptivo\footnote{Región de entrada que contribuye a la salida generada por el filtro} \cite{geron2022hands}. Esta convolución se realiza con un solapamiento total del filtro, lo que resulta en una imagen de menor dimensión (Figura \ref{fig:convolucion}). Si se desea mantener la misma dimensión, se puede aplicar zero-padding, que consiste en rellenar con ceros la matriz para obtener las dimensiones deseadas (Figura \ref{fig:convolucionPadding}). En la figura \ref{fig:convolu2} se muestran sendos campos receptivos de la imagen \( I \) que contribuyen a las salidas \( P \) y \( Q \) generadas por el filtro \( K \). La matriz de respuesta al aplicarle el kernel se llama mapa de características ($O$).
+En una CNN, la entrada de la convolución es una matriz multidimensional $I \in \mathcal{M}_{m\times n}(\mathbb{R})$ con $n,m \in \mathbb{N}$ y el núcleo de convolución es otra matriz $K \in \mathcal{M}_{i\times j}$ con $i,j \in \mathbb{N}$ de parámetros que se van ajustando durante el entrenamiento. A la matriz $K$ también se le puede llamar filtro. 
+
+Cada píxel de la capa de convolución tiene una neurona. Estas se conectan con su campo receptivo\footnote{Región de entrada que contribuye a la salida generada por el filtro} de la capa anterior y les aplica la convolución \cite{geron2022hands}. Esta convolución se realiza con un solapamiento total del filtro, lo que resulta en una imagen de menor dimensión (Figura \ref{fig:convolucion}). Si se desea mantener la misma dimensión, se puede aplicar \textit{zero-padding}, que consiste en rellenar con ceros la matriz para obtener las dimensiones deseadas (Figura \ref{fig:convolucionPadding}). En la figura \ref{fig:convolu2} se muestran los campos receptivos de la neurona P y Q con un recuadro amarillo y verde respectivamente sobre la imagen $I$. La matriz de respuesta al aplicarle el kernel se llama mapa de características ($O$).
 
 
 \begin{figure}[h] 
@@ -332,7 +346,7 @@ En una CNN, la entrada de la convolución es una matriz multidimensional junto c
      \label{fig:convolu2}
 \end{figure} 
 
-Se observa que el filtro se desplaza por la matriz \textit{I} con paso unitario en vertical y horizontal. Este parámetro se llama stride y su valor depende de el objetivo que se quiera lograr con esta capa convolucional.
+Se observa que el filtro se desplaza por la matriz \textit{I} con paso unitario en vertical y horizontal. Este parámetro se llama \textit{stride} y su valor depende de el objetivo que se quiera lograr con esta capa convolucional (Figura \ref{fig:receptive_field}).
 
 \begin{figure}[h]
     \centering
@@ -341,11 +355,11 @@ Se observa que el filtro se desplaza por la matriz \textit{I} con paso unitario 
     \label{fig:receptive_field}
 \end{figure}
 
-Una longitud de paso de 1 se utiliza normalmente para extraer el máximo número de características, ya que proporciona el máximo solapamiento entre el núcleo y la entrada. Por otro lado, cuando la longitud de paso es mayor que 1, los campos receptivos se solapan menos y producen una salida más pequeña. Si la longitud de paso fuera 3, habría problemas con el espaciado, ya que el campo receptivo no encajaría alrededor de la entrada como un número entero \citep{yepez2020stride}.
+Una longitud de paso de 1 se utiliza normalmente para extraer el máximo número de características, ya que proporciona el máximo solapamiento entre el núcleo y la entrada. Por otro lado, cuando la longitud de paso es mayor que 1, los campos receptivos se solapan menos y producen una salida más pequeña. Si en la figura \ref{fig:receptive_field}, la longitud de paso fuera 3, habría problemas con el espaciado, ya que el campo receptivo no encajaría alrededor de la entrada como un número entero \citep{yepez2020stride}.
 
 
 
-Por simplicidad, se ha usado siempre un único kernel, pero se puede generalizar a varios filtros, creando un mapa de características por cada uno. En cada uno de estos mapas hay una neurona por pixel y todas ellas comparten los mismos parámetros, lo que reduce considerablemente el número de parámetros del modelo. El campo receptivo de una neurona ahora se extiende por los mapas de características de todas las capas anteriores \citep{geron2022hands}.
+Por simplicidad, se ha usado siempre un único kernel, pero se puede generalizar a varios filtros, creando un mapa de características por cada uno. En cada uno de estos mapas hay una neurona por píxel y todas ellas comparten los mismos parámetros, lo que reduce considerablemente el número de parámetros del modelo. El campo receptivo de una neurona ahora se extiende por los mapas de características de todas las capas anteriores \citep{geron2022hands}.
 
 
 
@@ -377,33 +391,33 @@ donde:
 
 \subsubsection*{Capa de pooling}
 
-El siguiente tipo de capa de las \acrshort{cnn} son las pooling, cuyo objetivo es reducir la imagen de entrada para disminuir la carga computacional, el uso de memoria y el número de parámetros, limitando así el riesgo de sobreajuste y proporcionando robustez contra el ruido y las distorsiones. Esta capa se suele colocar entre las capas de convolución, permitiendo reducir el tamaño de las imágenes mientras se preservan las características más importantes \citep{podder2021artificial}. Al igual que en las capas convolucionales, sus neuronas están conectadas a un pequeño grupo de neuronas de la capa anterior a las que se le aplica una función de agregación\footnote{Las funciones de agregación devuelven un valor único de un conjunto de registros.}. Las tres funciones más comunes son el promedio, la suma y el máximo. La Figura \ref{fig:maxpooling} muestra una capa de max pooling, que es el tipo más común \citep{geron2022hands}. 
+El siguiente tipo de capa de las \acrshort{cnn} son las \textit{pooling}, cuyo objetivo es reducir la imagen de entrada para disminuir la carga computacional, el uso de memoria y el número de parámetros, limitando así el riesgo de sobreajuste y proporcionando robustez contra el ruido y las distorsiones. Esta capa se suele colocar entre las capas de convolución, permitiendo reducir el tamaño de las imágenes mientras se preservan las características más importantes \citep{podder2021artificial}. Al igual que en las capas convolucionales, sus neuronas están conectadas a un pequeño grupo de neuronas de la capa anterior a las que se le aplica una función de agregación\footnote{Las funciones de agregación devuelven un valor único de un conjunto de registros.}. Las tres funciones más comunes son el promedio, la suma y el máximo. La Figura \ref{fig:maxpooling} muestra una capa de \textit{max pooling}, que es el tipo más común \citep{geron2022hands}. 
 
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth]{img/maxpooling.png}
-\caption{Capa de max pooling con un kernel de \( 2 \times 2 \), stride 2 y sin padding.}
+\caption{Capa de \textit{max pooling} con un kernel de \( 2 \times 2 \), \textit{stride} 2 y sin \textit{padding}.}
 \label{fig:maxpooling}
 \end{figure}
 
-Además de reducir el número de operaciones, el número de parámetros y ayudar con el overfitting, una capa de max pooling introduce cierto nivel de invarianza a pequeñas translaciones, ya que si un pixel se traslada hacia la derecha, la salida también debería trasladarse un pixel hacia la derecha, como se ilustra en la Figura \ref{fig:translacionPooling}. Esto significa que pequeñas variaciones en la posición de las características dentro de la imagen no afectan significativamente la salida.
+Además de reducir el número de operaciones, el número de parámetros y ayudar con el \textit{overfitting}, la capa de \textit{max pooling} introduce cierto nivel de invarianza a pequeñas translaciones, ya que si un píxel se traslada hacia la derecha, la salida también debería trasladarse un píxel hacia la derecha, como se ilustra en la Figura \ref{fig:translacionPooling}. Esto significa que pequeñas variaciones en la posición de las características dentro de la imagen no afectan significativamente la salida.
 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.4\textwidth]{img/translacionPooling.png}
-\caption{Invarianza a translaciones pequeñas mediante una capa de max pooling. Fuente \citep{geron2022hands}}
+\includegraphics[width=0.38\textwidth]{img/translacionPooling.png}
+\caption{Invarianza a translaciones pequeñas mediante una capa de \textit{max pooling}. Fuente \citep{geron2022hands}}
 \label{fig:translacionPooling}
 \end{figure}
 
-Una capa típica de convolución se compone de tres etapas. En la primera etapa, se realizan múltiples convoluciones para producir un conjunto de activaciones lineales. En la segunda etapa, cada activación lineal se procesa a través de una función de activación no lineal, como la función de activación rectificada lineal (ReLU). Esta etapa a menudo se denomina etapa de detección. En la tercera etapa, se aplica una función de pooling para modificar la salida de la capa. Este tipo de capa de convolución compuesta será de utilidad en los experimentos realizados en capítulos posteriores, como por ejemplo en la creación de una M-CNN para el problema de clasificación de malware del Capítulo \ref{Capitulo_3} \citep{pajares2021aprendizaje}.
+Una capa típica de convolución se compone de tres etapas. En la primera etapa, se realizan múltiples convoluciones para producir un conjunto de activaciones lineales. En la segunda etapa, cada activación lineal se procesa a través de una función de activación no lineal, como la función de activación rectificada lineal (ReLU). Esta etapa a menudo se denomina etapa de detección. En la tercera etapa, se aplica una función de \textit{pooling} para modificar la salida de la capa. Este tipo de capa de convolución compuesta será de utilidad en los experimentos realizados en capítulos posteriores, como por ejemplo en la creación de una M-CNN para el problema de clasificación de malware del Capítulo \ref{Capitulo_3} \citep{pajares2021aprendizaje}.
 
 
 \subsubsection*{Capa de Unpooling}
 
-En la figura \ref{fig:maxpooling} se presenta un ejemplo gráfico relacionado con la operación de max pooling. Durante este proceso, es posible mantener un mapa de localizaciones, que señala la posición de origen del valor máximo que ha generado la capa. Este mapa permite ejecutar la operación inversa conocida como reconstrucción (Unpooling), colocando los valores obtenidos en las posiciones indicadas por el mapa de localizaciones. Una vez completada la reconstrucción, se puede realizar una interpolación lineal usando el método del vecino más próximo para obtener el mapa de características reconstruido \citep{pajares2021aprendizaje}. Este tipo de capa hace el proceso inverso de la capa de pooling. En vez de reducir la dimensión de entrada, la aumenta utilizando o bien interpolación lineal o bilineal o bien rellenando con ceros el resto de casillas \citep{pajares2021aprendizaje}. La operación de Unpooling se suele emplear junto con la operación de convolución transpuesta, como se describe más adelante, y se utiliza, por ejemplo, en el modelo de autoencoder utilizado en la sección \ref{sec: 3.AE}, en un autoencoder convolucional.
+En la figura \ref{fig:maxpooling} se presenta un ejemplo gráfico relacionado con la operación de \textit{max pooling}. Durante este proceso, es posible mantener un mapa de localizaciones, que señala la posición de origen del valor máximo que ha generado la capa. Este mapa permite ejecutar la operación inversa conocida como reconstrucción (\textit{Unpooling}), colocando los valores obtenidos en las posiciones indicadas por el mapa de localizaciones. Una vez completada la reconstrucción, se puede realizar una interpolación lineal usando el método del vecino más próximo para obtener el mapa de características reconstruido \citep{pajares2021aprendizaje}. Este tipo de capa hace el proceso inverso de la capa de \textit{pooling}. En vez de reducir la dimensión de entrada, la aumenta utilizando o bien interpolación lineal o bilineal o bien rellenando con ceros el resto de casillas \citep{pajares2021aprendizaje}. La operación de \textit{Unpooling} se suele emplear junto con la operación de convolución transpuesta, como se describe más adelante, y se utiliza, por ejemplo, en el modelo de \textit{autoencoder} utilizado en la sección \ref{sec: 3.AE}, en un \textit{autoencoder} convolucional.
 
 En Keras, esta capa se denomina \lstinline|UpSampling2D|.
 
@@ -412,68 +426,156 @@ En Keras, esta capa se denomina \lstinline|UpSampling2D|.
 
 La necesidad de realizar convoluciones transpuestas surge generalmente de la necesidad de aplicar una transformación en la dirección inversa a una convolución directa o normal, como la proyección de mapas de características a un espacio de mayor dimensión. Aunque a veces se denomina deconvolución, esta es en realidad una operación distinta. En las redes neuronales convolucionales (CNN), esta operación es más compleja que en las redes totalmente conectadas, donde solo se requiere el uso de una matriz de pesos transpuesta \citep{pajares2021aprendizaje}.
 
-Considere la convolución mostrada en la figura \ref{fig:convolucion}. Sean $I$ y $O$ la entrada y la salida respectivamente expandidas en forma vectorial de izquierda a derecha y de arriba a abajo. Entonces la operación de convolución \ref{eq:conv} puede expresarse ahora como:
+Considere la convolución mostrada en la figura \ref{fig:convolucion}. Teníamos que $I \in \mathcal{M}_{m\times n}(\mathbb{R})$ con $n,m \in \mathbb{N}$ y $O \in \mathcal{M}_{i\times j}(\mathbb{R})$ con $i,j \in \mathbb{N}$ la entrada y la salida respectivamente. Expandamos ahora estas matrices a un vector $I' \in \mathcal{M}_{m\cdot n}(\mathbb{R})$ y $O' \in \mathcal{M}_{i\cdot j}(\mathbb{R})$ de izquierda a derecha y de arriba a abajo. Con esta nueva notación, la operación de convolución \ref{eq:conv} también puede expresarse como $C \cdot I' = O'$ como podemos observar en la figura \ref{fig:conv2}:
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/conv2.png}
-    \caption{Convolución y representación matricial.  $C \cdot I = O$}
+    \includegraphics[width=0.55\textwidth]{img/conv2.png}
+    \caption{Convolución y representación matricial de la operación  $C \cdot I' = O'$}
     \label{fig:conv2}
 \end{figure}
 
 \begin{minipage}{0.5\textwidth}
-La convolución puede ser expresada como una matriz dispersa \(C\), caracterizada por la presencia de múltiples ceros, donde los elementos no nulos corresponden a los elementos $w_{ij}$ del núcleo \(K\). Aquí, \(i\) y \(j\) denotan la fila y la columna, respectivamente. Esta operación lineal transforma la matriz de entrada en un vector de 20 dimensiones y produce un vector de 6 dimensiones, el cual se reestructura en una matriz de salida de \(2 \times 3\). Usando esta formulación, el paso hacia atrás se obtiene mediante la transposición de \(C\) \citep{pajares2021aprendizaje}.
+Una vez tenemos estos dos vectores transformados, hay que modificar la matriz $C$ original. Para ello, se añaden múltiples ceros de forma que al multiplicarla por $O'$, nos de de resultado el vector $I'$. Esta nueva matriz la denotamos como $C' \in \mathcal{M}_{(i\cdot j) \times (n\cdot m)}$. Los elementos no nulos de $C'$ se corresponden a los elementos $w_{ij}$ del núcleo \(K\). Aquí, \(i\) y \(j\) denotan la fila y la columna, respectivamente. 
+
+\bigskip
+
+Usando esta formulación, para poder hacer el paso inverso y obtener la matriz original $I$ a partir de $O'$ y $C'$, tenemos que aplicar una trasposición de la matriz $C'$ como se muestra en la figura \ref{fig:convT}  \citep{pajares2021aprendizaje}.
 
 
 \bigskip
 
-Con la operación mencionada, se tiene un vector de 6 dimensiones como entrada y se obtiene un vector de 20 dimensiones como salida. En ambos casos, los valores $w_{ij}$ del núcleo definen las matrices \(C\) y \(C^t\) utilizadas en la propagación hacia delante y hacia atrás. Si se realiza la multipli-
+Con la operación mencionada, a partir del vector $C'^t$ y $O'$, obtenemos la matriz $I'$ como un vector que hay que redimensionar para obtener la entrada original $I$ \citep{pajares2021aprendizaje}.
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 	\textbf{ }	
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
 	\includegraphics[width=1.1\textwidth]{img/convT.png}
-    \captionof{figure}{Convolución traspuesta. $C^t \cdot O = I$.}
+    \captionof{figure}{Convolución traspuesta. $C'^t \cdot O' = I'$.}
     \label{fig:convT}
 \end{minipage}
-cación matricial \(C^t \cdot O\), cuyas dimensiones son \(20x6\) y \(6x1\), se obtiene la matriz esperada $I$ de dimensión \(20x1\), que finalmente habrá que redimensionar \citep{pajares2021aprendizaje}.
 
-Al igual que en las capas convolucionales originales, también puede añadirse zero-padding a la matriz y con desplazamientos (strides) superiores a la unidad \citep{pajares2021aprendizaje}.
 
-Estas dos últimas capas son especialmente utilizadas en los autoencoderes convolucionales, donde hay que construir y reconstruir una versión reducida de los datos de entrada.
+Al igual que en las capas convolucionales originales, también puede añadirse \textit{zero-padding} a la matriz y con desplazamientos (strides) superiores a la unidad \citep{pajares2021aprendizaje}.
+
+Estas dos últimas capas son especialmente utilizadas en los \textit{autoencoders} convolucionales, donde hay que construir y reconstruir una versión reducida de los datos de entrada.
 
 \subsubsection*{Capas Totalmente Conectadas (Fully Connected)}
 
-Por último están las capas totalmente conectadas (\textit{fully connected}), que realizan la clasificación sobre la salida generada por las capas de convolución y pooling. Como el input de una capa densa debe ser un vector, primero se debe aplanar la salida de la última capa para poder utilizar después esta capa. Cada una de sus neuronas está conectada a todas las de la capa anterior, estableciendo una red densa de conexiones. Este tipo de neuronas suele ir seguido de una capa Dropout para mejorar la generalización del modelo. Este diseño permite a las CNN manejar datos complejos y variados, aprovechando la jerarquía de características aprendidas durante el entrenamiento. Este tipo de capa suele ir seguido de una capa de Dropout que mejora la capacidad de generalización del modelo al prevenir el sobreajuste, un problema común en el ámbito del aprendizaje profundo \citep{hossain2019classification}.
+Por último están las capas totalmente conectadas (\textit{fully connected}), que realizan la clasificación sobre la salida generada por las capas de convolución y \textit{pooling}. Como el input de una capa densa debe ser un vector, primero se debe aplanar la salida de la última capa para poder utilizar después esta capa. Cada una de sus neuronas está conectada a todas las de la capa anterior, estableciendo una red densa de conexiones. Este tipo de neuronas suele ir seguido de una capa \lstinline|Dropout| para mejorar la generalización del modelo y evitar un problema muy común en el aprendizaje automático como es el sobreajuste \citep{hossain2019classification}.
 
 
 
 \subsection{Red Neuronal Recurrente}
-\subsubsection{Restricted Boltzmann Machine}
 
 
+Las Redes Neuronales Recurrentes (RNN) son un tipo de red neuronal diseñada para procesar secuencias de datos. A diferencia de las redes neuronales \textit{feedforward} tradicionales, que asumen que las entradas y salidas son independientes, las RNN tienen conexiones recurrentes que permiten la propagación de información temporal, haciendo posible el modelado de dependencias a lo largo del tiempo. Esta característica es clave en tareas que involucran datos secuenciales, como series temporales, texto o audio.
+
+\subsection*{Neuronas y Capas Recurrentes}
+
+En una neurona recurrente, la estructura se extiende para incorporar no solo la entrada en el tiempo \( t \), \( x(t) \), sino también su propio \textbf{estado oculto} en el tiempo anterior \( h(t-1) \). Este mecanismo dota a la neurona de una forma de memoria temporal, permitiendo que el modelo mantenga información sobre secuencias pasadas. La Figura \ref{fig:rnn} muestra cómo una neurona recurrente se despliega en el tiempo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/simple_RNN.png}
+    \caption{Una neurona recurrente desplegada en el tiempo. Fuente \citep{geron2022hands}}
+    \label{fig:rnn}
+\end{figure}
+
+Matemáticamente, el \textbf{estado oculto} de una neurona recurrente en el tiempo \( t \) se define como:
+\begin{equation}
+    h(t) = \phi ( W_x \cdot x(t) + W_y \cdot h(t-1) + b )
+\end{equation}
+donde \( W_x \) y \( W_y \) son las matrices de pesos asociadas con la entrada y el estado oculto, respectivamente, \( b \) es el vector de sesgo, y \( \phi \) es la función de activación.
+
+Para una capa completa de neuronas recurrentes, la \textbf{salida} para un lote de instancias en el tiempo \( t \) se calcula como:
+\begin{equation}
+    y(t) = \phi(h(t) \cdot W_y)
+\end{equation}
+donde \( h(t) \) es el estado oculto en el tiempo $t$, $W_y$ es la matriz de pesos asociada a la capa de salida e $y(t)$ es la la predicción final en el tiempo $t$.
+
+Puede resultar un poco confuso estos dos conceptos, por ello vamos a resumirlos para ver sus diferencias. El estado oculto en una RNN hace referencia a la representación interna (memoria) de los datos anteriores de la red hasta ese momento dado. Este estado oculto se actualiza en cada paso de tiempo y sirve como entrada para calcular la siguiente salida. Por otro lado, la predicción es el resultado final que la red genera después de procesar toda la secuencia de datos anterior. Se basa en la información contenida en el último estado oculto. 
 
 
+\subsection*{Entrenamiento de RNNs}
 
+El entrenamiento de una RNN se lleva a cabo utilizando una técnica conocida como \textit{backpropagation through time} (BPTT). Este método implica desplegar la red a lo largo del tiempo y luego aplicar retropropagación a la red desplegada. Inicialmente, se realiza una pasada hacia adelante a través de la red desplegada, calculando la secuencia de \textbf{salidas} en cada paso temporal (representado en la figura \ref{fig:bptt} con las líneas discontinuas). Posteriormente, se evalúa la salida con una función de costo \( C(y(0), y(1), \ldots, y(T)) \), donde \( T \) es el tiempo máximo considerado. Es importante señalar que la función de costo puede ignorar ciertas salidas, dependiendo de la tarea específica (por ejemplo, en la Figura \ref{fig:bptt}, la función de costo se calcula usando las tres últimas salidas de la red, \( y(2), y(3) \) e \( y(4) \), por lo que los gradientes se propagan a través de estas tres salidas, pero no a través de \( y(0) \) y \( y(1) \)). 
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.68\textwidth]{img/bptt.png}
+    \caption{\textit{Backpropagation} through time (BPTT) en una RNN. Fuente \citep{geron2022hands}}
+    \label{fig:bptt}
+\end{figure}
 
+Una vez calculado el costo, los gradientes de la función de costo se propagan hacia atrás a través de la red desplegada. Este proceso de retropropagación ajusta los parámetros del modelo utilizando los gradientes calculados. Un aspecto crítico en BPTT es que los mismos parámetros de la red (como los pesos \( W \) y los sesgos \( b \)) se utilizan en cada paso temporal, lo que implica que la retropropagación debe sumar correctamente los gradientes a lo largo de todos los pasos temporales.
 
+Aunque el BPTT permite el entrenamiento de RNNs, existen desafíos con este método. Un ejemplo es la desaparición de gradientes, que ocurre cuando los gradientes se vuelven muy pequeños, impidiendo la actualización efectiva de los parámetros. Otro problema consiste en la explosión de gradientes, que se refiere a la situación en la que los gradientes crecen exponencialmente, causando inestabilidad en el entrenamiento.
 
+Para mitigar estos problemas, se pueden usar técnicas como \textit{gradient clipping}, que limita el tamaño de los gradientes para evitar la explosión, el uso de activaciones saturadas que estabilizan el flujo de gradientes o el uso de las celdas \textit{Long Short-Term Memory}.
 
+\subsection*{Long Short-Term Memory}
 
+Para superar las limitaciones de las RNN básicas, se han desarrollado celdas de \textit{Long Short-Term Memory} (LSTM). Introducidas por \cite{hochreiter1997long}, las LSTM están diseñadas para almacenar y gestionar información durante largos períodos de tiempo, abordando los problemas de gradientes mediante el uso de mecanismos de puertas. Las celdas de este tipo de redes son una extensión de las redes neuronales recurrentes (RNN), diseñadas para mejorar su capacidad de recordar información relevante durante largos períodos. Esta mejora permite a las RNN retener sus entradas por mucho más tiempo, ya que las LSTM almacenan la información en una estructura de memoria que es análoga a la memoria de un ordenador. En este sentido, una célula de LSTM puede realizar operaciones de lectura, escritura y eliminación de información en su memoria.
 
+La estructura de memoria en una LSTM puede ser conceptualizada como una celda ``cerrada'', donde ``cerrada'' implica que la celda decide si debe almacenar o descartar la información en función de su relevancia. Esta decisión se realiza a través de las puertas de la LSTM, cuya apertura o cierre depende de los pesos asignados, los cuales se ajustan durante el proceso de aprendizaje. En esencia, la red aprende a través del tiempo qué información debe ser retenida y cuál puede ser descartada.
 
+Cada célula de una red LSTM incluye tres tipos de puertas que regulan el flujo de información: la puerta de entrada, la puerta de olvido y la puerta de salida. La puerta de entrada controla la incorporación de nueva información a la memoria, la puerta de olvido decide si se debe eliminar información previa y la puerta de salida determina si la información almacenada debe influir en la salida en el tiempo presente.
 
+Estas puertas utilizan funciones sigmoides, lo que les permite operar en un rango continuo entre 0 y 1. Las LSTM resuelven el problema del desvanecimiento del gradiente (\textit{vanishing gradients}) al mantener los gradientes suficientemente pronunciados, resultando en un entrenamiento eficiente y una alta precisión.
 
+La arquitectura de una celda LSTM se representa en la Figura \ref{fig:lstm}, donde FC hace referencia a una capa \textit{fully connected} que se utilizan para procesar los datos de entrada antes de interactuar con las puertas. Además, a continuación se describen las operaciones de cada puerta.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/lstm.png}
+    \caption{Arquitectura de una celda LSTM. Fuente \citep{geron2022hands}}
+    \label{fig:lstm}
+\end{figure}
 
+En una red LSTM, la \textbf{puerta de olvido} se encarga de determinar qué información del estado de la celda debe ser eliminada en cada instante de tiempo. Sea \( f_t \in \mathbb{R}^n \) el vector de activaciones de la puerta de olvido en el tiempo \( t \). Sea \( W_f \in \mathbb{R}^{n \times m} \) la matriz de pesos asociada a la puerta de olvido que incluye los pesos del estado oculto y de los datos de entrada, y \( b_f \in \mathbb{R}^n \) el vector de sesgos para la puerta del olvido. Consideremos \( h(t-1) \in \mathbb{R}^m \) el estado oculto en el tiempo \( t-1 \) y \( x(t) \in \mathbb{R}^p \) la entrada actual, cuya concatenación está dada por \( [h(t-1), x(t)] \in \mathbb{R}^{m+p} \). La activación a través de la función $\sigma$ de la puerta de olvido se define por la ecuación:
 
+\begin{equation}
+    f_t = \sigma(W_f \cdot [h(t-1), x(t)] + b_f)
+\end{equation}
+
+La \textbf{puerta de entrada} determina qué información nueva debe ser añadida al estado de la celda. Sea \( i_t \in \mathbb{R}^n \) el vector de activaciones de la puerta de entrada en el tiempo \( t \). Definimos \( W_i \in \mathbb{R}^{n \times m} \) como la matriz de pesos y \( b_i \in \mathbb{R}^n \) como el vector de sesgos para la puerta de entrada. La activación de la puerta de entrada está dada por:
+
+\begin{equation}
+    i_t = \sigma(W_i \cdot [h(t-1), x(t)] + b_i)
+\end{equation}
+
+Para \textbf{actualizar el estado} de la celda con las nuevas posibles informaciones, consideremos \( \tilde{C}_t \in \mathbb{R}^n \) como el vector de nuevas posibles actualizaciones en el tiempo \( t \). Sea \( W_C \in \mathbb{R}^{n \times m} \) la matriz de pesos y \( b_C \in \mathbb{R}^n \) el vector de sesgos para actualizar el estado de la celda. La actualización se describe mediante:
+
+\begin{equation}
+    \tilde{C}_t = \tanh(W_C \cdot [h(t-1), x(t)] + b_C)
+\end{equation}
+
+El \textbf{estado de la celda} \( C_t \in \mathbb{R}^n \) en el tiempo \( t \) se obtiene combinando la información retenida y la nueva entrada. Sea \( C_{t-1} \in \mathbb{R}^n \) el estado de la celda anterior. La actualización del estado de la celda se calcula como:
+
+\begin{equation}
+    C_t = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t
+\end{equation}
+
+La \textbf{puerta de salida} decide qué información del estado de la celda debe ser utilizada en la salida actual. Sea \( o_t \in \mathbb{R}^n \) el vector de activaciones de la puerta de salida en el tiempo \( t \). Consideramos \( W_o \in \mathbb{R}^{n \times m} \) la matriz de pesos y \( b_o \in \mathbb{R}^n \) el vector de sesgos para la puerta de salida. Esta activación está dada por:
+
+\begin{equation}
+    o_t = \sigma(W_o \cdot [h(t-1), x(t)] + b_o)
+\end{equation}
+
+Finalmente, el \textbf{estado oculto} \( h(t) \in \mathbb{R}^m \) en el tiempo \( t \) se obtiene combinando la activación de la puerta de salida con el estado de la celda actual. Esto se formaliza como:
+
+\begin{equation}
+    h(t) = o_t \cdot \tanh(C_t)
+\end{equation}
+
+Keras también incluye otras variantes de RNN, como las Unidades Recurrentes Gated (GRU). Introducidas en 2014, las GRU simplifican los principios de las LSTM, ofreciendo un rendimiento comparable pero con una mayor eficiencia computacional.
 
 
 
 \section{Función de perdida}
 
-En el aprendizaje supervisado, las funciones de pérdida son herramientas muy importantes para evaluar qué tan bien un modelo predice los resultados esperados. Su objetivo es cuantificar el grado de error en las predicciones realizadas por el modelo, lo cual es fundamental para el ajuste de sus parámetros durante el entrenamiento. En términos generales, estas funciones se dividen en dos grandes categorías: las utilizadas para problemas de clasificación y las utilizadas para problemas de regresión \citep{pajares2021aprendizaje}. Ambas buscan minimizar el error, pero lo hacen con diferentes enfoques dependiendo de la naturaleza de la variable de salida.
+En el aprendizaje supervisado, las funciones de pérdida son herramientas muy importantes para evaluar la precisión con la que un modelo predice los resultados esperados. Su objetivo es cuantificar el grado de error en las predicciones realizadas por el modelo, lo cual es fundamental para el ajuste de sus parámetros durante el entrenamiento. En términos generales, estas funciones se dividen en dos grandes categorías: las utilizadas para problemas de clasificación y las utilizadas para problemas de regresión \citep{pajares2021aprendizaje}. Ambas buscan minimizar el error, pero lo hacen con diferentes enfoques dependiendo de la naturaleza de la variable de salida.
 
 \subsection{Clasificación}
 
@@ -481,26 +583,19 @@ En los problemas de clasificación, la tarea del modelo es asignar una etiqueta 
 
 \subsubsection{Entropía Cruzada}
 
-La entropía cruzada mide la diferencia entre la distribución de probabilidad verdadera de las etiquetas y la distribución de probabilidad predicha por el modelo. Existen dos variantes principales:
+La entropía cruzada mide la diferencia entre la distribución de probabilidad verdadera de las etiquetas y la distribución de probabilidad predicha por el modelo. La variante general de esta función se denomina \textbf{entropía cruzada categórica} que se utiliza cuando se predicen múltiples clases. Se calcula como:
+\begin{equation}
+    H(p, q) = -\sum_{x} p(x) \log q(x) 
+\end{equation}
 
-\begin{itemize}
-	\item La \textbf{entropía cruzada categórica} se utiliza cuando se predicen múltiples categorías (multiclase). Se calcula como:
+donde $H(p,q) \in \mathbb{R}$ devuelve el valor que mide la diferencia entre las distribuciones de probabilidad del conjunto de predicciones del modelo  (\(q(x)\) ) y las etiquetas reales (\(p(x)\)) \citep{pajares2021aprendizaje}. 
 
-	\begin{equation}
-    		H(p, q) = -\sum_{x} p(x) \log q(x)
-	\end{equation}
+Un caso particular de esta función se presenta cuando tenemos un problema de clasificación binaria. Su ecuación se reduce a: 
+\begin{equation}
+    H(p, q) = - \left[ p \log q + (1 - p) \log (1 - q) \right]
+\end{equation}
 
-	Aquí, \(p(x)\) es la distribución verdadera (generalmente representada como \textit{one-hot} para una categoría) y \(q(x)\) es la distribución predicha. Esta función penaliza las predicciones que se desvían de las probabilidades verdaderas, con valores más altos indicando mayores discrepancias \citep{pajares2021aprendizaje}. 
-
-	\item La\textbf{ entropía cruzada binaria} se aplica a problemas de clasificación binaria, donde solo hay dos posibles etiquetas. Se define como:
-
-	\begin{equation}
-    		H(p, q) = - \left[ p \log q + (1 - p) \log (1 - q) \right]
-	\end{equation}
-
-	Aquí, \(p\) es la probabilidad de la etiqueta verdadera (1 para la clase positiva, 0 para la clase negativa), y \(q\) es la probabilidad predicha para la clase positiva. Esta variante es más sencilla y específica para problemas donde las etiquetas son binarias \citep{pajares2021aprendizaje}.
-\end{itemize}
-
+donde \(p\) es la probabilidad de la etiqueta verdadera (1 para la clase positiva, 0 para la clase negativa), y \(q\) es la probabilidad predicha para la clase positiva. Esta variante es más sencilla y específica para problemas donde las etiquetas son binarias \citep{pajares2021aprendizaje}.
 
 
 \subsubsection{Coeficiente de Dice}
@@ -577,23 +672,11 @@ Aquí, \(\cosh\) es la función hiperbólica del coseno. La ventaja de esta func
 
 \subsubsection{Pérdida Basada en Cuantiles}
 
-La función de pérdida basada en cuantiles (quantile loss) se utiliza en regresión cuando se quiere predecir un intervalo en lugar de un punto concreto. Se define como:
+La función de pérdida basada en cuantiles (\textit{quantile loss}) se utiliza en regresión cuando se quiere predecir un intervalo en lugar de un punto concreto. Sea \(\tau \in [0,1]\) un cuantil, entonces la función de pérdida se define como:
 
 \begin{equation}
-    L_{\tau}(y, \hat{y}) = \sum_{i=1}^{n} \left(\tau \max(y_i - \hat{y}_i, 0) + (1 - \tau) \max(\hat{y}_i - y_i, 0)\right)
+    L_{\tau} = \sum_{i=1}^{n} \left(\tau \max(y_i - \hat{y}_i, 0) + (1 - \tau) \max(\hat{y}_i - y_i, 0)\right)
 \end{equation}
-
-donde \(\tau\) es el cuantil elegido.
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Función de activación.}
@@ -604,36 +687,46 @@ Entre capa y capa de las redes neuronales, cada neurona suma ponderadamente las 
 \subsubsection*{Softmax}
 
 
-La función \textbf{Softmax} se utiliza comúnmente en la capa de salida de redes neuronales para problemas de clasificación multiclase. Convierte un vector de valores arbitrarios en un vector de probabilidades, donde la suma de todas las probabilidades es 1. La función Softmax está definida como:
+La función \textbf{Softmax} se utiliza comúnmente en la capa de salida de redes neuronales para problemas de clasificación multiclase. Convierte un vector de valores arbitrarios en un vector de probabilidades, cuya suma es 1. La función Softmax se define como:
 
 \begin{equation}
     \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
 \end{equation}
 
-donde \(z_i\) es el valor de la \(i\)-ésima neurona de salida, y \(K\) es el número total de clases. La interpretación de esta función es que transforma las salidas en probabilidades, facilitando la toma de decisiones sobre la clase a la que pertenece una muestra en función de las probabilidades más altas \citep{pajares2021aprendizaje}. 
+donde \(z_i\) es el valor de la \(i\)-ésima neurona de salida, y \(K\) es el número total de neuronas en la capa de salida. La interpretación de esta función es que transforma las salidas en probabilidades, facilitando la toma de decisiones sobre la clase a la que pertenece una muestra en función de las probabilidades más altas \citep{pajares2021aprendizaje}. 
 
 
 
 
 \subsubsection*{Sigmoide}
 
-
 \begin{minipage}{0.6\textwidth}
-    La función \textbf{sigmoide}, también conocida como la función logística, convierte entradas en el rango \(0, 1\). Está definida como:
+    La función sigmoide, también conocida como la función logística, convierte entradas en el rango $(0, 1)$. Está definida como:
+
 \begin{equation}
-    \sigma(x) = \frac{1}{1 + e^{-x}} 
+\sigma(x) = \frac{1}{1 + e^{-x}} \label{eq:sigmoid}
 \end{equation}
-Sin embargo, tiene problemas como la saturación del gradiente (cuando los valores se aproximan a 0 o 1, el gradiente tiende a 0, lo que afecta en la actualización de los pesos) o los pesos tienen esperanza de la función de salida positiva, lo que puede llevar a una convergencia lenta \citep{pajares2021aprendizaje}.
+
+Sin embargo, tiene problemas como la saturación del gradiente. Esto ocurre cuando los valores de entrada se aproximan a 0 o 1. En estas regiones, el gradiente de la función sigmoide tiende a 0. Esto se puede ver derivando la función sigmoide:
+
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 \textbf{ }
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=1.1\textwidth]{img/Sigmoide.png}
+    \includegraphics[width=0.9\textwidth]{img/Sigmoide.png}
     \captionof{figure}{Gráfica de la función sigmoide.}
     \label{img: sigmoide}
 \end{minipage}
 
+\begin{equation}
+\sigma'(x) = \frac{e^{-x}}{(1 + e^{-x})^2}
+\end{equation}
+
+Cuando $x$ tiende a infinito, $\sigma(x)$ tiende a 1, luego $\sigma'(x)$ tiende a 0. Cuando $x$ tiende a menos infinito, $\sigma(x)$ tiende a 0, y nuevamente $\sigma'(x)$ tiende a 0. En ambos extremos, el gradiente tiende a 0, lo que afecta la actualización de los pesos durante el entrenamiento mediante descenso de gradiente. En otras palabras, los pesos se actualizan muy lentamente en estas regiones, lo que puede llevar a una convergencia lenta.
+
+\begin{comment}
+Para solucionar el problema de la saturación del gradiente en los extremos, está la función sigmoide dura (\textit{hardsigmoid}), que es una aproximación simplificada de la función sigmoide. \citep{pajares2021aprendizaje}.
 
 
 \subsubsection*{Sigmoide dura}
@@ -648,15 +741,23 @@ Sin embargo, tiene problemas como la saturación del gradiente (cuando los valor
 \textbf{ }
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-    Para solucionar el problema de la saturación del gradiente en los extremos, está la función \textbf{sigmoide dura} (\textit{hard-sigmoid}), que es una aproximación simplificada de la función sigmoide. Su fórmula es la siguiente:
+     La fórmula de esta función es la siguiente:
 
 \begin{equation}
-    f(x) = \max(0, \min(1, \frac{x+1}{2}))
+f(x) = \max\left(0, \min\left(1, \frac{x + 1}{2}\right)\right) \label{eq:hardsigmoid}
 \end{equation}
-
-Esta función es computacionalmente más eficiente y evita los problemas de saturación en los extremos \citep{pajares2021aprendizaje}.
+La derivada de esta función es:
+\begin{equation}
+f'(x) =
+\begin{cases} 
+\frac{1}{2} & \text{si } -1 < x < 1 \\
+0 & \text{en otro caso }
+\end{cases}
+\end{equation}
 \end{minipage}
 
+Como podemos ver, la derivada de la función sigmoide dura es constante \(\frac{1}{2}\) en el rango \(-1 < x < 1\), y cero fuera de este rango.  Esto evita el problema de la saturación del gradiente entre (-1,1) y facilita la actualización de los pesos durante el entrenamiento, ya que es computacionalmente más eficiente en ese rango \citep{pajares2021aprendizaje}.
+\end{comment}
 
 
 \subsubsection*{Función Tangente hiperbólica}
@@ -675,7 +776,7 @@ Aunque también sufre de saturación del gradiente, \textit{tanh} centra las sal
 \textbf{ }
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=1.1\textwidth]{img/tanh.png}
+    \includegraphics[width=0.9\textwidth]{img/tanh.png}
     \captionof{figure}{Gráfica de la función tangente hiperbólica.}
     \label{img: tanh}
 \end{minipage}
@@ -685,7 +786,7 @@ Aunque también sufre de saturación del gradiente, \textit{tanh} centra las sal
 \subsubsection*{Función ReLU}
 
 \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=1.1\textwidth]{img/ReLU.png}
+    \includegraphics[width=\textwidth]{img/ReLU.png}
     \captionof{figure}{Gráfica de la función ReLU.}
     \label{img: relu}
 \end{minipage}
@@ -698,36 +799,37 @@ Aunque también sufre de saturación del gradiente, \textit{tanh} centra las sal
 \begin{equation}
     f(x) = \max(0, x)
 \end{equation}
-Sin embargo, la función ReLU tiene algunos problemas, como el problema de la ``ReLU muerta'' \citep{maas2013rectifier} y la falta de diferenciabilidad en cero. Para este problema último, se suele asignar un valor arbitrario para este valor como 0, 0.5 o 1 citep{pajares2021aprendizaje}. Esto ocurre cuando se aprende un sesgo negativo grande, haciendo que la salida de la neurona sea siempre cero, sin importar la entrada \citep{apicella2021survey}. Por eso, a continuación, discutimos algunas variantes de ReLU.
+Sin embargo, la función ReLU tiene algunos problemas, como el problema de la ``ReLU muerta'' \citep{maas2013rectifier} y la falta de diferenciabilidad en cero. Para este problema último, se suele asignar un valor arbitrario para este valor como 0, 0.5 o 1 \citep{pajares2021aprendizaje}. Esto ocurre cuando se aprende un sesgo negativo grande, haciendo que la salida de la neurona sea siempre cero, sin importar la entrada \citep{apicella2021survey}. Por eso, a continuación, discutimos algunas variantes de ReLU.
 \end{minipage}
 
 
 \subsubsection*{Función Leaky ReLU (LReLU)}
 
 \begin{minipage}{0.6\textwidth}
-    Una de las primeras funciones de activación basadas en ReLU fue \textbf{LReLU} \citep{maas2013rectifier}. La función LReLU fue un intento de aliviar los problemas potenciales de ReLU mencionados anteriormente. Se define como:
+    Fue una de las primeras funciones de activación basadas en ReLU \citep{maas2013rectifier}.
 
 \begin{equation}
-    f(x) = \max(0.001x, x)
+    f(x) = \max(x\cdot 10^{-3}, x)
 \end{equation}
 
-La función de activación Leaky ReLU permite que la neurona tenga un pequeño gradiente cuando su salida es cero o negativa (es decir, cuando $x \leq 0)$. Sin embargo, se ha demostrado que Leaky ReLU funciona de manera casi idéntica a la ReLU original, por lo que no mejora significativamente el rendimiento de la red. Además, se propuso una versión aleatoria de ReLU, donde el valor de $x$ se elige aleatoriamente de una distribución uniforme \( U(l, u) \) con \( 0 \le l < u < 1 \) \citep{apicella2021survey}.
+Esta función de activación permite que haya un pequeño gradiente cuando la salida es menor que cero. Sin embargo, se ha demostrado que Leaky ReLU funciona de manera casi idéntica a ReLU, lo que no mejora significativamente su rendimiento \citep{xu2020reluplex}. Además, se propuso una versión aleatoria de ReLU, donde $x \in U(l, u)$, \( 0 \le l < u < 1 \) \citep{apicella2021survey}.
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 \textbf{ }
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=1.1\textwidth]{img/Leaky ReLU.png}
-    \captionof{figure}{Gráfica de la función Leaky ReLU.}
+    \includegraphics[width=0.9\textwidth]{img/Leaky ReLU.png}
+    \captionof{figure}{Gráfica Leaky ReLU.}
     \label{img: LReLU}
 \end{minipage}
+
 
 
 \subsubsection*{Función paramétrica ReLU(PReLU)}
 
 \begin{minipage}{0.35\textwidth}
     \includegraphics[width=1.1\textwidth]{img/PReLU.png}
-    \captionof{figure}{Gráfica de la función Paramétrica ReLU.}
+    \captionof{figure}{Gráfica de la función Paramétrica ReLU con $\alpha = 10^{-1}$.}
     \label{img: PReLU}
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
@@ -736,9 +838,9 @@ La función de activación Leaky ReLU permite que la neurona tenga un pequeño g
 \begin{minipage}{0.6\textwidth}
     Una forma de generalizar la función anterior es introduciendo un parámetro \(\alpha\) para ajustar la pendiente para entradas negativas. Esta función se llama PReLU y se define:
 \begin{equation}
-    f(x; \alpha) = 
+    f_{\alpha}(x) = 
     \begin{cases} 
-      \alpha x & \text{si } x < 0 \\ 
+      \alpha \cdot x & \text{si } x < 0 \\ 
       x & \text{si } x \geq 0 
     \end{cases}
     \label{eq:prelu}
@@ -751,7 +853,7 @@ Cuando $\alpha = 0$, la función se corresponde con ReLU y cuando $\alpha > 0$, 
 \begin{minipage}{0.6\textwidth}
     La función softplus puede considerarse una aproximación suave de la función ReLU. Se define como:
 \begin{equation}
-\text{softplus}(a) = \log(1 + \exp(a))
+f(x) = \log(1 + \exp(x))
 \end{equation}
 
 La forma más suave de la función y la ausencia de puntos no diferenciables podrían sugerir un mejor comportamiento y un entrenamiento más fácil como función de activación. Sin embargo, los resultados experimentales obtenidos tienden a contradecir esta hipótesis, sugiriendo que las propiedades de ReLU pueden facilitar el entrenamiento supervisado mejor que las funciones softplus \citep{apicella2021survey}.
@@ -779,79 +881,71 @@ La forma más suave de la función y la ausencia de puntos no diferenciables pod
 \begin{minipage}{0.6\textwidth}
     La \textbf{función ELU} es una función de activación que mantiene la identidad para argumentos positivos pero con valores no nulos para los negativos. Se define como:
     \[
-    \text{ELU}(a) =
+    f_{\alpha}(x) =
     \begin{cases} 
-    a & \text{si } a > 0 \\
-    \alpha \cdot (\exp(a) - 1) & \text{de lo contrario}
+    x & \text{si } x > 0 \\
+    \alpha \cdot (\exp(x) - 1) & \text{de lo contrario}
     \end{cases}
     \]
     donde \( \alpha \) controla el valor para entradas negativas. Los valores dados por las unidades ELU empujan la media de las activaciones más cerca de cero, permitiendo una fase de aprendizaje más rápida, a costa de un hiperparámetro extra (\( \alpha \)) que necesita ser establecido durante el entrenamiento \citep{apicella2021survey}.
 \end{minipage}
 
+\begin{comment}
+    \subsubsection*{Funciones Swish y SiLU}
 
-\subsubsection*{Funciones Swish y SiLU}
-
-\textbf{Swish y SiLU} combinan la función sigmoide con otros parámetros para proporcionar una activación suave y no lineal. Ambas funciones se han probado en tareas de aprendizaje por refuerzo y en otros contextos, demostrando su efectividad \citep{apicella2021survey}.
-
-\begin{equation}
-    \text{SiLU}(a) = a \cdot \sigma(a) = \frac{a}{1 + e^{-a}}
-\end{equation}
-
-La derivada de SiLU se define como:
-
-\begin{equation}
-    \text{dSiLU}(a) = \sigma(a) \left( 1 + a (1 - \sigma(a)) \right)
-\end{equation}
-
-Donde \(\sigma(a)\) es la función sigmoide.
-
-La función Swish se define de manera similar, pero con un parámetro adicional \(\beta\):
-\begin{equation}
-    \text{Swish}(x) = x \cdot \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}
-\end{equation}
-
-Para \(\beta = 1\), Swish es equivalente a SiLU. La Figura \ref{fig:activf} muestra las gráficas de las funciones Swish (con \(\beta = 3\)) y SiLU.
-
-\begin{figure}[h]
-    \centering
-    \begin{minipage}[b]{0.45\textwidth}
+    \textbf{Swish y SiLU} combinan la función sigmoide con otros parámetros para proporcionar una activación suave y no lineal. Ambas funciones se han probado en tareas de aprendizaje por refuerzo y en otros contextos, demostrando su efectividad \citep{apicella2021survey}.
+    
+    \begin{equation}
+        \text{SiLU}(x) = x \cdot \sigma(x) = \frac{x}{1 + e^{-x}}
+    \end{equation}
+    
+    La derivada de SiLU se define como:
+    
+    \begin{equation}
+        \text{dSiLU}(x) = \sigma(x) \left( 1 + x (1 - \sigma(x)) \right)
+    \end{equation}
+    
+    Donde \(\sigma(x)\) es la función sigmoide.
+    
+    La función Swish se define de manera similar, pero con un parámetro adicional \(\beta\):
+    \begin{equation}
+        \text{Swish}(x) = x \cdot \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}
+    \end{equation}
+    
+    Para \(\beta = 1\), Swish es equivalente a SiLU. La Figura \ref{fig:activf} muestra las gráficas de las funciones Swish (con \(\beta = 3\)) y SiLU.
+    
+    \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{img/Swish.png}
-        \caption{Gráfica de la función Swish con \(\beta = 3\).}
-        \label{fig:swish}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{img/SiLU.png}
-        \caption{Gráfica de la función SiLU.}
-        \label{fig:silu}
-    \end{minipage}
-    \caption{Comparación de las funciones de activación Swish y SiLU.}
-    \label{fig:activf}
-\end{figure}
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.6\textwidth]{img/Swish.png}
+            \caption{Gráfica Swish con \(\beta = 3\).}
+            \label{fig:swish}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.6\textwidth]{img/SiLU.png}
+            \caption{Gráfica de la función SiLU.}
+            \label{fig:silu}
+        \end{minipage}
+        \caption{Comparación de las funciones de activación Swish y SiLU.}
+        \label{fig:activf}
+    \end{figure}
+\end{comment}
 
+\newpage
 
-
-Las funciones de activación juegan un papel esencial en la formación de redes neuronales al permitir que las redes aprendan y generen relaciones complejas. Desde funciones clásicas como la sigmoide y tanh, hasta variantes más recientes como ReLU, LReLU y ELU, cada función tiene sus propios beneficios y limitaciones. La elección de la función de activación depende del tipo de problema al que nos enfrentemos y de lo que se busque con el modelo, pero tiene que ser una elección acertada, ya que puede influir significativamente en el rendimiento del modelo. Además, permiten resolver el desvanecimiento del gradiente durante el proceso de aprendizaje, evitando que el gradiente se acerque a cero, cumpliendo la hipótesis de derivabilidad \citep{pajares2021aprendizaje}.
-
-
-
-
-
-
-
-
-
+Las funciones de activación juegan un papel esencial en la formación de redes neuronales al permitir que las redes aprendan y generen relaciones complejas. Desde funciones clásicas como la \lstinline|sigmoide| y \lstinline|tanh|, hasta variantes más recientes como \lstinline|ReLU|, \lstinline|LReLU| y \lstinline|ELU|, cada función tiene sus propios beneficios y limitaciones. La elección de la función de activación depende del tipo de problema al que nos enfrentemos y de lo que se busque con el modelo, pero tiene que ser una elección acertada, ya que puede influir significativamente en el rendimiento del modelo \citep{pajares2021aprendizaje}. Además, permiten resolver el desvanecimiento del gradiente durante el proceso de aprendizaje, evitando que el gradiente se acerque a cero, cumpliendo la hipótesis de derivabilidad \citep{pajares2021aprendizaje}.
 
 
 
 \section{Sobreajuste del modelo.}
 
-El sobreajuste es uno de los principales desafíos a los que se enfrentan los expertos en machine learning a día de hoy. Para poder explicar y presentar diferentes soluciones a este problema, vamos a ver primero algunos conceptos.
+El sobreajuste es uno de los principales desafíos a los que se enfrentan los expertos en \textit{machine learning} a día de hoy. Para poder explicar y presentar diferentes soluciones a este problema, vamos a ver primero algunos conceptos.
 
 
-El \textbf{sobreajuste} (también conocido como \textit{overfitting}) se produce cuando un modelo se ajusta demasiado bien a los datos de entrenamiento, capturando incluso el ruido y las fluctuaciones aleatorias. Este ajuste excesivo provoca que el modelo tenga un rendimiento excelente en los datos de entrenamiento pero un rendimiento deficiente en datos nuevos. El overfitting suele ocurrir cuando el modelo es demasiado complejo en comparación con la cantidad de datos disponibles.
+El \textbf{sobreajuste} (también conocido como \textit{overfitting}) se produce cuando un modelo se ajusta demasiado bien a los datos de entrenamiento, capturando incluso el ruido y las fluctuaciones aleatorias. Este ajuste excesivo provoca que el modelo tenga un rendimiento excelente en los datos de entrenamiento pero un rendimiento deficiente en datos nuevos. El \textit{overfitting} suele ocurrir cuando el modelo es demasiado complejo en comparación con la cantidad de datos disponibles.
 
 El \textbf{subajuste} (también conocido como \textit{underfitting}) ocurre cuando el modelo es demasiado simple para capturar la estructura subyacente en los datos. Esto se manifiesta con un bajo ajuste del polinomio tanto a los datos de entrenamiento como a los de validación, indicando que el modelo no ha capturado patrones importantes en los datos.
 
@@ -864,7 +958,7 @@ En la primera gráfica de la Figura \ref{fig:overfitting}, se puede observar com
     \label{fig:overfitting}
 \end{figure}
 
-Por último, la gráfica de más a la derecha presenta un ajuste idóneo para este conjunto de datos, ya que se puede observar como se ajusta a todos los puntos pero sin capturar ruido. Para llegar a este tipo de ajuste y evitar los dos primeros casos, vamos a explorar diferentes métodos para mitigar el sobreajuste, como la regularización $l1$ y $l2$, las capas dropout o la parada temprana.
+Por último, la gráfica de más a la derecha presenta un ajuste idóneo para este conjunto de datos, ya que se puede observar como se ajusta a todos los puntos pero sin capturar ruido. Para llegar a este tipo de ajuste y evitar los dos primeros casos, vamos a explorar diferentes métodos para mitigar el sobreajuste, como la regularización $l1$ y $l2$, las capas \textit{dropout} o la parada temprana.
 
 \subsection{Regularización l1 y l2} \label{sec:regularizacion}
 
@@ -873,35 +967,35 @@ La regularización ayuda a evitar el sobreajuste, lo cual ocurre cuando un model
 Para implementarla, se añade un término de regularización a la función de pérdida durante el entrenamiento. Este término penaliza ciertos parámetros del modelo, ajustando el total de la pérdida. La intensidad de la regularización se controla mediante un parámetro que determina el equilibrio entre ajustar los datos y reducir el impacto de coeficientes muy grandes \citep{geron2022hands}.
 
 \begin{equation}
-loss_{regul}(\theta) = loss(\theta) + \beta \cdot f(\theta) 
-\end{equation}
+loss_{r}(w) = loss(w) + \beta \cdot f(w) 
+\end{equation} \label{eq: regularizacion}
 
-Aquí, \( loss_{regul}(\theta) \) es la función de pérdida final despues de aplicarle una regularización. \( loss(\theta) \) es la función de pérdida original que mide el ajuste del modelo a los datos, y \( \theta \) representa los parámetros del modelo (pesos y sesgos). El parámetro \(\beta\) controla la intensidad de la regularización, equilibrando entre ajustar el modelo a los datos y mantener los valores de los parámetros bajo control. Por último, el término de regularización \( f(\theta) \) penaliza los parámetros del modelo, siendo comúnmente la regularización $l2$ o la $l1$. 
+Aquí, \( loss_{r}(w) \) es la función de pérdida final después de aplicarle una regularización. \( loss(w) \) es la función de pérdida original que mide el ajuste del modelo a los datos, y \( w \in \mathbb{R}^n\) representa los parámetros del modelo (pesos y sesgos). El parámetro \(\beta\) controla la intensidad de la regularización, equilibrando entre ajustar el modelo a los datos y mantener los valores de los parámetros bajo control. Por último, el término de regularización \( f(w) \) penaliza los parámetros del modelo, siendo comúnmente la regularización $l2$ o la $l1$. 
  
 
-La \textbf{regularización \(l2\)} (o regresión Ridge) añade una penalización proporcional a la suma de los pesos al cuadrado. La función de pérdida regularizada \(l2\) se define como:
+La \textbf{regularización \(l2\)} (o regresión Ridge) añade una penalización proporcional a la suma de los pesos de cada capa al cuadrado. La función de pérdida regularizada \(l2\) se define como $\sum_{i}^n w_i^2$ (donde $n$ es el número de neuronas de esa capa). Sustituyendo en la ecuación \ref{eq: regularizacion}, nos queda
 
 \begin{equation}
-\text{Loss} = \text{Original Loss} + \lambda \sum_{i} w_i^2
+loss_{r}(w) = loss(w) + \beta \cdot \sum_{i}^n w_i^2
 \end{equation}
 
-donde \(\lambda\) es el parámetro de regularización que controla la importancia de la penalización y $w_i$ los pesos \citep{geron2022hands}. Este método tiende a producir soluciones más estables y reduce la complejidad de los modelos, tendiendo los coeficientes hacia valores más pequeños.
+donde \(\beta\) es el parámetro de regularización que controla la importancia de la penalización y $w_i$ los pesos \citep{geron2022hands}. Este método tiende a producir soluciones más estables y reduce la complejidad de los modelos, tendiendo los coeficientes hacia valores más pequeños.
 
 
-La \textbf{regularización \(l1\)} (o regresión Lasso) añade una penalización proporcional a la suma del valor absoluto de los pesos:
+La \textbf{regularización \(l1\)} (o regresión Lasso) añade una penalización proporcional a la suma del valor absoluto de los pesos de cada capa. La función de pérdida regularizada \(l1\) se define como $\sum_{i}^n |w_i|$ (donde $n$ es el número de neuronas de esa capa). Sustituyendo en la ecuación \ref{eq: regularizacion}, nos queda
 \begin{equation}
-\text{Loss} = \text{Original Loss} + \lambda \sum_{i} |w_i|
+loss_{r}(w) = loss(w) + \beta \cdot \sum_{i}^n |w_i|
 \end{equation}
 Esta técnica puede generar un modelo más sencillo, donde algunos coeficientes se anulan, seleccionando las características más importantes de los datos. Sin embargo, produce soluciones menos estables que aplicando $l2$ \citep{geron2022hands}. 
 
 
 \subsection{Dropout} \label{sec:dropout}
 
-Otro método para evitar el sobreajuste de nuestro modelo es el Dropout, que fue propuesto por Hinton et al. \citep{hinton2012improving} como una forma de regularización para capas de redes neuronales completamente conectadas. El dropout consiste en que cada elemento de la salida de una capa se mantiene en cada iteración con una probabilidad \(p\) (``tasa de dropout''), de lo contrario se establece en 0, con una probabilidad \((1 - p)\). Según \citep{geron2022hands}, este valor de $p$ suele variar entre 0.1 y 0.5, siendo este último uno de los más típicos \citep{srivastava2013improving}, aunque la red neuronal que se esté utilizando influye en el valor óptimo \citep{geron2022hands}. La elección de este parámetro es muy importnate, ya que si tomamos un valor muy alto, puede llevarnos a underfitting.
+Otro método para evitar el sobreajuste de nuestro modelo es el \textit{dropout}, que fue propuesto por Hinton et al. \citep{hinton2012improving} como una forma de regularización para capas de redes neuronales completamente conectadas. El \textit{dropout} consiste en que cada elemento de la salida de una capa se mantiene en cada iteración con una probabilidad \(p\) (tasa de \textit{dropout}), de lo contrario se establece en 0, con una probabilidad \((1 - p)\). Según \citep{geron2022hands}, este valor de $p$ suele variar entre 0.1 y 0.5, siendo este último uno de los más típicos \citep{srivastava2013improving}, aunque la red neuronal que se esté utilizando influye en el valor óptimo \citep{geron2022hands}. La elección de este parámetro es muy importante, ya que si tomamos un valor muy alto, puede llevarnos a \textit{underfitting}.
     
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/dropout.png}
+    \includegraphics[width=0.5\textwidth]{img/dropout.png}
     \captionof{figure}{Esquema de la técnica dropout. Fuente \citep{srivastava2014dropout}}
     \label{fig:dropout}
 \end{figure}
@@ -909,13 +1003,13 @@ Otro método para evitar el sobreajuste de nuestro modelo es el Dropout, que fue
 Al eliminar una neurona, esta se elimina de la red con todas sus conexiones entrantes y salientes (ver Figura \ref{fig:dropout}). La principal ventaja de esto es que la red no depende excesivamente de ninguna neurona, mejorando de esta forma la generalización del modelo. La eliminación se aplica de manera independiente a cada capa oculta y a cada iteración del entrenamiento. 
 
 
-Por lo tanto, aplicar dropout a una red neuronal equivale a seleccionar una submuestra ``reducida'' de la red original. Como cada neurona puede estar activa o inactiva, hay un total de $2^n$ redes posibles, donde $n$ es el número de neuronas que se pueden desactivar \citep{srivastava2013improving}. Puede interpretarse como entrenar una gran colección de redes neuronales diferentes y usar sus promedios para hacer predicciones.
+Por lo tanto, aplicar \textit{dropout} a una red neuronal equivale a seleccionar una submuestra de la red original. Como cada neurona puede estar activa o inactiva, hay un total de $2^n$ redes posibles, donde $n$ es el número de neuronas que se pueden desactivar \citep{srivastava2013improving}. Puede interpretarse como entrenar una gran colección de redes neuronales diferentes y usar sus promedios para hacer predicciones.
 
 
-Experimentos como los que se harán en el Capítulo \ref{Capitulo_3} muestran como el Dropout mejora la capacidad de generalización de la red, proporcionando un mejor rendimiento del modelo.
+Experimentos como los que se harán en el Capítulo \ref{Capitulo_3} muestran como el \textit{dropout} mejora la capacidad de generalización de la red, proporcionando un mejor rendimiento del modelo.
 
 
-El uso del dropout en una red neuronal se implementa fácilmente en frameworks como Keras. Por ejemplo:
+El uso del \textit{dropout} en una red neuronal se implementa fácilmente en frameworks como Keras. Por ejemplo:
 
 \lstset{language=Python}
 \begin{lstlisting}
@@ -927,32 +1021,31 @@ model = Sequential([
     Dense(10, activation='softmax') ])
 \end{lstlisting}
 
-En este código, se aplica dropout con una tasa del 50\% después de una capa densa con 128 unidades.
-
+En este código, se aplica \textit{dropout} con una tasa del 50\% después de una capa densa con 128 unidades.
 
 
 \subsection{Parada temprana}
 
-Además de las técnicas de regularización $l1$ y $l2$ y el uso de dropout para prevenir el sobreajuste en redes neuronales, otra estrategia ampliamente utilizada es la parada temprana o \textit{Early Stopping}.
+Además de las técnicas de regularización $l1$ y $l2$ y el uso de \textit{dropout} para prevenir el sobreajuste en redes neuronales, otra estrategia ampliamente utilizada es la parada temprana o \textit{Early Stopping}.
 
 \begin{minipage}{0.35\textwidth}
 \centering
     \includegraphics[width=0.8\textwidth]{img/earlyStopping.png}
-    \captionof{figure}{Curvas de error de entrenamiento y validación con Early Stopping.}
+    \captionof{figure}{Curvas de error de entrenamiento y validación con \textit{Early Stopping}.}
     \label{fig:early_stopping}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-     El Early Stopping consiste en que el modelo deja de entrenar cuando el error en el conjunto de validación alcanza un mínimo y comienza a aumentar nuevamente. Esto se observa durante el proceso de entrenamiento, cuando el error de entrenamiento continúa disminuyendo mientras que el error de validación inicialmente disminuye, pero eventualmente comienza a incrementarse debido al sobreajuste \citep{geron2022hands}. La Figura \ref{fig:early_stopping} ilustra este comportamiento, donde la precisión del modelo en el conjunto de validación deja de mejorar después de cierto punto y comienza a empeorar.
+     El \textit{Early Stopping} consiste en que el modelo deja de entrenar cuando el error en el conjunto de validación alcanza un mínimo y comienza a aumentar nuevamente. Esto se observa durante el proceso de entrenamiento, cuando el error de entrenamiento continúa disminuyendo mientras que el error de validación inicialmente disminuye, pero eventualmente comienza a incrementarse debido al sobreajuste \citep{geron2022hands}. La Figura \ref{fig:early_stopping} ilustra este comportamiento, donde la precisión del modelo en el conjunto de validación deja de mejorar después de cierto punto y comienza a empeorar.
      
 \bigskip
 
-Formalmente, si denotamos el error en el conjunto de entrenamiento después de la \( t \)-ésima época como \( E_{\text{tr}}(t) \) y el error en el conjunto de validación como \( E_{\text{val}}(t) \), Early Stopping interrumpe el entrenamiento cuando \( E_{\text{val}}(t) \) deja de mejorar durante un número definido de épocas consecutivas. 
+Formalmente, si denotamos el error en el conjunto de entrenamiento después de la \( t \)-ésima época como \( E_{\text{tr}}(t) \) y el error en el conjunto de validación como \( E_{\text{val}}(t) \), \textit{Early Stopping} interrumpe el entrenamiento cuando \( E_{\text{val}}(t) \) deja de mejorar durante un número definido de épocas consecutivas. 
 \end{minipage}
 
 
 Esta técnica no solo ayuda a prevenir el sobreajuste sino que también optimiza el uso de recursos al detener el entrenamiento cuando ya no se obtienen mejoras en el desempeño del modelo \citep{tian2022comprehensive}.
 
-Para implementarlo en la práctica, frameworks como Keras ofrecen callbacks que facilitan este proceso. A continuación se presenta un ejemplo de código que utiliza \lstinline|EarlyStopping| para detener el entrenamiento cuando no se observa ninguna mejora en el error de validación:
+Para implementarlo en la práctica, \textit{frameworks} como Keras ofrecen \textit{callbacks} que facilitan este proceso. A continuación se presenta un ejemplo de código que utiliza \lstinline|EarlyStopping| para detener el entrenamiento cuando no se observa ninguna mejora en el error de validación:
 
 
 \lstset{language=Python}
@@ -966,14 +1059,14 @@ history = model.fit(X_train, y_train, epochs=100,
                     callbacks=[early_stopping_cb])
 \end{lstlisting}
 
-En este ejemplo, EarlyStopping detiene el entrenamiento después de un número definido de épocas sin mejora (\lstinline|patience = 10|), restaurando los pesos que lograron el mejor desempeño \citep{geron2022hands}.
+En este ejemplo, \lstinline|EarlyStopping| detiene el entrenamiento después de un número definido de épocas sin mejora (\lstinline|patience = 10|), restaurando los pesos que lograron el mejor desempeño \citep{geron2022hands}.
 
-Así, \textit{Early Stopping} se complementa eficazmente con las técnicas de regularización $l1$, $l2$ y dropout, proporcionando una capa adicional de protección contra el sobreajuste y mejorando la robustez del modelo.
+Así, \textit{Early Stopping} se complementa eficazmente con las técnicas de regularización $l1$, $l2$ y \textit{dropout}, proporcionando una capa adicional de protección contra el sobreajuste y mejorando la robustez del modelo.
 
 \bigskip
 
 
-El sobreajuste es uno de los principales desafíos en el entrenamiento de modelos de aprendizaje automático, incluyendo las redes neuronales. Técnicas como la regularización \(l2\), el dropout y la parada temprana son estrategias efectivas para mitigar este problema. Es crucial seleccionar y combinar adecuadamente estas técnicas según las características del problema y los datos disponibles. A través de estos métodos, podemos mejorar la capacidad de generalización de nuestros modelos y lograr un rendimiento más robusto en datos no vistos \citep{geron2022hands, pajares2021aprendizaje}.
+El sobreajuste es uno de los principales desafíos en el entrenamiento de modelos de aprendizaje automático, incluyendo las redes neuronales. Técnicas como la regularización \(l2\), el \textit{dropout} y la parada temprana son estrategias efectivas para mitigar este problema. Es crucial seleccionar y combinar adecuadamente estas técnicas según las características del problema y los datos disponibles. A través de estos métodos, podemos mejorar la capacidad de generalización de nuestros modelos y lograr un rendimiento más robusto en datos no vistos \citep{geron2022hands, pajares2021aprendizaje}.
 
 
 
@@ -988,13 +1081,13 @@ El sobreajuste es uno de los principales desafíos en el entrenamiento de modelo
 
 \section{Evaluación del modelo.} 
 
-Una vez discutidos los fundamentos del aprendizaje supervisado y no supervisado, y explorado una variedad de algoritmos de machine learning, profundizaremos ahora en la evaluación de los diferenes modelos. Nos centraremos en los métodos supervisados, tanto en regresión como en clasificación, ya que la evaluación y selección de modelos en aprendizaje no supervisado suele ser un proceso más cualitativo \citep{muller2016introduction}. 
+Una vez discutidos los fundamentos del aprendizaje supervisado y no supervisado, y explorado una variedad de algoritmos de \textit{machine learning}, profundizaremos ahora en la evaluación de los diferentes modelos. Nos centraremos en los métodos supervisados, tanto en regresión como en clasificación, ya que la evaluación y selección de modelos en aprendizaje no supervisado suele ser un proceso más cualitativo \citep{muller2016introduction}. 
 
 
-Para evaluar los modelos supervisados, primero se divide el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba utilizando la función \lstinline|train_test_split|, que divide los datos de manera aleatoria. Algunos modelo como la \acrshort{cnn} o los autoencoders también necesitan un conjunto de validación durante su entrenamiento para ir evaluando el rendimiento del modelo en cada iteración. Además, proporciona información muy valiosa para detectar si un modelo empieza a sobreaprender de los datos de entrenamiento. Los porcentajes de estos subconjuntos suelen encontrarse entre el 70 - 80 \%, 10 - 20 \% y 10 - 20 \% para entrenamiento, test y validación respectivamente. El conjunto de entrenamiento sirve para entrenar la red neuronal. Por otro lado, el conjunto de prueba sirve para medir definitivamente el rendimiento del modelo con nuevas muestras de datos que no han sido utilizadas durante del entrenamiento para evaluar el modelo \citep{muller2016introduction}.
+Para evaluar los modelos supervisados, primero se divide el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba utilizando la función \lstinline|train_test_split|, que divide los datos de manera aleatoria. Algunos modelo como la \acrshort{cnn} o los \textit{autoencoders} también necesitan un conjunto de validación durante su entrenamiento para ir evaluando el rendimiento del modelo en cada iteración. Además, proporciona información muy valiosa para detectar si un modelo empieza a sobreaprender de los datos de entrenamiento. Los porcentajes de estos subconjuntos suelen encontrarse entre el 70 - 80 \%, 10 - 20 \% y 10 - 20 \% para entrenamiento, prueba y validación respectivamente. El conjunto de entrenamiento sirve para entrenar la red neuronal. Por otro lado, el conjunto de validación sirve para ajustar hiperparámetros y evaluar el modelo con datos diferentes al entrenamiento, ayudando a evitar el sobreajuste. Por último, los datos de prueba sirven para medir definitivamente el rendimiento del modelo con nuevas muestras de datos que no han sido utilizadas durante del entrenamiento para evaluar el modelo \citep{muller2016introduction}.
 
 
-El problema de esta técnica radica en que las distribuciones de los datos pueden no ser uniformes en los tres subconjuntos y que no sea una divisón muy óptima. Para evitar este inconveniente, se puede usar una técnica de evaluación del modelo más avanzada llamada \textbf{validación cruzada} (\textit{cross-validation}), donde los datos se dividen en varios subconjuntos, y el modelo se entrena y valida múltiples veces, garantizando una evaluación más robusta del rendimiento. La variante más comúnmente utilizada es la validación cruzada \textit{k-fold}. Aquí, el conjunto de datos se divide en $k$ partes aproximadamente iguales, llamadas pliegues. Cada uno de los $k$ pliegues se utiliza una vez como conjunto de prueba, mientras que los $k-1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Este proceso se repite $k$ veces, generando $k$ modelos y $k$ evaluaciones. La Figura~\ref{img: k-fold} ilustra este procedimiento \citep{muller2016introduction}.
+El problema de esta técnica radica en que las distribuciones de los datos pueden no ser uniformes en los tres subconjuntos y que no sea una división muy óptima. Para evitar este inconveniente, se puede usar una técnica de evaluación del modelo más avanzada llamada \textbf{validación cruzada} (\textit{cross-validation}), donde los datos se dividen en varios subconjuntos, y el modelo se entrena y valida múltiples veces, garantizando una evaluación más robusta del rendimiento. La variante más comúnmente utilizada es la validación cruzada \textit{k-fold}. Aquí, el conjunto de datos se divide en $k$ partes aproximadamente iguales, llamadas pliegues. Cada uno de los $k$ pliegues se utiliza una vez como conjunto de prueba, mientras que los $k-1$ pliegues restantes se combinan para formar el conjunto de entrenamiento. Este proceso se repite $k$ veces, generando $k$ modelos y $k$ evaluaciones. La Figura~\ref{img: k-fold} ilustra este procedimiento \citep{muller2016introduction}.
 
 \begin{figure}[h]
 	\centering
@@ -1007,7 +1100,7 @@ Al final de la validación cruzada \textit{k-fold}, se recopilan $k$ valores de 
 
 
 
-Una vez ya se ha entrenado el modelo, utilizamos el conjunto de prueba para medir el rendimiento del modelo. Para ello, se utilizan una serie de métricas que nos permiten entender el rendimiento y efectividad de un modelo. A continuación, se describen las principales métricas utilizadas, así como las representaciones gráficas asociadas.
+Una vez ya se ha entrenado el modelo, utilizamos el conjunto de prueba para medir el rendimiento del modelo. Para ello, se utilizan una serie de métricas que nos permiten entender el rendimiento y efectividad de un modelo. A continuación, se describen las principales.
 
 \subsection{Matriz de Confusión}
 
@@ -1022,14 +1115,13 @@ La matriz se define como:
 \text{Real Negativa} & FP & TN \\
 \end{array}
 \]
-
 Para calcularla, utilizamos el conjunto de predicciones del modelo y las etiquetas reales. La matriz de confusión nos ofrece una visión clara de cómo se distribuyen los errores del modelo entre las diferentes clases.
 
 \subsection{Métricas}
 
 La matriz de confusión ofrece una gran cantidad de información, pero a veces te interesa una métrica más concreta para evaluar un modelo de clasificación, como la sensibilidad, la tasa de falsos negativos o su sensibilidad. A continuación vamos a definir y explicar las principales métricas a tener en cuenta según \citep{erickson2021magician} junto con su fórmula. 
 
-La \textbf{sensibilidad} es la fracción de casos positivos que el modelo predice correctamente como positivos. También se conoce como recall o tasa de verdaderos positivos (TPR). Se calcula utilizando la fórmula:
+La \textbf{sensibilidad} es la fracción de casos positivos que el modelo predice correctamente como positivos. También se conoce como \textit{recall} o tasa de verdaderos positivos (TPR). Se calcula utilizando la fórmula:
 \[
 \text{Sensibilidad} = \frac{TP}{TP + FN}
 \]
@@ -1039,7 +1131,7 @@ La \textbf{especificidad} es la fracción de casos negativos que el modelo predi
 \text{Especificidad} = \frac{TN}{TN + FP}
 \]
 
-La \textbf{tasa de falsos positivos} (FPR) es la fracción de casos negativos que el modelo predice incorrectamente como positivos. También se conoce como fall-out o probabilidad de alarma falsa. Se calcula utilizando la fórmula:
+La \textbf{tasa de falsos positivos} (FPR) es la fracción de casos negativos que el modelo predice incorrectamente como positivos. También se conoce como \textit{fall-out} o probabilidad de alarma falsa. Se calcula utilizando la fórmula:
 \[
 \text{FPR} = \frac{FP}{TN + FP}
 \]
@@ -1059,7 +1151,7 @@ El \textbf{valor predictivo negativo} (NPV) es la fracción de casos que el mode
 \text{NPV} = \frac{TN}{TN + FN}
 \]
 
-El \textbf{accuracy} es la fracción de casos que el modelo predijo correctamente, ya sean positivos o negativos. Se calcula utilizando la fórmula:
+El \textit{\textbf{accuracy}} es la fracción de casos que el modelo predijo correctamente, ya sean positivos o negativos. Se calcula utilizando la fórmula:
 \[
 \text{Accuracy} = \frac{TP + TN}{TP + FN + TN + FP}
 \]
@@ -1071,45 +1163,48 @@ Por último la \textbf{puntuación F1} es la media armónica del valor predictiv
 
 Un buen modelo de clasificación, evaluado mediante el F1-score, es aquel que presenta un F1-score cercano a 1. Esto indica que el modelo tiene un excelente equilibrio entre precisión y exhaustividad, identificando correctamente la mayoría de los verdaderos positivos y minimizando tanto los falsos positivos como los falsos negativos. 
 
+
+Estas métricas son aplicables a problemas de clasificación binaria, pero para problemas de clasificación multiclase, es necesario utilizar versiones extendidas de estas métricas. En estos casos, la sensibilidad y especificidad se pueden calcular para cada clase individualmente y luego promediarse para obtener una visión global del rendimiento del modelo. La precisión y el \textit{recall} también deben evaluarse por clase y combinarse adecuadamente. Para evaluar la precisión en estos problemas, se considera la proporción de predicciones correctas con respecto al total de predicciones \citep{zhang2013review}.
+
 \subsection{Curva ROC y AUC}
 
 \begin{minipage}{0.5\textwidth}
-La curva ROC (Receiver Operating Characteristic) es otra herramienta utilizada en los modelos de clasificación \citep{geron2022hands}. Consiste en una representación gráfica que muestra la relación entre la tasa de verdaderos positivos (TPR) y la tasa de falsos positivos (FPR) para diferentes umbrales de clasificación. La linea discontinua de la figura \ref{img: roc} indica la curva ROC de un clasificador puramente aleatorio \citep{geron2022hands}. 
+La curva ROC (\textit{Receiver Operating Characteristic}) es otra herramienta utilizada en los modelos de clasificación binaria. Consiste en una representación gráfica que muestra la relación entre la tasa de verdaderos positivos (TPR) y la tasa de falsos positivos (FPR) para diferentes umbrales de clasificación \citep{geron2022hands}. 
 
 \bigskip
 
-Otro término que está relacionado es el AUC (\textit{area under the curve}). El AUC es el área que se encuentra encerrada entre la curva ROC, la recta $y = 0$ y $x = 1$. Cuantifica la capacidad que tiene el modelo para distinguir entre las diferentes clases. Cuanto mayor valor, mejor rendimiento. En la Figura \ref{img: roc} se representa con rallas de intensidad baja. 
+La curva ROC se construye variando el umbral de decisión, que es el punto en el que el modelo decide clasificar una predicción como positiva o negativa. Cada punto en la curva ROC corresponde a un umbral específico que separa las predicciones en positivas y negativas. 
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 \textbf{ }
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
-	\includegraphics[width=1.15\textwidth]{img/roc.png}
+	\includegraphics[width=0.9\textwidth]{img/roc.png}
 	\captionof{figure}{Interpretación de la curva ROC con el área bajo la curva (AUC).}
 	\label{img: roc}
 \end{minipage}
+
+Un umbral bajo aumenta la TPR, lo que incrementa los verdaderos positivos pero también los falsos positivos, desplazando el punto hacia la esquina superior derecha de la gráfica. Por el contrario, un umbral alto disminuye la TPR, resultando en más verdaderos negativos pero también en más falsos negativos, moviendo el punto hacia la esquina inferior izquierda de la gráfica. La curva ROC completa se genera trazando todos los puntos correspondientes a diferentes umbrales, desde el más bajo (donde todos los resultados se clasifican como positivos) hasta el más alto (donde todos se clasifican como negativos). De esta forma, la curva ROC proporciona una visualización del rendimiento del modelo en todo el rango de umbrales posibles \citep{geron2022hands}.
+
+Otro término que está relacionado es el AUC (\textit{area under the curve}). El AUC es el área que se encuentra encerrada entre la curva ROC, la recta $y = 0$ y $x = 1$. Cuantifica la capacidad que tiene el modelo para distinguir entre las diferentes clases. Cuanto mayor valor, mejor rendimiento. En la Figura \ref{img: roc} se representa con rallas de intensidad baja. 
 
 La interpretación de estos términos consiste en que una curva ROC más cercana al vértice superior izquierdo, o un AUC cercano a 1, indica un mejor rendimiento del modelo \citep{geron2022hands}.
 
 \subsection{Curva de Precisión-Recall}
 
-\begin{minipage}{0.4\textwidth}
-	\includegraphics[width=1.15\textwidth]{img/pr.png}
+\begin{minipage}{0.35\textwidth}
+	\includegraphics[width=0.9\textwidth]{img/pr.png}
 	\captionof{figure}{Curva de Precisión-Recall.}
 	\label{img: pr}
 \end{minipage}
 \begin{minipage}{0.05\textwidth}
 \textbf{ }
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
-Por último, se estudiará la curva de Precisión-Recall (PR). Esta curva muestra la precisión frente a la sensibilidad para diferentes umbrales de decisión. Se identifica a partir de qué valor de sensibilidad comienza una disminución en la precisión, y viceversa. Idealmente, se busca una curva que se acerque lo más posible a la esquina superior derecha del gráfico, lo que representaría una combinación óptima de alta precisión y alto recall.
-
-\bigskip
-
-Esta curva es especialmente útil para ajustar un umbral de decisión que permita obtener una precisión tan alta como se desee, pero a costa de la sensibilidad. Por ejemplo, si se desea una precisión del 90\%, se puede aumentar el umbral has-
+\begin{minipage}{0.55\textwidth}
+Por último, se estudiará la curva de Precisión-Recall (PR). Esta curva muestra la precisión frente a la sensibilidad para diferentes umbrales de decisión. Se identifica a partir de qué valor de sensibilidad comienza una disminución en la precisión, y viceversa. Idealmente, se busca una curva que se acerque lo más posible a la esquina superior derecha del gráfico, lo que representaría una combinación óptima de alta precisión y alto \textit{recall}. Esta curva es especialmente útil para ajustar un umbral de decisión que permita obtener una precisión tan alta como se desee, pero a costa de la sensibilidad. 
 \end{minipage}
 
-ta alcanzar este valor de precisión, aunque esto reducirá la sensibilidad. Este proceso se denomina trade-off entre precisión y sensibilidad.
+Por ejemplo, si se desea una precisión del 90\%, se puede aumentar el umbral hasta alcanzar este valor de precisión, aunque esto reducirá la sensibilidad. Este proceso se denomina \textit{trade-off} entre precisión y sensibilidad.
 
 Para calcular este umbral, se utilizan las puntuaciones de decisión obtenidas del clasificador. Primero, se obtienen estas puntuaciones usando la función \lstinline|decision_function()| del clasificador. Luego, se emplea la función \lstinline|precision_recall_curve()| de Scikit-Learn para calcular la precisión y la sensibilidad para todos los umbrales posibles. Finalmente, se selecciona el umbral que proporciona la precisión deseada. La Figura \ref{img: pr_vs_threshold} ilustra cómo se comportan la precisión y la sensibilidad en función del umbral \citep{geron2022hands}.
 
@@ -1123,10 +1218,10 @@ Para calcular este umbral, se utilizan las puntuaciones de decisión obtenidas d
 
 \section{Bibliotecas utilizadas en Python} \label{Subsec: 3_3}
 
-Para nuestros experimentos, utilizaremos Python debido a su popularidad y versatilidad en el ámbito del aprendizaje automático y la inteligencia artificial. Python ofrece una amplia gama de bibliotecas especializadas que facilitan la creación, entrenamiento y evaluación de modelos, así como el análisis y visualización de datos. A continuación, se describen las principales bibliotecas y frameworks que emplearemos en este trabajo, destacando sus características y ventajas.
+Para nuestros experimentos, utilizaremos Python debido a su popularidad y versatilidad en el ámbito del aprendizaje automático y la inteligencia artificial. Python ofrece una amplia gama de bibliotecas especializadas que facilitan la creación, entrenamiento y evaluación de modelos, así como el análisis y visualización de datos. A continuación, se describen las principales bibliotecas y \textit{frameworks} que emplearemos en este trabajo, destacando sus características y ventajas.
 
 
-\subsection{Principales frameworks. Keras}
+\subsection{Principales frameworks.}
 
 Como las técnicas de aprendizaje profundo han ido ganando popularidad, muchas organizaciones académicas e industriales se han centrado en desarrollar marcos para facilitar la experimentación con redes neuronales profundas. En esta sección, ofrecemos una visión general de los marcos de trabajo más importantes que se pueden usar en Python, concluyendo con nuestra elección.
 
@@ -1134,7 +1229,7 @@ Como las técnicas de aprendizaje profundo han ido ganando popularidad, muchas o
 \textbf{TensorFlow} \citep{tensorflow} es una biblioteca de código abierto desarrollada por el equipo de Google Brain para la computación numérica y el aprendizaje automático a gran escala. Diseñada para ser altamente flexible, TensorFlow soporta computación distribuida y permite la optimización de gráficos computacionales, lo que mejora significativamente la velocidad y el uso de memoria de las operaciones. En su núcleo, TensorFlow es similar a NumPy pero con soporte para GPU, lo que acelera considerablemente los cálculos. Además, incluye herramientas avanzadas como TensorBoard para la visualización de modelos y TensorFlow Extended para la producción de modelos de aprendizaje automático. Gracias a estas capacidades, TensorFlow se ha convertido en una herramienta esencial en la industria y la investigación, siendo utilizada en aplicaciones que van desde la clasificación de imágenes y el procesamiento de lenguaje natural hasta los sistemas de recomendación y la previsión de series temporales.
 
 
-\textbf{Keras} \citep{keras} es una API de alto nivel para redes neuronales que ahora es parte integral de TensorFlow. Fue desarrollada por François Chollet y ganó popularidad rápidamente gracias a su simplicidad y diseño elegante. Inicialmente, Keras soportaba múltiples backends, pero desde la versión 2.4, funciona exclusivamente con TensorFlow \citep{muller2016introduction}. Keras permite a los usuarios construir, entrenar y evaluar modelos de aprendizaje profundo de manera rápida y eficiente. Su facilidad de uso y extensa documentación la convierten en una herramienta valiosa tanto para la investigación como para la implementación de aplicaciones de inteligencia artificial.
+\textbf{Keras} \citep{keras} es una API de alto nivel para redes neuronales que ahora es parte integral de TensorFlow. Fue desarrollada por François Chollet y ganó popularidad rápidamente gracias a su simplicidad y diseño elegante. Inicialmente, Keras soportaba múltiples \textit{backends}, pero desde la versión 2.4, funciona exclusivamente con TensorFlow \citep{muller2016introduction}. Keras permite a los usuarios construir, entrenar y evaluar modelos de aprendizaje profundo de manera rápida y eficiente. Su facilidad de uso y extensa documentación la convierten en una herramienta valiosa tanto para la investigación como para la implementación de aplicaciones de inteligencia artificial.
 
 
 
@@ -1142,7 +1237,7 @@ Como las técnicas de aprendizaje profundo han ido ganando popularidad, muchas o
 
 
 
-Para escoger con cuál de estas librerías se realizará la parte práctica de este trabajo, vamos a utilizar, además de las características previamente vistas, los resultados de \citep{mahmoud2019dlbench}. En él se hace un estudio de eficiencia, convergencia, tiempo de entrenamiento y uso de memoria de los diferentes frameworks con varios datasets. Entre sus resultados podemos observar como Keras destaca por encima de las demás en el entorno de la CPU. No solo logra el mejor accuracy en los tres datasets (MNIST, CIFAR-10, CIFAR-100), sino que además también tiene los tiempos de ejecución más bajos y una de las mejores tasas de convergencia. En cuento al entorno de la GPU, las tres librerías obtienen unos resultados semejantes. En conclusión, podemos afirmar que estos resultados junto con su facilidad de uso, accesibilidad y documentación bien estructurada, han sido determinantes para optar por usar Keras en vez de PyTorch o TensorFlow en nuestros estudios posteriores. Aakash Nain resume perfectamente las ventajas de Keras \citep{keraswebsite2} al señalar que:
+Para escoger con cuál de estas librerías se realizará la parte práctica de este trabajo, vamos a utilizar, además de las características previamente vistas, los resultados de \citep{mahmoud2019dlbench}. En él se hace un estudio de eficiencia, convergencia, tiempo de entrenamiento y uso de memoria de los diferentes \textit{frameworks} con varios conjuntos de datos. Entre sus resultados podemos observar como Keras destaca por encima de las demás en el entorno de la CPU. No solo logra el mejor \textit{accuracy} en los tres datasets (MNIST, CIFAR-10, CIFAR-100), sino que además también tiene los tiempos de ejecución más bajos y una de las mejores tasas de convergencia. En cuento al entorno de la GPU, las tres librerías obtienen unos resultados semejantes. En conclusión, podemos afirmar que estos resultados junto con su facilidad de uso, accesibilidad y documentación bien estructurada, han sido determinantes para optar por usar Keras (junto con TensorFlow) en vez de PyTorch o solo TensorFlow en nuestros estudios posteriores. Aakash Nain resume perfectamente las ventajas de Keras \citep{keraswebsite2} al señalar que:
 
 \begin{quote} 
 ``Keras is that sweet spot where you get flexibility for research and consistency for deployment. Keras is to Deep Learning what Ubuntu is to Operating Systems.'' 
@@ -1159,7 +1254,7 @@ De manera similar, Matthew Carrigan destaca la intuitividad y facilidad de uso d
 
 De forma complementaria, también es importante conocer y utilizar diversas librerías y herramientas esenciales que facilitan el desarrollo y análisis de los modelos de Keras. Estas incluyen herramientas para la manipulación, visualización y análisis de datos.
 
-\textbf{Scikit-Learn} \citep{scikitlearn} es una librería de código abierto con herramientas simples y eficientes para el análisis predictivo de datos. Contiene varios algoritmos de aprendizaje automático, desde clasificación y regresión hasta clustering y reducción de dimensionalidad, con la documentación completa sobre cada algoritmo. Está construida sobre otras librerías que veremos más adelante como Numpy, SciPy y matplotlib. Aunque no se aprovecharán todas estas funcionalidades de scikit-learn, si que se va a utilizar una de sus funciones más populares, \lstinline|train\_test\_split()| \citep{traintestsplit}. Esta función divide el dataset en dos subconjuntos de forma aleatoria, manteniendo la correspondencia en caso de que el dataset contenga dos o más partes. Usualmente, a estos subconjuntos se les llama conjunto de prueba y conjunto de entrenamiento, cuyo tamaño se indica con un valor entre 0 y 1 (\lstinline|test\_size|). Además, también se suele asignar una semilla a esa división para que cada vez que se quieran reproducir los experimentos, pueda usarse la misma partición. Esa semilla es un número natural que se introduce como parámetro de entrada en la variable \lstinline|random\_state|. Veamos un ejemplo de como utilizar esta función.
+\textbf{Scikit-Learn} \citep{scikitlearn} es una librería de código abierto con herramientas simples y eficientes para el análisis predictivo de datos. Contiene varios algoritmos de aprendizaje automático, desde clasificación y regresión hasta \textit{clustering} y reducción de dimensionalidad, con la documentación completa sobre cada algoritmo. Está construida sobre otras librerías que veremos más adelante como Numpy, SciPy y matplotlib. Aunque no se aprovecharán todas estas funcionalidades de scikit-learn, si que se va a utilizar una de sus funciones más populares, \lstinline|train_test_split()| \citep{traintestsplit}. Esta función divide el conjunto de datos en dos subconjuntos de forma aleatoria, manteniendo la correspondencia en caso de que el conjunto de datos contenga dos o más partes. Usualmente, a estos subconjuntos se les llama conjunto de prueba y conjunto de entrenamiento, cuyo tamaño se indica con un valor entre 0 y 1 (\lstinline|test_size|). Además, también se suele asignar una semilla a esa división para que cada vez que se quieran reproducir los experimentos, pueda usarse la misma partición. Esa semilla es un número natural que se introduce como parámetro de entrada en la variable \lstinline|random_state|. Veamos un ejemplo de como utilizar esta función.
 
 
 \lstset{language=Python}
@@ -1172,7 +1267,7 @@ X_train, X_test, y_train, y_test = train_test_split(data, labels,
 \end{lstlisting}
 
 
-Las variables X\_train, X\_ test y compañía son numpy arrays. \textbf{NumPy} \citep{numpy} es el paquete fundamental de Python para la computación científica. Es una biblioteca general de estructuras de datos, álgebra lineal y manipulación de matrices para Python, cuya sintaxis y manejo de estructuras de datos y matrices es comparable al de MATLAB \citep{bloice2016tutorial}. En NumPy, se pueden crear arrays y realizar operaciones rápidas y eficientes sobre ellos. Se utilizarán estas estructuras de datos para almacenar los datos y entrenar las redes neuronales con ellas. Aunque también se pueden utilizar tensores \citep{modeltraining}, se ha decidido utilizar numpy arrays por su alta eficiencia operacional y por su uso en la industria.
+Las variables \lstinline|X_train|, \lstinline|X_test| y compañía son numpy arrays. \textbf{NumPy} \citep{numpy} es el paquete fundamental de Python para la computación científica. Es una biblioteca general de estructuras de datos, álgebra lineal y manipulación de matrices para Python, cuya sintaxis y manejo de estructuras de datos y matrices es comparable al de MATLAB \citep{bloice2016tutorial}. NumPy es la base de todas las estructuras de datos utilizadas en el entrenamiento de todas las redes neuronales. Se utilizarán estas estructuras de datos para almacenar los datos y entrenar las redes neuronales con ellas. Aunque también se pueden utilizar tensores \citep{modeltraining}, se ha decidido utilizar numpy arrays por su alta eficiencia operacional y por su uso en la industria.
 
 
 Otro paquete que se va a utilizar durante los experimentos y que Scikit-Learn utiliza es \textbf{matplotlib} \citep{matplotlib}. Es la principal biblioteca de gráficos científicos en Python y proporciona funciones para crear visualizaciones de calidad como gráficos de barras, histogramas, gráficos de dispersión, etc. Se utilizará este paquete para representar gráficamente los datos de cada dataset para poder obtener bastante información con un simple vistazo. 

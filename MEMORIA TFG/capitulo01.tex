@@ -1,32 +1,153 @@
 \chapter{Introducción} \label{Capitulo 1}
-      
-En la última década, la inteligencia artificial (IA) se ha convertido en un tema popular tanto dentro como fuera de la comunidad científica. Una abundancia de artículos en revistas tecnológicas y no tecnológicas han cubierto los temas de aprendizaje automático (o \textit{machine learning}), aprendizaje profundo (o \textit{deep learning}) e inteligencia artificial (\textit{IA}). Sin embargo, todavía existe confusión en torno a estos tres términos. Aunque están relacionados, no son intercambiables.
-
-En 1956, un grupo de informáticos propuso que las computadoras podrían ser programadas para pensar y razonar. Esta visión fue expresada en la conferencia de 1956 \citep{moor2006dartmouth} como:``que cada aspecto del aprendizaje o cualquier otra característica de la inteligencia podría, en principio, ser descrito tan precisamente que una máquina podría simularlo'' . Describieron este principio como ``Inteligencia Artificial''. En pocas palabras, la IA es un campo enfocado en automatizar tareas intelectuales que normalmente realizan los humanos. Principalmente lo que diferencia la Inteligencia Artificial de otros programas informáticos es que no hace falta modificarla para cada escenario particular. Se puede entrenar a las máquinas para que ellas solas 
+Las redes neuronales representan uno de los métodos más prometedores en la resolución de problemas complejos en diversos campos. En el ámbito de la ciberseguridad, su aplicación ofrece nuevas vías para abordar desafíos como la detección de amenazas y la mitigación de ataques. En este primer capítulo, definiremos los conceptos clave de la ciberseguridad, explorando los diferentes tipos de malware y los principales desafíos a los que se enfrenta hoy en día. A continuación, describiremos los objetivos (tanto principales como secundarios) de esta investigación, incluyendo la motivación para la elección de este tema. Finalmente, presentaremos la estructura de esta memoria, destacando las contribuciones más importantes de nuestro trabajo. Las principales fuentes de consulta para la elaboración de este capítulo son: \citep{podder2021artificial, geron2022hands, pajares2021aprendizaje}.
 
 
 \section{Motivación y objetivos del trabajo} \label{Sec:1_1}
 
+La creciente digitalización de nuestro día a día y la expansión masiva de Internet han traído consigo numerosos beneficios, pero también han incrementado significativamente el riesgo de ciberataques. Empresas, gobiernos y particulares son cada vez más dependientes de la tecnología, lo que ha llevado a un aumento en la exposición a amenazas cibernéticas.
+
+La sofisticación de los atacantes y la variedad de métodos utilizados hacen que la detección y prevención de intrusiones sea un desafío constante. En este contexto, la ciberseguridad no es solo una preocupación personal, sino también una cuestión de seguridad nacional y estabilidad económica. La capacidad para anticipar, identificar y mitigar estos ataques se ha convertido en un aspecto crucial para proteger tanto los datos sensibles como las infraestructuras críticas.
+
+Desde un enfoque más personal, mi interés en la inteligencia artificial (IA) ha sido un factor determinante en la elección de este tema para mi Trabajo Fin de Grado. Aunque no tuve la oportunidad de cursar asignaturas específicas sobre IA durante mi formación, siempre he estado fascinado por su potencial. Una vez decidido ese tema, quería aplicarlo a un problema en particular. A raíz del ataque cibernético sufrido por Telepizza \citep{telepizza}, encontré una gran oportunidad para explorar este campo, ya que mi cercanía a una persona que estuvo directamente involucrado en la respuesta a este incidente me permitió conocer de primera mano los desafíos y la importancia de una protección adecuada contra los ciberataques.
+
+
+\newpage
+
+
+El presente trabajo tiene como objetivo principal explorar y desarrollar técnicas avanzadas basadas en redes neuronales artificiales en el ámbito de la seguridad digital. Para alcanzar estos objetivos generales, se han definido los siguientes objetivos específicos.
+
+\begin{itemize}
+\item Estudio teórico de las redes neuronales con sus diferentes arquitecturas e hiperparámetros.
+
+\item Presentación de dos problemas actuales de ciberseguridad, la clasificación de malware y la detección de intrusiones.
+
+\item Replicación de diferentes modelos de redes neuronales para resolver estos problemas.
+
+\item Implementación en Python de estos modelos para su entrenamiento y análisis de resultados.
+
+\end{itemize}
+
     
 \section{Contexto y antecedentes del trabajo} \label{Sec:1_2}
 
-\subsection{Redes neuronales} \label{Subsubsec: 1_2_1}
-  
-\subsection{Importancia de la detección y prevención de ataques} \label{Subsec: 1_2_2}
+En la era digital actual, la ciberseguridad se ha convertido en una preocupación esencial para empresas, ciudadanos y sociedades. Los ciberataques, que van desde virus y troyanos hasta el espionaje y la filtración de datos, son cada vez más comunes y sofisticados. Estos ataques no solo amenazan nuestra información personal y financiera, sino que también ponen en peligro grandes infraestructuras, lo que puede tener efectos en cadena a gran escala.
 
-Destaca la importancia crítica de la detección y prevención de ataques cibernéticos en entornos empresariales y gubernamentales, así como en la protección de datos sensibles y la infraestructura crítica.
+Debido al creciente número de sistemas conectados a Internet, el riesgo de ataques también a aumentado. Recientes ciberataques como el sufrido por el Banco Santander accediendo a su base de datos \citep{santander}, o el ataque a la aplicación de gestión de prácticas de la Universidad Complutense de Madrid \citep{compluRobo}, resaltan cómo las amenazas están en constante evolución y la necesidad urgente de fortalecer nuestras defensas cibernéticas.
 
-\subsection{Evolución de las amenazas cibernéticas} \label{Subsec: 1_2_3}
+Para enfrentar este problema, la investigación en detección de intrusiones ha cobrado mayor importancia. Los sistemas de detección de intrusiones (IDS) son herramientas clave en la defensa cibernética, y se dividen principalmente en dos tipos: basados en firmas y basados en anomalías. Los IDS basados en firmas detectan ataques comparando el comportamiento observado, con una base de datos de amenazas conocidas, pero este método puede ser esquivado por ataques nuevos y desconocidos. Por otro lado, los IDS basados en anomalías identifican comportamientos inusuales que no se ajustan a los patrones normales, ofreciendo una protección más amplia contra ataques novedosos \citep{pawlicki2022survey}. 
 
-Describe brevemente cómo han evolucionado las amenazas en el ámbito de la ciberseguridad a lo largo del tiempo, desde virus simples hasta ataques sofisticados como el ransomware y el phishing.
+La inteligencia artificial (IA), y en particular las redes neuronales artificiales (ANN), se presentan como una solución prometedora para mejorar la detección de intrusiones. Las ANN pueden analizar grandes volúmenes de datos y detectar patrones complejos de ataque que los métodos tradicionales podrían pasar por alto.
 
-\subsection{Avances en el aprendizaje automático para ciberseguridad} \label{Subsubsec: 1_2_4}
+Uno de los principales desafíos es la gran cantidad de datos en los conjuntos de datos de ciberseguridad actuales, lo que requiere algoritmos inteligentes, como los de aprendizaje automático, para extraer información valiosa. En el contexto de los IDS, esto implica manejar una gran cantidad de características para seleccionar el mejor enfoque y detectar posibles ataques. Además, hay otros desafíos como la optimización de hiperparámetros, el balanceo de datos y la necesidad de explicabilidad y equidad en los modelos. Este es un problema importante porque un alto número de características en un conjunto de datos puede llevar al sobreajuste del modelo, lo que resulta en un desempeño deficiente en los conjuntos de datos de validación.
 
-Proporciona una visión general de cómo los algoritmos de aprendizaje automático han revolucionado el campo de la ciberseguridad, permitiendo la detección temprana de amenazas, el análisis de comportamiento anómalo y la automatización de respuestas.
+Entre todas las técnicas de aprendizaje automático disponibles, esta investigación se centra en el estudio de modelos basados en redes neuronales.
+
+\subsection{Definiciones y conceptos sobre ciberseguridad}
+
+Veamos ahora algunos conceptos sobre ciberseguridad que necesitaremos más adelante:
+
+La ciberseguridad se refiere a las prácticas y tecnologías diseñadas para proteger máquinas, servidores, dispositivos móviles, sistemas electrónicos, redes y datos contra accesos no autorizados, ataques, daños o cualquier tipo de amenaza maliciosa. 
+
+El malware, abreviatura de \textit{malicious software} (software malicioso), es un software diseñado para dañar, infiltrarse o interrumpir el funcionamiento de sistemas informáticos y redes. El propósito del malware puede variar desde el robo de información confidencial hasta el control remoto de dispositivos infectados. 
+
+Veamos cuales son los principales tipos de malware y en que consiste cada uno según \citep{gounder2017new,luoma2023analysis}
+
+\begin{itemize}
+    \item \textbf{Virus:} Programas dañinos que se adhieren a archivos legítimos y se propagan a través de redes y correos electrónicos, causando problemas operativos, pérdida de datos, y ralentizaciones del sistema.
+    
+    \item \textbf{Spyware (programa espía):} Software que recopila información sobre el usuario y sus actividades en línea sin su consentimiento, comprometiendo la seguridad y la privacidad.
+    
+    \item \textbf{Worm (Gusano):} Malware que se replica y se propaga a través de redes sin intervención humana o de un programa huésped, consumiendo ancho de banda y recursos del sistema.
+    
+    \item \textbf{Adware (programa publicitario):} Variedad de malware que muestra anuncios no deseados a los usuarios, típicamente como ventanas emergentes, degradando el rendimiento del sistema y recopilando datos sobre las actividades del usuario.
+    
+    \item \textbf{Backdoor (Puerta trasera):} Herramienta que permite que una entidad no autorizada tome el control completo del sistema de una víctima sin su consentimiento. Un troyano de puerta trasera siempre se presenta como una herramienta de software legítima esencialmente requerida por el usuario. Herramienta que permite el control remoto no autorizado de un sistema, facilitando actividades maliciosas como el robo de datos y la instalación de otros malware.
+    
+    \item \textbf{Trojan (Troyano):} Programa que se disfraza de software legítimo para realizar acciones maliciosas como robar datos o abrir puertas traseras para otros malware.
+    
+    \item \textbf{Trojan downloader (Descargador troyano):} Malware que descarga e instala otros programas maliciosos en el sistema infectado, deshabilitando herramientas de seguridad y transfiriendo información sin permiso.
+    
+    \item \textbf{Obfuscated malware (Malware ofuscado):} Malware cuyo código se ha modificado para dificultar su detección y análisis por parte de software de seguridad.
+\end{itemize}
+
+\subsection{Tecnología de redes y transmisión de datos}
+
+Por otro lado, entender la tecnología de redes y la transmisión de datos es crucial en este mundo cada vez más digital, ya que es la base de la comunicación entre dispositivos. Veremos algunos conceptos relacionados.
+
+El \textbf{HTTP} (\textit{HyperText Transfer Protocol}) es el protocolo estándar utilizado para la transmisión de información en la World Wide Web. Facilita la comunicación entre los navegadores web y los servidores, permitiendo que los navegadores soliciten datos y reciban contenido como páginas web. Cada solicitud HTTP utiliza un método específico (como GET, POST, PUT, DELETE, entre otros) que define la operación que el cliente desea realizar. Por otro lado, el \textbf{HTTPS} (\textit{HyperText Transfer Protocol Secure}) es la versión segura de HTTP. Utiliza el cifrado SSL/TLS para proteger la integridad y la confidencialidad de los datos transmitidos entre el navegador y el servidor.
+
+Una \textbf{LAN} (\textit{Local Area Network}) es una red de área local que conecta dispositivos dentro de un área limitada, como una oficina o un edificio. Las LANs son rápidas y permiten la comunicación eficiente y la compartición de recursos como archivos e impresoras.
+
+El \textbf{IP} (\textit{Internet Protocol}) es el conjunto de reglas que define cómo se envían y reciben los datos a través de la red. Existen dos versiones principales de este protocolo: \textit{IPv4} e \textit{IPv6}. \textit{IPv4} es la versión más utilizada históricamente y tiene un rango de direcciones de 4 bytes (32 bits), permitiendo un total de $2^{32}$ direcciones IP posibles. Debido al limitado número de direcciones, se han implementado soluciones como la creación de subredes y el uso de tecnologías como \textit{NAT} (Traducción de Direcciones de Red), donde una única dirección IP puede ser compartida por múltiples dispositivos. Por otro lado, \textit{IPv6}, con direcciones de 128 bits, ofrece un rango de direcciones significativamente más amplio, permitiendo asignar una dirección IP única a cada dispositivo, solucionando las limitaciones de escalabilidad presentes en \textit{IPv4}.
+
+El \textbf{TCP} (\textit{Transmission Control Protocol}) es un protocolo de control de transmisión que garantiza la entrega fiable de datos entre dispositivos en una red. TCP segmenta los datos en paquetes, los envía y asegura que lleguen al destino en el orden correcto y sin errores. Por otro lado, se encuentra el protocolo \textbf{UDP} (\textit{User Datagram Protocol}), que no da garantías de que el mensaje ha llegado. Por último, vamos a ver el protocolo \textbf{ICMP} (\textit{Internet Control Message Protocol}), que complementa a TCP y UDP proporcionando mecanismos de diagnóstico y control en redes IP, tales como la comunicación de errores y la verificación de conectividad a través de mensajes informativos, siendo fundamental para la gestión y el mantenimiento de la comunicación en Internet.
+
+El \textbf{DNS} (\textit{Domain Name System}) traduce nombres de dominio legibles para humanos en direcciones IP que las computadoras utilizan para identificar servidores en la red. Es una parte clave de la navegación en Internet.
+
+Un \textbf{router} es un dispositivo de red que dirige el tráfico de datos entre diferentes redes. Determina la mejor ruta para cada paquete de datos y lo envía al siguiente nodo en esa ruta.
+
+Un \textbf{firewall} es una barrera de seguridad que controla el tráfico de red permitido o denegado basado en reglas de seguridad predefinidas. Protege las redes contra accesos no autorizados y ataques cibernéticos.
+
+Finalmente, un \textbf{proxy} actúa como intermediario entre un usuario y la Internet. Puede filtrar solicitudes, mejorar la seguridad y almacenar datos en caché para mejorar la eficiencia de la red.
+
+La comprensión de estos elementos no solo es vital para la configuración y mantenimiento de redes seguras, sino que también sienta las bases para el estudio de mecanismos de detección y prevención de intrusiones.
+
+
+\newpage
+
 
 \section{Metodología} \label{Subsubsec: 1_3}
+
+Para lograr los objetivos establecidos en este estudio, se comenzó con un profundo análisis teórico y práctico del funcionamiento de las redes neuronales siguiendo los libros \citep{geron2022hands, pajares2021aprendizaje} e incluyendo los apuntes de la asignatura de Geometría Computacional del profesor Robert Monjo \citep{monjogcom}. Paralelamente, se implementaron varios modelos utilizando tutoriales de Kaggle\footnote{\url{https://www.kaggle.com/}} como guía, tales como la detección de señales de tráfico y la clasificación de dígitos en el conjunto de datos MNIST mediante redes neuronales convolucionales (CNN) \citep{conceptos_RN_DesdeCero2, kaggle_cnn_tutorial}. Estas implementaciones proporcionaron una base sólida para comprender las arquitecturas y técnicas de entrenamiento de redes neuronales aplicadas a los problemas específicos.
+
+Posteriormente, se llevó a cabo un estudio sobre el uso de redes neuronales en ciberseguridad. Se consultó el \textit{review} \citep{podder2021artificial} que ofreció una visión general de cómo estas redes se emplean para abordar diversos problemas en este campo. A partir de esta revisión, se identificaron dos problemas principales en ciberseguridad: la detección de intrusiones y la clasificación de ataques.
+
+Con base en los problemas identificados, se procedió a seleccionar las bases de datos más apropiadas que proporcionaran datos relevantes y variados para cada uno de estos problemas. Esta selección se basó principalmente en escoger las bases de datos con más métodos de aprendizaje profundo documentados en artículos.
+
+Para el desarrollo de los modelos de redes neuronales en Python, se implementaron diversas mejoras y adaptaciones específicas a cada problema. Esto incluyó ajustes en las arquitecturas de red, la optimización de hiperparámetros y la selección de técnicas de procesamiento de datos adecuadas. Cada modelo fue sometido a pruebas para medir su rendimiento y asegurar su eficacia en la detección y clasificación de intrusiones y ataques.
+
+Finalmente, se procedió a la evaluación comparativa de los modelos desarrollados utilizando diferentes métricas de rendimiento. El modelo que demostró ser más efectivo en términos de precisión y capacidad para generalizar fue seleccionado como la solución óptima para cada uno de los problemas estudiados.
+
+
 \section{Estructura de la memoria} \label{Subsubsec: 1_4}
-  
-El entorno de hardware en el que he realizado todos los experimentos es un servidor proporcionado por la facultad de informática de la Universidad Complutense de Madrid llamado Simba. Tiene un sistema operativo Debian 12.2 con Linux version 6.1.0-17-amd64 con memoria RAM disponible de 128 GB. La CPU utilizada es un Intel(R) Xeon(R) W-2235 CPU con 3.8 GHz con 6 núcleos. 
+
+La presente memoria se estructura en cinco capítulos, cada uno de los cuales aborda diferentes aspectos del estudio y aplicación de algoritmos de aprendizaje automático en problemas de ciberseguridad. 
+
+
+El \textbf{Capítulo 2}, denominado \textit{Fundamentos de las redes neuronales}, ofrece una introducción detallada a los conceptos fundamentales del aprendizaje automático y el aprendizaje profundo. Se explican diversas técnicas de optimización de modelos de \textit{machine learning}, incluyendo el descenso de gradiente y sus variantes, así como diferentes arquitecturas de redes neuronales, tales como el perceptrón, los \textit{autoencoders}, las redes neuronales convolucionales y las redes neuronales recurrentes. También se discuten las funciones de pérdida y activación, el sobreajuste del modelo y algunas métricas de evaluación para los diferentes modelos.
+
+En los \textbf{capítulos 3} y \textbf{4}, titulados \textit{Clasificación de Malware} y \textit{Detección de intrusiones} respectivamente, se describen dos de los principales desafíos de la ciberseguridad. Para ello, primero se va a explicar la base de datos utilizada, para después aplicar diferentes modelos de redes neuronales y estudiar cual de ellos se ajusta mejor al problema. Por último, se presentan y analizan los resultados obtenidos, destacando los modelos más efectivos y sus aportaciones al problema.
+
+Finalmente, el \textbf{Capítulo 5}, titulado \textit{Conclusiones y Trabajo Futuro}, resume las conclusiones obtenidas a partir de los experimentos y análisis realizados en los capítulos anteriores. Se destacan las principales contribuciones del trabajo y se sugieren posibles direcciones para investigaciones futuras, con el objetivo de mejorar y ampliar los enfoques presentados en esta memoria.
+
+Todos los experimentos y códigos de Python utilizados se encuentran en \citep{poyatos_repositorio_2024}.
+
+El entorno de hardware en el que he realizado todos los experimentos es un servidor proporcionado por la Facultad de Informática de la Universidad Complutense de Madrid llamado Simba. Tiene un sistema operativo Debian 12.2 con Linux version 6.1.0-17-amd64 con memoria RAM disponible de 128 GB. La CPU utilizada es un Intel(R) Xeon(R) W-2235 CPU con 3.8 GHz con 6 núcleos. 
+
+
+
+\section{Contribuciones} \label{sec:1.5contribuciones}
+
+Aunque mi objetivo inicial era replicar modelos existentes de redes neuronales, a lo largo del trabajo he decidido hacer ciertas modificaciones y aportaciones a diferentes modelos para lograr mejores resultados. En otros casos, he decidido realizar diferentes experimentos para comprobar la efectividad de diferentes hiperparámetros. 
+
+En particular, en el Capítulo \ref{Capitulo_3}, he realizado algunas contribuciones en el campo de la clasificación de malware. Para los modelos de CNN, llevé a cabo diferentes experimentos con el fin de verificar que los hiperparámetros indicados en el artículo eran efectivamente los mejores. Además, implementé mejoras adicionales para optimizar la generalización del modelo y evitar el sobreajuste.
+
+En el capitulo \ref{Capitulo_3} pero en los modelos basados en \textit{autoencoders}, mis principales contribuciones consistieron en que no utilicé ningún artículo específico que hubiera resuelto este problema con anterioridad. En su lugar, investigué diversas arquitecturas y realicé diferentes experimentos para determinar cuál de todas ellas ofrecía el mejor rendimiento para la clasificación de malware.
+
+Por último, en el Capítulo \ref{Capitulo4} decidí añadir métodos específicos para evitar el sobreajuste en los modelos desarrollados. Esta decisión fue crucial para mejorar la robustez y la capacidad de generalización de los modelos de redes neuronales aplicados a la detección de intrusiones.
+
+
+
+
+
+\begin{comment} 
+
+Mis principales contribuciones en este trabajo de investigación se centran en varios aspectos fundamentales para el desarrollo y la mejora de modelos de redes neuronales aplicados a problemas específicos de ciberseguridad. En primer lugar, he realizado mejoras significativas en las arquitecturas de las redes neuronales utilizadas. Esto incluye la adaptación y optimización de las estructuras de red para maximizar la precisión y eficiencia en la detección de intrusiones y clasificación de ataques.
+
+En particular, se destaca el capítulo dedicado al problema de la clasificación de malware (capítulo \ref{Capitulo_3}), donde se han implementado diversas mejoras. En el modelo de redes neuronales convolucionales (\acrshort{cnn}), se llevaron a cabo experimentos adicionales a los propuestos por el artículo que se usaba de base para seleccionar los mejores hiperparámetros del modelo. Además, en los modelos que emplearon autoencoders, se realizó una investigación particular sin seguir ningún artículo de referencia que ya haya realizado experimentos sobre esta base de datos. Para ello, se crearon modelos innovadores y adaptados específicamente a los desafíos de la clasificación de malware en entornos de ciberseguridad.
+
+Este enfoque ha resultado en una notable mejora en la precisión y robustez de los modelos desarrollados. Además, ha permitido avanzar en la comprensión de cómo aplicar redes neuronales de manera efectiva para la detección y clasificación de amenazas en ciberseguridad. La clave de este avance ha sido la combinación de la optimización de hiperparámetros, experimentación con Python y un análisis minucioso de los resultados, lo cual ha validado la efectividad de nuestras propuestas en escenarios prácticos y desafiantes de ciberseguridad.
+\end{comment}
+
 
 
