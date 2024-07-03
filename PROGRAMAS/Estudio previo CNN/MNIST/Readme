@@ -1,0 +1,44 @@
+# Reconocimiento de Dígitos MNIST
+
+## Descripción
+
+Este proyecto utiliza un modelo de red neuronal convolucional (CNN) para reconocer dígitos 
+manuscritos a partir de imágenes. El modelo ha sido entrenado utilizando el conjunto de datos
+MNIST, y puede predecir la clase de un dígito proporcionado como imagen de entrada.
+
+
+## Requisitos
+
+- Python 3.8 o superior
+- Bibliotecas:
+  - `numpy`
+  - `matplotlib`
+  - `tensorflow`
+  - `keras`
+
+Puedes instalar las bibliotecas necesarias usando el siguiente comando:
+
+pip install numpy matplotlib tensorflow keras
+
+
+## Conjunto de Datos
+
+Para descargar el conjunto de datos MNIST , hay que ir a la página web 
+https://www.kaggle.com/code/kanncaa1/convolutional-neural-network-cnn-tutorial/notebookse 
+,descargase los archivos .csv test y train que aparecen en input y guardarlos en la misma 
+carpeta donde se encuentren los archivos.
+
+
+## Estructura del Proyecto
+
+- `CNN_recDigitos.py`: Script para entrenar el modelo de reconocimiento de dígitos MNIST.
+
+
+### Entrenamiento
+
+Ejecuta `CNN_recDigitos.py` para entrenar el modelo. Este script:
+   - Descarga y carga el conjunto de datos MNIST.
+   - Preprocesa los datos.
+   - Divide los datos en conjuntos de entrenamiento y prueba.
+   - Construye el modelo CNN.
+   - Entrena el modelo y lo guarda en `modelo_digitos_func.keras`.
