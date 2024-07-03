@@ -1,3 +1,7 @@
+'''
+Función para graficar resultados recogidos en csv sobre la evolución del modelo a lo largo de las épocas.
+'''
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
