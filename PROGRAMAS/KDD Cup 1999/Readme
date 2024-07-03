@@ -1,0 +1,41 @@
+# Proyecto de Redes Neuronales para Detección de Intrusiones
+
+Este repositorio contiene varios scripts y archivos relacionados con la creación y entrenamiento de modelos 
+de redes neuronales para la detección de intrusiones, utilizando la base de datos KDD CUP. A continuación, 
+se detallan los archivos presentes y su propósito.
+
+## Estructura del Repositorio
+
+- `Resultados de los entrenamientos en excel/` - Carpeta que contiene los resultados del entrenamiento 
+de las 4 redes neuronales en archivos Excel.
+- `KDD_AE.py` - Código para crear y entrenar un modelo de Autoencoder.
+- `KDD_CNN.py` - Código para crear y entrenar un modelo de Red Neuronal Convolucional (CNN).
+- `KDD_DNN.py` - Código para crear y entrenar un modelo de Red Neuronal Densa (DNN).
+- `KDD_RNN.py` - Código para crear y entrenar un modelo de Red Neuronal Recurrente (RNN).
+- `confusionKDD.py` - Código para crear la matriz de confusión.
+- `confusionKDD_AE.py` - Código específico para crear la matriz de confusión del Autoencoder.
+- `data.py` - Código para procesar los datos.
+- `descargaKDDCUP.py` - Código para descargar la base de datos KDD CUP.
+
+## Requisitos
+
+Primero, es necesario instalar los paquetes de Python requeridos:
+
+pip install numpy Pillow opencv-python pandas keras scikit-learn seaborn matplotlib tensorflow
+
+## Uso
+1. Descargar la Base de Datos: Ejecutar el script descargaKDDCUP.py para descargar la base de datos necesaria.
+
+2. Procesar los Datos: Ejecutar el script data.py para preprocesar los datos.
+
+3. Crear y Entrenar Modelos: Según el tipo de modelo que se desee entrenar, ejecutar uno de los siguientes scripts:
+
+    KDD_AE.py para Autoencoder
+    KDD_CNN.py para CNN
+    KDD_DNN.py para DNN
+    KDD_RNN.py para RNN
+
+4. Generar Matriz de Confusión:
+
+  Para modelos generales, se usa confusionKDD.py.
+  Para el Autoencoder, se usa confusionKDD_AE.py.
