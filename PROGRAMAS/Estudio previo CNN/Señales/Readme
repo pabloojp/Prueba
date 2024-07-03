@@ -1,0 +1,68 @@
+# Reconocimiento de Señales de Tráfico
+
+## Descripción
+
+Este proyecto utiliza un modelo de red neuronal convolucional (CNN) para reconocer señales de tráfico 
+a partir de imágenes. El modelo ha sido entrenado utilizando el conjunto de datos de señales de tráfico, 
+y puede predecir la clase de una señal proporcionada como imagen de entrada.
+
+## Requisitos
+
+- Python 3.8 o superior
+- Bibliotecas:
+  - `numpy`
+  - `pillow`
+  - `tensorflow`
+  - `keras`
+
+Puedes instalar las bibliotecas necesarias usando el siguiente comando:
+
+pip install numpy pillow tensorflow keras
+
+
+## Conjunto de Datos
+
+Para entrenar el modelo, necesitarás descargar el conjunto de datos de señales de tráfico. 
+Puedes encontrar el conjunto de datos en el siguiente enlace:
+https://www.kaggle.com/code/yacharki/traffic-signs-image-classification-96-cnn#6.-Training-the-Model
+
+He tenido que descargarme la carpeta train y guardar imágenes de entrenamiento en diferentes carpetas 
+(cada clase en una carpeta). Todas estas carpetas se guardan en una carpeta llamada "Train", la cual
+hay que guardarla en la misma carpeta donde esten los scripts. 
+
+## Estructura del Proyecto
+
+- `predecir.py`: Script para predecir la señal de tráfico en una imagen dada.
+- `trafficSign.py`: Script para entrenar el modelo de reconocimiento de señales de tráfico.
+
+## Uso
+
+### Entrenamiento
+
+Para entrenar el modelo, sigue estos pasos:
+
+1. Descarga el conjunto de datos y organízalo en carpetas según las clases de señales. La estructura 
+de directorios debe ser similar a:
+
+Train/
+├── 0/
+├── 1/
+├── ...
+└── 42/
+
+2. Ejecuta `traffic_sign_recognition.py` para entrenar el modelo. Este script:
+   - Carga y preprocesa los datos.
+   - Divide los datos en conjuntos de entrenamiento y prueba.
+   - Construye el modelo CNN.
+   - Entrena el modelo y lo guarda en `traffic_classifier.keras`.
+
+### Predicción
+
+Para predecir la señal en una imagen, sigue estos pasos:
+
+1. Asegúrate de tener el archivo `traffic_classifier.keras` en el mismo directorio que `predict.py`.
+2. Proporciona la ruta de la imagen que deseas clasificar.
+3. Ejecuta `predecir.py` para obtener la predicción. Este script:
+   - Carga el modelo entrenado.
+   - Preprocesa la imagen de entrada.
+   - Realiza la predicción y muestra la clase predicha junto con las probabilidades.
