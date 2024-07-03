@@ -1,0 +1,12 @@
+En esta ruta, tenemos tres carpetas. 
+
+1. La carpeta "Estudio previo CNN" incluye los primeros pasos que seguí para
+afianzar los conceptos de las redes neuronales y en particular de las CNN. Para
+ello creé un modelo para predecir digitos del conjunto e datos MNIST y otro 
+modelo para reconocer señales de tráfico.
+
+2. La carpeta "Clasificacion malware - Microsoft Malware Classification" incluye
+los códigos utilizados para el análisis de este problema de ciberseguridad.
+
+3. La carpeta "Detección de intrusiones - KDD CUP" incluye los códigos utilizados 
+para el análisis del problema de la detección de intrusiones.
