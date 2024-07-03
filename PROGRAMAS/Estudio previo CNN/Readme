@@ -1,0 +1,11 @@
+# Proyecto de Reconocimiento de Imágenes
+
+Este repositorio contiene dos proyectos de reconocimiento de imágenes utilizando aprendizaje profundo: 
+uno para el reconocimiento de dígitos MNIST y otro para el reconocimiento de señales de tráfico. 
+Estos códigos fueron creados a partir de diferentes páginas web de Kaggle y repliqué sus experimentos
+para aprender el funcionamiento.
+
+## Estructura del Repositorio
+
+- **MNIST:** Carpeta que contiene el código relacionado con el reconocimiento de dígitos MNIST.
+- **ReconocimientoSenales:** Carpeta que contiene el código relacionado con el reconocimiento de señales de tráfico.
